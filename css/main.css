@@ -1851,7 +1851,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff94ba;
+  background: #fc74fa;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2668,10 +2668,10 @@ body {
   letter-spacing: 1px;
   padding-bottom: 3px;
   font-weight: bold;
-  color: #000;
+  color: #fff;
   border-bottom-width: 1px;
   border-bottom-style: solid;
-  border-bottom-color: #000;
+  border-bottom-color: #0ff;
 }
 .menu {
   text-align: center;
@@ -2910,6 +2910,13 @@ pre .deletion {
 .posts-collapse .post-header::before {
   background-color: #ff0;
 }
+.posts-collapse .collection-title h1,
+.posts-collapse .collection-title h2 {
+  color: #fff;
+}
+.posts-collapse .post-title a {
+  color: #5073b8;
+}
 .posts-collapse .post-title a:hover {
   color: #000;
   font-weight: bold;
@@ -2918,7 +2925,7 @@ pre .deletion {
   border-bottom-color: #000;
 }
 .page-archive .archive-page-counter {
-  color: #000;
+  color: #fff;
 }
 .page-archive .posts-collapse .archive-move-on {
   top: 10px;
@@ -2929,25 +2936,55 @@ pre .deletion {
 .post-block.page {
   margin-top: 40px;
 }
-#top {
-  margin: -100px 50px 40px 50px;
+.category-all-page {
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
   background-color: #fff;
-  padding: 106px 36px 10px 36px;
+  padding: 86px 36px 36px 36px;
+  border-radius: 5px;
 }
-.about-page {
-  margin: -80px 0px 60px 0px;
+@media (max-width: 767px) {
+  .category-all-page {
+    margin: -73px 15px 50px 15px;
+  }
+  .category-all-page .category-all-title {
+    margin-top: -5px;
+  }
+}
+.tag-cloud {
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+  background-color: #fff;
+  padding: 86px 36px 36px 36px;
+  border-radius: 5px;
+}
+.tag-cloud-title {
+  margin-bottom: 15px;
+}
+@media (max-width: 767px) {
+  .tag-cloud {
+    margin: -73px 15px 50px 15px;
+    padding: 86px 5px 36px 5px;
+  }
+}
+#top {
+  border-radius: 5px;
+  margin-bottom: 50px;
+  padding: 15px 36px 36px 36px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+  background-color: #fff;
+}
+#about {
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
   background-color: #fff;
   padding: 106px 36px 36px 36px;
+  border-radius: 5px;
 }
 @media (max-width: 767px) {
-  .about-page {
+  #about {
     margin: -73px 0px 50px 0px;
     padding: 96px 15px 20px 15px;
   }
 }
-h2.about-title {
+h2#about-title {
   border-left: none !important;
   margin-left: 0px !important;
   padding-left: 0px !important;
