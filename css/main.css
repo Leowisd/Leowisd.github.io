@@ -1851,7 +1851,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #e9af66;
+  background: #fffaff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2819,6 +2819,9 @@ pre .deletion {
 .sidebar {
   box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.5);
   background-color: transparent;
+/* background:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw4miJ9u4D-uHQjJv0H42j08zZXdP_M0KQs8b0soPKG8sxv2U_Og);
+    background-size: auto;
+    background-repeat: no-repeat; */
 }
 .sidebar-inner {
   margin-top: 30px;
@@ -2994,7 +2997,7 @@ pre .deletion {
   margin: -80px 0px 60px 0px;
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
   background-color: #fff;
-  padding: 10px 36px 5px 36px;
+  padding: 0px 36px 5px 36px;
   border-radius: 5px;
 }
 @media (max-width: 767px) {
