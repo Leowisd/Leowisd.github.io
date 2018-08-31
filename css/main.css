@@ -1851,7 +1851,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fffaff;
+  background: #261d63;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2943,7 +2943,7 @@ pre .deletion {
   margin-top: 40px;
 }
 .category-all-page {
-  margin: -80px 50px 40px 50px;
+  margin: -80px 0px 40px 0px;
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
   background-color: #fff;
   padding: 10px 36px 10px 36px;
@@ -2964,7 +2964,7 @@ pre .deletion {
   }
 }
 .tag-cloud {
-  margin: -80px 50px 40px 50px;
+  margin: -80px 0px 40px 0px;
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
   background-color: #fff;
   padding: 10px 36px 10px 36px;
@@ -2981,7 +2981,7 @@ pre .deletion {
   }
 }
 #top {
-  margin: -80px 50px 40px 50px;
+  margin: -80px 0px 40px 0px;
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
   background-color: #fff;
   padding: 10px 36px 10px 36px;
