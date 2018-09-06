@@ -122,7 +122,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/cf684029ly1fuzkfsqtqpj212w0m87wi.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/cf684029ly1fuzk4l7z7fj204j03jgm0.jpg">
-<meta property="og:updated_time" content="2018-09-06T01:47:06.920Z">
+<meta property="og:updated_time" content="2018-09-06T01:51:39.744Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2-Problem Solving">
 <meta name="twitter:description" content="The Note of AI Course">
@@ -375,7 +375,7 @@
                 
               
 
-              <time title="Created: 2018-09-05 18:38:55 / Modified: 20:47:06" itemprop="dateCreated datePublished" datetime="2018-09-05T18:38:55-05:00">2018-09-05</time>
+              <time title="Created: 2018-09-05 18:38:55 / Modified: 20:51:39" itemprop="dateCreated datePublished" datetime="2018-09-05T18:38:55-05:00">2018-09-05</time>
             
 
             
@@ -471,25 +471,19 @@
 <li>Nondeterministic and/or partially observable =&gt; contingency problem</li>
 <li>Unknown state space =&gt; exploration problem(“online”)</li>
 </ul>
-<h2 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h2><p><strong>Optimal</strong>: Yes. Always find the shortest path.<br><strong>Complete</strong>: Yes</p>
-<h3 id="Implement"><a href="#Implement" class="headerlink" title="Implement"></a>Implement</h3><p>Loading…</p>
-<h2 id="Uniform-Cost-Search-Cheapest-Search"><a href="#Uniform-Cost-Search-Cheapest-Search" class="headerlink" title="Uniform-Cost Search (Cheapest-Search)"></a>Uniform-Cost Search (Cheapest-Search)</h2><p>Stop only until the goal is removed from Frontier to Explored</p>
-<h3 id="Optimal"><a href="#Optimal" class="headerlink" title="Optimal"></a>Optimal</h3><p>Yes. Always find the cheapest path</p>
-<h3 id="Complete"><a href="#Complete" class="headerlink" title="Complete"></a>Complete</h3><p>Yes</p>
-<h3 id="Implement-1"><a href="#Implement-1" class="headerlink" title="Implement"></a>Implement</h3><p>Loading…</p>
-<h2 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h2><h3 id="Optimal-1"><a href="#Optimal-1" class="headerlink" title="Optimal:"></a>Optimal:</h3><p>No. For example, in the tree below, if there is a goal both in 3 and 5, it will find 3 but not find 5, so it can’t find the shortest path.<br><img src="http://ww1.sinaimg.cn/large/cf684029ly1fuzk4l7z7fj204j03jgm0.jpg" alt=""></p>
-<h3 id="Complete-1"><a href="#Complete-1" class="headerlink" title="Complete:"></a>Complete:</h3><p>No. If there is a infinite tree, it will have a endless path to go down</p>
-<h3 id="Implement-2"><a href="#Implement-2" class="headerlink" title="Implement"></a>Implement</h3><p>Loading…</p>
-<h2 id="Iterative-Deepening-Search"><a href="#Iterative-Deepening-Search" class="headerlink" title="Iterative Deepening Search"></a>Iterative Deepening Search</h2><h3 id="Optimal-2"><a href="#Optimal-2" class="headerlink" title="Optimal"></a>Optimal</h3><p>Yes</p>
-<h3 id="Complete-2"><a href="#Complete-2" class="headerlink" title="Complete"></a>Complete</h3><p>Yes</p>
-<h3 id="Implement-3"><a href="#Implement-3" class="headerlink" title="Implement"></a>Implement</h3><p>Loading…</p>
+<h2 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h2><p><strong>Optimal</strong>: Yes. Always find the shortest path.<br><strong>Complete</strong>: Yes<br><strong>Implement</strong><br>Loading…</p>
+<h2 id="Uniform-Cost-Search-Cheapest-Search"><a href="#Uniform-Cost-Search-Cheapest-Search" class="headerlink" title="Uniform-Cost Search (Cheapest-Search)"></a>Uniform-Cost Search (Cheapest-Search)</h2><p>Stop only until the goal is removed from Frontier to Explored<br><strong>Optimal:</strong> Yes. Always find the cheapest path<br><strong>Complete:</strong> Yes<br><strong>Implement</strong><br>Loading…</p>
+<h2 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h2><p><strong>Optimal:</strong> No. For example, in the tree below, if there is a goal both in 3 and 5, it will find 3 but not find 5, so it can’t find the shortest path.<br><img src="http://ww1.sinaimg.cn/large/cf684029ly1fuzk4l7z7fj204j03jgm0.jpg" alt=""><br><strong>Complete:</strong> No. If there is a infinite tree, it will have a endless path to go down<br><strong>Implement</strong><br>Loading…</p>
+<h2 id="Iterative-Deepening-Search"><a href="#Iterative-Deepening-Search" class="headerlink" title="Iterative Deepening Search"></a>Iterative Deepening Search</h2><p><strong>Optimal:</strong> Yes<br><strong>Complete:</strong> Yes<br><strong>Implement</strong><br>Loading…</p>
 <h2 id="A-Search-Heuristic-Search"><a href="#A-Search-Heuristic-Search" class="headerlink" title="A* Search (Heuristic Search)"></a>A* Search (Heuristic Search)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f = g + h</span><br><span class="line">g(path) = path cost</span><br><span class="line">h(path) = h(s) = estimated distance to the goal</span><br><span class="line">Stop only until the goal is removed from Frontier</span><br></pre></td></tr></table></figure>
-<h3 id="A-Finds-lowest-cost-path-if"><a href="#A-Finds-lowest-cost-path-if" class="headerlink" title="A* Finds lowest cost path if:"></a>A* Finds lowest cost path if:</h3><ul>
+<p><strong>Finds lowest cost path if:</strong></p>
+<ul>
 <li><strong>h(s) &lt; true cost</strong></li>
 <li>h never overestimate</li>
 <li>h optimistic</li>
-<li>h admissable<h3 id="Implement-4"><a href="#Implement-4" class="headerlink" title="Implement"></a>Implement</h3>Loading…</li>
+<li>h admissable</li>
 </ul>
+<p><strong>Implement</strong><br>Loading…</p>
 <h2 id="Problems-with-Search"><a href="#Problems-with-Search" class="headerlink" title="Problems with Search"></a>Problems with Search</h2><p>Problem-Sloving works when:</p>
 <ul>
 <li>Fully Observable</li>
@@ -787,7 +781,7 @@ show_date_time();
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#DEFINITION-OF-A-PROBLEM"><span class="nav-number">1.</span> <span class="nav-text">DEFINITION OF A PROBLEM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem-types"><span class="nav-number">2.</span> <span class="nav-text">Problem types</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BFS"><span class="nav-number">3.</span> <span class="nav-text">BFS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Implement"><span class="nav-number">3.1.</span> <span class="nav-text">Implement</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Uniform-Cost-Search-Cheapest-Search"><span class="nav-number">4.</span> <span class="nav-text">Uniform-Cost Search (Cheapest-Search)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Optimal"><span class="nav-number">4.1.</span> <span class="nav-text">Optimal</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Complete"><span class="nav-number">4.2.</span> <span class="nav-text">Complete</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Implement-1"><span class="nav-number">4.3.</span> <span class="nav-text">Implement</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DFS"><span class="nav-number">5.</span> <span class="nav-text">DFS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Optimal-1"><span class="nav-number">5.1.</span> <span class="nav-text">Optimal:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Complete-1"><span class="nav-number">5.2.</span> <span class="nav-text">Complete:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Implement-2"><span class="nav-number">5.3.</span> <span class="nav-text">Implement</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Iterative-Deepening-Search"><span class="nav-number">6.</span> <span class="nav-text">Iterative Deepening Search</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Optimal-2"><span class="nav-number">6.1.</span> <span class="nav-text">Optimal</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Complete-2"><span class="nav-number">6.2.</span> <span class="nav-text">Complete</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Implement-3"><span class="nav-number">6.3.</span> <span class="nav-text">Implement</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A-Search-Heuristic-Search"><span class="nav-number">7.</span> <span class="nav-text">A* Search (Heuristic Search)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#A-Finds-lowest-cost-path-if"><span class="nav-number">7.1.</span> <span class="nav-text">A* Finds lowest cost path if:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Implement-4"><span class="nav-number">7.2.</span> <span class="nav-text">Implement</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Problems-with-Search"><span class="nav-number">8.</span> <span class="nav-text">Problems with Search</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#DEFINITION-OF-A-PROBLEM"><span class="nav-number">1.</span> <span class="nav-text">DEFINITION OF A PROBLEM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem-types"><span class="nav-number">2.</span> <span class="nav-text">Problem types</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BFS"><span class="nav-number">3.</span> <span class="nav-text">BFS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Uniform-Cost-Search-Cheapest-Search"><span class="nav-number">4.</span> <span class="nav-text">Uniform-Cost Search (Cheapest-Search)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DFS"><span class="nav-number">5.</span> <span class="nav-text">DFS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Iterative-Deepening-Search"><span class="nav-number">6.</span> <span class="nav-text">Iterative Deepening Search</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A-Search-Heuristic-Search"><span class="nav-number">7.</span> <span class="nav-text">A* Search (Heuristic Search)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Problems-with-Search"><span class="nav-number">8.</span> <span class="nav-text">Problems with Search</span></a></li></ol></div>
             
 
           </div>
