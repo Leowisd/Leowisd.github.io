@@ -113,7 +113,7 @@
 
 
   <meta name="description" content="The Note of AI Course">
-<meta name="keywords" content="AI,Course Note">
+<meta name="keywords" content="AI,Course Note,Search Algorithm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2-Problem Solving">
 <meta property="og:url" content="http://yfygoing.com/2018/09/05/AINote-2/index.html">
@@ -122,7 +122,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/cf684029ly1fuzkfsqtqpj212w0m87wi.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/cf684029ly1fuzk4l7z7fj204j03jgm0.jpg">
-<meta property="og:updated_time" content="2018-09-06T01:32:42.675Z">
+<meta property="og:updated_time" content="2018-09-06T01:39:41.690Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2-Problem Solving">
 <meta name="twitter:description" content="The Note of AI Course">
@@ -375,7 +375,7 @@
                 
               
 
-              <time title="Created: 2018-09-05 18:38:55 / Modified: 20:32:42" itemprop="dateCreated datePublished" datetime="2018-09-05T18:38:55-05:00">2018-09-05</time>
+              <time title="Created: 2018-09-05 18:38:55 / Modified: 20:39:41" itemprop="dateCreated datePublished" datetime="2018-09-05T18:38:55-05:00">2018-09-05</time>
             
 
             
@@ -478,14 +478,17 @@
 <h3 id="Optimal-1"><a href="#Optimal-1" class="headerlink" title="Optimal"></a>Optimal</h3><p>Yes. Always find the cheapest path</p>
 <h3 id="Complete-1"><a href="#Complete-1" class="headerlink" title="Complete"></a>Complete</h3><p>Yes</p>
 <h3 id="Implement-1"><a href="#Implement-1" class="headerlink" title="Implement"></a>Implement</h3><p>Loading…</p>
-<h2 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h2><h3 id="Optimal-2"><a href="#Optimal-2" class="headerlink" title="Optimal:"></a>Optimal:</h3><p>No. For example<br><img src="http://ww1.sinaimg.cn/large/cf684029ly1fuzk4l7z7fj204j03jgm0.jpg" alt=""><br>In such tree, if there is a goal both in 3 and 5, it will find 3 but not find 5, so it can’t find the shortest path.</p>
+<h2 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h2><h3 id="Optimal-2"><a href="#Optimal-2" class="headerlink" title="Optimal:"></a>Optimal:</h3><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fuzk4l7z7fj204j03jgm0.jpg" alt=""><br>No. For example, in the tree above, if there is a goal both in 3 and 5, it will find 3 but not find 5, so it can’t find the shortest path.</p>
 <h3 id="Complete-2"><a href="#Complete-2" class="headerlink" title="Complete:"></a>Complete:</h3><p>No. If there is a infinite tree, it will have a endless path to go down</p>
 <h3 id="Implement-2"><a href="#Implement-2" class="headerlink" title="Implement"></a>Implement</h3><p>Loading…</p>
 <h2 id="Iterative-Deepening-Search"><a href="#Iterative-Deepening-Search" class="headerlink" title="Iterative Deepening Search"></a>Iterative Deepening Search</h2><h3 id="Optimal-3"><a href="#Optimal-3" class="headerlink" title="Optimal"></a>Optimal</h3><p>Yes</p>
 <h3 id="Complete-3"><a href="#Complete-3" class="headerlink" title="Complete"></a>Complete</h3><p>Yes</p>
 <h3 id="Implement-3"><a href="#Implement-3" class="headerlink" title="Implement"></a>Implement</h3><p>Loading…</p>
-<h2 id="A-Search-Heuristic-Search"><a href="#A-Search-Heuristic-Search" class="headerlink" title="A* Search (Heuristic Search)"></a>A* Search (Heuristic Search)</h2><p>f = g + h<br>g(path) = path cost<br>h(path) = h(s) = estimated distance to the goal<br>Stop only until the goal is removed from Frontier</p>
-<h3 id="A-Finds-lowest-cost-path-if"><a href="#A-Finds-lowest-cost-path-if" class="headerlink" title="A* Finds lowest cost path if:"></a>A* Finds lowest cost path if:</h3><ul>
+<h2 id="A-Search-Heuristic-Search"><a href="#A-Search-Heuristic-Search" class="headerlink" title="A* Search (Heuristic Search)"></a>A* Search (Heuristic Search)</h2><ul>
+<li>f = g + h</li>
+<li>g(path) = path cost</li>
+<li>h(path) = h(s) = estimated distance to the goal</li>
+<li>Stop only until the goal is removed from Frontier<h3 id="A-Finds-lowest-cost-path-if"><a href="#A-Finds-lowest-cost-path-if" class="headerlink" title="A* Finds lowest cost path if:"></a>A* Finds lowest cost path if:</h3></li>
 <li><strong>h(s) &lt; true cost</strong></li>
 <li>h never overestimate</li>
 <li>h optimistic</li>
@@ -522,6 +525,8 @@
             <a href="/tags/AI/" rel="tag"># AI</a>
           
             <a href="/tags/Course-Note/" rel="tag"># Course Note</a>
+          
+            <a href="/tags/Search-Algorithm/" rel="tag"># Search Algorithm</a>
           
         </div>
       
@@ -655,7 +660,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
