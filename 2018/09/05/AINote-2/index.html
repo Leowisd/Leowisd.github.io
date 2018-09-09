@@ -113,7 +113,7 @@
 
 
   <meta name="description" content="The Note of AI Course">
-<meta name="keywords" content="AI,Course Note,Search Algorithm">
+<meta name="keywords" content="Algorithm,AI,Searching,Course Note">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2-Problem Solving">
 <meta property="og:url" content="http://yfygoing.com/2018/09/05/AINote-2/index.html">
@@ -122,7 +122,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/cf684029ly1fuzkfsqtqpj212w0m87wi.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/cf684029ly1fuzk4l7z7fj204j03jgm0.jpg">
-<meta property="og:updated_time" content="2018-09-06T01:56:30.730Z">
+<meta property="og:updated_time" content="2018-09-09T03:22:34.076Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2-Problem Solving">
 <meta name="twitter:description" content="The Note of AI Course">
@@ -375,12 +375,24 @@
                 
               
 
-              <time title="Created: 2018-09-05 18:38:55 / Modified: 20:56:30" itemprop="dateCreated datePublished" datetime="2018-09-05T18:38:55-05:00">2018-09-05</time>
+              <time title="Created: 2018-09-05 18:38:55" itemprop="dateCreated datePublished" datetime="2018-09-05T18:38:55-05:00">2018-09-05</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-09-08 22:22:34" itemprop="dateModified" datetime="2018-09-08T22:22:34-05:00">2018-09-08</time>
               
             
           </span>
@@ -471,19 +483,20 @@
 <li>Nondeterministic and/or partially observable =&gt; contingency problem</li>
 <li>Unknown state space =&gt; exploration problem(“online”)</li>
 </ul>
-<h2 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h2><p><strong>Optimal</strong>: Yes. Always find the shortest path.</p>
+<h2 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h2><p><strong>Optimal</strong>: Yes. Always find the shortest(not the cheapest) path.</p>
 <p><strong>Complete</strong>: Yes</p>
-<p><strong>Implement</strong> Loading…</p>
+<p><strong>Implement</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">BFS(G, s)</span><br><span class="line">for each vertex u &lt;- G. V - &#123;s&#125;</span><br><span class="line">  u.color = WHITE</span><br><span class="line">  u.distance = infinity</span><br><span class="line">  u.pre = NULL</span><br><span class="line">s.color = GRAY</span><br><span class="line">s.distance = 0</span><br><span class="line">s.pre = NULL</span><br><span class="line">Q = NULL</span><br><span class="line">ENQUEUE(Q, s)</span><br><span class="line">while Q != NULL</span><br><span class="line">  u = DEQUEUE(Q)</span><br><span class="line">  for each v &lt;- G. Adj[u]</span><br><span class="line">    if v.color == WHITE</span><br><span class="line">        v.color = GRAY</span><br><span class="line">        v.distance = u.distance + cost[u, v]</span><br><span class="line">        v.pre = u</span><br><span class="line">        // GOAL-TEST(v)</span><br><span class="line">        ENQUEUE(Q, v)</span><br><span class="line">  u.color = BLACK</span><br><span class="line"></span><br><span class="line">Note: WHITE-NOT EXPANDED  GRAY-FRONTIER BLACK-EXPLORED</span><br><span class="line">      Q is a FIFO queue</span><br><span class="line">      s is the source vertex</span><br><span class="line">      GOAL-TEST(v) to test if v is the goal vertex</span><br><span class="line"></span><br><span class="line">Based on Intro to Algorithms. 3rd Edition. P595</span><br></pre></td></tr></table></figure>
 <h2 id="Uniform-Cost-Search-Cheapest-Search"><a href="#Uniform-Cost-Search-Cheapest-Search" class="headerlink" title="Uniform-Cost Search (Cheapest-Search)"></a>Uniform-Cost Search (Cheapest-Search)</h2><p>Stop only until the goal is removed from Frontier to Explored</p>
 <p><strong>Optimal:</strong> Yes. Always find the cheapest path</p>
 <p><strong>Complete:</strong> Yes</p>
-<p><strong>Implement</strong> Loading…</p>
+<p><strong>Implement</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">Uniform-Cost Search(G, s)</span><br><span class="line">for each vertex u &lt;- G. V - &#123;s&#125;</span><br><span class="line">  u.color = WHITE</span><br><span class="line">  u.distance = infinity</span><br><span class="line">  u.pre = NULL</span><br><span class="line">s.color = GRAY</span><br><span class="line">s.distance = 0</span><br><span class="line">s.pre = NULL</span><br><span class="line">Q = NULL</span><br><span class="line">ENQUEUE(Q, s)</span><br><span class="line">while Q != NULL</span><br><span class="line">  u = DEQUEUE(Q)</span><br><span class="line">  // GOAL-TEST(u)</span><br><span class="line">  for each v &lt;- G. Adj[u]</span><br><span class="line">    if v.color == WHITE</span><br><span class="line">        v.color = GRAY</span><br><span class="line">        v.distance = u.distance + cost[u, v]</span><br><span class="line">        v.pre = u</span><br><span class="line">        ENQUEUE(Q, v)</span><br><span class="line">  Q.sort()  //by distance</span><br><span class="line">  u.color = BLACK</span><br><span class="line"></span><br><span class="line">Note: WHITE-NOT EXPANDED  GRAY-FRONTIER BLACK-EXPLORED</span><br><span class="line">      s is the source vertex</span><br><span class="line">      Q.sort() sorts vertices by their cost (most from lowest to highest)</span><br><span class="line">      GOAL-TEST(u) is different from BFS because it can find the cheapest path correctly only when the goal vertx is removed from Frontier to Explored(most, when values of paths are different)</span><br><span class="line"></span><br><span class="line">Based on Intro to Algorithms. 3rd Edition. P595</span><br></pre></td></tr></table></figure></p>
 <h2 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h2><p><strong>Optimal:</strong> No. For example, in the tree below, if there is a goal both in 3 and 5, it will find 3 but not find 5, so it can’t find the shortest path.<br><img src="http://ww1.sinaimg.cn/large/cf684029ly1fuzk4l7z7fj204j03jgm0.jpg" alt=""></p>
 <p><strong>Complete:</strong> No. If there is a infinite tree, it will have a endless path to go down</p>
-<p><strong>Implement</strong> Loading…</p>
+<p><strong>Implement</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">DFS(G)</span><br><span class="line">for each vertex u &lt;- G.V</span><br><span class="line">  u.color = WHITE</span><br><span class="line">  u.pre = NULL</span><br><span class="line">time = 0</span><br><span class="line">for each vertex u &lt;- G.V</span><br><span class="line">  if u.color == WHITE</span><br><span class="line">    DFS-VISIT(G, u)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">DFS-VISIT(G, u)</span><br><span class="line">time = time + 1 //white vertex u has just been discovered</span><br><span class="line">u.d = time</span><br><span class="line">// GOAL-TEST(u)</span><br><span class="line">u.color = GREY</span><br><span class="line">for each v &lt;- G.Adj[u]  //explore edge (u,v)</span><br><span class="line">  if v.color == WHITE</span><br><span class="line">    v.pre = u</span><br><span class="line">    DFS-VISIT(G, v)</span><br><span class="line">u.color = BLACK //blacken u; it is finished</span><br><span class="line">time = time + 1</span><br><span class="line">u.f = time</span><br><span class="line"></span><br><span class="line">Note: WHITE-NOT EXPANDED  GRAY-FRONTIER BLACK-EXPLORED</span><br><span class="line">      time is global variable using for timestamping</span><br><span class="line">      DFS records when it discovers vertex u in the attribute u.d and when it finishes vertex u in the attribute u.f</span><br><span class="line">      u.d &lt; u.f</span><br><span class="line"></span><br><span class="line">Based on Intro to Algorithms. 3rd Edition. P604</span><br></pre></td></tr></table></figure></p>
 <h2 id="Iterative-Deepening-Search"><a href="#Iterative-Deepening-Search" class="headerlink" title="Iterative Deepening Search"></a>Iterative Deepening Search</h2><p><strong>Optimal:</strong> Yes</p>
 <p><strong>Complete:</strong> Yes</p>
-<p><strong>Implement</strong> Loading…</p>
+<p><strong>Implement</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LOADING...</span><br></pre></td></tr></table></figure></p>
 <h2 id="A-Search-Heuristic-Search"><a href="#A-Search-Heuristic-Search" class="headerlink" title="A* Search (Heuristic Search)"></a>A* Search (Heuristic Search)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f = g + h</span><br><span class="line">g(path) = path cost</span><br><span class="line">h(path) = h(s) = estimated distance to the goal</span><br><span class="line">Stop only until the goal is removed from Frontier</span><br></pre></td></tr></table></figure>
 <p><strong>Finds lowest cost path if:</strong></p>
 <ul>
@@ -492,7 +505,7 @@
 <li>h optimistic</li>
 <li>h admissable</li>
 </ul>
-<p><strong>Implement</strong> Loading…</p>
+<p><strong>Implement</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">A*(G, s)</span><br><span class="line">for each vertex u &lt;- G. V - &#123;s&#125;</span><br><span class="line">  u.color = WHITE</span><br><span class="line">  u.distance = infinity</span><br><span class="line">  u.pre = NULL</span><br><span class="line">s.color = GRAY</span><br><span class="line">s.distance = 0</span><br><span class="line">s.pre = NULL</span><br><span class="line">s.f = s.distance + h(s)</span><br><span class="line">Q = NULL</span><br><span class="line">ENQUEUE(Q, s)</span><br><span class="line">while Q != NULL</span><br><span class="line">  u = DEQUEUE(Q)</span><br><span class="line">  // GOAL-TEST(u)</span><br><span class="line">  for each v &lt;- G. Adj[u]</span><br><span class="line">    if v.color == WHITE</span><br><span class="line">        v.color = GRAY</span><br><span class="line">        v.distance = u.distance + cost[u, v]</span><br><span class="line">        v.f = v.distance + h(v)</span><br><span class="line">        v.pre = u</span><br><span class="line">        ENQUEUE(Q, v)</span><br><span class="line">  Q.sort()  //by f</span><br><span class="line">  u.color = BLACK</span><br><span class="line"></span><br><span class="line">Note: WHITE-NOT EXPANDED  GRAY-FRONTIER BLACK-EXPLORED</span><br><span class="line">      s is the source vertex</span><br><span class="line">      h(u) is the estimated distance to the goal vertex</span><br><span class="line">      Q.sort() sorts vertices by their u.f which is equal to u.distance + h(u)</span><br><span class="line">      A* stops searching only when the goal vertx is removed from Frontier to Explored(most, when values of paths are different)</span><br><span class="line"></span><br><span class="line">Based on Intro to Algorithms. 3rd Edition. P595</span><br></pre></td></tr></table></figure></p>
 <h2 id="Problems-with-Search"><a href="#Problems-with-Search" class="headerlink" title="Problems with Search"></a>Problems with Search</h2><p>Problem-Sloving works when:</p>
 <ul>
 <li>Fully Observable</li>
@@ -521,11 +534,13 @@
       
         <div class="post-tags">
           
+            <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
+          
             <a href="/tags/AI/" rel="tag"># AI</a>
           
-            <a href="/tags/Course-Note/" rel="tag"># Course Note</a>
+            <a href="/tags/Searching/" rel="tag"># Searching</a>
           
-            <a href="/tags/Search-Algorithm/" rel="tag"># Search Algorithm</a>
+            <a href="/tags/Course-Note/" rel="tag"># Course Note</a>
           
         </div>
       
@@ -547,6 +562,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/08/15-puzzle/" rel="prev" title="15-puzzle">
+                15-puzzle <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -625,7 +644,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -640,7 +659,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -661,7 +682,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
