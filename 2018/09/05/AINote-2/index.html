@@ -113,7 +113,7 @@
 
 
   <meta name="description" content="The Note of AI Course">
-<meta name="keywords" content="BFS,DFS,AI,Course Note,Algorithm,Searching,IDS,Iterative Deepening Search,A*,Uniform-Cost Search">
+<meta name="keywords" content="AI,Course Note,Algorithm,Search,DFS,BFS,IDS,Iterative Deepening Search,A*,Uniform-Cost Search,Greedy best-first Search">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2-Problem Solving">
 <meta property="og:url" content="http://yfygoing.com/2018/09/05/AINote-2/index.html">
@@ -122,7 +122,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/cf684029ly1fuzkfsqtqpj212w0m87wi.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/cf684029ly1fuzk4l7z7fj204j03jgm0.jpg">
-<meta property="og:updated_time" content="2018-09-10T00:16:49.549Z">
+<meta property="og:updated_time" content="2018-09-18T02:10:24.487Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2-Problem Solving">
 <meta name="twitter:description" content="The Note of AI Course">
@@ -392,7 +392,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-09-09 19:16:49" itemprop="dateModified" datetime="2018-09-09T19:16:49-05:00">2018-09-09</time>
+                <time title="Modified: 2018-09-17 21:10:24" itemprop="dateModified" datetime="2018-09-17T21:10:24-05:00">2018-09-17</time>
               
             
           </span>
@@ -497,10 +497,14 @@
 <h2 id="Iterative-Deepening-Search"><a href="#Iterative-Deepening-Search" class="headerlink" title="Iterative Deepening Search"></a>Iterative Deepening Search</h2><p><strong>Optimal:</strong> Yes</p>
 <p><strong>Complete:</strong> Yes</p>
 <p><strong>Implement</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">function ITERATIVE-DEEPENING-SEARCH(problem) returns a solution, or failure</span><br><span class="line">  for depth = 0 to infinity do</span><br><span class="line">    result = DEPTH-LIMITED=SEARCH(problem, depth)</span><br><span class="line">    if result != cutoff then return result</span><br><span class="line"></span><br><span class="line">function DEPTH-LIMITED-SEARCH(problem, limit) returns a solution, or failure/cutoff</span><br><span class="line">  return RECURSIVE-DLS(MAKE-NODE(problem, INITIAL-STATE), problem, limit)</span><br><span class="line"></span><br><span class="line">function RECURSIVE-DLS(node, problem, limit) returns a solution, or failure/cutoff</span><br><span class="line">  if problem.GOAL-TEST(node, STATE) then returns SOLUTION(node)</span><br><span class="line">  else if limit = 0 then return cutoff</span><br><span class="line">  else</span><br><span class="line">    cutoff_occurred? = false</span><br><span class="line">    for each action in problem, ACTIONS(node, STATE) do</span><br><span class="line">      child = CHILD_NODE(problem, node, action)</span><br><span class="line">      result = RECURSIVE_DLS(child, problem, limit-1)</span><br><span class="line">      if result = cutoff then cutoff_occured? = true</span><br><span class="line">      else if result != failure then return result</span><br><span class="line">    if curoff_occured? then return cutoff else return failure</span><br><span class="line"></span><br><span class="line">Based on Artifical Intelligence: A Modern Approch, 3rd Edition. P88~P89</span><br></pre></td></tr></table></figure></p>
+<h2 id="Greedy-best-first-Search"><a href="#Greedy-best-first-Search" class="headerlink" title="Greedy best-first Search"></a>Greedy best-first Search</h2><p><strong>Optimal:</strong> No</p>
+<p><strong>Complete:</strong> No</p>
+<p><strong>Implement</strong></p>
+<p>Evaluation function h(n) (heuristic) = estimate of cost from n to the closest goal<br>E.g., hSLD(n) = straight-line distance from n to Bucharest<br>Greedy search expands the node that appears to be closest to goal</p>
 <h2 id="A-Search-Heuristic-Search"><a href="#A-Search-Heuristic-Search" class="headerlink" title="A* Search (Heuristic Search)"></a>A* Search (Heuristic Search)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f = g + h</span><br><span class="line">g(path) = path cost</span><br><span class="line">h(path) = h(s) = estimated distance to the goal</span><br><span class="line">Stop only until the goal is removed from Frontier</span><br></pre></td></tr></table></figure>
 <p><strong>Finds lowest cost path if:</strong></p>
 <ul>
-<li><strong>h(s) &lt; true cost</strong></li>
+<li><strong>h(s) &lt;= true cost</strong></li>
 <li>h never overestimate</li>
 <li>h optimistic</li>
 <li>h admissable</li>
@@ -534,17 +538,17 @@
       
         <div class="post-tags">
           
-            <a href="/tags/BFS/" rel="tag"># BFS</a>
-          
-            <a href="/tags/DFS/" rel="tag"># DFS</a>
-          
             <a href="/tags/AI/" rel="tag"># AI</a>
           
             <a href="/tags/Course-Note/" rel="tag"># Course Note</a>
           
             <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
           
-            <a href="/tags/Searching/" rel="tag"># Searching</a>
+            <a href="/tags/Search/" rel="tag"># Search</a>
+          
+            <a href="/tags/DFS/" rel="tag"># DFS</a>
+          
+            <a href="/tags/BFS/" rel="tag"># BFS</a>
           
             <a href="/tags/IDS/" rel="tag"># IDS</a>
           
@@ -553,6 +557,8 @@
             <a href="/tags/A/" rel="tag"># A*</a>
           
             <a href="/tags/Uniform-Cost-Search/" rel="tag"># Uniform-Cost Search</a>
+          
+            <a href="/tags/Greedy-best-first-Search/" rel="tag"># Greedy best-first Search</a>
           
         </div>
       
@@ -656,7 +662,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -679,7 +685,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -738,7 +746,19 @@
                     
                       
                     
-                    <span class="site-state-item-count">22</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">28</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -867,7 +887,7 @@ show_date_time();
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#DEFINITION-OF-A-PROBLEM"><span class="nav-number">1.</span> <span class="nav-text">DEFINITION OF A PROBLEM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem-types"><span class="nav-number">2.</span> <span class="nav-text">Problem types</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BFS"><span class="nav-number">3.</span> <span class="nav-text">BFS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Uniform-Cost-Search-Cheapest-Search"><span class="nav-number">4.</span> <span class="nav-text">Uniform-Cost Search (Cheapest-Search)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DFS"><span class="nav-number">5.</span> <span class="nav-text">DFS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Iterative-Deepening-Search"><span class="nav-number">6.</span> <span class="nav-text">Iterative Deepening Search</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A-Search-Heuristic-Search"><span class="nav-number">7.</span> <span class="nav-text">A* Search (Heuristic Search)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Problems-with-Search"><span class="nav-number">8.</span> <span class="nav-text">Problems with Search</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#DEFINITION-OF-A-PROBLEM"><span class="nav-number">1.</span> <span class="nav-text">DEFINITION OF A PROBLEM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem-types"><span class="nav-number">2.</span> <span class="nav-text">Problem types</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BFS"><span class="nav-number">3.</span> <span class="nav-text">BFS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Uniform-Cost-Search-Cheapest-Search"><span class="nav-number">4.</span> <span class="nav-text">Uniform-Cost Search (Cheapest-Search)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DFS"><span class="nav-number">5.</span> <span class="nav-text">DFS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Iterative-Deepening-Search"><span class="nav-number">6.</span> <span class="nav-text">Iterative Deepening Search</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Greedy-best-first-Search"><span class="nav-number">7.</span> <span class="nav-text">Greedy best-first Search</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A-Search-Heuristic-Search"><span class="nav-number">8.</span> <span class="nav-text">A* Search (Heuristic Search)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Problems-with-Search"><span class="nav-number">9.</span> <span class="nav-text">Problems with Search</span></a></li></ol></div>
             
 
           </div>
