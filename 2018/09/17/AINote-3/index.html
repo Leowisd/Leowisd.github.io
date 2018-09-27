@@ -121,7 +121,7 @@
 <meta property="og:description" content="The Note of AI Course">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/cf684029ly1fvdcczwxmlj212w0m8n0c.jpg">
-<meta property="og:updated_time" content="2018-09-18T01:28:17.525Z">
+<meta property="og:updated_time" content="2018-09-27T03:14:31.384Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="3-Local search algorithms">
 <meta name="twitter:description" content="The Note of AI Course">
@@ -374,12 +374,24 @@
                 
               
 
-              <time title="Created: 2018-09-17 18:19:42 / Modified: 20:28:17" itemprop="dateCreated datePublished" datetime="2018-09-17T18:19:42-05:00">2018-09-17</time>
+              <time title="Created: 2018-09-17 18:19:42" itemprop="dateCreated datePublished" datetime="2018-09-17T18:19:42-05:00">2018-09-17</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-09-26 22:14:31" itemprop="dateModified" datetime="2018-09-26T22:14:31-05:00">2018-09-26</time>
               
             
           </span>
@@ -457,9 +469,21 @@
 
 <p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fvdcczwxmlj212w0m8n0c.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
 <a id="more"></a>
-<p>##</p>
-<p>##</p>
-<p>##</p>
+<h2 id="Hill-Climbing"><a href="#Hill-Climbing" class="headerlink" title="Hill Climbing"></a>Hill Climbing</h2><p><em>“Like climbing Everest in thick fog with amnesia”</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function HILL-CLIMBING(problem) returns a state that is a local maximum</span><br><span class="line">    inputs: problem, a problem</span><br><span class="line">    local variables: current, a node</span><br><span class="line">                     neighbor, a node</span><br><span class="line">    current &lt;- MAKE-NODE(INITIAL-STATE[problem])</span><br><span class="line">    loop do</span><br><span class="line">        neighbor &lt;- a highest-valued successor of current</span><br><span class="line">        if VALUE[neighbor] &lt;= VALUE[current] then return STATE[current]</span><br><span class="line">        current &lt;- neighbor</span><br><span class="line">    end</span><br></pre></td></tr></table></figure>
+<p>Random-restart hill climbing overcomes local maxima–trivially complete</p>
+<p>Random sideways moves escape from shoulders loop on flat maxima </p>
+<h2 id="Simulated-annealing"><a href="#Simulated-annealing" class="headerlink" title="Simulated annealing"></a>Simulated annealing</h2><p>Idea: escape local maxima by allowing some “bad” moves</p>
+<p>but gradually decrease their size and frequency</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function SIMULATED-ANNEALING(problem, schedule) returns a solution state</span><br><span class="line">    inputs: problem, a problem</span><br><span class="line">            schedule, a mapping from time to &quot;temperature&quot;</span><br><span class="line">    local variables: current, a node</span><br><span class="line">                     next, a node</span><br><span class="line">                     T1 a &quot;temperature&quot; controlling prob. of downward steps</span><br><span class="line">    current &lt;- MAKE-NODE(INITIAL-STATE[problem])</span><br><span class="line">    for t &lt;- 1 to infinity do</span><br><span class="line">        T &lt;- schedule[t]</span><br><span class="line">        if T=0 then return current</span><br><span class="line">        next &lt;- a randomly selected successor of current</span><br><span class="line">        disE &lt;- VALUE[next] - VALUE[current]</span><br><span class="line">        if disE&gt;0 then current &lt;- next</span><br><span class="line">        else current &lt;- next only with probability e^(disE/T)</span><br></pre></td></tr></table></figure>
+<h2 id="Local-beam-Search"><a href="#Local-beam-Search" class="headerlink" title="Local beam Search"></a>Local beam Search</h2><p>Idea: keep k states instead of 1; choose top k of all their successors</p>
+<p>Not the same as k searches run in parallel!</p>
+<p>Searches that find good states recruit other searches to join them</p>
+<p>Problem: quite often, all k states end up on same local hill</p>
+<p>Idea: choose k successors randomly, biased towards good ones</p>
+<p>Observe the close analogy to native selection!</p>
+<h2 id="Genetic-Algorithms"><a href="#Genetic-Algorithms" class="headerlink" title="Genetic Algorithms"></a>Genetic Algorithms</h2><p>= stochastic local beam search + generate successors from pairs of states</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">function GENETIC-ALGORITHM(population, FITNESS-FN) returns an individual</span><br><span class="line">    inputs: population, a set of individuals</span><br><span class="line">            FITNESS-FN: a function that measures the fitness of an individual</span><br><span class="line">    repeat</span><br><span class="line">        new.population &lt;- empty set</span><br><span class="line">        for i= 1 to SIZE(population) do</span><br><span class="line">            x &lt;- RANDOM-SELECTION(population, FITNESS-FN)</span><br><span class="line">            y &lt;- RANDOM-SELECTION(population, FITNESS-FN)</span><br><span class="line">            child &lt;- REPRODUCE(x,y)</span><br><span class="line">            if (small random probability) then child &lt;- MUTATE(child)</span><br><span class="line">            add child to new_population</span><br><span class="line">        population = new_population</span><br><span class="line">    until some individual is fit enough, or enough time has clapsed</span><br><span class="line">    return the best individual in population, according to FITNESS-FN</span><br><span class="line"></span><br><span class="line">function REPRODUCE(x,y) returns an individual</span><br><span class="line">    inputs: x,y, parent individuals</span><br><span class="line"></span><br><span class="line">    n &lt;- LENGTH(x); c&lt;- random number from 1 to n</span><br><span class="line">    return APPEND(SUBSTRING(x,1,c), SUBSTRING(y, c+1, n))</span><br></pre></td></tr></table></figure>
 <hr>
       
     </div>
@@ -565,8 +589,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -585,7 +618,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -610,7 +643,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">6</span>
+                      
+                    
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -681,7 +716,17 @@
                     
                       
                     
-                    <span class="site-state-item-count">28</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -800,6 +845,22 @@ show_date_time();
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hill-Climbing"><span class="nav-number">1.</span> <span class="nav-text">Hill Climbing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Simulated-annealing"><span class="nav-number">2.</span> <span class="nav-text">Simulated annealing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Local-beam-Search"><span class="nav-number">3.</span> <span class="nav-text">Local beam Search</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Genetic-Algorithms"><span class="nav-number">4.</span> <span class="nav-text">Genetic Algorithms</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
