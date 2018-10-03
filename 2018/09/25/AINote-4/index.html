@@ -121,7 +121,14 @@
 <meta property="og:description" content="The Note of AI Course">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/cf684029ly1fvmrp426maj212w0m816v.jpg">
-<meta property="og:updated_time" content="2018-09-26T03:11:57.990Z">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/cf684029ly1fvutmwlzmuj20gf0atwf1.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/cf684029ly1fvutqhdjr6j20ko07zq38.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/cf684029ly1fvuu3g4qdxj20l10e7aax.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/cf684029ly1fvuuqw60gwj20k803rmxi.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/cf684029ly1fvuutlwbyxj20hr0cmmxr.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/cf684029ly1fvuuuer7pdj20lx05rjsa.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/cf684029ly1fvuuxeh3gsj20l6097jrq.jpg">
+<meta property="og:updated_time" content="2018-10-03T03:08:58.880Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="4-Game_Adversarial Search">
 <meta name="twitter:description" content="The Note of AI Course">
@@ -374,12 +381,24 @@
                 
               
 
-              <time title="Created: 2018-09-25 20:30:08 / Modified: 22:11:57" itemprop="dateCreated datePublished" datetime="2018-09-25T20:30:08-05:00">2018-09-25</time>
+              <time title="Created: 2018-09-25 20:30:08" itemprop="dateCreated datePublished" datetime="2018-09-25T20:30:08-05:00">2018-09-25</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-10-02 22:08:58" itemprop="dateModified" datetime="2018-10-02T22:08:58-05:00">2018-10-02</time>
               
             
           </span>
@@ -457,7 +476,31 @@
 
 <p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fvmrp426maj212w0m816v.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
 <a id="more"></a>
-<h2 id="Minimax-Algorithm"><a href="#Minimax-Algorithm" class="headerlink" title="Minimax Algorithm"></a>Minimax Algorithm</h2><h2 id="Reduce-d-Alpha-Beita-purning"><a href="#Reduce-d-Alpha-Beita-purning" class="headerlink" title="Reduce d: Alpha-Beita purning"></a>Reduce d: Alpha-Beita purning</h2><h2 id="Reduce-m-Evaluation-functions"><a href="#Reduce-m-Evaluation-functions" class="headerlink" title="Reduce m: Evaluation functions"></a>Reduce m: Evaluation functions</h2><h2 id="Stochatic-games"><a href="#Stochatic-games" class="headerlink" title="Stochatic games"></a>Stochatic games</h2><hr>
+<h2 id="Game-Tree-2-player-deterministic-turns"><a href="#Game-Tree-2-player-deterministic-turns" class="headerlink" title="Game Tree(2-player, deterministic, turns)"></a>Game Tree(2-player, deterministic, turns)</h2><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fvutmwlzmuj20gf0atwf1.jpg" alt=""></p>
+<h2 id="Minimax-Algorithm"><a href="#Minimax-Algorithm" class="headerlink" title="Minimax Algorithm"></a>Minimax Algorithm</h2><h4 id="Concept"><a href="#Concept" class="headerlink" title="Concept"></a>Concept</h4><p>Perfect play for deterministic, perfect-information games</p>
+<p>Idea: choose move to position with highest minimax value =&gt; best achievable payoff against best play</p>
+<p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fvutqhdjr6j20ko07zq38.jpg" alt=""></p>
+<h4 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function MINIMAX-DECISION(state) returns an action</span><br><span class="line">    inputs: state, currrent state in game</span><br><span class="line">    return the a in ACTIONS(state) maximizing MIN-VALUE(RESULT(a.state))</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function MAX-VALUE(state) returns a utility value</span><br><span class="line">    if TERMINAL-TEST(state) then return UTILITY(state)</span><br><span class="line">    v &lt;- -infinity</span><br><span class="line">    for a.s in SUCCESSION(state) do v &lt;- MAX(v, MIN-VALUE(s))</span><br><span class="line">    return v</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function MIN-VALUE(state) returns a utility value</span><br><span class="line">    if TERMINAL-TEST(state) then return UTILITY(state)</span><br><span class="line">    v &lt;- infinity</span><br><span class="line">    for a.s in SUCCESSION(state) do v &lt;- MIN(v, MAX-VALUE(s))</span><br><span class="line">    return v</span><br></pre></td></tr></table></figure>
+<h4 id="Properties-of-minimax"><a href="#Properties-of-minimax" class="headerlink" title="Properties of minimax"></a>Properties of minimax</h4><p>Complete: Yes, if the tree is finite</p>
+<p>Optimal: Yes, against an optimal oppoent.</p>
+<p>Time complexity: O(b^m)</p>
+<p>Space complexity: O(bm)</p>
+<p><strong>If we explore every path, the algorithm will run for a lot of time, so it’s necessary to reduce searching-width(d) or searching-depth(m)</strong></p>
+<h2 id="Reduce-searching-width-d-Alpha-Beta-purning"><a href="#Reduce-searching-width-d-Alpha-Beta-purning" class="headerlink" title="Reduce searching-width(d): Alpha-Beta purning"></a>Reduce searching-width(d): Alpha-Beta purning</h2><h4 id="Concept-1"><a href="#Concept-1" class="headerlink" title="Concept"></a>Concept</h4><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fvuu3g4qdxj20l10e7aax.jpg" alt=""></p>
+<h4 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">function ALPHA-BETA-DECISION(state) returns an action</span><br><span class="line">    return the a in ACTIONS(state) maximizing MIN-VALUE(RESULT(a,state))</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function MAX-VALUE(state,a,b) returns a utility value</span><br><span class="line">    inputs: state, current state in game</span><br><span class="line">            a, the value of the best alternative for MAX along the path to state</span><br><span class="line">            b, the value of the best alternative for MIN along the path to state</span><br><span class="line">    IF TERMINAL-TEST(state) then return UTILITY(state)</span><br><span class="line">    v &lt;- -infinity</span><br><span class="line">    for x.s in SUCCESSORS(state) do</span><br><span class="line">        v &lt;- MAX(v, MIN-VALUE(s,a,b))</span><br><span class="line">        if v &gt;= b then return v</span><br><span class="line">        a &lt;- MAX(a, v)</span><br><span class="line">    return v</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">function MIN-VALUE(state,a,b) returns a utility value</span><br><span class="line">    same as MAX-VALUE but with roles of a,b reversed</span><br></pre></td></tr></table></figure>
+<h4 id="Properties-of-Alpha-Beta"><a href="#Properties-of-Alpha-Beta" class="headerlink" title="Properties of Alpha-Beta"></a>Properties of Alpha-Beta</h4><p>Pruning <strong>does not</strong> affect final result</p>
+<p>Good move ordering improvres effectiveness of pruning</p>
+<p>With “perfect ordering” time complexity == O(b^(m/2))  =&gt; doubles solvable depth</p>
+<h2 id="Reduce-searching-depth-m-Evaluation-functions"><a href="#Reduce-searching-depth-m-Evaluation-functions" class="headerlink" title="Reduce searching-depth(m): Evaluation functions"></a>Reduce searching-depth(m): Evaluation functions</h2><p>An evaluation function returns an estimate of the expected utility of the game from a given position, just as the heuristic functions.</p>
+<p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fvuuqw60gwj20k803rmxi.jpg" alt=""></p>
+<h2 id="Stochatic-games"><a href="#Stochatic-games" class="headerlink" title="Stochatic games"></a>Stochatic games</h2><h4 id="Schematic-game-tree"><a href="#Schematic-game-tree" class="headerlink" title="Schematic game tree"></a>Schematic game tree</h4><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fvuutlwbyxj20hr0cmmxr.jpg" alt=""></p>
+<h4 id="Process-Formula"><a href="#Process-Formula" class="headerlink" title="Process Formula"></a>Process Formula</h4><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fvuuuer7pdj20lx05rjsa.jpg" alt=""></p>
+<h4 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h4><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fvuuxeh3gsj20l6097jrq.jpg" alt=""></p>
+<hr>
       
     </div>
 
@@ -695,7 +738,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">33</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">35</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -824,7 +871,7 @@ show_date_time();
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Minimax-Algorithm"><span class="nav-number">1.</span> <span class="nav-text">Minimax Algorithm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reduce-d-Alpha-Beita-purning"><span class="nav-number">2.</span> <span class="nav-text">Reduce d: Alpha-Beita purning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reduce-m-Evaluation-functions"><span class="nav-number">3.</span> <span class="nav-text">Reduce m: Evaluation functions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stochatic-games"><span class="nav-number">4.</span> <span class="nav-text">Stochatic games</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Game-Tree-2-player-deterministic-turns"><span class="nav-number">1.</span> <span class="nav-text">Game Tree(2-player, deterministic, turns)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Minimax-Algorithm"><span class="nav-number">2.</span> <span class="nav-text">Minimax Algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Concept"><span class="nav-number">2.0.1.</span> <span class="nav-text">Concept</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Code"><span class="nav-number">2.0.2.</span> <span class="nav-text">Code</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Properties-of-minimax"><span class="nav-number">2.0.3.</span> <span class="nav-text">Properties of minimax</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reduce-searching-width-d-Alpha-Beta-purning"><span class="nav-number">3.</span> <span class="nav-text">Reduce searching-width(d): Alpha-Beta purning</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Concept-1"><span class="nav-number">3.0.1.</span> <span class="nav-text">Concept</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Code-1"><span class="nav-number">3.0.2.</span> <span class="nav-text">Code</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Properties-of-Alpha-Beta"><span class="nav-number">3.0.3.</span> <span class="nav-text">Properties of Alpha-Beta</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reduce-searching-depth-m-Evaluation-functions"><span class="nav-number">4.</span> <span class="nav-text">Reduce searching-depth(m): Evaluation functions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stochatic-games"><span class="nav-number">5.</span> <span class="nav-text">Stochatic games</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Schematic-game-tree"><span class="nav-number">5.0.1.</span> <span class="nav-text">Schematic game tree</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Process-Formula"><span class="nav-number">5.0.2.</span> <span class="nav-text">Process Formula</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Example"><span class="nav-number">5.0.3.</span> <span class="nav-text">Example</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
