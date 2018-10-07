@@ -125,7 +125,8 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/cf684029ly1fvzg0x7i1rj20e707cmxb.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/cf684029ly1fvzg2zl7b6j20hj094t9k.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/cf684029ly1fvzi8yaqylj20dr05iq31.jpg">
-<meta property="og:updated_time" content="2018-10-07T04:11:54.927Z">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/cf684029ly1fw038c5kc5j20fj03wwen.jpg">
+<meta property="og:updated_time" content="2018-10-07T15:43:23.286Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="5-Constraint Satisfacation Problems">
 <meta name="twitter:description" content="The Note of AI Course">
@@ -378,12 +379,24 @@
                 
               
 
-              <time title="Created: 2018-10-06 20:52:13 / Modified: 23:11:54" itemprop="dateCreated datePublished" datetime="2018-10-06T20:52:13-05:00">2018-10-06</time>
+              <time title="Created: 2018-10-06 20:52:13" itemprop="dateCreated datePublished" datetime="2018-10-06T20:52:13-05:00">2018-10-06</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-10-07 10:43:23" itemprop="dateModified" datetime="2018-10-07T10:43:23-05:00">2018-10-07</time>
               
             
           </span>
@@ -493,6 +506,13 @@
 <p>约束传播局部重复地实施约束</p>
 <h2 id="Arc-consistency-弧相容算法-AC-3"><a href="#Arc-consistency-弧相容算法-AC-3" class="headerlink" title="Arc consistency (弧相容算法 AC-3)"></a>Arc consistency (弧相容算法 AC-3)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function AC-3(csp) returns the CSP, possibly with reduced domains</span><br><span class="line">    inputs:csp, a binary CSP with variables &#123;X1,X2,...,Xn&#125;</span><br><span class="line">    local variables:queue, a queue of arcs, initially all the arcs in csp</span><br><span class="line">    while queue is not empty do</span><br><span class="line">        (Xi,Xj) ← REMOVE-FIRST(queue)</span><br><span class="line">        if REMOVE-INCONSISTENT-VALUES(Xi,Xj) then</span><br><span class="line">            for each Xk in NEIGHBORS[Xi] do</span><br><span class="line">                add (Xk,Xi) to queue</span><br><span class="line"></span><br><span class="line">function REMOVE-INCONSISTENT-VALUES(Xi,Xj) returns true iff succeeds</span><br><span class="line">    removed ← false</span><br><span class="line">    for each x in DOMAIN[Xi] do</span><br><span class="line">        if no value y in DOMAIN[Xj] allows (x,y) to satisfy the constraint (Xi, Xj)</span><br><span class="line">            then delete x from DOMAIN[Xi]; removed ← true</span><br><span class="line">    return removed</span><br></pre></td></tr></table></figure>
 <p>O(n^2^d^3^), can be reduced to O(n^2^d^2^) (but detecting all is NP-hard)</p>
+<h2 id="Tree-structured-CSPs"><a href="#Tree-structured-CSPs" class="headerlink" title="Tree-structured CSPs"></a>Tree-structured CSPs</h2><p>Theorem: if the constraint graph has no loops, the CSP can be solved in O(nd^2^) time</p>
+<h3 id="Algorithm-for-tree-structured-CSPs"><a href="#Algorithm-for-tree-structured-CSPs" class="headerlink" title="Algorithm for tree-structured CSPs"></a>Algorithm for tree-structured CSPs</h3><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fw038c5kc5j20fj03wwen.jpg" alt=""></p>
+<ol>
+<li>Choose a variable as root, order variables from root to leaves such that every node’s parent precedes it in the ordering</li>
+<li>For j from n down to 2, apply RemoveInconsistent(Parent(Xj), Xj)</li>
+<li>For j from 1 to n, assign Xj consistently with Parent(Xj)</li>
+</ol>
 <hr>
       
     </div>
@@ -900,7 +920,7 @@ show_date_time();
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Constraint-Satisfacation-Problems"><span class="nav-number">1.</span> <span class="nav-text">Constraint Satisfacation Problems</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Constraint-Graph"><span class="nav-number">1.1.</span> <span class="nav-text">Constraint Graph</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Extra-example-Cryptarithmetic"><span class="nav-number">1.2.</span> <span class="nav-text">Extra example: Cryptarithmetic</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Backtracking-search"><span class="nav-number">2.</span> <span class="nav-text">Backtracking search</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Minimum-remaining-values-（最小剩余值）"><span class="nav-number">3.</span> <span class="nav-text">Minimum remaining values （最小剩余值）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Degree-heuristic-（度启发式）"><span class="nav-number">4.</span> <span class="nav-text">Degree heuristic （度启发式）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Least-constraining-value-（最少约束值）"><span class="nav-number">5.</span> <span class="nav-text">Least constraining value （最少约束值）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Forward-checking"><span class="nav-number">6.</span> <span class="nav-text">Forward checking</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Constraint-propagation"><span class="nav-number">6.1.</span> <span class="nav-text">Constraint propagation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Arc-consistency-弧相容算法-AC-3"><span class="nav-number">7.</span> <span class="nav-text">Arc consistency (弧相容算法 AC-3)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Constraint-Satisfacation-Problems"><span class="nav-number">1.</span> <span class="nav-text">Constraint Satisfacation Problems</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Constraint-Graph"><span class="nav-number">1.1.</span> <span class="nav-text">Constraint Graph</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Extra-example-Cryptarithmetic"><span class="nav-number">1.2.</span> <span class="nav-text">Extra example: Cryptarithmetic</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Backtracking-search"><span class="nav-number">2.</span> <span class="nav-text">Backtracking search</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Minimum-remaining-values-（最小剩余值）"><span class="nav-number">3.</span> <span class="nav-text">Minimum remaining values （最小剩余值）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Degree-heuristic-（度启发式）"><span class="nav-number">4.</span> <span class="nav-text">Degree heuristic （度启发式）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Least-constraining-value-（最少约束值）"><span class="nav-number">5.</span> <span class="nav-text">Least constraining value （最少约束值）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Forward-checking"><span class="nav-number">6.</span> <span class="nav-text">Forward checking</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Constraint-propagation"><span class="nav-number">6.1.</span> <span class="nav-text">Constraint propagation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Arc-consistency-弧相容算法-AC-3"><span class="nav-number">7.</span> <span class="nav-text">Arc consistency (弧相容算法 AC-3)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tree-structured-CSPs"><span class="nav-number">8.</span> <span class="nav-text">Tree-structured CSPs</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Algorithm-for-tree-structured-CSPs"><span class="nav-number">8.1.</span> <span class="nav-text">Algorithm for tree-structured CSPs</span></a></li></ol></li></ol></div>
             
 
           </div>
