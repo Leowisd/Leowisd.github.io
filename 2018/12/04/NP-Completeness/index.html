@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=6.4.0">
+
+
+  <link rel="mask-icon" href="/images/safari-pinned.svg?v=6.4.0" color="#222">
+
+
+  <link rel="manifest" href="/images/android-chrome-512x512.png">
+
+
+  <meta name="msapplication-config" content="/images/browserconfig.xml" />
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.4.0',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Review of NPC">
+<meta name="keywords" content="P,NP,NPC,NPC-Complete">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NP-Completeness">
+<meta property="og:url" content="http://yfygoing.com/2018/12/04/NP-Completeness/index.html">
+<meta property="og:site_name" content="StarWalker">
+<meta property="og:description" content="Review of NPC">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/cf684029ly1fxuntyysxzj212w0m8ab6.jpg">
+<meta property="og:image" content="https://blog.csdn.net/golden1314521/article/details/51470999">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/cf684029ly1fxuk9s3tlmj20h80d6q5j.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/cf684029ly1fxuk9y886hj20hz073js2.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/cf684029ly1fxukxkdlysj20go0av3zt.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/cf684029ly1fxuleeazmtj20gq07hgn1.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/cf684029ly1fxumuzljmej20gk05yq3g.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/cf684029ly1fxvn7ofocfj20gq06agn7.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/cf684029ly1fxvn8cgbw0j20gp03f0t3.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/cf684029ly1fxvo8qcea8j20g905575j.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/cf684029ly1fxvo8w97ftj20i10ajgoz.jpg">
+<meta property="og:updated_time" content="2018-12-05T02:43:05.929Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NP-Completeness">
+<meta name="twitter:description" content="Review of NPC">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/cf684029ly1fxuntyysxzj212w0m8ab6.jpg">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yfygoing.com/2018/12/04/NP-Completeness/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>NP-Completeness | StarWalker</title>
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-124506951-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-124506951-1');
+</script>
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">StarWalker</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Where my heart will take me</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-top">
+    <a href="/top/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-angle-double-up"></i> <br />Ranking</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />About</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yfygoing.com/2018/12/04/NP-Completeness/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="YF">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww1.sinaimg.cn/large/cf684029ly1funucikn1mj20go0gojy2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="StarWalker">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">NP-Completeness
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-12-03 20:09:48" itemprop="dateCreated datePublished" datetime="2018-12-03T20:09:48-06:00">2018-12-03</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-12-04 20:43:05" itemprop="dateModified" datetime="2018-12-04T20:43:05-06:00">2018-12-04</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Algorithms/" itemprop="url" rel="index"><span itemprop="name">Algorithms</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/04/NP-Completeness/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count valine-comment-count" data-xid="/2018/12/04/NP-Completeness/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/12/04/NP-Completeness/" class="leancloud_visitors" data-flag-title="NP-Completeness">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Views: </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+              <div class="post-description">Review of NPC</div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p class="description"></p>
+
+<p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fxuntyysxzj212w0m8ab6.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="NP-completeness-and-the-classes-P-and-NP"><a href="#NP-completeness-and-the-classes-P-and-NP" class="headerlink" title="NP-completeness and the classes P and NP"></a>NP-completeness and the classes P and NP</h2><h3 id="Classes-P"><a href="#Classes-P" class="headerlink" title="Classes P"></a>Classes P</h3><p>The class P consists of those problems that are solvable in polynomial time.</p>
+<p>More specifically, they are problems that can be solved in time $O(n^k)$ for some<br>constant k, where n is the size of the input to the problem.</p>
+<h3 id="Classes-NP"><a href="#Classes-NP" class="headerlink" title="Classes NP"></a>Classes NP</h3><p>The class NP consists of those problems that are “verifiable” in polynomial time.</p>
+<p>What do we mean by a problem being verifiable? If we were somehow given a<br>“certificate” of a solution, then we could verify that the certificate is correct in time<br>polynomial in the size of the input to the problem.</p>
+<h3 id="NP-completeness"><a href="#NP-completeness" class="headerlink" title="NP-completeness"></a>NP-completeness</h3><p>Informally, a problem is in the class NPC—and we refer to it as being NP-complete if<br>it is in NP and is as “hard” as any problem in NP.</p>
+<p>In the meantime, we will state without proof that if any NP-complete problem<br>can be solved in polynomial time, then every problem in NP has a polynomialtime<br>algorithm.</p>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h3><p><img src="https://blog.csdn.net/golden1314521/article/details/51470999" alt="P问题、NP问题、NPC问题的概念及实例证明"></p>
+<h2 id="Polynomial-time"><a href="#Polynomial-time" class="headerlink" title="Polynomial time"></a>Polynomial time</h2><h3 id="Abstract-problems"><a href="#Abstract-problems" class="headerlink" title="Abstract problems"></a>Abstract problems</h3><p>To understand the class of polynomial-time solvable problems, we must first have<br>a formal notion of what a “problem” is. We define an abstract problem <strong>Q</strong> to be a<br>binary relation on a set <strong>I</strong> of problem instances and a set <strong>S</strong> of problem solutions.<br>For example, an instance for <strong>SHORTEST-PATH</strong> is a triple consisting of a graph<br>and two vertices. A solution is a sequence of vertices in the graph, with perhaps<br>the empty sequence denoting that no path exists. The problem <strong>SHORTEST-PATH</strong><br>itself is the relation that associates each instance of a graph and two vertices with<br>a shortest path in the graph that connects the two vertices. Since shortest paths are<br>not necessarily unique, a given problem instance may have more than one solution.</p>
+<h3 id="Endocing"><a href="#Endocing" class="headerlink" title="Endocing"></a>Endocing</h3><p>In order for a computer program to solve an abstract problem, we must represent<br>problem instances in a way that the program understands. An encoding of a set S<br>of abstract objects is a mapping e from S to the set of binary strings.</p>
+<h3 id="A-formal-language-framework"><a href="#A-formal-language-framework" class="headerlink" title="A formal-language framework"></a>A formal-language framework</h3><p>Omit!</p>
+<h3 id="Exercise"><a href="#Exercise" class="headerlink" title="Exercise"></a>Exercise</h3><p>Show that if an algorithm makes at most a constant number of calls to polynomial-time subroutines and performs an additional amount of work that also takes polynomial time, then it runs in polynomial time. Also show that a polynomial number of calls to polynomial-time subroutines may result in an exponential-time algorithm.</p>
+<p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fxuk9s3tlmj20h80d6q5j.jpg" alt=""><br><img src="http://ww1.sinaimg.cn/large/cf684029ly1fxuk9y886hj20hz073js2.jpg" alt=""></p>
+<h2 id="Polynomial-time-verification"><a href="#Polynomial-time-verification" class="headerlink" title="Polynomial-time verification"></a>Polynomial-time verification</h2><h3 id="Hamiltonian-cycles"><a href="#Hamiltonian-cycles" class="headerlink" title="Hamiltonian cycles"></a>Hamiltonian cycles</h3><p>A hamiltonian cycle of an undirected graph $G=(V;E)$ is a simple cycle that contains each vertex in $V$. A graph that contains a hamiltonian cycle is said to be hamiltonian; otherwise, it is nonhamiltonian.</p>
+<p>We can define the hamiltonian-cycle problem, “Does a graph G have a hamiltonian cycle?” as a formal language:</p>
+<script type="math/tex; mode=display">HAM-CYCLE = \{(G) : G is a hamiltonian graph\}</script><p>This naive algorithm does not run in polynomial time. In fact, the hamiltonian-cycle problem is NP-complete.</p>
+<h3 id="Verification-algorithms"><a href="#Verification-algorithms" class="headerlink" title="Verification algorithms"></a>Verification algorithms</h3><p>We define a verification algorithm as being a two-argument algorithm A, where one argument is an ordinary input string x and the other is a binary string y called a certificate. A two-argument algorithm A verifies an input string x if there exists a certificate y such that $A(x,y) = 1$. The language verified by a verification algorithm A is</p>
+<script type="math/tex; mode=display">L = \{x \in \{0,1\}^* : there \space exists \space y \in \{0, 1\}^* such \space that \space A(x,y) = 1\}</script><h3 id="The-complexity-class-NP"><a href="#The-complexity-class-NP" class="headerlink" title="The complexity class NP"></a>The complexity class NP</h3><p>Omit!</p>
+<h3 id="Exercises"><a href="#Exercises" class="headerlink" title="Exercises"></a>Exercises</h3><h4 id="Question-1"><a href="#Question-1" class="headerlink" title="Question 1"></a>Question 1</h4><p>Prove that if $G$ is an undirected bipartite graph with an odd number of vertices, then $G$ is nonhamiltonian.</p>
+<h4 id="Answer"><a href="#Answer" class="headerlink" title="Answer"></a>Answer</h4><p>Let graph G be a bipartite graph with an odd number of vertices and G be Hamiltonian, meaning that there is a directed cycle that includes every vertex of G. As such, there exists a cycle in G would of odd length. However, a graph G is bipartite if and only if every cycle of G has even length. Proven by contradiction, if G is a bipartite graph with an odd number of vertices, then G is non-Hamiltonian.</p>
+<h4 id="Question-2"><a href="#Question-2" class="headerlink" title="Question 2"></a>Question 2</h4><p>Show that any language in NP can be decided by an algorithm running in time $2^{O(n^k)}$ for some constant k.</p>
+<h4 id="Answer-1"><a href="#Answer-1" class="headerlink" title="Answer"></a>Answer</h4><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fxukxkdlysj20go0av3zt.jpg" alt=""></p>
+<h4 id="Question-3"><a href="#Question-3" class="headerlink" title="Question 3"></a>Question 3</h4><p>A hamiltonian path in a graph is a simple path that visits every vertex exactly<br>once. Show that the language $HAM-PATH = \{(G, u , i): there \space is \space a \space hamiltonian \space path \space from \space u \space to \space i \space in \space graph \space G\}$ belongs to NP.</p>
+<h4 id="Answer-2"><a href="#Answer-2" class="headerlink" title="Answer"></a>Answer</h4><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fxuleeazmtj20gq07hgn1.jpg" alt=""></p>
+<h4 id="Question-4"><a href="#Question-4" class="headerlink" title="Question 4"></a>Question 4</h4><p>Show that the hamiltonian-path problem from Exercise 34.2-6 can be solved in polynomial time on directed acyclic graphs. Give an efficient algorithm for the problem.</p>
+<h4 id="Answer-3"><a href="#Answer-3" class="headerlink" title="Answer"></a>Answer</h4><p>For this particular problem, we could find a polynomial-time solution for it and then it’s proven it could be solved in polynomial-time.</p>
+<p>In this following step, I will give some steps that will demonstrate it will resolve the problem:</p>
+<p>1) find a path in the original graph $G$ that in-degree is zero, because for a DAG it must have a source node that in-degree is zero. If there’re more than one nodes, then there is no solution, since every node must be visited, but the zero degree should start first and if there’re more than one point, then there must be some nodes that left cannot be visited at first.</p>
+<p>2) remove the source node which in-degree is zero and its neighboring edges so that we could find the next node to start, let’s assume that the left graph is $G’$.</p>
+<p>3) if the left graph $G’$ has more than two nodes or vertices that have the in-degree which is zero, then we could judge that it’s unsolvable, because as I said in 1) there is no way to visit those nodes since there in-degree is zero and there should only be one to visit after its predecessor.</p>
+<p>4) keep doing the 3) until we have reached the end-point, which there is no other nodes to visit. If there is some nodes that are not visited but we cannot find an edge to reach it, then it’s unsolvable, otherwise we should get the solution.</p>
+<p>From the above steps, we have found the solution for the hamiltonian-path, and its complexity if $O(|E|+|V|)$, while here $|V|$ is the number of vertices in the graph and $|E|$ is the number of edges in the graph, because we have to trace the vertices and its neighborhood edges from $v<em>{1}$ to $v</em>{n}$. We know that it is done in polynomial time.</p>
+<h2 id="NP-completeness-and-reducibility"><a href="#NP-completeness-and-reducibility" class="headerlink" title="NP-completeness and reducibility"></a>NP-completeness and reducibility</h2><h3 id="Reducibility"><a href="#Reducibility" class="headerlink" title="Reducibility"></a>Reducibility</h3><p>A language $L_1$ is polynomial-time reducible to a language $L_2$, written $L_1 \leq_p L_2$</p>
+<p>If there exists a polynomial-time computable function $f :\{0, 1\}^<em> \rightarrow \{0, 1\}^</em>$ such that for all $x \in \{0, 1\}^*$,</p>
+<script type="math/tex; mode=display">x \in L_1 \space if \space and \space only \space if \space f(x) \in L_2</script><p>We call the function f the <strong>reduction function</strong>, and a polynomial-time algorithm F that computes f is a <strong>reduction algorithm</strong>.</p>
+<h3 id="NP-completeness-1"><a href="#NP-completeness-1" class="headerlink" title="NP-completeness"></a>NP-completeness</h3><p>A language $L \in \{0,1\}$ is NP-complete if</p>
+<ol>
+<li>$L \in NP$, and</li>
+<li>$L’ \leq_p L$ for every $L’ \in NP$.</li>
+</ol>
+<p>If a language L satisfies property 2, but not necessarily property 1, we say that L is NP-hard. We also define NPC to be the class of NP-complete languages.</p>
+<h3 id="Circuit-satisfiability"><a href="#Circuit-satisfiability" class="headerlink" title="Circuit satisfiability"></a>Circuit satisfiability</h3><p>The language CIRCUIT-SAT is therefore at least as hard as any language in NP, and since it belongs to NP, it is NP-complete.</p>
+<h3 id="Exercise-1"><a href="#Exercise-1" class="headerlink" title="Exercise"></a>Exercise</h3><h4 id="Question-1-1"><a href="#Question-1-1" class="headerlink" title="Question 1"></a>Question 1</h4><p>Show that the $\leq_p$ relation is a transitive relation on languages. That is, show that if $L_1 \leq_p L_2$ and $L_2 \leq_p L_3$, then $L_1 \leq_p L_3$.</p>
+<h4 id="Answer-4"><a href="#Answer-4" class="headerlink" title="Answer"></a>Answer</h4><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fxumuzljmej20gk05yq3g.jpg" alt=""></p>
+<h4 id="Question-2-1"><a href="#Question-2-1" class="headerlink" title="Question 2"></a>Question 2</h4><p>A language L is complete for a language class C with respect to polynomial-time reductions if $L \in C$ and $L’ \leq_p L$ for all $L’ \in C$. Show that $\empty$ and $\{0,1\}^*$ are the only languages in P that are not complete for P with respect to polynomial-time reductions.</p>
+<h4 id="Answer-5"><a href="#Answer-5" class="headerlink" title="Answer"></a>Answer</h4><p>Omit</p>
+<h2 id="NP-completeness-proofs"><a href="#NP-completeness-proofs" class="headerlink" title="NP-completeness proofs"></a>NP-completeness proofs</h2><p>Language L is NP-complete:</p>
+<ol>
+<li>Prove $L \in NP$.</li>
+<li>Select a known NP-complete language $L’$.</li>
+<li>Describe an algorithm that computes a function $f$ mapping every instance $x \in \{0,1\}^*$ of $L’$ to an instance $f(x)$ of $L$.</li>
+<li>Prove that the function $f$ satisfies $x \in L’$ if and only if $f(x) \in L$ for all $x \in \{0,1\}^*$.</li>
+<li>Prove that the algorithm computing $f$ runs in polynomial time.</li>
+</ol>
+<h3 id="3-CNF-satisfiability"><a href="#3-CNF-satisfiability" class="headerlink" title="3-CNF satisfiability"></a>3-CNF satisfiability</h3><p>We define 3-CNF satisfiability using the following terms. A literal in a boolean formula is an occurrence of a variable or its negation. A boolean formula is in conjunctive normal form, or CNF, if it is expressed as an AND of clauses, each of which is the OR of one or more literals. A boolean formula is in 3-conjunctive normal form, or 3-CNF, if each clause has exactly three distinct literals.</p>
+<h4 id="Theorem"><a href="#Theorem" class="headerlink" title="Theorem"></a>Theorem</h4><p>Satisfiability of boolean formulas in 3-conjunctive normal form is NP-complete.</p>
+<h3 id="Exercises-1"><a href="#Exercises-1" class="headerlink" title="Exercises"></a>Exercises</h3><h4 id="Question-1-2"><a href="#Question-1-2" class="headerlink" title="Question 1"></a>Question 1</h4><p>Consider the straightforward (nonpolynomial-time) reduction in the proof of Theorem 34.9. Describe a circuit of size n that, when converted to a formula by this method, yields a formula whose size is exponential in n.</p>
+<h4 id="Answer-6"><a href="#Answer-6" class="headerlink" title="Answer"></a>Answer</h4><h4 id="Question-2-2"><a href="#Question-2-2" class="headerlink" title="Question 2"></a>Question 2</h4><p>Suppose that someone gives you a polynomial-time algorithm to decide formula satisfiability. Describe how to use this algorithm to find satisfying assignments in polynomial time.</p>
+<h4 id="Answer-7"><a href="#Answer-7" class="headerlink" title="Answer"></a>Answer</h4><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fxvn7ofocfj20gq06agn7.jpg" alt=""><br><img src="http://ww1.sinaimg.cn/large/cf684029ly1fxvn8cgbw0j20gp03f0t3.jpg" alt=""></p>
+<h2 id="NP-complete-problems"><a href="#NP-complete-problems" class="headerlink" title="NP-complete problems"></a>NP-complete problems</h2><p>What the F<em>*</em>!</p>
+<h3 id="Exercises-2"><a href="#Exercises-2" class="headerlink" title="Exercises"></a>Exercises</h3><h4 id="Question-1-3"><a href="#Question-1-3" class="headerlink" title="Question 1"></a>Question 1</h4><p>The subgraph-isomorphism problem takes two undirected graphs $G_1$ and $G_2$, and it asks whether $G_1$ is isomorphic to a subgraph of $G_2$. Show that the subgraph-isomorphism problem is NP-complete.</p>
+<h4 id="Answer-8"><a href="#Answer-8" class="headerlink" title="Answer"></a>Answer</h4><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fxvo8qcea8j20g905575j.jpg" alt=""><br><img src="http://ww1.sinaimg.cn/large/cf684029ly1fxvo8w97ftj20i10ajgoz.jpg" alt=""></p>
+<hr>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/P/" rel="tag"># P</a>
+          
+            <a href="/tags/NP/" rel="tag"># NP</a>
+          
+            <a href="/tags/NPC/" rel="tag"># NPC</a>
+          
+            <a href="/tags/NPC-Complete/" rel="tag"># NPC-Complete</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/13/AINote7/" rel="next" title="7-First Order Logic">
+                <i class="fa fa-chevron-left"></i> 7-First Order Logic
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/08/AINote-8/" rel="prev" title="8-Uncertainty">
+                8-Uncertainty <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://ww1.sinaimg.cn/large/cf684029ly1funucikn1mj20go0gojy2.jpg"
+                alt="YF" />
+            
+              <p class="site-author-name" itemprop="name">YF</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">25</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">83</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:yveyao@outlook.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/Leowisd" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://instagram.com/leowisd" target="_blank" title="Instagram"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://missouri.edu/" title="Mizzou" target="_blank">Mizzou</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.ecust.edu.cn/" title="ECUST" target="_blank">ECUST</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://allanlu.xyz/" title="Allan Lu's BLOG" target="_blank">Allan Lu's BLOG</a>
+                  </li>
+                
+              </ul>
+              <div id="days"></div>
+<script>
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("08/24/2018 20:00:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="Has been running for "+daysold+" days "+hrsold+"h "+minsold+"m "+seconds+"s ";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+
+            </div>
+          
+
+          
+            
+          
+          <div id="days"></div>
+<script>
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("08/24/2018 20:00:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="Has been running for "+daysold+" days "+hrsold+"h "+minsold+"m "+seconds+"s ";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#NP-completeness-and-the-classes-P-and-NP"><span class="nav-number">1.</span> <span class="nav-text">NP-completeness and the classes P and NP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Classes-P"><span class="nav-number">1.1.</span> <span class="nav-text">Classes P</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Classes-NP"><span class="nav-number">1.2.</span> <span class="nav-text">Classes NP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NP-completeness"><span class="nav-number">1.3.</span> <span class="nav-text">NP-completeness</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reference"><span class="nav-number">1.4.</span> <span class="nav-text">Reference:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Polynomial-time"><span class="nav-number">2.</span> <span class="nav-text">Polynomial time</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Abstract-problems"><span class="nav-number">2.1.</span> <span class="nav-text">Abstract problems</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Endocing"><span class="nav-number">2.2.</span> <span class="nav-text">Endocing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#A-formal-language-framework"><span class="nav-number">2.3.</span> <span class="nav-text">A formal-language framework</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Exercise"><span class="nav-number">2.4.</span> <span class="nav-text">Exercise</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Polynomial-time-verification"><span class="nav-number">3.</span> <span class="nav-text">Polynomial-time verification</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hamiltonian-cycles"><span class="nav-number">3.1.</span> <span class="nav-text">Hamiltonian cycles</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Verification-algorithms"><span class="nav-number">3.2.</span> <span class="nav-text">Verification algorithms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-complexity-class-NP"><span class="nav-number">3.3.</span> <span class="nav-text">The complexity class NP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Exercises"><span class="nav-number">3.4.</span> <span class="nav-text">Exercises</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Question-1"><span class="nav-number">3.4.1.</span> <span class="nav-text">Question 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Answer"><span class="nav-number">3.4.2.</span> <span class="nav-text">Answer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Question-2"><span class="nav-number">3.4.3.</span> <span class="nav-text">Question 2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Answer-1"><span class="nav-number">3.4.4.</span> <span class="nav-text">Answer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Question-3"><span class="nav-number">3.4.5.</span> <span class="nav-text">Question 3</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Answer-2"><span class="nav-number">3.4.6.</span> <span class="nav-text">Answer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Question-4"><span class="nav-number">3.4.7.</span> <span class="nav-text">Question 4</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Answer-3"><span class="nav-number">3.4.8.</span> <span class="nav-text">Answer</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NP-completeness-and-reducibility"><span class="nav-number">4.</span> <span class="nav-text">NP-completeness and reducibility</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Reducibility"><span class="nav-number">4.1.</span> <span class="nav-text">Reducibility</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NP-completeness-1"><span class="nav-number">4.2.</span> <span class="nav-text">NP-completeness</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Circuit-satisfiability"><span class="nav-number">4.3.</span> <span class="nav-text">Circuit satisfiability</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Exercise-1"><span class="nav-number">4.4.</span> <span class="nav-text">Exercise</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Question-1-1"><span class="nav-number">4.4.1.</span> <span class="nav-text">Question 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Answer-4"><span class="nav-number">4.4.2.</span> <span class="nav-text">Answer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Question-2-1"><span class="nav-number">4.4.3.</span> <span class="nav-text">Question 2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Answer-5"><span class="nav-number">4.4.4.</span> <span class="nav-text">Answer</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NP-completeness-proofs"><span class="nav-number">5.</span> <span class="nav-text">NP-completeness proofs</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-CNF-satisfiability"><span class="nav-number">5.1.</span> <span class="nav-text">3-CNF satisfiability</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Theorem"><span class="nav-number">5.1.1.</span> <span class="nav-text">Theorem</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Exercises-1"><span class="nav-number">5.2.</span> <span class="nav-text">Exercises</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Question-1-2"><span class="nav-number">5.2.1.</span> <span class="nav-text">Question 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Answer-6"><span class="nav-number">5.2.2.</span> <span class="nav-text">Answer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Question-2-2"><span class="nav-number">5.2.3.</span> <span class="nav-text">Question 2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Answer-7"><span class="nav-number">5.2.4.</span> <span class="nav-text">Answer</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NP-complete-problems"><span class="nav-number">6.</span> <span class="nav-text">NP-complete problems</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Exercises-2"><span class="nav-number">6.1.</span> <span class="nav-text">Exercises</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Question-1-3"><span class="nav-number">6.1.1.</span> <span class="nav-text">Question 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Answer-8"><span class="nav-number">6.1.2.</span> <span class="nav-text">Answer</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">YF</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+  <div class="footer-custom">Life is Beautiful</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="Total Visitors">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        lang: 'en',
+        verify: false,
+        notify: false,
+        appId: 'E7vwwiWpiaeLTwLBS8GGfbHX-gzGzoHsz',
+        appKey: 'gvN94Bk9as8RRGeuQGqeHazh',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: true
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap')
+      $(e).after($wrap)
+      $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+        
+          if(result)$(this).text('Copied')
+          else $(this).text('Copy failed')
+        
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('Copy')
+        }, 300)
+      }).append(e)
+    })
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+  
+</body>
+</html>
