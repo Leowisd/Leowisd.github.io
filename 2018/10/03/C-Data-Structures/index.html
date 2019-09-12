@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=6.4.0">
+
+
+  <link rel="mask-icon" href="/images/safari-pinned.svg?v=6.4.0" color="#222">
+
+
+  <link rel="manifest" href="/images/android-chrome-512x512.png">
+
+
+  <meta name="msapplication-config" content="/images/browserconfig.xml" />
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.4.0',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Some usual data structures">
+<meta name="keywords" content="C#,Data Structure,Array,ArrayList,List&lt;&gt;,Linked List,Queue,Stack,Dictionary">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Useful C# Data Structures">
+<meta property="og:url" content="http://yfygoing.com/2018/10/03/C-Data-Structures/index.html">
+<meta property="og:site_name" content="StarWalker">
+<meta property="og:description" content="Some usual data structures">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/cf684029ly1fvw28hncf5j212w0m8dh3.jpg">
+<meta property="og:updated_time" content="2018-10-04T04:08:33.265Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Useful C# Data Structures">
+<meta name="twitter:description" content="Some usual data structures">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/cf684029ly1fvw28hncf5j212w0m8dh3.jpg">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yfygoing.com/2018/10/03/C-Data-Structures/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Useful C# Data Structures | StarWalker</title>
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-124506951-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-124506951-1');
+</script>
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">StarWalker</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Where my heart will take me</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-top">
+    <a href="/top/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-angle-double-up"></i> <br />Ranking</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />About</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yfygoing.com/2018/10/03/C-Data-Structures/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="YF">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww1.sinaimg.cn/large/cf684029ly1funucikn1mj20go0gojy2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="StarWalker">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Useful C# Data Structures
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-10-03 20:43:56 / Modified: 23:08:33" itemprop="dateCreated datePublished" datetime="2018-10-03T20:43:56-05:00">2018-10-03</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C#</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/10/03/C-Data-Structures/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count valine-comment-count" data-xid="/2018/10/03/C-Data-Structures/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/10/03/C-Data-Structures/" class="leancloud_visitors" data-flag-title="Useful C# Data Structures">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Views: </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+              <div class="post-description">Some usual data structures</div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p class="description"></p>
+
+<p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fvw28hncf5j212w0m8dh3.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Usual-Data-Structures"><a href="#Usual-Data-Structures" class="headerlink" title="Usual Data Structures"></a>Usual Data Structures</h2><h4 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h4><p>Array is the simplest data structure in C#. It has the following characteristics:</p>
+<ul>
+<li>Array is stored in continuous memory.</li>
+<li>The contents of the array are all of the same type.</li>
+<li>Array can be accessed directly through subscript.</li>
+</ul>
+<p>The creation of Array:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int size = 5;</span><br><span class="line">int[] array = new int[size];</span><br></pre></td></tr></table></figure></p>
+<p>Because Array is stored in contiguous memory, its indexing speed is very fast. The time to access an element is constant, which means it is independent of the number of elements in the array. The assignment and modification of elements is also very simple.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">string[] test2 = new string[3];</span><br><span class="line">//Assisgnmennt</span><br><span class="line">test2[0] = &quot;yao&quot;;</span><br><span class="line">test2[1] = &quot;y&quot;;</span><br><span class="line">test2[2] = &quot;f&quot;;</span><br><span class="line">//Modification</span><br><span class="line">test2[0] = &quot;yaoyf&quot;;</span><br></pre></td></tr></table></figure>
+<p>But if there are advantages, then it will be accompanied by shortcomings. Because it is continuous storage, it is inconvenient to insert new elements between the two elements. And as the code above shows, when you declare a new array, you have to specify its length, which has the potential problem of wasting memory when we declare it too long, and the risk of overflowing when we declare it too short.</p>
+<p>In order to avoid such disadvantages， there is a data structure called ArrayList.</p>
+<h4 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h4><p>ArrayList is part of the System.Collections namespace, so you must introduce System.Collections to use it. As mentioned above, ArrayList solves some of the shortcomings of arrays.</p>
+<ul>
+<li>It is not necessary to specify the length of an ArrayList when it is declared, because the length of an ArrayList object is dynamically increased and reduced according to the data stored therein.</li>
+<li>ArrayList can store different types of elements. This is because ArrayList treats all its elements as Object.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">ArrayList test3 = new ArrayList();</span><br><span class="line">//Add new element</span><br><span class="line">test3.Add(&quot;yao&quot;);</span><br><span class="line">test3.Add(&quot;y&quot;);</span><br><span class="line">test3.Add(&quot;f&quot;);</span><br><span class="line">test3.Add(&quot;is&quot;);</span><br><span class="line">test3.Add(22);</span><br><span class="line">//Modification</span><br><span class="line">test3[4] = 666;</span><br><span class="line">//Delete</span><br><span class="line">test3.RemoveAt(4);</span><br></pre></td></tr></table></figure>
+<p>Disadvantages:</p>
+<ul>
+<li>ArrayList is not type safe. Because different types are treated as objects, it’s very likely that type mismatches occur when ArrayList is used.</li>
+<li>Boxing does not occur when an array stores value types, but because ArrayList treats all types as Objects, it is inevitable that boxing occurs when inserting value types, and unboxing occurs when index values are taken. There will be time wastage, that is, the reduction of efficiency.</li>
+</ul>
+<h4 id="List"><a href="#List" class="headerlink" title="List"></a>List<t></t></h4><p>In order to overcome the shortcomings of ArrayList insecure types and boxed and unboxed, the concept of generics was introduced as a new array type. It is also an array type commonly used in work. Similar to Array List, the length can be flexibly changed. The biggest difference is that when we declare a List collection, we also need to declare the object type of the data in the List collection for it. This is similar to Array , which is implemented internally in List <t>.</t></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">List&lt;string&gt; test4 = new List&lt;string&gt;();  </span><br><span class="line">//Add new element  </span><br><span class="line">test4.Add(“abcdefg”);  </span><br><span class="line">test4.Add(“1234556”);  </span><br><span class="line">//Modification</span><br><span class="line">test4[1] = “WeAreTheBest”;  </span><br><span class="line">//Remove element  </span><br><span class="line">test4.RemoveAt(0);</span><br></pre></td></tr></table></figure>
+<p>The best advantages of List are:</p>
+<ul>
+<li>That can ensure type safety.</li>
+<li>The operation of boxing and unboxing is cancelled.</li>
+<li>It combines the advantages of fast access to Array and the flexibility of length to ArrayList.</li>
+</ul>
+<h4 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList<t></t></h4><p>That’s the linked list. The biggest difference from the above array types is that the linked list may not be sequenced in memory storage. This is because the list is arranged by pointing to the next element from the previous element, so it may not be accessible by subscript.</p>
+<p>Since the greatest feature of linked lists is that the space stored in memory is not necessarily continuous, the greatest advantages and disadvantages of linked lists over arrays are obvious:</p>
+<ul>
+<li>Inserting or deleting nodes into the linked list does not need to adjust the capacity of the structure, because it’s not consecutive storage. It’s determined by the pointer of each object, so adding and deleting elements has an advantage over arrays.</li>
+<li>Linked lists are good for adding new elements in situations where ordering is required. Here’s a comparison with arrays. For example, adding new elements at a certain location in the middle of an array may require moving many elements, but for a linked list it may be just the direction of several elements changes.</li>
+<li>There are advantages and disadvantages, because it is not necessarily sequential in memory space, so access to the subscript can not be used, but must start from the beginning node, traverse the next node until the target is found. So when you need to quickly access objects, arrays are undoubtedly more advantageous.</li>
+</ul>
+<p>In summary, the linked list is suitable for the unfixed number of elements.</p>
+<h4 id="Queue"><a href="#Queue" class="headerlink" title="Queue"></a>Queue<t></t></h4><p>In a Queue <t> data structure, the first element inserted will be deleted first while the last element inserted will be deleted at last, so queues are also called FIFO - first in first out linear tables. Through the use of Enqueue() and Dequeue() those two methods to achieve access to Queue<t>.</t></t></p>
+<p>Notes:</p>
+<ul>
+<li>First in first out scenario.</li>
+<li>By default, the initial capacity of Queue<t> is 32, and the growth factor is 2.0.</t></li>
+<li>When Enqueue is used, the length of the queue is judged to be sufficient. If not, the capacity is increased according to the growth factor. For example, when the initial 2.0 is used, the queue capacity is doubled. </li>
+</ul>
+<h4 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack<t></t></h4><p>As opposed to Queue <t>, we need Stack <t> when we need to use a LIFO data structure.</t></t></p>
+<p>Notes:</p>
+<ul>
+<li>Last in first out scenario.</li>
+<li>The default capacity is 10.</li>
+<li>Use pop and push two methods to operate.</li>
+</ul>
+<h4 id="Dictionary"><a href="#Dictionary" class="headerlink" title="Dictionary"></a>Dictionary<k,t></k,t></h4><p>Very fast to add, modify, delete and find elemets. However, in order to speed up, we use more memory space.</p>
+<h2 id="When-to-use-Which"><a href="#When-to-use-Which" class="headerlink" title="When to use Which"></a>When to use Which</h2><p><strong>Array</strong>: The number of elements and the need to use subscript can be considered, but List<t> is recommended.</t></p>
+<p><strong>ArrayList</strong>: It is not recommended. List<t> is recommended.</t></p>
+<p><strong>List</strong>: The number of elements is not sure. Most usual.</p>
+<p><strong>LinkedList</strong>: Linked list suitable for the number of elements is not fixed and need to constantly increase or decrease the node. The 2 sides can be increased or reduced.</p>
+<p><strong>Queue</strong>: FIFO</p>
+<p><strong>Stack</strong>: LIFO</p>
+<p><strong>Dictionary</strong>: Require pairs of keys and values. Fast operation.</p>
+<hr>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/C/" rel="tag"># C#</a>
+          
+            <a href="/tags/Data-Structure/" rel="tag"># Data Structure</a>
+          
+            <a href="/tags/Array/" rel="tag"># Array</a>
+          
+            <a href="/tags/ArrayList/" rel="tag"># ArrayList</a>
+          
+            <a href="/tags/List/" rel="tag"># List<></a>
+          
+            <a href="/tags/Linked-List/" rel="tag"># Linked List</a>
+          
+            <a href="/tags/Queue/" rel="tag"># Queue</a>
+          
+            <a href="/tags/Stack/" rel="tag"># Stack</a>
+          
+            <a href="/tags/Dictionary/" rel="tag"># Dictionary</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/02/Four-In-A-Row-Game/" rel="next" title="Four in a row game(2 players)">
+                <i class="fa fa-chevron-left"></i> Four in a row game(2 players)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/03/2018NobelPrize/" rel="prev" title="The Owner of 2018 Nobel Prize in Chemistry">
+                The Owner of 2018 Nobel Prize in Chemistry <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://ww1.sinaimg.cn/large/cf684029ly1funucikn1mj20go0gojy2.jpg"
+                alt="YF" />
+            
+              <p class="site-author-name" itemprop="name">YF</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">41</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">97</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:yveyao@outlook.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/Leowisd" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://instagram.com/leowisd" target="_blank" title="Instagram"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://missouri.edu/" title="Mizzou" target="_blank">Mizzou</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.ecust.edu.cn/" title="ECUST" target="_blank">ECUST</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://allanlu.xyz/" title="Allan Lu's BLOG" target="_blank">Allan Lu's BLOG</a>
+                  </li>
+                
+              </ul>
+              <div id="days"></div>
+<script>
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("08/24/2018 20:00:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="Has been running for "+daysold+" days "+hrsold+"h "+minsold+"m "+seconds+"s ";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+
+            </div>
+          
+
+          
+            
+          
+          <div id="days"></div>
+<script>
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("08/24/2018 20:00:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="Has been running for "+daysold+" days "+hrsold+"h "+minsold+"m "+seconds+"s ";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Usual-Data-Structures"><span class="nav-number">1.</span> <span class="nav-text">Usual Data Structures</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Array"><span class="nav-number">1.0.1.</span> <span class="nav-text">Array</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ArrayList"><span class="nav-number">1.0.2.</span> <span class="nav-text">ArrayList</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#List"><span class="nav-number">1.0.3.</span> <span class="nav-text">List</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LinkedList"><span class="nav-number">1.0.4.</span> <span class="nav-text">LinkedList</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Queue"><span class="nav-number">1.0.5.</span> <span class="nav-text">Queue</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Stack"><span class="nav-number">1.0.6.</span> <span class="nav-text">Stack</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dictionary"><span class="nav-number">1.0.7.</span> <span class="nav-text">Dictionary</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#When-to-use-Which"><span class="nav-number">2.</span> <span class="nav-text">When to use Which</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">YF</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+  <div class="footer-custom">Life is Beautiful</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="Total Visitors">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        lang: 'en',
+        verify: false,
+        notify: false,
+        appId: 'E7vwwiWpiaeLTwLBS8GGfbHX-gzGzoHsz',
+        appKey: 'gvN94Bk9as8RRGeuQGqeHazh',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: true
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap')
+      $(e).after($wrap)
+      $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+        
+          if(result)$(this).text('Copied')
+          else $(this).text('Copy failed')
+        
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('Copy')
+        }, 300)
+      }).append(e)
+    })
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+  
+</body>
+</html>
