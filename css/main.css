@@ -1854,7 +1854,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #2bff14;
+  background: #981cdd;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2624,8 +2624,10 @@ embed {
 img.img-topic {
   width: 100%;
 }
+.container {
+  background-color: rgba(0,0,0,0.75);
+}
 body {
-  background: url("http://ww1.sinaimg.cn/large/cf684029ly1fuvldldkmxj247p2dbnpm.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
