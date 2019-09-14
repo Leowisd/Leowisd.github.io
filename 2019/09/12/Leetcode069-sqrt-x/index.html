@@ -121,7 +121,7 @@
 <meta property="og:description" content="Solution Report of LeetCode Acceptted">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https:///">
-<meta property="og:updated_time" content="2019-09-13T02:58:15.495Z">
+<meta property="og:updated_time" content="2019-09-14T05:03:13.164Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode069-sqrt(x)">
 <meta name="twitter:description" content="Solution Report of LeetCode Acceptted">
@@ -374,12 +374,24 @@
                 
               
 
-              <time title="Created: 2019-09-12 21:55:15 / Modified: 21:58:15" itemprop="dateCreated datePublished" datetime="2019-09-12T21:55:15-05:00">2019-09-12</time>
+              <time title="Created: 2019-09-12 21:55:15" itemprop="dateCreated datePublished" datetime="2019-09-12T21:55:15-05:00">2019-09-12</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-09-14 00:03:13" itemprop="dateModified" datetime="2019-09-14T00:03:13-05:00">2019-09-14</time>
               
             
           </span>
@@ -463,7 +475,7 @@
 <h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: 4</span><br><span class="line">Output: 2</span><br></pre></td></tr></table></figure></p>
 <p><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: 8</span><br><span class="line">Output: 2</span><br><span class="line">Explanation: The square root of 8 is 2.82842..., and since </span><br><span class="line">             the decimal part is truncated, 2 is returned.</span><br></pre></td></tr></table></figure></p>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>Newton’s method: <a href="https://blog.csdn.net/chenrenxiang/article/details/78286599" target="_blank" rel="noopener">https://blog.csdn.net/chenrenxiang/article/details/78286599</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int mySqrt(int x) &#123;</span><br><span class="line"></span><br><span class="line">//         Method 1 (Good to solve): Binary Search        </span><br><span class="line">//         if (x == 0) return 0;</span><br><span class="line">//         int left  = 1;</span><br><span class="line">//         int right = Integer.MAX_VALUE;</span><br><span class="line">        </span><br><span class="line">//         while(left &lt;= right)&#123;</span><br><span class="line">//             int mid = left + (right - left)/2;</span><br><span class="line">//             if (mid == x/mid) return mid;</span><br><span class="line">//             else if (mid &lt; x/mid) left = mid + 1;</span><br><span class="line">//             else if (mid &gt; x/mid) right = mid - 1;</span><br><span class="line">//         &#125;</span><br><span class="line">//         return right;</span><br><span class="line">        </span><br><span class="line">        // Newton&apos;s method</span><br><span class="line">        long r = x;</span><br><span class="line">        while (r*r &gt; x)&#123;</span><br><span class="line">            r = (r + x/r)/2;</span><br><span class="line">        &#125;</span><br><span class="line">        return (int)r;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">mySqrt</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">//         Method 1 (Good to solve): Binary Search        </span></span><br><span class="line"><span class="comment">//         if (x == 0) return 0;</span></span><br><span class="line"><span class="comment">//         int left  = 1;</span></span><br><span class="line"><span class="comment">//         int right = Integer.MAX_VALUE;</span></span><br><span class="line">        </span><br><span class="line"><span class="comment">//         while(left &lt;= right)&#123;</span></span><br><span class="line"><span class="comment">//             int mid = left + (right - left)/2;</span></span><br><span class="line"><span class="comment">//             if (mid == x/mid) return mid;</span></span><br><span class="line"><span class="comment">//             else if (mid &lt; x/mid) left = mid + 1;</span></span><br><span class="line"><span class="comment">//             else if (mid &gt; x/mid) right = mid - 1;</span></span><br><span class="line"><span class="comment">//         &#125;</span></span><br><span class="line"><span class="comment">//         return right;</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">// Newton's method</span></span><br><span class="line">        <span class="keyword">long</span> r = x;</span><br><span class="line">        <span class="keyword">while</span> (r*r &gt; x)&#123;</span><br><span class="line">            r = (r + x/r)/<span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">int</span>)r;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
       
     </div>
