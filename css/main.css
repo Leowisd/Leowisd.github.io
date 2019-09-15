@@ -1854,7 +1854,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #9cffff;
+  background: #ebab7a;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3184,7 +3184,6 @@ code.description {
 }
 .site-nav-toggle button {
   margin-top: 60px;
-  margin-left: 25px;
 }
 .btn-bar {
   background-color: #fff;
