@@ -113,7 +113,7 @@
 
 
   <meta name="description" content="Solution Report of LeetCode Acceptted">
-<meta name="keywords" content="PriorityQueue,HashMap">
+<meta name="keywords" content="Hash Table,Amazon,Heap">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Leetcode347-topKFrequentElements">
 <meta property="og:url" content="http://yfygoing.com/2019/09/18/Leetcode347-topKFrequentElements/index.html">
@@ -121,7 +121,7 @@
 <meta property="og:description" content="Solution Report of LeetCode Acceptted">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https:///">
-<meta property="og:updated_time" content="2019-09-19T03:39:10.267Z">
+<meta property="og:updated_time" content="2019-10-13T22:19:48.024Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode347-topKFrequentElements">
 <meta name="twitter:description" content="Solution Report of LeetCode Acceptted">
@@ -374,12 +374,24 @@
                 
               
 
-              <time title="Created: 2019-09-18 22:34:41 / Modified: 22:39:10" itemprop="dateCreated datePublished" datetime="2019-09-18T22:34:41-05:00">2019-09-18</time>
+              <time title="Created: 2019-09-18 22:34:41" itemprop="dateCreated datePublished" datetime="2019-09-18T22:34:41-05:00">2019-09-18</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-10-13 17:19:48" itemprop="dateModified" datetime="2019-10-13T17:19:48-05:00">2019-10-13</time>
               
             
           </span>
@@ -465,7 +477,7 @@
 <li>You may assume k is always valid, 1 ≤ k ≤ number of unique elements.</li>
 <li>Your algorithm’s time complexity must be better than O(n log n), where n is the array’s size.</li>
 </ul>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">topKFrequent</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        HashMap&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> x:nums)&#123;</span><br><span class="line">            <span class="keyword">if</span> (map.containsKey(x))&#123;</span><br><span class="line">                map.put(x, map.get(x)+<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> map.put(x, <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        PriorityQueue&lt;Note&gt; pq = <span class="keyword">new</span> PriorityQueue&lt;&gt;(k, <span class="keyword">new</span> Comparator&lt;Note&gt;()&#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Note a, Note b)</span></span>&#123;</span><br><span class="line">                <span class="keyword">return</span> a.freq-b.freq;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> x: map.keySet())&#123;</span><br><span class="line">            pq.offer(<span class="keyword">new</span> Note(x, map.get(x)));</span><br><span class="line">            <span class="keyword">if</span> (pq.size() &gt; k)&#123;</span><br><span class="line">                pq.poll();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        List&lt;Integer&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">while</span> (!pq.isEmpty())&#123;</span><br><span class="line">            res.add(pq.poll().val);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line"><span class="comment">//         bucket sort O(n), below is O(nlogk)</span></span><br><span class="line"><span class="comment">//         List&lt;Integer&gt;[] bucket = new List[nums.length + 1];</span></span><br><span class="line"><span class="comment">// 	    Map&lt;Integer, Integer&gt; frequencyMap = new HashMap&lt;Integer, Integer&gt;();</span></span><br><span class="line">    </span><br><span class="line"><span class="comment">// 	    for (int n : nums) &#123;</span></span><br><span class="line"><span class="comment">// 		    frequencyMap.put(n, frequencyMap.getOrDefault(n, 0) + 1);</span></span><br><span class="line"><span class="comment">// 	    &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 	    for (int key : frequencyMap.keySet()) &#123;</span></span><br><span class="line"><span class="comment">// 		    int frequency = frequencyMap.get(key);</span></span><br><span class="line"><span class="comment">// 		    if (bucket[frequency] == null) &#123;</span></span><br><span class="line"><span class="comment">// 		    	bucket[frequency] = new ArrayList&lt;&gt;();</span></span><br><span class="line"><span class="comment">// 		    &#125;</span></span><br><span class="line"><span class="comment">// 		    bucket[frequency].add(key);</span></span><br><span class="line"><span class="comment">// 	    &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 	    List&lt;Integer&gt; res = new ArrayList&lt;&gt;();</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 	    for (int pos = bucket.length - 1; pos &gt;= 0 &amp;&amp; res.size() &lt; k; pos--) &#123;</span></span><br><span class="line"><span class="comment">// 		    if (bucket[pos] != null) &#123;</span></span><br><span class="line"><span class="comment">// 			    res.addAll(bucket[pos]);</span></span><br><span class="line"><span class="comment">// 		    &#125;</span></span><br><span class="line"><span class="comment">//         &#125;</span></span><br><span class="line"><span class="comment">// 	    return res;</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Note</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> val;</span><br><span class="line">        <span class="keyword">int</span> freq;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Note</span><span class="params">(<span class="keyword">int</span> val, <span class="keyword">int</span> freq)</span></span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.val = val;</span><br><span class="line">            <span class="keyword">this</span>.freq = freq;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">topKFrequent</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        HashMap&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> x:nums)&#123;</span><br><span class="line">            <span class="keyword">if</span> (map.containsKey(x))&#123;</span><br><span class="line">                map.put(x, map.get(x)+<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> map.put(x, <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        PriorityQueue&lt;Note&gt; pq = <span class="keyword">new</span> PriorityQueue&lt;&gt;(k, <span class="keyword">new</span> Comparator&lt;Note&gt;()&#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Note a, Note b)</span></span>&#123;</span><br><span class="line">                <span class="keyword">return</span> a.freq-b.freq;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> x: map.keySet())&#123;</span><br><span class="line">            pq.offer(<span class="keyword">new</span> Note(x, map.get(x)));</span><br><span class="line">            <span class="keyword">if</span> (pq.size() &gt; k)&#123;</span><br><span class="line">                pq.poll();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        List&lt;Integer&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">while</span> (!pq.isEmpty())&#123;</span><br><span class="line">            res.add(pq.poll().val);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Note</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> val;</span><br><span class="line">        <span class="keyword">int</span> freq;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Note</span><span class="params">(<span class="keyword">int</span> val, <span class="keyword">int</span> freq)</span></span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.val = val;</span><br><span class="line">            <span class="keyword">this</span>.freq = freq;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
       
     </div>
@@ -486,9 +498,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/PriorityQueue/" rel="tag"># PriorityQueue</a>
+            <a href="/tags/Hash-Table/" rel="tag"># Hash Table</a>
           
-            <a href="/tags/HashMap/" rel="tag"># HashMap</a>
+            <a href="/tags/Amazon/" rel="tag"># Amazon</a>
+          
+            <a href="/tags/Heap/" rel="tag"># Heap</a>
           
         </div>
       
@@ -592,7 +606,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">126</span>
+                    <span class="site-state-item-count">144</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -888,7 +902,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">125</span>
+                      
+                    
+                    <span class="site-state-item-count">126</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
