@@ -113,7 +113,7 @@
 
 
   <meta name="description" content="Algorithms review for coming interviews">
-<meta name="keywords" content="Data Structure,Algorithms">
+<meta name="keywords" content="Algorithms,Data Structure">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Union-find data structure">
 <meta property="og:url" content="http://yfygoing.com/2018/12/27/union-find/index.html">
@@ -121,7 +121,7 @@
 <meta property="og:description" content="Algorithms review for coming interviews">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/cf684029ly1fyl26sdrq8j212w0m8jwg.jpg">
-<meta property="og:updated_time" content="2018-12-27T02:35:07.190Z">
+<meta property="og:updated_time" content="2019-10-16T15:53:07.905Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Union-find data structure">
 <meta name="twitter:description" content="Algorithms review for coming interviews">
@@ -391,7 +391,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-12-26 20:35:07" itemprop="dateModified" datetime="2018-12-26T20:35:07-06:00">2018-12-26</time>
+                <time title="Modified: 2019-10-16 10:53:07" itemprop="dateModified" datetime="2019-10-16T10:53:07-05:00">2019-10-16</time>
               
             
           </span>
@@ -469,7 +469,8 @@
 
 <p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fyl26sdrq8j212w0m8jwg.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
 <a id="more"></a>
-<h2 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h2><h3 id="MakeSet"><a href="#MakeSet" class="headerlink" title="MakeSet"></a>MakeSet</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">makeSet</span><span class="params">(a, n)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">        a[i] = i</span><br></pre></td></tr></table></figure>
+<h2 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">initial</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span>[] friends = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) friends[i] = i;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> i)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (friends[i] != i) friends[i] = find(friends[i]);</span><br><span class="line">    <span class="keyword">return</span> friends[i];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">union</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> si = find(i);</span><br><span class="line">    <span class="keyword">int</span> sj = find(j);</span><br><span class="line">    <span class="keyword">if</span> (si != sj) friends[si] = sj;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="MakeSet"><a href="#MakeSet" class="headerlink" title="MakeSet"></a>MakeSet</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">makeSet</span><span class="params">(a, n)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">        a[i] = i</span><br></pre></td></tr></table></figure>
 <h3 id="Find"><a href="#Find" class="headerlink" title="Find"></a>Find</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find</span><span class="params">(i)</span>:</span></span><br><span class="line">    <span class="keyword">global</span> a</span><br><span class="line">    <span class="keyword">if</span> a[i] != i:</span><br><span class="line">        <span class="comment"># Optimation 1: Find with path compression</span></span><br><span class="line">        a[i] = find(a[i]) </span><br><span class="line">    <span class="keyword">return</span> a[i]</span><br></pre></td></tr></table></figure>
 <h3 id="Union"><a href="#Union" class="headerlink" title="Union"></a>Union</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">union</span><span class="params">(x, y)</span>:</span></span><br><span class="line">    fx = find(x)</span><br><span class="line">    fy = find(y)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (fx == fy):</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">global</span> rank</span><br><span class="line">    <span class="keyword">global</span> a</span><br><span class="line">    <span class="comment"># Optimation 2: Union by Rank</span></span><br><span class="line">    <span class="keyword">if</span> (rank[fx]&gt;rank[fy]):</span><br><span class="line">        a[fy] = fx</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        a[fx] = fy</span><br><span class="line">        <span class="keyword">if</span> (rank[fx] == rank[fy]):</span><br><span class="line">            rank[fy] += <span class="number">1</span></span><br></pre></td></tr></table></figure>
 <h2 id="Example-problem"><a href="#Example-problem" class="headerlink" title="Example problem"></a>Example problem</h2><h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p>If a family is too large, it’s really not easy to judge whether two people are relatives. Give a relatives diagram and find out whether any given two people have relatives. Provisions: X and y are relatives, y and Z are relatives, then x and Z are relatives. If X and y are relatives, then x’s relatives are relatives of y, and y’s relatives are relatives of X.</p>
@@ -497,9 +498,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Data-Structure/" rel="tag"># Data Structure</a>
-          
             <a href="/tags/Algorithms/" rel="tag"># Algorithms</a>
+          
+            <a href="/tags/Data-Structure/" rel="tag"># Data Structure</a>
           
         </div>
       
@@ -603,7 +604,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">158</span>
+                    <span class="site-state-item-count">160</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
