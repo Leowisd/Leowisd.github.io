@@ -113,7 +113,7 @@
 
 
   <meta name="description" content="Solution Report of LeetCode Acceptted">
-<meta name="keywords" content="medium,array">
+<meta name="keywords" content="Hash Table,Amazon,Two Pointers">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Leetcode003_lengthOfLongestSubstring">
 <meta property="og:url" content="http://yfygoing.com/2019/01/08/Leetcode003-lengthOfLongestSubstring/index.html">
@@ -121,7 +121,7 @@
 <meta property="og:description" content="Solution Report of LeetCode Acceptted">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/cf684029ly1fv8tdv3nmqj212w0m8tev.jpg">
-<meta property="og:updated_time" content="2019-09-13T20:32:20.834Z">
+<meta property="og:updated_time" content="2019-10-17T02:41:33.726Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode003_lengthOfLongestSubstring">
 <meta name="twitter:description" content="Solution Report of LeetCode Acceptted">
@@ -391,7 +391,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-09-13 15:32:20" itemprop="dateModified" datetime="2019-09-13T15:32:20-05:00">2019-09-13</time>
+                <time title="Modified: 2019-10-16 21:41:33" itemprop="dateModified" datetime="2019-10-16T21:41:33-05:00">2019-10-16</time>
               
             
           </span>
@@ -479,7 +479,8 @@
 <h3 id="Example-3"><a href="#Example-3" class="headerlink" title="Example 3"></a>Example 3</h3><p>Input: “pwwkew”</p>
 <p>Output: 3</p>
 <p>Explanation: The answer is “wke”, with the length of 3.<br>             Note that the answer must be a substring, “pwke” is a subsequence and not a substring.</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h3 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution 1"></a>Solution 1</h3><p>First set the first element as the current longest substring</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (s == <span class="keyword">null</span> || s.length() == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        HashMap&lt;Character, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> right = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(right &lt; s.length())&#123;</span><br><span class="line">            <span class="keyword">if</span> (map.containsKey(s.charAt(right)))&#123;</span><br><span class="line">                left = Math.max(left, map.get(s.charAt(right)) + <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            map.put(s.charAt(right), right);</span><br><span class="line">            res = Math.max(res, right - left + <span class="number">1</span>);</span><br><span class="line">            right++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution 1"></a>Solution 1</h3><p>First set the first element as the current longest substring</p>
 <p>For the rest part of the input string, check if each element is in the substring</p>
 <p>If not, plus one to current temp length value</p>
 <p>If yes, reset the current longest substring from the index where the element occurs last time and reset the temp length value</p>
@@ -509,9 +510,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/medium/" rel="tag"># medium</a>
+            <a href="/tags/Hash-Table/" rel="tag"># Hash Table</a>
           
-            <a href="/tags/array/" rel="tag"># array</a>
+            <a href="/tags/Amazon/" rel="tag"># Amazon</a>
+          
+            <a href="/tags/Two-Pointers/" rel="tag"># Two Pointers</a>
           
         </div>
       
@@ -615,7 +618,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">160</span>
+                    <span class="site-state-item-count">162</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -911,9 +914,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">126</span>
+                    <span class="site-state-item-count">125</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
