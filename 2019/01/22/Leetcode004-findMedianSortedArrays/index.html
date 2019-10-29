@@ -113,7 +113,7 @@
 
 
   <meta name="description" content="Solution Report of LeetCode Acceptted">
-<meta name="keywords" content="Sort">
+<meta name="keywords" content="Google,Binary Search">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Leetcode004-findMedianSortedArrays">
 <meta property="og:url" content="http://yfygoing.com/2019/01/22/Leetcode004-findMedianSortedArrays/index.html">
@@ -121,7 +121,7 @@
 <meta property="og:description" content="Solution Report of LeetCode Acceptted">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/cf684029ly1fv8tdv3nmqj212w0m8tev.jpg">
-<meta property="og:updated_time" content="2019-09-13T20:32:34.685Z">
+<meta property="og:updated_time" content="2019-10-29T15:23:16.964Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode004-findMedianSortedArrays">
 <meta name="twitter:description" content="Solution Report of LeetCode Acceptted">
@@ -391,7 +391,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-09-13 15:32:34" itemprop="dateModified" datetime="2019-09-13T15:32:34-05:00">2019-09-13</time>
+                <time title="Modified: 2019-10-29 10:23:16" itemprop="dateModified" datetime="2019-10-29T10:23:16-05:00">2019-10-29</time>
               
             
           </span>
@@ -478,8 +478,8 @@
 <h3 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h3><p>nums1 = [1, 2]</p>
 <p>nums2 = [3, 4]</p>
 <p>The median is (2 + 3)/2 = 2.5</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>Sorting these two arrays and then find the median one</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span>    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findMedianSortedArrays</span><span class="params">(self, nums1, nums2)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type nums1: List[int]</span></span><br><span class="line"><span class="string">        :type nums2: List[int]</span></span><br><span class="line"><span class="string">        :rtype: float</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        num = nums1 + nums2</span><br><span class="line">        n = len(nums1) + len(nums2)</span><br><span class="line">        self.quickSort(num, <span class="number">0</span>, n<span class="number">-1</span>)</span><br><span class="line">        mid = n//<span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> n%<span class="number">2</span> == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> num[mid]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> (num[mid]+num[mid<span class="number">-1</span>])/<span class="number">2</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">quickSort</span><span class="params">(self, a, left, right)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> left&gt;=right:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        p = left + random.randrange(right-left+<span class="number">1</span>)</span><br><span class="line">        temp = a[left]</span><br><span class="line">        a[left] = a[p]</span><br><span class="line">        a[p] = temp</span><br><span class="line">        i = left</span><br><span class="line">        j = right</span><br><span class="line">        x = a[i]</span><br><span class="line">        <span class="keyword">while</span>(i&lt;j):</span><br><span class="line">            <span class="keyword">while</span> (i&lt;j) <span class="keyword">and</span> (a[j]&gt;x):</span><br><span class="line">                j -= <span class="number">1</span></span><br><span class="line">            a[i] = a[j]</span><br><span class="line">            <span class="keyword">while</span>(i&lt;j) <span class="keyword">and</span> (a[i]&lt;=x):</span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">            a[j] = a[i]</span><br><span class="line">        a[i] = x</span><br><span class="line">        self.quickSort(a, left, i<span class="number">-1</span>)</span><br><span class="line">        self.quickSort(a, i+<span class="number">1</span>, right)</span><br></pre></td></tr></table></figure>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>convert to find the Kth number in m + n, each time ignore k/2 numbers</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">findMedianSortedArrays</span><span class="params">(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span>[] nums2)</span> </span>&#123;        </span><br><span class="line">        <span class="keyword">int</span> m = nums1.length, n = nums2.length;</span><br><span class="line">        <span class="keyword">int</span> l = (m + n + <span class="number">1</span>) / <span class="number">2</span>; <span class="comment">//left half of the combined median</span></span><br><span class="line">        <span class="keyword">int</span> r = (m + n + <span class="number">2</span>) / <span class="number">2</span>; <span class="comment">//right half of the combined median</span></span><br><span class="line">        <span class="comment">// If the nums1.length + nums2.length is odd, the 2 function will return the same number</span></span><br><span class="line">        <span class="comment">// Else if nums1.length + nums2.length is even, the 2 function will return the left number and right number that make up a median</span></span><br><span class="line">        <span class="keyword">return</span> (getKth(nums1, <span class="number">0</span>, nums2, <span class="number">0</span>, l) + getKth(nums1, <span class="number">0</span>, nums2, <span class="number">0</span>, r)) / <span class="number">2.0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">double</span> <span class="title">getKth</span><span class="params">(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span> start1, <span class="keyword">int</span>[] nums2, <span class="keyword">int</span> start2, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// This function finds the Kth element in nums1 + nums2</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">// If nums1 is exhausted, return kth number in nums2</span></span><br><span class="line">        <span class="keyword">if</span> (start1 &gt; nums1.length - <span class="number">1</span>) <span class="keyword">return</span> nums2[start2 + k - <span class="number">1</span>];        </span><br><span class="line">        <span class="comment">// If nums2 is exhausted, return kth number in nums1</span></span><br><span class="line">        <span class="keyword">if</span> (start2 &gt; nums2.length - <span class="number">1</span>) <span class="keyword">return</span> nums1[start1 + k - <span class="number">1</span>];</span><br><span class="line">        <span class="comment">// If k == 1, return the first number</span></span><br><span class="line">        <span class="comment">// Since nums1 and nums2 is sorted, the smaller one among the start point of nums1 and nums2 is the first one</span></span><br><span class="line">        <span class="keyword">if</span> (k == <span class="number">1</span>) <span class="keyword">return</span> Math.min(nums1[start1], nums2[start2]);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> mid1 = Integer.MAX_VALUE;</span><br><span class="line">        <span class="keyword">int</span> mid2 = Integer.MAX_VALUE;</span><br><span class="line">        <span class="keyword">if</span> (start1 + k / <span class="number">2</span> - <span class="number">1</span> &lt; nums1.length) mid1 = nums1[start1 + k / <span class="number">2</span> - <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">if</span> (start2 + k / <span class="number">2</span> - <span class="number">1</span> &lt; nums2.length) mid2 = nums2[start2 + k / <span class="number">2</span> - <span class="number">1</span>];        </span><br><span class="line">        <span class="comment">// Throw away half of the array from nums1 or nums2. And cut k in half</span></span><br><span class="line">        <span class="keyword">if</span> (mid1 &lt; mid2) &#123;</span><br><span class="line">            <span class="keyword">return</span> getKth(nums1, start1 + k / <span class="number">2</span>, nums2, start2, k - k / <span class="number">2</span>); <span class="comment">//nums1.right + nums2</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> getKth(nums1, start1, nums2, start2 + k / <span class="number">2</span>, k - k / <span class="number">2</span>); <span class="comment">//nums1 + nums2.right</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
       
     </div>
@@ -500,7 +500,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Sort/" rel="tag"># Sort</a>
+            <a href="/tags/Google/" rel="tag"># Google</a>
+          
+            <a href="/tags/Binary-Search/" rel="tag"># Binary Search</a>
           
         </div>
       
@@ -604,7 +606,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">180</span>
+                    <span class="site-state-item-count">183</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -906,7 +908,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">128</span>
+                      
+                    
+                    <span class="site-state-item-count">129</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
