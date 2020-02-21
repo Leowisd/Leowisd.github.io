@@ -1,6 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Leetcode097-interleavingString</title>
+    <url>/2020/02/20/Leetcode097-interleavingString/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given s1, s2, s3, find whether s3 is formed by the interleaving of s1 and s2.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: s1 = &quot;aabcc&quot;, s2 = &quot;dbbca&quot;, s3 = &quot;aadbbcbcac&quot;</span><br><span class="line">Output: true</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: s1 = &quot;aabcc&quot;, s2 = &quot;dbbca&quot;, s3 = &quot;aadbbbaccc&quot;</span><br><span class="line">Output: false</span><br></pre></td></tr></table></figure></p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isInterleave</span><span class="params">(String s1, String s2, String s3)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (s1.length() + s2.length() != s3.length()) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">boolean</span>[][] dp = <span class="keyword">new</span> <span class="keyword">boolean</span>[s1.length() + <span class="number">1</span>][s2.length() + <span class="number">1</span>];</span><br><span class="line">        dp[<span class="number">0</span>][<span class="number">0</span>] = <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= s2.length(); i++)&#123;</span><br><span class="line">            dp[<span class="number">0</span>][i] = dp[<span class="number">0</span>][i-<span class="number">1</span>] &amp;&amp; (s2.charAt(i-<span class="number">1</span>) == s3.charAt(i-<span class="number">1</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= s1.length(); i++)&#123;</span><br><span class="line">            dp[i][<span class="number">0</span>] = dp[i-<span class="number">1</span>][<span class="number">0</span>] &amp;&amp; (s1.charAt(i-<span class="number">1</span>) == s3.charAt(i-<span class="number">1</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= s1.length(); i++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= s2.length(); j++)&#123;</span><br><span class="line">                dp[i][j] = (dp[i-<span class="number">1</span>][j] &amp;&amp; (s1.charAt(i-<span class="number">1</span>) == s3.charAt(i + j -<span class="number">1</span>)))</span><br><span class="line">                    ||(dp[i][j-<span class="number">1</span>] &amp;&amp; (s2.charAt(j-<span class="number">1</span>) == s3.charAt(i + j-<span class="number">1</span>)));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[s1.length()][s2.length()];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>String</tag>
+        <tag>DP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode213-houseRobberII</title>
+    <url>/2020/02/20/Leetcode213-houseRobberII/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed. All houses at this place are arranged in a circle. That means the first house is the neighbor of the last one. Meanwhile, adjacent houses have security system connected and <strong>it will automatically contact the police if two adjacent houses were broken into on the same night.</strong></p>
+<p>Given a list of non-negative integers representing the amount of money of each house, determine the maximum amount of money you can rob tonight <strong>without alerting the police.</strong></p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [2,3,2]</span><br><span class="line">Output: 3</span><br><span class="line">Explanation: You cannot rob house 1 (money = 2) and then rob house 3 (money = 2),</span><br><span class="line">             because they are adjacent houses.</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [1,2,3,1]</span><br><span class="line">Output: 4</span><br><span class="line">Explanation: Rob house 1 (money = 1) and then rob house 3 (money = 3).</span><br><span class="line">             Total amount you can rob = 1 + 3 = 4.</span><br></pre></td></tr></table></figure></p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">rob</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums == <span class="keyword">null</span> || nums.length == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (nums.length == <span class="number">1</span>) <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">if</span> (nums.length == <span class="number">2</span>) <span class="keyword">return</span> Math.max(nums[<span class="number">0</span>], nums[<span class="number">1</span>]);</span><br><span class="line">        <span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[nums.length];</span><br><span class="line">        </span><br><span class="line">        dp[<span class="number">0</span>] = nums[<span class="number">0</span>];</span><br><span class="line">        dp[<span class="number">1</span>] = Math.max(dp[<span class="number">0</span>], nums[<span class="number">1</span>]);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; nums.length-<span class="number">1</span>; i++)</span><br><span class="line">            dp[i] = Math.max(dp[i-<span class="number">1</span>], dp[i-<span class="number">2</span>] + nums[i]);</span><br><span class="line">        <span class="keyword">int</span> res = dp[nums.length - <span class="number">2</span>];</span><br><span class="line">        </span><br><span class="line">        dp[<span class="number">1</span>] = nums[<span class="number">1</span>];</span><br><span class="line">        dp[<span class="number">2</span>] = Math.max(dp[<span class="number">1</span>], nums[<span class="number">2</span>]);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">3</span>; i &lt; nums.length; i++)</span><br><span class="line">            dp[i] = Math.max(dp[i-<span class="number">1</span>], dp[i-<span class="number">2</span>] + nums[i]);</span><br><span class="line">        res = Math.max(res, dp[nums.length - <span class="number">1</span>]);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>DP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode203-removeLinkedListElements</title>
+    <url>/2020/02/20/Leetcode203-removeLinkedListElements/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Remove all elements from a linked list of integers that have value val.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input:  1-&gt;2-&gt;6-&gt;3-&gt;4-&gt;5-&gt;6, val = 6</span><br><span class="line">Output: 1-&gt;2-&gt;3-&gt;4-&gt;5</span><br></pre></td></tr></table></figure>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * public class ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) &#123; val = x; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">removeElements</span><span class="params">(ListNode head, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (head == <span class="keyword">null</span>) <span class="keyword">return</span> head;</span><br><span class="line">        ListNode dummy = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">        dummy.next = head;</span><br><span class="line">        ListNode cur = head;</span><br><span class="line">        ListNode pre = dummy;</span><br><span class="line">        <span class="keyword">while</span>(cur != <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span> (cur.val == val)</span><br><span class="line">                pre.next = cur.next;</span><br><span class="line">            <span class="keyword">else</span> pre = cur;</span><br><span class="line">            cur = cur.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dummy.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Linked List</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Leetcode219-containsDuplicateII</title>
     <url>/2020/02/20/Leetcode219-containsDuplicateII/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
@@ -1489,8 +1547,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Amazon</tag>
         <tag>Hash Table</tag>
+        <tag>Amazon</tag>
       </tags>
   </entry>
   <entry>
@@ -1640,8 +1698,8 @@
       </categories>
       <tags>
         <tag>DFS</tag>
-        <tag>Amazon</tag>
         <tag>Hash Table</tag>
+        <tag>Amazon</tag>
       </tags>
   </entry>
   <entry>
@@ -1663,8 +1721,8 @@
       </categories>
       <tags>
         <tag>Array</tag>
-        <tag>Amazon</tag>
         <tag>Hash Table</tag>
+        <tag>Amazon</tag>
       </tags>
   </entry>
   <entry>
@@ -1730,8 +1788,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Amazon</tag>
         <tag>Hash Table</tag>
+        <tag>Amazon</tag>
       </tags>
   </entry>
   <entry>
@@ -1967,8 +2025,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Amazon</tag>
         <tag>Hash Table</tag>
+        <tag>Amazon</tag>
         <tag>Tree</tag>
       </tags>
   </entry>
@@ -2149,8 +2207,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Amazon</tag>
         <tag>Hash Table</tag>
+        <tag>Amazon</tag>
         <tag>Two Pointers</tag>
         <tag>Sliding Window</tag>
       </tags>
@@ -2286,8 +2344,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Amazon</tag>
         <tag>Hash Table</tag>
+        <tag>Amazon</tag>
         <tag>Design</tag>
       </tags>
   </entry>
@@ -2544,8 +2602,8 @@
       </categories>
       <tags>
         <tag>DFS</tag>
-        <tag>Amazon</tag>
         <tag>Hash Table</tag>
+        <tag>Amazon</tag>
         <tag>Trie</tag>
       </tags>
   </entry>
@@ -2701,8 +2759,8 @@
       </categories>
       <tags>
         <tag>Google</tag>
-        <tag>Amazon</tag>
         <tag>Hash Table</tag>
+        <tag>Amazon</tag>
         <tag>Microsoft</tag>
       </tags>
   </entry>
@@ -2745,8 +2803,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Amazon</tag>
         <tag>Hash Table</tag>
+        <tag>Amazon</tag>
         <tag>Heap</tag>
       </tags>
   </entry>
@@ -2904,8 +2962,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Amazon</tag>
         <tag>Hash Table</tag>
+        <tag>Amazon</tag>
       </tags>
   </entry>
   <entry>
@@ -3033,8 +3091,8 @@
       </categories>
       <tags>
         <tag>Amazon</tag>
-        <tag>Divide and Conquer</tag>
         <tag>Heap</tag>
+        <tag>Divide and Conquer</tag>
       </tags>
   </entry>
   <entry>
@@ -3076,8 +3134,8 @@
       </categories>
       <tags>
         <tag>Array</tag>
-        <tag>Amazon</tag>
         <tag>Hash Table</tag>
+        <tag>Amazon</tag>
         <tag>Design</tag>
       </tags>
   </entry>
@@ -3238,8 +3296,8 @@
       </categories>
       <tags>
         <tag>Amazon</tag>
-        <tag>Divide and Conquer</tag>
         <tag>Heap</tag>
+        <tag>Divide and Conquer</tag>
       </tags>
   </entry>
   <entry>
@@ -3310,8 +3368,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Amazon</tag>
         <tag>Hash Table</tag>
+        <tag>Amazon</tag>
         <tag>String</tag>
       </tags>
   </entry>
@@ -4065,8 +4123,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Amazon</tag>
         <tag>Hash Table</tag>
+        <tag>Amazon</tag>
         <tag>Heap</tag>
       </tags>
   </entry>
@@ -4682,8 +4740,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Amazon</tag>
         <tag>Hash Table</tag>
+        <tag>Amazon</tag>
         <tag>Two Pointers</tag>
       </tags>
   </entry>
@@ -4710,9 +4768,9 @@
         <category>leetcode</category>
       </categories>
       <tags>
+        <tag>Amazon</tag>
         <tag>medium</tag>
         <tag>linkedlist</tag>
-        <tag>Amazon</tag>
       </tags>
   </entry>
   <entry>
@@ -4771,9 +4829,9 @@
         <category>Algorithms</category>
       </categories>
       <tags>
-        <tag>Searching</tag>
         <tag>DFS</tag>
         <tag>BFS</tag>
+        <tag>Searching</tag>
         <tag>Algorithms</tag>
       </tags>
   </entry>
@@ -6030,11 +6088,11 @@
       <tags>
         <tag>AI</tag>
         <tag>Algorithm</tag>
-        <tag>Searching</tag>
-        <tag>A*</tag>
+        <tag>DFS</tag>
         <tag>IDS</tag>
         <tag>Iterative Deepening Search</tag>
-        <tag>DFS</tag>
+        <tag>A*</tag>
+        <tag>Searching</tag>
         <tag>15-puzzle</tag>
       </tags>
   </entry>
@@ -6109,12 +6167,12 @@
         <tag>AI</tag>
         <tag>Course Note</tag>
         <tag>Algorithm</tag>
-        <tag>A*</tag>
+        <tag>Search</tag>
+        <tag>DFS</tag>
+        <tag>BFS</tag>
         <tag>IDS</tag>
         <tag>Iterative Deepening Search</tag>
-        <tag>DFS</tag>
-        <tag>Search</tag>
-        <tag>BFS</tag>
+        <tag>A*</tag>
         <tag>Uniform-Cost Search</tag>
         <tag>Greedy best-first Search</tag>
       </tags>
