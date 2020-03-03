@@ -113,7 +113,7 @@
 
 
   <meta name="description" content="Solution Report of LeetCode Acceptted">
-<meta name="keywords" content="Array,Stack">
+<meta name="keywords" content="Array,Stack,Bloomberg">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Leetcode084-langestRectangleInHistogram">
 <meta property="og:url" content="http://yfygoing.com/2020/02/24/Leetcode084-langestRectangleInHistogram/index.html">
@@ -121,7 +121,9 @@
 <meta property="og:description" content="Solution Report of LeetCode Acceptted">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yfygoing.com/images/LeetCode.jpg">
-<meta property="og:updated_time" content="2020-02-25T03:54:38.174Z">
+<meta property="og:image" content="https://assets.leetcode.com/uploads/2018/10/12/histogram.png">
+<meta property="og:image" content="https://assets.leetcode.com/uploads/2018/10/12/histogram_area.png">
+<meta property="og:updated_time" content="2020-03-03T04:10:41.583Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode084-langestRectangleInHistogram">
 <meta name="twitter:description" content="Solution Report of LeetCode Acceptted">
@@ -405,12 +407,24 @@
                 
               
 
-              <time title="Created: 2020-02-24 21:52:01 / Modified: 21:54:38" itemprop="dateCreated datePublished" datetime="2020-02-24T21:52:01-06:00">2020-02-24</time>
+              <time title="Created: 2020-02-24 21:52:01" itemprop="dateCreated datePublished" datetime="2020-02-24T21:52:01-06:00">2020-02-24</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2020-03-02 22:10:41" itemprop="dateModified" datetime="2020-03-02T22:10:41-06:00">2020-03-02</time>
               
             
           </span>
@@ -489,6 +503,10 @@
 <p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
 <a id="more"></a>
 <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given n non-negative integers representing the histogram’s bar height where the width of each bar is 1, find the area of largest rectangle in the histogram.</p>
+<p><img src="https://assets.leetcode.com/uploads/2018/10/12/histogram.png" alt=""></p>
+<p>Above is a histogram where width of each bar is 1, given height = [2,1,5,6,2,3].</p>
+<p><img src="https://assets.leetcode.com/uploads/2018/10/12/histogram_area.png" alt=""></p>
+<p>The largest rectangle is shown in the shaded area, which has area = 10 unit.</p>
 <h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">A histogram where width of each bar is 1, given height = [2,1,5,6,2,3].</span><br><span class="line"></span><br><span class="line">The largest rectangle is shown in the shaded area, which has area = 10 unit.</span><br></pre></td></tr></table></figure>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>Method 1: calculate the most left and right bounds which higher than cur<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">largestRectangleArea</span><span class="params">(<span class="keyword">int</span>[] heights)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (heights == <span class="keyword">null</span> || heights.length == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span>[] leftHigher = <span class="keyword">new</span> <span class="keyword">int</span>[heights.length];</span><br><span class="line">        <span class="keyword">int</span>[] rightHigher = <span class="keyword">new</span> <span class="keyword">int</span>[heights.length];</span><br><span class="line">        leftHigher[<span class="number">0</span>] = -<span class="number">1</span>;</span><br><span class="line">        rightHigher[heights.length - <span class="number">1</span>] = heights.length;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; heights.length; i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> index= i - <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span> (index &gt;= <span class="number">0</span> &amp;&amp; heights[index] &gt;= heights[i])</span><br><span class="line">                index = leftHigher[index];</span><br><span class="line">            leftHigher[i] = index;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = heights.length - <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--)&#123;</span><br><span class="line">            <span class="keyword">int</span> index = i + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span> (index &lt; heights.length &amp;&amp; heights[index] &gt;= heights[i])</span><br><span class="line">                index = rightHigher[index];</span><br><span class="line">            rightHigher[i] = index;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> res = Integer.MIN_VALUE;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; heights.length; i++)&#123;</span><br><span class="line">            res = Math.max(res, (rightHigher[i] - leftHigher[i] - <span class="number">1</span>) * heights[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>Method 2: Stack based solution, calculate each removed bar whose height larger then the cur. The speed is O(n), but slower than the above solution actually.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">largestRectangleArea</span><span class="params">(<span class="keyword">int</span>[] heights)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (heights == <span class="keyword">null</span> || heights.length == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        Stack&lt;Integer&gt; st = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= heights.length; i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> h = i == heights.length ? <span class="number">0</span> : heights[i];</span><br><span class="line">            <span class="keyword">while</span> (!st.isEmpty() &amp;&amp; h &lt; heights[st.peek()])&#123;</span><br><span class="line">                <span class="keyword">int</span> preHeight = heights[st.pop()];</span><br><span class="line">                <span class="keyword">int</span> preBoundary = st.isEmpty() ? -<span class="number">1</span> : st.peek();</span><br><span class="line">                <span class="keyword">int</span> len = i - preBoundary - <span class="number">1</span>;</span><br><span class="line">                res = Math.max(res, preHeight * len);</span><br><span class="line">            &#125;</span><br><span class="line">            st.push(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -515,6 +533,8 @@
             <a href="/tags/Array/" rel="tag"># Array</a>
           
             <a href="/tags/Stack/" rel="tag"># Stack</a>
+          
+            <a href="/tags/Bloomberg/" rel="tag"># Bloomberg</a>
           
         </div>
       
@@ -618,7 +638,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">277</span>
+                    <span class="site-state-item-count">304</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -932,7 +952,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">134</span>
+                      
+                    
+                    <span class="site-state-item-count">135</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

@@ -113,7 +113,7 @@
 
 
   <meta name="description" content="Solution Report of LeetCode Acceptted">
-<meta name="keywords" content="Hash Table">
+<meta name="keywords" content="Hash Table,Bloomberg">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Leetcode532-k-diffPairsInAnArray">
 <meta property="og:url" content="http://yfygoing.com/2019/09/26/Leetcode532-k-diffPairsInAnArray/index.html">
@@ -121,7 +121,7 @@
 <meta property="og:description" content="Solution Report of LeetCode Acceptted">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yfygoing.com/images/LeetCode.jpg">
-<meta property="og:updated_time" content="2020-02-22T22:55:50.232Z">
+<meta property="og:updated_time" content="2020-03-03T02:51:42.678Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode532-k-diffPairsInAnArray">
 <meta name="twitter:description" content="Solution Report of LeetCode Acceptted">
@@ -422,7 +422,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-02-22 16:55:50" itemprop="dateModified" datetime="2020-02-22T16:55:50-06:00">2020-02-22</time>
+                <time title="Modified: 2020-03-02 20:51:42" itemprop="dateModified" datetime="2020-03-02T20:51:42-06:00">2020-03-02</time>
               
             
           </span>
@@ -499,18 +499,13 @@
         <p class="description"></p>
 
 <p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
-<!--
-## Description
-Given an array of integers and an integer k, you need to find the number of unique k-diff pairs in the array. Here a k-diff pair is defined as an integer pair (i, j), where i and j are both numbers in the array and their absolute difference is k.
-
-## Example
-**Example 1:**
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: [3, 1, 4, 1, 5], k = 2</span><br><span class="line">Output: 2</span><br><span class="line">Explanation: There are two 2-diff pairs in the array, (1, 3) and (3, 5).</span><br><span class="line">Although we have two 1s in the input, we should only return the number of unique pairs.</span><br></pre></td></tr></table></figure>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given an array of integers and an integer k, you need to find the number of unique k-diff pairs in the array. Here a k-diff pair is defined as an integer pair (i, j), where i and j are both numbers in the array and their absolute difference is k.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: [3, 1, 4, 1, 5], k = 2</span><br><span class="line">Output: 2</span><br><span class="line">Explanation: There are two 2-diff pairs in the array, (1, 3) and (3, 5).</span><br><span class="line">Although we have two 1s in the input, we should only return the number of unique pairs.</span><br></pre></td></tr></table></figure></p>
 <p><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input:[1, 2, 3, 4, 5], k = 1</span><br><span class="line">Output: 4</span><br><span class="line">Explanation: There are four 1-diff pairs in the array, (1, 2), (2, 3), (3, 4) and (4, 5).</span><br></pre></td></tr></table></figure></p>
 <p><strong>Example 3:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: [1, 3, 1, 5, 4], k = 0</span><br><span class="line">Output: 1</span><br><span class="line">Explanation: There is one 0-diff pair in the array, (1, 1).</span><br></pre></td></tr></table></figure></p>
 <p><strong>Note:</strong><br>The pairs (i, j) and (j, i) count as the same pair.<br>The length of the array won’t exceed 10,000.<br>All the integers in the given input belong to the range: [-1e7, 1e7].</p>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findPairs</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums == <span class="keyword">null</span> || nums.length == <span class="number">0</span> || k &lt; <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        HashMap&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> it: nums)&#123;</span><br><span class="line">            map.put(it, map.getOrDefault(it, <span class="number">0</span>)+<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> it: map.keySet())&#123;</span><br><span class="line">            <span class="keyword">if</span> (k == <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span> (map.get(it) &gt; <span class="number">1</span>) res++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (map.containsKey(it + k)) res ++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr />-->
+<hr>
       
     </div>
 
@@ -531,6 +526,8 @@ Given an array of integers and an integer k, you need to find the number of uniq
         <div class="post-tags">
           
             <a href="/tags/Hash-Table/" rel="tag"># Hash Table</a>
+          
+            <a href="/tags/Bloomberg/" rel="tag"># Bloomberg</a>
           
         </div>
       
@@ -605,8 +602,17 @@ Given an array of integers and an integer k, you need to find the number of uniq
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -625,7 +631,7 @@ Given an array of integers and an integer k, you need to find the number of uniq
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">277</span>
+                    <span class="site-state-item-count">304</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -939,7 +945,9 @@ Given an array of integers and an integer k, you need to find the number of uniq
                     
                       
                     
-                    <span class="site-state-item-count">134</span>
+                      
+                    
+                    <span class="site-state-item-count">135</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -1058,6 +1066,22 @@ show_date_time();
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example"><span class="nav-number">2.</span> <span class="nav-text">Example</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">3.</span> <span class="nav-text">Solution</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

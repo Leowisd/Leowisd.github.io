@@ -459,7 +459,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">277</span>
+                    <span class="site-state-item-count">304</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -773,7 +773,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">134</span>
+                      
+                    
+                    <span class="site-state-item-count">135</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -1528,7 +1530,9 @@ show_date_time();
   
 </body>
 </html>
-t) {
+ var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
                       result += text.substring(prevEnd, hit.position);
                       var end = hit.position + hit.length;
                       result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
