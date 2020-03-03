@@ -166,8 +166,8 @@
       </categories>
       <tags>
         <tag>Bloomberg</tag>
-        <tag>Two Pointers</tag>
         <tag>String</tag>
+        <tag>Two Pointers</tag>
       </tags>
   </entry>
   <entry>
@@ -373,8 +373,8 @@ private int helper(List&lt;Integer&gt; list, int target){
       <tags>
         <tag>Hash Table</tag>
         <tag>Bloomberg</tag>
-        <tag>Two Pointers</tag>
         <tag>String</tag>
+        <tag>Two Pointers</tag>
         <tag>Sliding Window</tag>
       </tags>
   </entry>
@@ -1788,8 +1788,8 @@ private int helper(List&lt;Integer&gt; list, int target){
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Recursion</tag>
         <tag>DP</tag>
+        <tag>Recursion</tag>
         <tag>Tree</tag>
       </tags>
   </entry>
@@ -2036,8 +2036,8 @@ private int helper(List&lt;Integer&gt; list, int target){
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Recursion</tag>
         <tag>DP</tag>
+        <tag>Recursion</tag>
       </tags>
   </entry>
   <entry>
@@ -7035,8 +7035,8 @@ private int helper(List&lt;Integer&gt; list, int target){
         <category>Algorithms</category>
       </categories>
       <tags>
-        <tag>Data Structure</tag>
         <tag>Algorithms</tag>
+        <tag>Data Structure</tag>
       </tags>
   </entry>
   <entry>
