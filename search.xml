@@ -5128,10 +5128,11 @@ private int helper(List&lt;Integer&gt; list, int target){
       </categories>
       <tags>
         <tag>DFS</tag>
+        <tag>Google</tag>
         <tag>BFS</tag>
         <tag>Amazon</tag>
         <tag>Microsoft</tag>
-        <tag>Google， Bloomberg</tag>
+        <tag>Bloomberg</tag>
       </tags>
   </entry>
   <entry>
