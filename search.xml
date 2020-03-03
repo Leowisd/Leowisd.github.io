@@ -1422,6 +1422,7 @@ private int helper(List&lt;Integer&gt; list, int target){
       </categories>
       <tags>
         <tag>Stack</tag>
+        <tag>Bloomberg</tag>
       </tags>
   </entry>
   <entry>
@@ -1508,6 +1509,7 @@ private int helper(List&lt;Integer&gt; list, int target){
       </categories>
       <tags>
         <tag>Stack</tag>
+        <tag>Bloomberg</tag>
         <tag>Recursion</tag>
       </tags>
   </entry>
@@ -7032,8 +7034,8 @@ private int helper(List&lt;Integer&gt; list, int target){
         <category>Algorithms</category>
       </categories>
       <tags>
-        <tag>Algorithms</tag>
         <tag>Data Structure</tag>
+        <tag>Algorithms</tag>
       </tags>
   </entry>
   <entry>
