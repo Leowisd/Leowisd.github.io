@@ -121,7 +121,7 @@
 <meta property="og:description" content="Solution Report of LeetCode Acceptted">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yfygoing.com/images/LeetCode.jpg">
-<meta property="og:updated_time" content="2020-03-03T04:22:27.284Z">
+<meta property="og:updated_time" content="2020-03-11T00:08:01.095Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode392-isSubsequence">
 <meta name="twitter:description" content="Solution Report of LeetCode Acceptted">
@@ -405,12 +405,24 @@
                 
               
 
-              <time title="Created: 2020-03-02 22:17:05 / Modified: 22:22:27" itemprop="dateCreated datePublished" datetime="2020-03-02T22:17:05-06:00">2020-03-02</time>
+              <time title="Created: 2020-03-02 22:17:05" itemprop="dateCreated datePublished" datetime="2020-03-02T22:17:05-06:00">2020-03-02</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2020-03-10 19:08:01" itemprop="dateModified" datetime="2020-03-10T19:08:01-05:00">2020-03-10</time>
               
             
           </span>
@@ -496,30 +508,7 @@
 <p><strong>Follow up:</strong><br>If there are lots of incoming S, say S1, S2, … , Sk where k &gt;= 1B, and you want to check one by one to see if T has its subsequence. In this scenario, how would you change your code?</p>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p><strong>Solution 1</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"><span class="comment">//     faster basic solution</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isSubsequence</span><span class="params">(String s, String t)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">char</span> c:s.toCharArray())&#123;</span><br><span class="line">            <span class="keyword">int</span> index = t.indexOf(c);</span><br><span class="line">            <span class="keyword">if</span>(index &lt; <span class="number">0</span>)&#123;</span><br><span class="line">               <span class="keyword">return</span> <span class="keyword">false</span>; </span><br><span class="line">            &#125;</span><br><span class="line">            t = t.substring(index+<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><strong>Solution 2</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"><span class="comment">// two pointers, basic solution</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isSubsequence</span><span class="params">(String s, String t)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (s.length() == <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">int</span> indexS = <span class="number">0</span>, indexT = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (indexT &lt; t.length()) &#123;</span><br><span class="line">            <span class="keyword">if</span> (t.charAt(indexT) == s.charAt(indexS)) &#123;</span><br><span class="line">                indexS++;</span><br><span class="line">                <span class="keyword">if</span> (indexS == s.length()) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            indexT++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>Solution 3</strong><br>```java<br>class Solution {<br>// binary search + index recording, for follow up<br>    public boolean isSubsequence(String s, String t) {<br>        List<integer>[] index = new List[128];<br>        for (int i = 0; i &lt; t.length(); i++){<br>            if (index[t.charAt(i)] == null)<br>                index[t.charAt(i)] = new ArrayList&lt;&gt;();<br>            index[t.charAt(i)].add(i);<br>        }</integer></p>
-<pre><code>    int pre = -1;
-    for (int i = 0; i &lt; s.length(); i++){
-        if (index[s.charAt(i)] == null) return false;
-        int cur = helper(index[s.charAt(i)], pre);
-        if (cur == -1) return false;
-        pre = cur;
-    }
-    return true;
-}
-private int helper(List&lt;Integer&gt; list, int target){
-    int left = 0;
-    int right = list.size() - 1;
-
-    while(left &lt; right){
-        int mid = (left + right)/2;
-        if (list.get(mid) &lt;= target)
-            left = mid + 1;
-        else right = mid;
-    }
-    if (list.get(left) &gt; target) return list.get(left);
-    else return -1;
-}
-</code></pre><p>}<br>``</p>
+<p><strong>Solution 3</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"><span class="comment">// binary search + index recording, for follow up</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isSubsequence</span><span class="params">(String s, String t)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt;[] index = <span class="keyword">new</span> List[<span class="number">128</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; t.length(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (index[t.charAt(i)] == <span class="keyword">null</span>)</span><br><span class="line">                index[t.charAt(i)] = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">            index[t.charAt(i)].add(i);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> pre = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (index[s.charAt(i)] == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            <span class="keyword">int</span> cur = helper(index[s.charAt(i)], pre);</span><br><span class="line">            <span class="keyword">if</span> (cur == -<span class="number">1</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            pre = cur;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">helper</span><span class="params">(List&lt;Integer&gt; list, <span class="keyword">int</span> target)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> right = list.size() - <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(left &lt; right)&#123;</span><br><span class="line">            <span class="keyword">int</span> mid = (left + right)/<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (list.get(mid) &lt;= target)</span><br><span class="line">                left = mid + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> right = mid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (list.get(left) &gt; target) <span class="keyword">return</span> list.get(left);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <hr>
       
     </div>
@@ -648,7 +637,7 @@ private int helper(List&lt;Integer&gt; list, int target){
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">304</span>
+                    <span class="site-state-item-count">309</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -962,7 +951,9 @@ private int helper(List&lt;Integer&gt; list, int target){
                     
                       
                     
-                    <span class="site-state-item-count">134</span>
+                      
+                    
+                    <span class="site-state-item-count">135</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
