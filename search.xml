@@ -1,6 +1,287 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Leetcode024-swapNodesInPairs</title>
+    <url>/2020/03/16/Leetcode024-swapNodesInPairs/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given a linked list, swap every two adjacent nodes and return its head.</p>
+<p>You may not modify the values in the list’s nodes, only nodes itself may be changed.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Given 1-&gt;2-&gt;3-&gt;4, you should return the list as 2-&gt;1-&gt;4-&gt;3.</span><br></pre></td></tr></table></figure>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * public class ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) &#123; val = x; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">swapPairs</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (head == <span class="keyword">null</span> || head.next == <span class="keyword">null</span>) <span class="keyword">return</span> head;</span><br><span class="line">        </span><br><span class="line">        ListNode dummy = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">        dummy.next = head;</span><br><span class="line">        ListNode cur = dummy;</span><br><span class="line">        <span class="keyword">while</span>(cur.next != <span class="keyword">null</span> &amp;&amp; cur.next.next != <span class="keyword">null</span>)&#123;</span><br><span class="line">            ListNode first = cur.next;</span><br><span class="line">            ListNode second = cur.next.next;</span><br><span class="line">            first.next = second.next;</span><br><span class="line">            cur.next = second;</span><br><span class="line">            second.next = first;</span><br><span class="line">            cur = cur.next.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dummy.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Linked List</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode166-fractionToRecurringDecimal</title>
+    <url>/2020/03/16/Leetcode166-fractionToRecurringDecimal/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given two integers representing the numerator and denominator of a fraction, return the fraction in string format.</p>
+<p>If the fractional part is repeating, enclose the repeating part in parentheses.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: numerator = 1, denominator = 2</span><br><span class="line">Output: &quot;0.5&quot;</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: numerator = 2, denominator = 1</span><br><span class="line">Output: &quot;2&quot;</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example 3:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: numerator = 2, denominator = 3</span><br><span class="line">Output: &quot;0.(6)&quot;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">fractionToDecimal</span><span class="params">(<span class="keyword">int</span> numerator, <span class="keyword">int</span> denominator)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (numerator == <span class="number">0</span>) <span class="keyword">return</span> <span class="string">"0"</span>;</span><br><span class="line">        StringBuilder res = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        res.append((numerator &gt; <span class="number">0</span>) ^ (denominator &gt; <span class="number">0</span>) ? <span class="string">"-"</span> : <span class="string">""</span>);</span><br><span class="line">        <span class="keyword">long</span> num = Math.abs((<span class="keyword">long</span>)numerator);</span><br><span class="line">        <span class="keyword">long</span> den = Math.abs((<span class="keyword">long</span>)denominator);</span><br><span class="line">        </span><br><span class="line"><span class="comment">//      integral part</span></span><br><span class="line">        res.append(num / den);</span><br><span class="line">        num %= den;</span><br><span class="line">        <span class="keyword">if</span> (num == <span class="number">0</span>) </span><br><span class="line">            <span class="keyword">return</span> res.toString();</span><br><span class="line">        </span><br><span class="line"><span class="comment">//      fraction part</span></span><br><span class="line">        res.append(<span class="string">"."</span>);</span><br><span class="line">        HashMap&lt;Long, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        map.put(num, res.length());</span><br><span class="line">        <span class="keyword">while</span>(num &gt; <span class="number">0</span>)&#123;</span><br><span class="line">            num *= <span class="number">10</span>;</span><br><span class="line">            res.append(num / den);</span><br><span class="line">            num %= den;</span><br><span class="line">            <span class="keyword">if</span> (map.containsKey(num))&#123;</span><br><span class="line">                res.insert(map.get(num), <span class="string">"("</span>);</span><br><span class="line">                res.append(<span class="string">")"</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> map.put(num, res.length());</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> res.toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Hash Table</tag>
+        <tag>Math</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode760-findAnagramMappings</title>
+    <url>/2020/03/16/Leetcode760-findAnagramMappings/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given two lists Aand B, and B is an anagram of A. B is an anagram of A means B is made by randomizing the order of the elements in A.</p>
+<p>We want to find an index mapping P, from A to B. A mapping P[i] = j means the ith element in A appears in B at index j.</p>
+<p>These lists A and B may contain duplicates. If there are multiple answers, output any of them.</p>
+<p>For example, given<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">A = [12, 28, 46, 32, 50]</span><br><span class="line">B = [50, 12, 32, 46, 28]</span><br></pre></td></tr></table></figure></p>
+<p>We should return<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[1, 4, 3, 2, 0]</span><br></pre></td></tr></table></figure></p>
+<p>as P[0] = 1 because the 0th element of A appears at B[1], and P[1] = 4 because the 1st element of A appears at B[4], and so on.</p>
+<p><strong>Note:</strong></p>
+<ol>
+<li>A, B have equal lengths in range [1, 100].</li>
+<li>A[i], B[i] are integers in range [0, 10^5].</li>
+</ol>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] anagramMappings(<span class="keyword">int</span>[] A, <span class="keyword">int</span>[] B) &#123;</span><br><span class="line">        <span class="keyword">if</span> (B == <span class="keyword">null</span> || A == <span class="keyword">null</span> || B.length == <span class="number">0</span> || A.length == <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">0</span>];</span><br><span class="line">        HashMap&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; B.length; i++)</span><br><span class="line">            map.put(B[i], i);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span>[] res = <span class="keyword">new</span> <span class="keyword">int</span>[A.length];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; A.length; i++)&#123;</span><br><span class="line">            res[i] = map.get(A[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Hash Table</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode554-brickWall</title>
+    <url>/2020/03/16/Leetcode554-brickWall/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>There is a brick wall in front of you. The wall is rectangular and has several rows of bricks. The bricks have the same height but different width. You want to draw a vertical line from the top to the bottom and cross the least bricks.</p>
+<p>The brick wall is represented by a list of rows. Each row is a list of integers representing the width of each brick in this row from left to right.</p>
+<p>If your line go through the edge of a brick, then the brick is not considered as crossed. You need to find out how to draw the line to cross the least bricks and return the number of crossed bricks.</p>
+<p><strong>You cannot draw a line just along one of the two vertical edges of the wall, in which case the line will obviously cross no bricks.</strong></p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [[1,2,2,1],</span><br><span class="line">        [3,1,2],</span><br><span class="line">        [1,3,2],</span><br><span class="line">        [2,4],</span><br><span class="line">        [3,1,2],</span><br><span class="line">        [1,3,1,1]]</span><br><span class="line"></span><br><span class="line">Output: 2</span><br><span class="line"></span><br><span class="line">Explanation:</span><br></pre></td></tr></table></figure>
+<p><img src="https://assets.leetcode.com/uploads/2018/10/12/brick_wall.png" alt=""></p>
+<p><strong>Note:</strong></p>
+<ol>
+<li>The width sum of bricks in different rows are the same and won’t exceed INT_MAX.</li>
+<li>The number of bricks in each row is in range [1,10,000]. The height of wall is in range [1,10,000]. Total number of bricks of the wall won’t exceed 20,000.</li>
+</ol>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">leastBricks</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; wall)</span> </span>&#123;</span><br><span class="line">        HashMap&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (List&lt;Integer&gt; row: wall)&#123;</span><br><span class="line">            <span class="keyword">int</span> cur = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; row.size() - <span class="number">1</span>; i++)&#123;</span><br><span class="line">                cur += row.get(i);</span><br><span class="line">                map.put(cur, map.getOrDefault(cur, <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> temp = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> it: map.keySet())&#123;</span><br><span class="line">            temp = Math.max(temp, map.get(it));</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// System.out.println(map);</span></span><br><span class="line">        <span class="keyword">return</span> wall.size() - temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Hash Table</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode525-contiguousArray</title>
+    <url>/2020/03/16/Leetcode525-contiguousArray/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given a binary array, find the maximum length of a contiguous subarray with equal number of 0 and 1.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [0,1]</span><br><span class="line">Output: 2</span><br><span class="line">Explanation: [0, 1] is the longest contiguous subarray with equal number of 0 and 1.</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [0,1,0]</span><br><span class="line">Output: 2</span><br><span class="line">Explanation: [0, 1] (or [1, 0]) is a longest contiguous subarray with equal number of 0 and 1.</span><br></pre></td></tr></table></figure></p>
+<p><strong>Note:</strong> The length of the given binary array will not exceed 50,000.</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//The idea is to change 0 in the original array to -1. Thus, if we find SUM[i, j] == 0 then we know there are even number of -1 and 1 between index i and j. Also put the sum to index mapping to a HashMap to make search faster</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findMaxLength</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums == <span class="keyword">null</span> || nums.length == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        HashMap&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        map.put(<span class="number">0</span>, -<span class="number">1</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">            sum += nums[i] == <span class="number">0</span> ? -<span class="number">1</span> : <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (map.containsKey(sum))&#123;</span><br><span class="line">                res = Math.max(res, i - map.get(sum));</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> map.put(sum, i);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Hash Table</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode727-minimumWindowSubsequence</title>
+    <url>/2020/03/16/Leetcode727-minimumWindowSubsequence/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given strings S and T, find the minimum (contiguous) substring W of S, so that T is a subsequence of W.</p>
+<p>If there is no such window in S that covers all characters in T, return the empty string “”. If there are multiple such minimum-length windows, return the one with the left-most starting index.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: </span><br><span class="line">S = &quot;abcdebdde&quot;, T = &quot;bde&quot;</span><br><span class="line">Output: &quot;bcde&quot;</span><br><span class="line">Explanation: </span><br><span class="line">&quot;bcde&quot; is the answer because it occurs before &quot;bdde&quot; which has the same length.</span><br><span class="line">&quot;deb&quot; is not a smaller window because the elements of T in the window must occur in order.</span><br></pre></td></tr></table></figure>
+<p><strong>Note:</strong></p>
+<ul>
+<li>All the strings in the input will only contain lowercase letters.</li>
+<li>The length of S will be in the range [1, 20000].</li>
+<li>The length of T will be in the range [1, 100].</li>
+</ul>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">minWindow</span><span class="params">(String S, String T)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sidx = <span class="number">0</span>, tidx = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> resStart = <span class="number">0</span>, resEnd = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> end = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> resMin = Integer.MAX_VALUE;</span><br><span class="line">        <span class="keyword">while</span>(sidx &lt; S.length())&#123;</span><br><span class="line">            <span class="keyword">if</span> (S.charAt(sidx) == T.charAt(tidx))&#123;</span><br><span class="line">                <span class="keyword">if</span> (tidx == T.length() - <span class="number">1</span>)&#123;</span><br><span class="line">                    end = sidx + <span class="number">1</span>;</span><br><span class="line">                    tidx--;</span><br><span class="line">                    <span class="keyword">while</span>(tidx &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">                        sidx--;</span><br><span class="line">                        <span class="keyword">while</span> (S.charAt(sidx) != T.charAt(tidx)) </span><br><span class="line">                            sidx--;</span><br><span class="line">                        tidx--;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">if</span>(end - sidx &lt; resMin)&#123;</span><br><span class="line">                        resMin = end - sidx;</span><br><span class="line">                        resStart = sidx;</span><br><span class="line">                        resEnd = end;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                tidx++;                </span><br><span class="line">            &#125;</span><br><span class="line">            sidx++;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> S.substring(resStart, resEnd);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Sliding Window</tag>
+        <tag>DP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode301-removeInvalidParentheses</title>
+    <url>/2020/03/16/Leetcode301-removeInvalidParentheses/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Remove the minimum number of invalid parentheses in order to make the input string valid. Return all possible results.</p>
+<p><strong>Note</strong>: The input string may contain letters other than the parentheses ( and ).</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: &quot;()())()&quot;</span><br><span class="line">Output: [&quot;()()()&quot;, &quot;(())()&quot;]</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: &quot;(a)())()&quot;</span><br><span class="line">Output: [&quot;(a)()()&quot;, &quot;(a())()&quot;]</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example 3:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: &quot;)(&quot;</span><br><span class="line">Output: [&quot;&quot;]</span><br></pre></td></tr></table></figure></p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>Solution 1</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"><span class="comment">// //     Basic method</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;String&gt; <span class="title">removeInvalidParentheses</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (s == <span class="keyword">null</span> || s.length() == <span class="number">0</span>) <span class="keyword">return</span> Arrays.asList(<span class="string">""</span>);</span><br><span class="line">        </span><br><span class="line"><span class="comment">//         preprocessor, count the number of alternative parentheses</span></span><br><span class="line">        <span class="keyword">int</span> numL = <span class="number">0</span>, numR = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">char</span> ch: s.toCharArray())&#123;</span><br><span class="line">            <span class="keyword">if</span> (ch == <span class="string">'('</span>)</span><br><span class="line">                numL++;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (ch == <span class="string">')'</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span> (numL != <span class="number">0</span>)</span><br><span class="line">                    numL --;</span><br><span class="line">                <span class="keyword">else</span> </span><br><span class="line">                    numR++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        HashSet&lt;String&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">        helper(s, set, <span class="number">0</span>, <span class="string">""</span>, numL, numR, <span class="number">0</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ArrayList&lt;&gt;(set);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">helper</span><span class="params">(String s, HashSet&lt;String&gt; res, <span class="keyword">int</span> idx, String cur, <span class="keyword">int</span> numL, <span class="keyword">int</span> numR, <span class="keyword">int</span> open)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (numL &lt; <span class="number">0</span> || numR &lt; <span class="number">0</span> || open &lt; <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">if</span> (idx == s.length())&#123;</span><br><span class="line">            <span class="keyword">if</span> (numL == <span class="number">0</span> &amp;&amp; numR == <span class="number">0</span> &amp;&amp; open == <span class="number">0</span>)</span><br><span class="line">                res.add(<span class="keyword">new</span> String(cur));</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (s.charAt(idx) == <span class="string">'('</span>)&#123;</span><br><span class="line"><span class="comment">//             use '('</span></span><br><span class="line">            helper(s, res, idx + <span class="number">1</span>, cur + <span class="string">"("</span>, numL, numR, open + <span class="number">1</span>);</span><br><span class="line"><span class="comment">//             unuse '('</span></span><br><span class="line">            helper(s, res, idx + <span class="number">1</span>, cur, numL - <span class="number">1</span>, numR, open);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (s.charAt(idx) == <span class="string">')'</span>)&#123;</span><br><span class="line"><span class="comment">//             use ')'</span></span><br><span class="line">            helper(s, res, idx + <span class="number">1</span>, cur + <span class="string">")"</span>, numL, numR, open - <span class="number">1</span>);</span><br><span class="line"><span class="comment">//             unuse ')'</span></span><br><span class="line">            helper(s, res, idx + <span class="number">1</span>, cur, numL, numR - <span class="number">1</span>, open);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> helper(s, res, idx + <span class="number">1</span>, cur + s.charAt(idx), numL, numR, open);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Solution 2</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"><span class="comment">// Generate unique answer once and only once, do not rely on Set.</span></span><br><span class="line"><span class="comment">// Do not need preprocess.</span></span><br><span class="line"><span class="comment">// Runtime 3 ms.</span></span><br><span class="line"><span class="comment">// Explanation:</span></span><br><span class="line"><span class="comment">// We all know how to check a string of parentheses is valid using a stack. Or even simpler use a counter.</span></span><br><span class="line"><span class="comment">// The counter will increase when it is ‘(‘ and decrease when it is ‘)’. Whenever the counter is negative, we have more ‘)’ than ‘(‘ in the prefix.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// To make the prefix valid, we need to remove a ‘)’. The problem is: which one? The answer is any one in the prefix. However, if we remove any one, we will generate duplicate results, for example: s = ()), we can remove s[1] or s[2] but the result is the same (). Thus, we restrict ourself to remove the first ) in a series of concecutive )s.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// After the removal, the prefix is then valid. We then call the function recursively to solve the rest of the string. However, we need to keep another information: the last removal position. If we do not have this position, we will generate duplicate by removing two ‘)’ in two steps only with a different order.</span></span><br><span class="line"><span class="comment">// For this, we keep tracking the last removal position and only remove ‘)’ after that.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Now one may ask. What about ‘(‘? What if s = ‘(()(()’ in which we need remove ‘(‘?</span></span><br><span class="line"><span class="comment">// The answer is: do the same from right to left.</span></span><br><span class="line"><span class="comment">// However a cleverer idea is: reverse the string and reuse the code!</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;String&gt; <span class="title">removeInvalidParentheses</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        List&lt;String&gt; ans = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        remove(s, ans, <span class="number">0</span>, <span class="number">0</span>, <span class="keyword">new</span> <span class="keyword">char</span>[]&#123;<span class="string">'('</span>, <span class="string">')'</span>&#125;);</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">remove</span><span class="params">(String s, List&lt;String&gt; ans, <span class="keyword">int</span> last_i, <span class="keyword">int</span> last_j,  <span class="keyword">char</span>[] par)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> stack = <span class="number">0</span>, i = last_i; i &lt; s.length(); ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (s.charAt(i) == par[<span class="number">0</span>]) stack++;</span><br><span class="line">            <span class="keyword">if</span> (s.charAt(i) == par[<span class="number">1</span>]) stack--;</span><br><span class="line">            <span class="keyword">if</span> (stack &gt;= <span class="number">0</span>) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = last_j; j &lt;= i; ++j)</span><br><span class="line">                <span class="keyword">if</span> (s.charAt(j) == par[<span class="number">1</span>] &amp;&amp; (j == last_j || s.charAt(j - <span class="number">1</span>) != par[<span class="number">1</span>]))</span><br><span class="line">                    remove(s.substring(<span class="number">0</span>, j) + s.substring(j + <span class="number">1</span>, s.length()), ans, i, j, par);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        String reversed = <span class="keyword">new</span> StringBuilder(s).reverse().toString();</span><br><span class="line">        <span class="keyword">if</span> (par[<span class="number">0</span>] == <span class="string">'('</span>) <span class="comment">// finished left to right</span></span><br><span class="line">            remove(reversed, ans, <span class="number">0</span>, <span class="number">0</span>, <span class="keyword">new</span> <span class="keyword">char</span>[]&#123;<span class="string">')'</span>, <span class="string">'('</span>&#125;);</span><br><span class="line">        <span class="keyword">else</span> <span class="comment">// finished right to left</span></span><br><span class="line">            ans.add(reversed);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>DFS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode1081-smallestSubsequenceOfDistinctCharacters</title>
+    <url>/2020/03/16/Leetcode1081-smallestSubsequenceOfDistinctCharacters/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Return the lexicographically smallest subsequence of text that contains all the distinct characters of text exactly once.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: &quot;cdadabcc&quot;</span><br><span class="line">Output: &quot;adbc&quot;</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: &quot;abcd&quot;</span><br><span class="line">Output: &quot;abcd&quot;</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example 3:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: &quot;ecbacba&quot;</span><br><span class="line">Output: &quot;eacb&quot;</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example 4:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: &quot;leetcode&quot;</span><br><span class="line">Output: &quot;letcod&quot;</span><br></pre></td></tr></table></figure></p>
+<p><strong>Constraints:</strong></p>
+<ol>
+<li>1 &lt;= text.length &lt;= 1000</li>
+<li>text consists of lowercase English letters.</li>
+</ol>
+<p><strong>Note:</strong> This question is the same as 316: <a href="https://leetcode.com/problems/remove-duplicate-letters/" target="_blank" rel="noopener">https://leetcode.com/problems/remove-duplicate-letters/</a></p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">smallestSubsequence</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (s == <span class="keyword">null</span> || s.length() &lt;= <span class="number">1</span>) <span class="keyword">return</span> s;</span><br><span class="line">        Stack&lt;Character&gt; st = <span class="keyword">new</span> Stack&lt;&gt;();    </span><br><span class="line">        <span class="keyword">int</span>[] set = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">128</span>];   <span class="comment">//record if stack has the character</span></span><br><span class="line">        <span class="keyword">int</span>[] map = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">128</span>];   <span class="comment">//record the number of characters remaining</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">char</span> ch: s.toCharArray())&#123;</span><br><span class="line">            map[ch]++;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">char</span> ch: s.toCharArray())&#123;</span><br><span class="line">            <span class="keyword">if</span> (set[ch] &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                map[ch]--;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">while</span> (!st.isEmpty() &amp;&amp; ch &lt; st.peek() &amp;&amp; map[st.peek()] &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                set[st.pop()] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            st.push(ch);</span><br><span class="line">            set[ch] = <span class="number">1</span>;</span><br><span class="line">            map[ch]--;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        StringBuilder res = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        <span class="keyword">while</span>(!st.isEmpty())</span><br><span class="line">            res.append(st.pop());</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> res.reverse().toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Stack</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode316-removeDuplicateLetters</title>
+    <url>/2020/03/16/Leetcode316-removeDuplicateLetters/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given a string which contains only lowercase letters, remove duplicate letters so that every letter appears once and only once. You must make sure your result is the smallest in lexicographical order among all possible results.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: &quot;bcabc&quot;</span><br><span class="line">Output: &quot;abc&quot;</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: &quot;cbacdcbc&quot;</span><br><span class="line">Output: &quot;acdb&quot;</span><br></pre></td></tr></table></figure></p>
+<p><strong>Note:</strong> This question is the same as 1081: <a href="https://leetcode.com/problems/smallest-subsequence-of-distinct-characters/" target="_blank" rel="noopener">https://leetcode.com/problems/smallest-subsequence-of-distinct-characters/</a></p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"><span class="comment">//  stack, O(n), faster</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">removeDuplicateLetters</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (s == <span class="keyword">null</span> || s.length() &lt;= <span class="number">1</span>) <span class="keyword">return</span> s;</span><br><span class="line">        Stack&lt;Character&gt; st = <span class="keyword">new</span> Stack&lt;&gt;();    </span><br><span class="line">        <span class="keyword">int</span>[] set = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">128</span>];   <span class="comment">//record if stack has the character</span></span><br><span class="line">        <span class="keyword">int</span>[] map = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">128</span>];   <span class="comment">//record the number of characters remaining</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">char</span> ch: s.toCharArray())&#123;</span><br><span class="line">            map[ch]++;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">char</span> ch: s.toCharArray())&#123;</span><br><span class="line">            <span class="keyword">if</span> (set[ch] &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                map[ch]--;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">while</span> (!st.isEmpty() &amp;&amp; ch &lt; st.peek() &amp;&amp; map[st.peek()] &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                set[st.pop()] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            st.push(ch);</span><br><span class="line">            set[ch] = <span class="number">1</span>;</span><br><span class="line">            map[ch]--;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        StringBuilder res = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        <span class="keyword">while</span>(!st.isEmpty())</span><br><span class="line">            res.append(st.pop());</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> res.reverse().toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Stack</tag>
+        <tag>Greedy</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode188-bestTimeToBuyAndSellStockIV</title>
+    <url>/2020/03/16/Leetcode188-bestTimeToBuyAndSellStockIV/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Say you have an array for which the i-th element is the price of a given stock on day i.</p>
+<p>Design an algorithm to find the maximum profit. You may complete at most k transactions.</p>
+<p><strong>Note:</strong></p>
+<p>You may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [2,4,1], k = 2</span><br><span class="line">Output: 2</span><br><span class="line">Explanation: Buy on day 1 (price = 2) and sell on day 2 (price = 4), profit = 4-2 = 2.</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [3,2,6,5,0,3], k = 2</span><br><span class="line">Output: 7</span><br><span class="line">Explanation: Buy on day 2 (price = 2) and sell on day 3 (price = 6), profit = 6-2 = 4.</span><br><span class="line">             Then buy on day 5 (price = 0) and sell on day 6 (price = 3), profit = 3-0 = 3.</span><br></pre></td></tr></table></figure></p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="keyword">int</span> k, <span class="keyword">int</span>[] prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (prices.length == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (k &gt;=  prices.length/<span class="number">2</span>) &#123;</span><br><span class="line">		    <span class="keyword">int</span> maxPro = <span class="number">0</span>;</span><br><span class="line">		    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; prices.length; i++) &#123;</span><br><span class="line">			    <span class="keyword">if</span> (prices[i] &gt; prices[i-<span class="number">1</span>])</span><br><span class="line">				    maxPro += prices[i] - prices[i-<span class="number">1</span>];</span><br><span class="line">		    &#125;</span><br><span class="line">		    <span class="keyword">return</span> maxPro;</span><br><span class="line">	    &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> n = prices.length;</span><br><span class="line">        <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[k+<span class="number">1</span>][n];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= k; i++) &#123;</span><br><span class="line">    	    <span class="keyword">int</span> localMax = dp[i-<span class="number">1</span>][<span class="number">0</span>] - prices[<span class="number">0</span>];</span><br><span class="line">    	    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; n; j++) &#123;</span><br><span class="line">    		    dp[i][j] = Math.max(dp[i][j-<span class="number">1</span>],  prices[j] + localMax);</span><br><span class="line">    		    localMax = Math.max(localMax, dp[i-<span class="number">1</span>][j] - prices[j]);</span><br><span class="line">    	    &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[k][n-<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>DP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode122-bestTimeToBuyAndSellStockII</title>
+    <url>/2020/03/16/Leetcode122-bestTimeToBuyAndSellStockII/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Say you have an array for which the ith element is the price of a given stock on day i.</p>
+<p>Design an algorithm to find the maximum profit. You may complete as many transactions as you like (i.e., buy one and sell one share of the stock multiple times).</p>
+<p>Note: You may not engage in multiple transactions at the same time (i.e., you must sell the stock before you buy again).</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [7,1,5,3,6,4]</span><br><span class="line">Output: 7</span><br><span class="line">Explanation: Buy on day 2 (price = 1) and sell on day 3 (price = 5), profit = 5-1 = 4.</span><br><span class="line">             Then buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6-3 = 3.</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [1,2,3,4,5]</span><br><span class="line">Output: 4</span><br><span class="line">Explanation: Buy on day 1 (price = 1) and sell on day 5 (price = 5), profit = 5-1 = 4.</span><br><span class="line">             Note that you cannot buy on day 1, buy on day 2 and sell them later, as you are</span><br><span class="line">             engaging multiple transactions at the same time. You must sell before buying again.</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example 3:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [7,6,4,3,1]</span><br><span class="line">Output: 0</span><br><span class="line">Explanation: In this case, no transaction is done, i.e. max profit = 0.</span><br></pre></td></tr></table></figure></p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>Solution 1: Greedy</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">// Greedy    </span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="keyword">int</span>[] prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; prices.length; i++)</span><br><span class="line">            res += Math.max(prices[i] - prices[i - <span class="number">1</span>], <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Solution 2: If we cannot buy and sell stocks at one day.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">// If we cannot buy and sell stocks at one day.</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="keyword">int</span>[] prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> profit = <span class="number">0</span>, i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &lt; prices.length) &#123;</span><br><span class="line">            <span class="comment">// find next local minimum</span></span><br><span class="line">            <span class="keyword">while</span> (i &lt; prices.length-<span class="number">1</span> &amp;&amp; prices[i+<span class="number">1</span>] &lt;= prices[i]) i++;</span><br><span class="line">            <span class="keyword">int</span> min = prices[i++]; <span class="comment">// need increment to avoid infinite loop for "[1]"</span></span><br><span class="line">            <span class="comment">// find next local maximum</span></span><br><span class="line">            <span class="keyword">while</span> (i &lt; prices.length-<span class="number">1</span> &amp;&amp; prices[i+<span class="number">1</span>] &gt;= prices[i]) i++;</span><br><span class="line">            profit += i &lt; prices.length ? prices[i++] - min : <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> profit;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Array</tag>
+        <tag>Greedy</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode169-majorityElement</title>
+    <url>/2020/03/16/Leetcode169-majorityElement/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given an array of size n, find the majority element. The majority element is the element that appears more than ⌊ n/2 ⌋ times.</p>
+<p>You may assume that the array is non-empty and the majority element always exist in the array.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [3,2,3]</span><br><span class="line">Output: 3</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [2,2,1,1,1,2,2]</span><br><span class="line">Output: 2</span><br></pre></td></tr></table></figure></p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Boyer-Moore Majority Algorithm</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">majorityElement</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> candidate = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> num : nums)&#123;</span><br><span class="line">            <span class="keyword">if</span> (count == <span class="number">0</span>)</span><br><span class="line">                candidate = num;</span><br><span class="line">            <span class="keyword">if</span> (candidate == num)</span><br><span class="line">                count++;</span><br><span class="line">            <span class="keyword">else</span> count--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> candidate;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Array</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Leetcode359-loggerRateLimiter</title>
     <url>/2020/03/16/Leetcode359-loggerRateLimiter/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
@@ -1235,8 +1516,8 @@
       </categories>
       <tags>
         <tag>Bloomberg</tag>
-        <tag>Binary Search</tag>
         <tag>Two Pointers</tag>
+        <tag>Binary Search</tag>
       </tags>
   </entry>
   <entry>
@@ -1964,8 +2245,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>DP</tag>
         <tag>Recursion</tag>
+        <tag>DP</tag>
         <tag>Tree</tag>
       </tags>
   </entry>
@@ -2212,8 +2493,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>DP</tag>
         <tag>Recursion</tag>
+        <tag>DP</tag>
       </tags>
   </entry>
   <entry>
@@ -5303,9 +5584,9 @@
         <category>leetcode</category>
       </categories>
       <tags>
+        <tag>Google</tag>
         <tag>DFS</tag>
         <tag>BFS</tag>
-        <tag>Google</tag>
         <tag>Amazon</tag>
         <tag>Microsoft</tag>
         <tag>Bloomberg</tag>
@@ -7211,8 +7492,8 @@
         <category>Algorithms</category>
       </categories>
       <tags>
-        <tag>Data Structure</tag>
         <tag>Algorithms</tag>
+        <tag>Data Structure</tag>
       </tags>
   </entry>
   <entry>
