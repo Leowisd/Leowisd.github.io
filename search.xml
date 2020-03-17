@@ -1,6 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Leetcode359-loggerRateLimiter</title>
+    <url>/2020/03/16/Leetcode359-loggerRateLimiter/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Design a logger system that receive stream of messages along with its timestamps, each message should be printed if and only if it is not printed in the last 10 seconds.</p>
+<p>Given a message and a timestamp (in seconds granularity), return true if the message should be printed in the given timestamp, otherwise returns false.</p>
+<p>It is possible that several messages arrive roughly at the same time.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Logger logger = new Logger();</span><br><span class="line"></span><br><span class="line">// logging string &quot;foo&quot; at timestamp 1</span><br><span class="line">logger.shouldPrintMessage(1, &quot;foo&quot;); returns true; </span><br><span class="line"></span><br><span class="line">// logging string &quot;bar&quot; at timestamp 2</span><br><span class="line">logger.shouldPrintMessage(2,&quot;bar&quot;); returns true;</span><br><span class="line"></span><br><span class="line">// logging string &quot;foo&quot; at timestamp 3</span><br><span class="line">logger.shouldPrintMessage(3,&quot;foo&quot;); returns false;</span><br><span class="line"></span><br><span class="line">// logging string &quot;bar&quot; at timestamp 8</span><br><span class="line">logger.shouldPrintMessage(8,&quot;bar&quot;); returns false;</span><br><span class="line"></span><br><span class="line">// logging string &quot;foo&quot; at timestamp 10</span><br><span class="line">logger.shouldPrintMessage(10,&quot;foo&quot;); returns false;</span><br><span class="line"></span><br><span class="line">// logging string &quot;foo&quot; at timestamp 11</span><br><span class="line">logger.shouldPrintMessage(11,&quot;foo&quot;); returns true;</span><br></pre></td></tr></table></figure>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Logger</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    HashMap&lt;String, Integer&gt; map;</span><br><span class="line">    <span class="comment">/** Initialize your data structure here. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Logger</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/** Returns true if the message should be printed in the given timestamp, otherwise returns false.</span></span><br><span class="line"><span class="comment">        If this method returns false, the message will not be printed.</span></span><br><span class="line"><span class="comment">        The timestamp is in seconds granularity. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">shouldPrintMessage</span><span class="params">(<span class="keyword">int</span> timestamp, String message)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!map.containsKey(message))&#123;</span><br><span class="line">            map.put(message, timestamp);</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (map.get(message) + <span class="number">10</span> &gt; timestamp) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                map.put(message, timestamp);</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your Logger object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * Logger obj = new Logger();</span></span><br><span class="line"><span class="comment"> * boolean param_1 = obj.shouldPrintMessage(timestamp,message);</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Hash Table</tag>
+        <tag>Bloomberg</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode047-permutationsII</title>
+    <url>/2020/03/16/Leetcode047-permutationsII/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given a collection of numbers that might contain duplicates, return all possible unique permutations.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [1,1,2]</span><br><span class="line">Output:</span><br><span class="line">[</span><br><span class="line">  [1,1,2],</span><br><span class="line">  [1,2,1],</span><br><span class="line">  [2,1,1]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; permuteUnique(<span class="keyword">int</span>[] nums) &#123;</span><br><span class="line">        List&lt;List&lt;Integer&gt;&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span> (nums == <span class="keyword">null</span> || nums.length == <span class="number">0</span>) <span class="keyword">return</span> res;</span><br><span class="line">        Arrays.sort(nums);</span><br><span class="line">        <span class="keyword">boolean</span>[] visited = <span class="keyword">new</span> <span class="keyword">boolean</span>[nums.length];</span><br><span class="line">        helper(nums, res, <span class="keyword">new</span> ArrayList&lt;&gt;(), visited);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">helper</span><span class="params">(<span class="keyword">int</span>[] nums, List&lt;List&lt;Integer&gt;&gt; res, List&lt;Integer&gt; cur, <span class="keyword">boolean</span>[] visited)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (cur.size() == nums.length)&#123;</span><br><span class="line">            res.add(<span class="keyword">new</span> ArrayList&lt;&gt;(cur));</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (visited[i]) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">if</span> (i &gt; <span class="number">0</span> &amp;&amp; nums[i] == nums[i - <span class="number">1</span>] &amp;&amp; !visited[i - <span class="number">1</span>]) <span class="keyword">continue</span>;</span><br><span class="line">            cur.add(nums[i]);</span><br><span class="line">            visited[i] = <span class="keyword">true</span>;</span><br><span class="line">            helper(nums, res, cur, visited);</span><br><span class="line">            visited[i] = <span class="keyword">false</span>;</span><br><span class="line">            cur.remove(cur.size() - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Bloomberg</tag>
+        <tag>Backtracking</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode034-findFirstAndLastPositionOfElementInSortedArray</title>
+    <url>/2020/03/16/Leetcode034-findFirstAndLastPositionOfElementInSortedArray/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given an array of integers nums sorted in ascending order, find the starting and ending position of a given target value.</p>
+<p>Your algorithm’s runtime complexity must be in the order of O(log n).</p>
+<p>If the target is not found in the array, return [-1, -1].</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: nums = [5,7,7,8,8,10], target = 8</span><br><span class="line">Output: [3,4]</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: nums = [5,7,7,8,8,10], target = 6</span><br><span class="line">Output: [-1,-1]</span><br></pre></td></tr></table></figure></p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] searchRange(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="keyword">if</span> (nums == <span class="keyword">null</span> || nums.length == <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;-<span class="number">1</span>, -<span class="number">1</span>&#125;;</span><br><span class="line">        <span class="keyword">int</span> smallest = findSmall(nums, target);</span><br><span class="line">        <span class="keyword">int</span> highest = findHigh(nums, target);</span><br><span class="line">        <span class="keyword">int</span>[] res = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;smallest, highest&#125;;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">findSmall</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> right = nums.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> res = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(left &lt;= right)&#123;</span><br><span class="line">            <span class="keyword">int</span> mid = (left + right) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[mid] == target) res = mid;</span><br><span class="line">            <span class="keyword">if</span> (nums[mid] &gt;= target)</span><br><span class="line">                right = mid - <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> left = mid + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">findHigh</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> right = nums.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> res = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(left &lt;= right)&#123;</span><br><span class="line">            <span class="keyword">int</span> mid = (left + right) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[mid] == target) res = mid;</span><br><span class="line">            <span class="keyword">if</span> (nums[mid] &lt;= target)</span><br><span class="line">                left = mid + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> right = mid - <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Array</tag>
+        <tag>Bloomberg</tag>
+        <tag>Binary Search</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Leetcode128-longestConsecutiveSequence</title>
     <url>/2020/03/10/Leetcode128-longestConsecutiveSequence/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
@@ -302,8 +365,8 @@
       </categories>
       <tags>
         <tag>Bloomberg</tag>
-        <tag>String</tag>
         <tag>Two Pointers</tag>
+        <tag>String</tag>
       </tags>
   </entry>
   <entry>
@@ -486,8 +549,8 @@
       <tags>
         <tag>Hash Table</tag>
         <tag>Bloomberg</tag>
-        <tag>String</tag>
         <tag>Two Pointers</tag>
+        <tag>String</tag>
         <tag>Sliding Window</tag>
       </tags>
   </entry>
@@ -5241,8 +5304,8 @@
       </categories>
       <tags>
         <tag>DFS</tag>
-        <tag>Google</tag>
         <tag>BFS</tag>
+        <tag>Google</tag>
         <tag>Amazon</tag>
         <tag>Microsoft</tag>
         <tag>Bloomberg</tag>
@@ -7148,8 +7211,8 @@
         <category>Algorithms</category>
       </categories>
       <tags>
-        <tag>Algorithms</tag>
         <tag>Data Structure</tag>
+        <tag>Algorithms</tag>
       </tags>
   </entry>
   <entry>
