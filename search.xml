@@ -1,6 +1,184 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Leetcode971-flipBinaryTreeToMatchPreorderTraversal</title>
+    <url>/2020/03/28/Leetcode971-flipBinaryTreeToMatchPreorderTraversal/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given a binary tree with N nodes, each node has a different value from {1, …, N}.</p>
+<p>A node in this binary tree can be flipped by swapping the left child and the right child of that node.</p>
+<p>Consider the sequence of N values reported by a preorder traversal starting from the root.  Call such a sequence of N values the voyage of the tree.</p>
+<p>(Recall that a preorder traversal of a node means we report the current node’s value, then preorder-traverse the left child, then preorder-traverse the right child.)</p>
+<p>Our goal is to flip the least number of nodes in the tree so that the voyage of the tree matches the voyage we are given.</p>
+<p>If we can do so, then return a list of the values of all nodes flipped.  You may return the answer in any order.</p>
+<p>If we cannot do so, then return the list [-1].</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong></p>
+<p><img src="https://assets.leetcode.com/uploads/2019/01/02/1219-01.png" alt=""><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: root = [1,2], voyage = [2,1]</span><br><span class="line">Output: [-1]</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example 2:</strong></p>
+<p><img src="https://assets.leetcode.com/uploads/2019/01/02/1219-02.png" alt=""><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: root = [1,2,3], voyage = [1,3,2]</span><br><span class="line">Output: [1]</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example 3:</strong></p>
+<p><img src="https://assets.leetcode.com/uploads/2019/01/02/1219-02.png" alt=""><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: root = [1,2,3], voyage = [1,2,3]</span><br><span class="line">Output: []</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">**Note:**</span><br><span class="line"></span><br><span class="line">* 1 &lt;= N &lt;= 100</span><br><span class="line"></span><br><span class="line">## Solution</span><br><span class="line"></span><br><span class="line">Global integer i indicates next index in voyage v.</span><br><span class="line"></span><br><span class="line">If current node == null, it&apos;s fine, we return true</span><br><span class="line"></span><br><span class="line">If current node.val != v[i], doesn&apos;t match wanted value, return false</span><br><span class="line"></span><br><span class="line">If left child exist but don&apos;t have wanted value, flip it with right child.</span><br><span class="line"></span><br><span class="line">```java</span><br><span class="line">/**</span><br><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * public class TreeNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     TreeNode left;</span><br><span class="line"> *     TreeNode right;</span><br><span class="line"> *     TreeNode(int x) &#123; val = x; &#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> */</span><br><span class="line">class Solution &#123;</span><br><span class="line">    List&lt;Integer&gt; res = new ArrayList&lt;&gt;();</span><br><span class="line">    int i = 0;</span><br><span class="line">    public List&lt;Integer&gt; flipMatchVoyage(TreeNode root, int[] v) &#123;</span><br><span class="line">        return dfs(root, v) ? res : Arrays.asList(-1);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Boolean dfs(TreeNode node, int[] v) &#123;</span><br><span class="line">        if (node == null) return true;</span><br><span class="line">        if (node.val != v[i++]) return false;</span><br><span class="line">        if (node.left != null &amp;&amp; node.left.val != v[i]) &#123;</span><br><span class="line">            res.add(node.val);</span><br><span class="line">            return dfs(node.right, v) &amp;&amp; dfs(node.left, v);</span><br><span class="line">        &#125;</span><br><span class="line">        return dfs(node.left, v) &amp;&amp; dfs(node.right, v);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>DFS</tag>
+        <tag>Bloomberg</tag>
+        <tag>Tree</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode1105-fillingBookcaseShelves</title>
+    <url>/2020/03/28/Leetcode1105-fillingBookcaseShelves/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>We have a sequence of books: the i-th book has thickness books[i][0] and height books[i][1].</p>
+<p>We want to place these books in order onto bookcase shelves that have total width shelf_width.</p>
+<p>We choose some of the books to place on this shelf (such that the sum of their thickness is &lt;= shelf_width), then build another level of shelf of the bookcase so that the total height of the bookcase has increased by the maximum height of the books we just put down.  We repeat this process until there are no more books to place.</p>
+<p>Note again that at each step of the above process, the order of the books we place is the same order as the given sequence of books.  For example, if we have an ordered list of 5 books, we might place the first and second book onto the first shelf, the third book on the second shelf, and the fourth and fifth book on the last shelf.</p>
+<p>Return the minimum possible height that the total bookshelf can be after placing shelves in this manner.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><img src="https://assets.leetcode.com/uploads/2019/06/24/shelves.png" alt=""><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: books = [[1,1],[2,3],[2,3],[1,1],[1,1],[1,1],[1,2]], shelf_width = 4</span><br><span class="line">Output: 6</span><br><span class="line">Explanation:</span><br><span class="line">The sum of the heights of the 3 shelves are 1 + 3 + 2 = 6.</span><br><span class="line">Notice that book number 2 does not have to be on the first shelf.</span><br></pre></td></tr></table></figure></p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>1 &lt;= books.length &lt;= 1000</li>
+<li>1 &lt;= books[i][0] &lt;= shelf_width &lt;= 1000</li>
+<li>1 &lt;= books[i][1] &lt;= 1000</li>
+</ul>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p> dp[i]: the min height for placing first books i - 1 on shelves</p>
+<p> For dp[i+1],</p>
+<p> either place book i on a new shelve =&gt; dp[i] + height[i], or grab previous books together with book i and move to next level together, utlitzing the sub problem dp[j] =&gt; min(dp[j] + max(height[j+1] .. height[i])), where sum(width[j+1] + … + sum(width[i]) &lt;= shelve_width</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minHeightShelves</span><span class="params">(<span class="keyword">int</span>[][] books, <span class="keyword">int</span> shelf_width)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[books.length + <span class="number">1</span>];</span><br><span class="line">        </span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= books.length; ++i) &#123;</span><br><span class="line">            <span class="keyword">int</span> width = books[i-<span class="number">1</span>][<span class="number">0</span>];</span><br><span class="line">            <span class="keyword">int</span> height = books[i-<span class="number">1</span>][<span class="number">1</span>];</span><br><span class="line">            dp[i] = dp[i-<span class="number">1</span>] + height;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i - <span class="number">1</span>; j &gt; <span class="number">0</span>; j--) &#123;</span><br><span class="line">                <span class="keyword">if</span> (width + books[j-<span class="number">1</span>][<span class="number">0</span>] &gt; shelf_width) <span class="keyword">break</span>;</span><br><span class="line">                height = Math.max(height, books[j-<span class="number">1</span>][<span class="number">1</span>]);</span><br><span class="line">                width += books[j-<span class="number">1</span>][<span class="number">0</span>];</span><br><span class="line">                dp[i] = Math.min(dp[i], dp[j-<span class="number">1</span>] + height);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[books.length];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Bloomberg</tag>
+        <tag>DP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode694-numberOfDistinctIslands</title>
+    <url>/2020/03/28/Leetcode694-numberOfDistinctIslands/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given a non-empty 2D array grid of 0’s and 1’s, an island is a group of 1’s (representing land) connected 4-directionally (horizontal or vertical.) You may assume all four edges of the grid are surrounded by water.</p>
+<p>Count the number of distinct islands. An island is considered to be the same as another if and only if one island can be translated (and not rotated or reflected) to equal the other.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">11000</span><br><span class="line">11000</span><br><span class="line">00011</span><br><span class="line">00011</span><br></pre></td></tr></table></figure></p>
+<p>Given the above grid map, return 1.</p>
+<p><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">11011</span><br><span class="line">10000</span><br><span class="line">00001</span><br><span class="line">11011</span><br></pre></td></tr></table></figure></p>
+<p>Given the above grid map, return 3.</p>
+<p>Notice that:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">11</span><br><span class="line">1</span><br></pre></td></tr></table></figure></p>
+<p>and<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"> 1</span><br><span class="line">11</span><br></pre></td></tr></table></figure></p>
+<p>are considered different island shapes, because we do not consider reflection / rotation.</p>
+<p><strong>Note:</strong> The length of each dimension in the given grid does not exceed 50.</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numDistinctIslands</span><span class="params">(<span class="keyword">int</span>[][] grid)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (grid == <span class="keyword">null</span> || grid.length == <span class="number">0</span> || grid[<span class="number">0</span>].length == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        HashSet&lt;String&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; grid.length; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; grid[<span class="number">0</span>].length; j++)&#123;</span><br><span class="line">                <span class="keyword">if</span> (grid[i][j] != <span class="number">0</span>)&#123;</span><br><span class="line">                    StringBuilder cur= <span class="keyword">new</span> StringBuilder();</span><br><span class="line">                    helper(grid, i, j, cur, <span class="string">"o"</span>);</span><br><span class="line">                    set.add(cur.toString());</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> set.size();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[][] direction = <span class="keyword">new</span> <span class="keyword">int</span>[][]&#123;&#123;<span class="number">1</span>, <span class="number">0</span>&#125;,&#123;-<span class="number">1</span>, <span class="number">0</span>&#125;,&#123;<span class="number">0</span>, <span class="number">1</span>&#125;,&#123;<span class="number">0</span>, -<span class="number">1</span>&#125;&#125;;</span><br><span class="line">    <span class="keyword">private</span> String[] symbols = <span class="keyword">new</span> String[]&#123;<span class="string">"d"</span>, <span class="string">"u"</span>, <span class="string">"r"</span>, <span class="string">"l"</span>&#125;;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">helper</span><span class="params">(<span class="keyword">int</span>[][] grid, <span class="keyword">int</span> x, <span class="keyword">int</span> y, StringBuilder cur, String dir)</span></span>&#123;</span><br><span class="line">        grid[x][y] = <span class="number">0</span>;</span><br><span class="line">        cur.append(dir);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; direction.length; i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> nx = x + direction[i][<span class="number">0</span>];</span><br><span class="line">            <span class="keyword">int</span> ny = y + direction[i][<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">if</span> (nx &gt;= <span class="number">0</span> &amp;&amp; nx &lt; grid.length &amp;&amp; ny &gt;= <span class="number">0</span> &amp;&amp; ny &lt; grid[<span class="number">0</span>].length &amp;&amp; grid[nx][ny] == <span class="number">1</span>)&#123;</span><br><span class="line">                helper(grid, nx, ny, cur, symbols[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        cur.append(<span class="string">"b"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>DFS</tag>
+        <tag>Hash Table</tag>
+        <tag>Bloomberg</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode209-minimumSizeSubarraySum</title>
+    <url>/2020/03/28/Leetcode209-minimumSizeSubarraySum/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given an array of n positive integers and a positive integer s, find the minimal length of a contiguous subarray of which the sum ≥ s. If there isn’t one, return 0 instead.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: s = 7, nums = [2,3,1,2,4,3]</span><br><span class="line">Output: 2</span><br><span class="line">Explanation: the subarray [4,3] has the minimal length under the problem constraint.</span><br></pre></td></tr></table></figure>
+<p><strong>Follow up:</strong></p>
+<p>If you have figured out the O(n) solution, try coding another solution of which the time complexity is O(n log n). </p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p><strong>Solution 1:</strong> Two Pointers, O(N)</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"><span class="comment">// Two Pointers, O(n)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minSubArrayLen</span><span class="params">(<span class="keyword">int</span> s, <span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums == <span class="keyword">null</span> || nums.length == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>, right = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> res = Integer.MAX_VALUE;</span><br><span class="line">        <span class="keyword">int</span> cur = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(right &lt; nums.length)&#123;</span><br><span class="line">            cur += nums[right];</span><br><span class="line">            <span class="keyword">if</span>(cur &lt; s)&#123;</span><br><span class="line">                right++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">while</span>(cur &gt;= s)&#123;</span><br><span class="line">                    res = Math.min(res, right - left + <span class="number">1</span>);</span><br><span class="line">                    cur -= nums[left];</span><br><span class="line">                    left++;</span><br><span class="line">                &#125;</span><br><span class="line">                right++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res == Integer.MAX_VALUE ? <span class="number">0</span> : res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Solution 2:</strong> Follow up, Bianry search, O(NlogN)<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"><span class="comment">//     O(NlongN): bianry search</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minSubArrayLen</span><span class="params">(<span class="keyword">int</span> s, <span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] sums = <span class="keyword">new</span> <span class="keyword">int</span>[nums.length + <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; sums.length; i++) sums[i] = sums[i - <span class="number">1</span>] + nums[i - <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">int</span> minLen = Integer.MAX_VALUE;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; sums.length; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> end = binarySearch(i + <span class="number">1</span>, sums.length - <span class="number">1</span>, sums[i] + s, sums);</span><br><span class="line">            <span class="keyword">if</span> (end == sums.length) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">if</span> (end - i &lt; minLen) minLen = end - i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> minLen == Integer.MAX_VALUE ? <span class="number">0</span> : minLen;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span> lo, <span class="keyword">int</span> hi, <span class="keyword">int</span> key, <span class="keyword">int</span>[] sums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span> (lo &lt;= hi) &#123;</span><br><span class="line">           <span class="keyword">int</span> mid = (lo + hi) / <span class="number">2</span>;</span><br><span class="line">           <span class="keyword">if</span> (sums[mid] &gt;= key)&#123;</span><br><span class="line">               hi = mid - <span class="number">1</span>;</span><br><span class="line">           &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">               lo = mid + <span class="number">1</span>;</span><br><span class="line">           &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> lo;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Array</tag>
+        <tag>Bloomberg</tag>
+        <tag>Binary Search</tag>
+        <tag>Two Pointers</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode437-pathSumIII</title>
+    <url>/2020/03/28/Leetcode437-pathSumIII/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>You are given a binary tree in which each node contains an integer value.</p>
+<p>Find the number of paths that sum to a given value.</p>
+<p>The path does not need to start or end at the root or a leaf, but it must go downwards (traveling only from parent nodes to child nodes).</p>
+<p>The tree has no more than 1,000 nodes and the values are in the range -1,000,000 to 1,000,000.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">root = [10,5,-3,3,2,null,11,3,-2,null,1], sum = 8</span><br><span class="line"></span><br><span class="line">      10</span><br><span class="line">     /  \</span><br><span class="line">    5   -3</span><br><span class="line">   / \    \</span><br><span class="line">  3   2   11</span><br><span class="line"> / \   \</span><br><span class="line">3  -2   1</span><br><span class="line"></span><br><span class="line">Return 3. The paths that sum to 8 are:</span><br><span class="line"></span><br><span class="line">1.  5 -&gt; 3</span><br><span class="line">2.  5 -&gt; 2 -&gt; 1</span><br><span class="line">3. -3 -&gt; 11</span><br></pre></td></tr></table></figure>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * public class TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode left;</span></span><br><span class="line"><span class="comment"> *     TreeNode right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) &#123; val = x; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">pathSum</span><span class="params">(TreeNode root, <span class="keyword">int</span> sum)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        HashMap&lt;Integer, Integer&gt; presum = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        presum.put(<span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line">        helper(presum, root, <span class="number">0</span>, sum);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">helper</span><span class="params">(HashMap&lt;Integer, Integer&gt; presum, TreeNode node, <span class="keyword">int</span> cur, <span class="keyword">int</span> target)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (node == <span class="keyword">null</span>) <span class="keyword">return</span>;</span><br><span class="line">        cur = cur + node.val;</span><br><span class="line">        <span class="keyword">if</span> (presum.getOrDefault(cur - target, <span class="number">0</span>) &gt; <span class="number">0</span>)&#123;</span><br><span class="line">            res += presum.get(cur - target);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        presum.put(cur, presum.getOrDefault(cur, <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">        helper(presum, node.left, cur, target);</span><br><span class="line">        helper(presum, node.right, cur, target);</span><br><span class="line">        presum.put(cur, presum.get(cur) - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Bloomberg</tag>
+        <tag>Tree</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode1114-printInOrder</title>
+    <url>/2020/03/28/Leetcode1114-printInOrder/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Suppose we have a class:</p>
+<p>public class Foo {<br>  public void first() { print(“first”); }<br>  public void second() { print(“second”); }<br>  public void third() { print(“third”); }<br>}<br>The same instance of Foo will be passed to three different threads. Thread A will call first(), thread B will call second(), and thread C will call third(). Design a mechanism and modify the program to ensure that second() is executed after first(), and third() is executed after second().</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [1,2,3]</span><br><span class="line">Output: &quot;firstsecondthird&quot;</span><br><span class="line">Explanation: There are three threads being fired asynchronously. The input [1,2,3] means thread A calls first(), thread B calls second(), and thread C calls third(). &quot;firstsecondthird&quot; is the correct output.</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [1,3,2]</span><br><span class="line">Output: &quot;firstsecondthird&quot;</span><br><span class="line">Explanation: The input [1,3,2] means thread A calls first(), thread B calls third(), and thread C calls second(). &quot;firstsecondthird&quot; is the correct output.</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">**Note:**</span><br><span class="line"></span><br><span class="line">We do not know how the threads will be scheduled in the operating system, even though the numbers in the input seems to imply the ordering. The input format you see is mainly to ensure our tests&apos; comprehensiveness.</span><br><span class="line"></span><br><span class="line">## Solution</span><br><span class="line">```java</span><br><span class="line">import java.util.concurrent.*;</span><br><span class="line">class Foo &#123;</span><br><span class="line">    </span><br><span class="line">    Semaphore run2, run3;</span><br><span class="line">    public Foo() &#123;</span><br><span class="line">        run2 = new Semaphore(0);</span><br><span class="line">        run3 = new Semaphore(0);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void first(Runnable printFirst) throws InterruptedException &#123;</span><br><span class="line">        </span><br><span class="line">        // printFirst.run() outputs &quot;first&quot;. Do not change or remove this line.</span><br><span class="line">        printFirst.run();</span><br><span class="line">        run2.release();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void second(Runnable printSecond) throws InterruptedException &#123;</span><br><span class="line">        run2.acquire();</span><br><span class="line">        // printSecond.run() outputs &quot;second&quot;. Do not change or remove this line.</span><br><span class="line">        printSecond.run();</span><br><span class="line">        run3.release();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void third(Runnable printThird) throws InterruptedException &#123;</span><br><span class="line">        run3.acquire();</span><br><span class="line">        // printThird.run() outputs &quot;third&quot;. Do not change or remove this line.</span><br><span class="line">        printThird.run();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Bloomberg</tag>
+        <tag>Design</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode252-meetingRooms</title>
+    <url>/2020/03/28/Leetcode252-meetingRooms/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given an array of meeting time intervals consisting of start and end times [[s1,e1],[s2,e2],…] (si &lt; ei), determine if a person could attend all meetings.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [[0,30],[5,10],[15,20]]</span><br><span class="line">Output: false</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [[7,10],[2,4]]</span><br><span class="line">Output: true</span><br></pre></td></tr></table></figure></p>
+<p><strong>NOTE:</strong> input types have been changed on April 15, 2019. Please reset to default code definition to get new method signature.</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Pair</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> start;</span><br><span class="line">        <span class="keyword">int</span> end;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Pair</span><span class="params">(<span class="keyword">int</span> start, <span class="keyword">int</span> end)</span></span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.start = start;</span><br><span class="line">            <span class="keyword">this</span>.end = end;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">canAttendMeetings</span><span class="params">(<span class="keyword">int</span>[][] intervals)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (intervals == <span class="keyword">null</span> || intervals.length == <span class="number">0</span> || intervals[<span class="number">0</span>].length == <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        Pair[] inter = <span class="keyword">new</span> Pair[intervals.length];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; intervals.length; i++)&#123;</span><br><span class="line">            inter[i] = <span class="keyword">new</span> Pair(intervals[i][<span class="number">0</span>], intervals[i][<span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        Arrays.sort(inter, <span class="keyword">new</span> Comparator&lt;Pair&gt;()&#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Pair a, Pair b)</span></span>&#123;</span><br><span class="line">                <span class="keyword">return</span> a.start - b.start;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; inter.length - <span class="number">1</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (inter[i].end &gt; inter[i + <span class="number">1</span>].start)</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Bloomberg</tag>
+        <tag>Sort</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Leetcode024-swapNodesInPairs</title>
     <url>/2020/03/16/Leetcode024-swapNodesInPairs/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
@@ -1516,8 +1694,8 @@
       </categories>
       <tags>
         <tag>Bloomberg</tag>
-        <tag>Two Pointers</tag>
         <tag>Binary Search</tag>
+        <tag>Two Pointers</tag>
       </tags>
   </entry>
   <entry>
@@ -2245,8 +2423,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Recursion</tag>
         <tag>DP</tag>
+        <tag>Recursion</tag>
         <tag>Tree</tag>
       </tags>
   </entry>
@@ -2493,8 +2671,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Recursion</tag>
         <tag>DP</tag>
+        <tag>Recursion</tag>
       </tags>
   </entry>
   <entry>
@@ -7492,8 +7670,8 @@
         <category>Algorithms</category>
       </categories>
       <tags>
-        <tag>Algorithms</tag>
         <tag>Data Structure</tag>
+        <tag>Algorithms</tag>
       </tags>
   </entry>
   <entry>
