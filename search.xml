@@ -235,8 +235,8 @@
       </categories>
       <tags>
         <tag>DFS</tag>
-        <tag>Hash Table</tag>
         <tag>Bloomberg</tag>
+        <tag>Hash Table</tag>
       </tags>
   </entry>
   <entry>
@@ -260,8 +260,8 @@
       <tags>
         <tag>Array</tag>
         <tag>Bloomberg</tag>
-        <tag>Binary Search</tag>
         <tag>Two Pointers</tag>
+        <tag>Binary Search</tag>
       </tags>
   </entry>
   <entry>
@@ -625,8 +625,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Hash Table</tag>
         <tag>Bloomberg</tag>
+        <tag>Hash Table</tag>
       </tags>
   </entry>
   <entry>
@@ -950,8 +950,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Hash Table</tag>
         <tag>Bloomberg</tag>
+        <tag>Hash Table</tag>
         <tag>Bit Manipulation</tag>
       </tags>
   </entry>
@@ -1155,8 +1155,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Hash Table</tag>
         <tag>Bloomberg</tag>
+        <tag>Hash Table</tag>
         <tag>Two Pointers</tag>
         <tag>String</tag>
         <tag>Sliding Window</tag>
@@ -1307,8 +1307,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Hash Table</tag>
         <tag>Bloomberg</tag>
+        <tag>Hash Table</tag>
         <tag>Math</tag>
       </tags>
   </entry>
@@ -1543,8 +1543,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Hash Table</tag>
         <tag>Bloomberg</tag>
+        <tag>Hash Table</tag>
         <tag>String</tag>
       </tags>
   </entry>
@@ -1843,8 +1843,8 @@
       </categories>
       <tags>
         <tag>Bloomberg</tag>
-        <tag>Binary Search</tag>
         <tag>Two Pointers</tag>
+        <tag>Binary Search</tag>
       </tags>
   </entry>
   <entry>
@@ -1923,8 +1923,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Hash Table</tag>
         <tag>Bloomberg</tag>
+        <tag>Hash Table</tag>
         <tag>Heap</tag>
       </tags>
   </entry>
@@ -2382,8 +2382,8 @@
       </categories>
       <tags>
         <tag>Array</tag>
-        <tag>Hash Table</tag>
         <tag>Bloomberg</tag>
+        <tag>Hash Table</tag>
         <tag>String</tag>
       </tags>
   </entry>
@@ -2425,8 +2425,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Hash Table</tag>
         <tag>Bloomberg</tag>
+        <tag>Hash Table</tag>
       </tags>
   </entry>
   <entry>
@@ -2572,8 +2572,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>DP</tag>
         <tag>Recursion</tag>
+        <tag>DP</tag>
         <tag>Tree</tag>
       </tags>
   </entry>
@@ -2820,8 +2820,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>DP</tag>
         <tag>Recursion</tag>
+        <tag>DP</tag>
       </tags>
   </entry>
   <entry>
@@ -2970,8 +2970,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Hash Table</tag>
         <tag>Bloomberg</tag>
+        <tag>Hash Table</tag>
         <tag>Math</tag>
       </tags>
   </entry>
@@ -4292,8 +4292,8 @@
       </categories>
       <tags>
         <tag>Linked List</tag>
-        <tag>Microsoft</tag>
         <tag>Bloomberg</tag>
+        <tag>Microsoft</tag>
       </tags>
   </entry>
   <entry>
@@ -4312,8 +4312,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Microsoft</tag>
         <tag>Bloomberg</tag>
+        <tag>Microsoft</tag>
         <tag>String</tag>
         <tag>Backtracking</tag>
       </tags>
@@ -4386,8 +4386,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Microsoft</tag>
         <tag>Bloomberg</tag>
+        <tag>Microsoft</tag>
         <tag>String</tag>
       </tags>
   </entry>
@@ -4437,8 +4437,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Hash Table</tag>
         <tag>Amazon</tag>
+        <tag>Hash Table</tag>
       </tags>
   </entry>
   <entry>
@@ -4588,8 +4588,8 @@
       </categories>
       <tags>
         <tag>DFS</tag>
-        <tag>Hash Table</tag>
         <tag>Amazon</tag>
+        <tag>Hash Table</tag>
       </tags>
   </entry>
   <entry>
@@ -4611,8 +4611,8 @@
       </categories>
       <tags>
         <tag>Array</tag>
-        <tag>Hash Table</tag>
         <tag>Amazon</tag>
+        <tag>Hash Table</tag>
       </tags>
   </entry>
   <entry>
@@ -4679,8 +4679,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Hash Table</tag>
         <tag>Amazon</tag>
+        <tag>Hash Table</tag>
       </tags>
   </entry>
   <entry>
@@ -4857,8 +4857,8 @@
       </categories>
       <tags>
         <tag>Amazon</tag>
-        <tag>Microsoft</tag>
         <tag>Bloomberg</tag>
+        <tag>Microsoft</tag>
         <tag>Tree</tag>
       </tags>
   </entry>
@@ -4913,15 +4913,15 @@
 <h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Examples 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [3,9,20,null,null,15,7]</span><br><span class="line"></span><br><span class="line">   3</span><br><span class="line">  /\</span><br><span class="line"> /  \</span><br><span class="line"> 9  20</span><br><span class="line">    /\</span><br><span class="line">   /  \</span><br><span class="line">  15   7 </span><br><span class="line"></span><br><span class="line">Output:</span><br><span class="line"></span><br><span class="line">[</span><br><span class="line">  [9],</span><br><span class="line">  [3,15],</span><br><span class="line">  [20],</span><br><span class="line">  [7]</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
 <p><strong>Examples 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [3,9,8,4,0,1,7]</span><br><span class="line"></span><br><span class="line">     3</span><br><span class="line">    /\</span><br><span class="line">   /  \</span><br><span class="line">   9   8</span><br><span class="line">  /\  /\</span><br><span class="line"> /  \/  \</span><br><span class="line"> 4  01   7 </span><br><span class="line"></span><br><span class="line">Output:</span><br><span class="line"></span><br><span class="line">[</span><br><span class="line">  [4],</span><br><span class="line">  [9],</span><br><span class="line">  [3,0,1],</span><br><span class="line">  [8],</span><br><span class="line">  [7]</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
 <p><strong>Examples 3:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [3,9,8,4,0,1,7,null,null,null,2,5] (0&apos;s right child is 2 and 1&apos;s left child is 5)</span><br><span class="line"></span><br><span class="line">     3</span><br><span class="line">    /\</span><br><span class="line">   /  \</span><br><span class="line">   9   8</span><br><span class="line">  /\  /\</span><br><span class="line"> /  \/  \</span><br><span class="line"> 4  01   7</span><br><span class="line">    /\</span><br><span class="line">   /  \</span><br><span class="line">   5   2</span><br><span class="line"></span><br><span class="line">Output:</span><br><span class="line"></span><br><span class="line">[</span><br><span class="line">  [4],</span><br><span class="line">  [9,5],</span><br><span class="line">  [3,0,1],</span><br><span class="line">  [8,2],</span><br><span class="line">  [7]</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * public class TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode left;</span></span><br><span class="line"><span class="comment"> *     TreeNode right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) &#123; val = x; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; verticalOrder(TreeNode root) &#123;</span><br><span class="line">        List&lt;List&lt;Integer&gt;&gt; res = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span> res;</span><br><span class="line"></span><br><span class="line">        Map&lt;Integer, List&lt;Integer&gt;&gt; map = <span class="keyword">new</span> TreeMap&lt;&gt;();</span><br><span class="line">        </span><br><span class="line">        Queue&lt;TreeNode&gt; q = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        Queue&lt;Integer&gt; cols = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        </span><br><span class="line">        q.add(root);</span><br><span class="line">        cols.add(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (!q.isEmpty())&#123;</span><br><span class="line">            TreeNode node = q.poll();</span><br><span class="line">            <span class="keyword">int</span> cur = cols.poll();</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (!map.containsKey(cur))</span><br><span class="line">                map.put(cur, <span class="keyword">new</span> LinkedList&lt;&gt;());</span><br><span class="line">            </span><br><span class="line">            map.get(cur).add(node.val);</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (node.left!=<span class="keyword">null</span>)&#123;</span><br><span class="line">                q.add(node.left);</span><br><span class="line">                cols.add(cur - <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (node.right!=<span class="keyword">null</span>)&#123;</span><br><span class="line">                q.add(node.right);</span><br><span class="line">                cols.add(cur + <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> itr: map.keySet())&#123;</span><br><span class="line">            res.add(map.get(itr));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * public class TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode left;</span></span><br><span class="line"><span class="comment"> *     TreeNode right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) &#123; val = x; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"><span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; verticalOrder(TreeNode root) &#123;</span><br><span class="line">    List&lt;List&lt;Integer&gt;&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    Map&lt;Integer, ArrayList&lt;Integer&gt;&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    Queue&lt;TreeNode&gt; q = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">    Queue&lt;Integer&gt; cols = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    q.add(root); </span><br><span class="line">    cols.add(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> min = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (!q.isEmpty()) &#123;</span><br><span class="line">        TreeNode node = q.poll();</span><br><span class="line">        <span class="keyword">int</span> col = cols.poll();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (!map.containsKey(col)) &#123;</span><br><span class="line">            map.put(col, <span class="keyword">new</span> ArrayList&lt;Integer&gt;());</span><br><span class="line">        &#125;</span><br><span class="line">        map.get(col).add(node.val);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (node.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">            q.add(node.left); </span><br><span class="line">            cols.add(col - <span class="number">1</span>);</span><br><span class="line">            min = Math.min(min, col - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (node.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">            q.add(node.right);</span><br><span class="line">            cols.add(col + <span class="number">1</span>);</span><br><span class="line">            max = Math.max(max, col + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = min; i &lt;= max; i++) &#123;</span><br><span class="line">        res.add(map.get(i));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>]]></content>
       <categories>
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Hash Table</tag>
         <tag>Amazon</tag>
         <tag>Bloomberg</tag>
+        <tag>Hash Table</tag>
         <tag>Tree</tag>
       </tags>
   </entry>
@@ -5105,8 +5105,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Hash Table</tag>
         <tag>Amazon</tag>
+        <tag>Hash Table</tag>
         <tag>Two Pointers</tag>
         <tag>Sliding Window</tag>
       </tags>
@@ -5131,8 +5131,8 @@
       </categories>
       <tags>
         <tag>Amazon</tag>
-        <tag>Microsoft</tag>
         <tag>Bloomberg</tag>
+        <tag>Microsoft</tag>
         <tag>Tree</tag>
       </tags>
   </entry>
@@ -5333,8 +5333,8 @@
       </categories>
       <tags>
         <tag>Amazon</tag>
-        <tag>Microsoft</tag>
         <tag>Bloomberg</tag>
+        <tag>Microsoft</tag>
         <tag>Divide and Conquer</tag>
       </tags>
   </entry>
@@ -5496,8 +5496,8 @@
       </categories>
       <tags>
         <tag>DFS</tag>
-        <tag>Hash Table</tag>
         <tag>Amazon</tag>
+        <tag>Hash Table</tag>
         <tag>Trie</tag>
       </tags>
   </entry>
@@ -5659,10 +5659,10 @@
       </categories>
       <tags>
         <tag>Google</tag>
-        <tag>Hash Table</tag>
         <tag>Amazon</tag>
-        <tag>Microsoft</tag>
         <tag>Bloomberg</tag>
+        <tag>Hash Table</tag>
+        <tag>Microsoft</tag>
       </tags>
   </entry>
   <entry>
@@ -5683,8 +5683,8 @@
       <tags>
         <tag>Google</tag>
         <tag>Amazon</tag>
-        <tag>Microsoft</tag>
         <tag>Bloomberg</tag>
+        <tag>Microsoft</tag>
         <tag>Two Pointers</tag>
       </tags>
   </entry>
@@ -5705,9 +5705,9 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Hash Table</tag>
         <tag>Amazon</tag>
         <tag>Bloomberg</tag>
+        <tag>Hash Table</tag>
         <tag>Heap</tag>
       </tags>
   </entry>
@@ -5865,8 +5865,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Hash Table</tag>
         <tag>Amazon</tag>
+        <tag>Hash Table</tag>
       </tags>
   </entry>
   <entry>
@@ -5915,8 +5915,8 @@
         <tag>Google</tag>
         <tag>BFS</tag>
         <tag>Amazon</tag>
-        <tag>Microsoft</tag>
         <tag>Bloomberg</tag>
+        <tag>Microsoft</tag>
       </tags>
   </entry>
   <entry>
@@ -6039,9 +6039,9 @@
       </categories>
       <tags>
         <tag>Array</tag>
-        <tag>Hash Table</tag>
         <tag>Amazon</tag>
         <tag>Bloomberg</tag>
+        <tag>Hash Table</tag>
         <tag>Design</tag>
       </tags>
   </entry>
@@ -6135,8 +6135,8 @@
       <tags>
         <tag>Array</tag>
         <tag>Amazon</tag>
-        <tag>Microsoft</tag>
         <tag>Bloomberg</tag>
+        <tag>Microsoft</tag>
         <tag>Divide and Conquer</tag>
         <tag>DP</tag>
       </tags>
@@ -6157,8 +6157,8 @@
       </categories>
       <tags>
         <tag>Amazon</tag>
-        <tag>Microsoft</tag>
         <tag>Bloomberg</tag>
+        <tag>Microsoft</tag>
         <tag>Tree</tag>
       </tags>
   </entry>
@@ -6182,8 +6182,8 @@
       </categories>
       <tags>
         <tag>Amazon</tag>
-        <tag>Microsoft</tag>
         <tag>Bloomberg</tag>
+        <tag>Microsoft</tag>
         <tag>Design</tag>
       </tags>
   </entry>
@@ -6279,9 +6279,9 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Hash Table</tag>
         <tag>Amazon</tag>
         <tag>Bloomberg</tag>
+        <tag>Hash Table</tag>
         <tag>String</tag>
       </tags>
   </entry>
@@ -6706,8 +6706,8 @@
       </categories>
       <tags>
         <tag>Amazon</tag>
-        <tag>Microsoft</tag>
         <tag>Bloomberg</tag>
+        <tag>Microsoft</tag>
         <tag>Topological Sort</tag>
       </tags>
   </entry>
@@ -6795,8 +6795,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Hash Table</tag>
         <tag>Bloomberg</tag>
+        <tag>Hash Table</tag>
       </tags>
   </entry>
   <entry>
@@ -6899,8 +6899,8 @@
       </categories>
       <tags>
         <tag>Amazon</tag>
-        <tag>Microsoft</tag>
         <tag>Bloomberg</tag>
+        <tag>Microsoft</tag>
         <tag>LinkedList</tag>
       </tags>
   </entry>
@@ -6922,8 +6922,8 @@
       </categories>
       <tags>
         <tag>Amazon</tag>
-        <tag>Microsoft</tag>
         <tag>Bloomberg</tag>
+        <tag>Microsoft</tag>
         <tag>LinkedList</tag>
       </tags>
   </entry>
@@ -7052,8 +7052,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Hash Table</tag>
         <tag>Amazon</tag>
+        <tag>Hash Table</tag>
         <tag>Heap</tag>
       </tags>
   </entry>
@@ -7615,8 +7615,8 @@
       </categories>
       <tags>
         <tag>Amazon</tag>
-        <tag>Microsoft</tag>
         <tag>Bloomberg</tag>
+        <tag>Microsoft</tag>
         <tag>String</tag>
         <tag>Palindrome</tag>
         <tag>Manacher</tag>
@@ -7683,9 +7683,9 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Hash Table</tag>
         <tag>Amazon</tag>
         <tag>Bloomberg</tag>
+        <tag>Hash Table</tag>
         <tag>Two Pointers</tag>
       </tags>
   </entry>
@@ -7712,10 +7712,10 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Amazon</tag>
-        <tag>Bloomberg</tag>
         <tag>medium</tag>
         <tag>linkedlist</tag>
+        <tag>Amazon</tag>
+        <tag>Bloomberg</tag>
       </tags>
   </entry>
   <entry>
@@ -7819,8 +7819,8 @@
         <category>Algorithms</category>
       </categories>
       <tags>
-        <tag>Data Structure</tag>
         <tag>Algorithms</tag>
+        <tag>Data Structure</tag>
       </tags>
   </entry>
   <entry>
