@@ -1,6 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Leetcode813-largestSumOfAverages</title>
+    <url>/2020/03/29/Leetcode813-largestSumOfAverages/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>We partition a row of numbers A into at most K adjacent (non-empty) groups, then our score is the sum of the average of each group. What is the largest score we can achieve?</p>
+<p>Note that our partition must use every number in A, and that scores are not necessarily integers.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: </span><br><span class="line">A = [9,1,2,3,9]</span><br><span class="line">K = 3</span><br><span class="line">Output: 20</span><br><span class="line">Explanation: </span><br><span class="line">The best choice is to partition A into [9], [1, 2, 3], [9]. The answer is 9 + (1 + 2 + 3) / 3 + 9 = 20.</span><br><span class="line">We could have also partitioned A into [9, 1], [2], [3, 9], for example.</span><br><span class="line">That partition would lead to a score of 5 + 2 + 6 = 13, which is worse.</span><br></pre></td></tr></table></figure>
+<p><strong>Note:</strong></p>
+<ul>
+<li>1 &lt;= A.length &lt;= 100.</li>
+<li>1 &lt;= A[i] &lt;= 10000.</li>
+<li>1 &lt;= K &lt;= A.length.</li>
+<li>Answers within 10^-6 of the correct answer will be accepted as correct.</li>
+</ul>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// search return the result for n first numbers to k groups.</span></span><br><span class="line"><span class="comment">// Time complexity: O(KN^2)</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">largestSumOfAverages</span><span class="params">(<span class="keyword">int</span>[] A, <span class="keyword">int</span> K)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> N = A.length;</span><br><span class="line">        <span class="keyword">double</span>[][] memo = <span class="keyword">new</span> <span class="keyword">double</span>[N+<span class="number">1</span>][N+<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">double</span> cur = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++i) &#123;</span><br><span class="line">            cur += A[i];</span><br><span class="line">            memo[i + <span class="number">1</span>][<span class="number">1</span>] = cur / (i + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> search(N, K, A, memo);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">search</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> k, <span class="keyword">int</span>[] A, <span class="keyword">double</span>[][] memo)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (memo[n][k] &gt; <span class="number">0</span>) <span class="keyword">return</span> memo[n][k];</span><br><span class="line">        <span class="keyword">if</span> (n &lt; k) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">double</span> cur = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = n - <span class="number">1</span>; i &gt; <span class="number">0</span>; --i) &#123;</span><br><span class="line">            cur += A[i];</span><br><span class="line">            memo[n][k] = Math.max(memo[n][k], search(i, k - <span class="number">1</span>, A, memo) + cur / (n - i));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> memo[n][k];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Bloomberg</tag>
+        <tag>DP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode978-longestTurbulentSubarray</title>
+    <url>/2020/03/29/Leetcode978-longestTurbulentSubarray/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>A subarray A[i], A[i+1], …, A[j] of A is said to be turbulent if and only if:</p>
+<ul>
+<li>For i &lt;= k &lt; j, A[k] &gt; A[k+1] when k is odd, and A[k] &lt; A[k+1] when k is even;</li>
+<li>OR, for i &lt;= k &lt; j, A[k] &gt; A[k+1] when k is even, and A[k] &lt; A[k+1] when k is odd.</li>
+</ul>
+<p>That is, the subarray is turbulent if the comparison sign flips between each adjacent pair of elements in the subarray.</p>
+<p>Return the length of a maximum size turbulent subarray of A.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [9,4,2,10,7,8,8,1,9]</span><br><span class="line">Output: 5</span><br><span class="line">Explanation: (A[1] &gt; A[2] &lt; A[3] &gt; A[4] &lt; A[5])</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [4,8,12,16]</span><br><span class="line">Output: 2</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example 3:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [100]</span><br><span class="line">Output: 1</span><br></pre></td></tr></table></figure></p>
+<p><strong>Note:</strong></p>
+<ol>
+<li>1 &lt;= A.length &lt;= 40000</li>
+<li>0 &lt;= A[i] &lt;= 10^9</li>
+</ol>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p><strong>Solutio 1:</strong> Basic solution, Time O(n), Space O(n)<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"><span class="comment">//  Basic Method: Time: O(n), Space: O(n)</span></span><br><span class="line"><span class="comment">//     For each A[i]</span></span><br><span class="line"><span class="comment">//  inc: The length of current valid sequence which ends with two increasing numbers</span></span><br><span class="line"><span class="comment">//  dec: The length of current valid sequence which ends with two decreasing numbers</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxTurbulenceSize</span><span class="params">(<span class="keyword">int</span>[] A)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (A == <span class="keyword">null</span> || A.length == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span>[] inc = <span class="keyword">new</span> <span class="keyword">int</span>[A.length];</span><br><span class="line">        <span class="keyword">int</span>[] des = <span class="keyword">new</span> <span class="keyword">int</span>[A.length];</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">1</span>;</span><br><span class="line">        Arrays.fill(inc, <span class="number">1</span>);</span><br><span class="line">        Arrays.fill(des, <span class="number">1</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; A.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (A[i] &gt; A[i - <span class="number">1</span>])</span><br><span class="line">                inc[i] = des[i - <span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (A[i] &lt; A[i - <span class="number">1</span>])</span><br><span class="line">                des[i] = inc[i - <span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">            </span><br><span class="line">            res = Math.max(res, Math.max(inc[i], des[i]));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>Solution 2:</strong> Improved Solution, Space O(1)<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"><span class="comment">//  Improved: O(1) Space; O(N) time</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxTurbulenceSize</span><span class="params">(<span class="keyword">int</span>[] A)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (A == <span class="keyword">null</span> || A.length == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> inc = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> des = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; A.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (A[i] &gt; A[i - <span class="number">1</span>])&#123;</span><br><span class="line">                inc = des + <span class="number">1</span>;</span><br><span class="line">                des = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (A[i] &lt; A[i - <span class="number">1</span>])&#123;</span><br><span class="line">                des = inc + <span class="number">1</span>;</span><br><span class="line">                inc = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                inc = <span class="number">1</span>;</span><br><span class="line">                des = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            res = Math.max(res, Math.max(inc, des));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Array</tag>
+        <tag>Bloomberg</tag>
+        <tag>DP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode787-cheapestFlightsWithinKStops</title>
+    <url>/2020/03/29/Leetcode787-cheapestFlightsWithinKStops/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>There are n cities connected by m flights. Each flight starts from city u and arrives at v with a price w.</p>
+<p>Now given all the cities and flights, together with starting city src and the destination dst, your task is to find the cheapest price from src to dst with up to k stops. If there is no such route, output -1.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: </span><br><span class="line">n = 3, edges = [[0,1,100],[1,2,100],[0,2,500]]</span><br><span class="line">src = 0, dst = 2, k = 1</span><br><span class="line">Output: 200</span><br><span class="line">Explanation: </span><br><span class="line">The graph looks like this:</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://s3-lc-upload.s3.amazonaws.com/uploads/2018/02/16/995.png" alt=""><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">The cheapest price from city 0 to city 2 with at most 1 stop costs 200, as marked red in the picture.</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: </span><br><span class="line">n = 3, edges = [[0,1,100],[1,2,100],[0,2,500]]</span><br><span class="line">src = 0, dst = 2, k = 0</span><br><span class="line">Output: 500</span><br><span class="line">Explanation: </span><br><span class="line">The graph looks like this:</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://s3-lc-upload.s3.amazonaws.com/uploads/2018/02/16/995.png" alt=""><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">The cheapest price from city 0 to city 2 with at most 0 stop costs 500, as marked blue in the picture.</span><br></pre></td></tr></table></figure></p>
+<p><strong>Note:</strong></p>
+<ul>
+<li>The number of nodes n will be in range [1, 100], with nodes labeled from 0 to n - 1.</li>
+<li>The size of flights will be in range [0, n * (n - 1) / 2].</li>
+<li>The format of each flight will be (src, dst, price).</li>
+<li>The price of each flight will be in the range [1, 10000].</li>
+<li>k is in the range of [0, n - 1].</li>
+<li>There will not be any duplicated flights or self cycles.</li>
+</ul>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// It happen to be the same idea of Dijkstra's algorithm, but we need to keep the path.</span></span><br><span class="line"><span class="comment">// It could not need visited, here "k" limited the time we can visit a single node that it wont go into an infinite loop. (and the n in range[1,100]), but will be slower.</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findCheapestPrice</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span>[][] flights, <span class="keyword">int</span> src, <span class="keyword">int</span> dst, <span class="keyword">int</span> K)</span> </span>&#123;</span><br><span class="line">        Map&lt;Integer, Map&lt;Integer, Integer&gt;&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line"><span class="comment">//         construct map</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span>[] flight: flights)&#123;</span><br><span class="line">            <span class="keyword">if</span> (!map.containsKey(flight[<span class="number">0</span>]))</span><br><span class="line">                map.put(flight[<span class="number">0</span>], <span class="keyword">new</span> HashMap&lt;&gt;());</span><br><span class="line">            map.get(flight[<span class="number">0</span>]).put(flight[<span class="number">1</span>], flight[<span class="number">2</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line"><span class="comment">//      used priorityqueue to store distances</span></span><br><span class="line">        PriorityQueue&lt;<span class="keyword">int</span>[]&gt; pq = <span class="keyword">new</span> PriorityQueue&lt;&gt;(<span class="keyword">new</span> Comparator&lt;<span class="keyword">int</span>[]&gt;()&#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(<span class="keyword">int</span>[] a, <span class="keyword">int</span> b[])</span></span>&#123;</span><br><span class="line">                <span class="keyword">return</span> a[<span class="number">0</span>] - b[<span class="number">0</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        pq.offer(<span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">0</span>, src, K + <span class="number">1</span>&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//         Visited set</span></span><br><span class="line">        HashSet&lt;Integer&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(!pq.isEmpty())&#123;</span><br><span class="line">            <span class="keyword">int</span>[] first = pq.poll();</span><br><span class="line">            <span class="keyword">int</span> price = first[<span class="number">0</span>];</span><br><span class="line">            <span class="keyword">int</span> city = first[<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">int</span> stops = first[<span class="number">2</span>];</span><br><span class="line">            set.add(city);</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (city == dst)</span><br><span class="line">                <span class="keyword">return</span> price;</span><br><span class="line">            <span class="keyword">if</span> (stops &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                Map&lt;Integer, Integer&gt; adj = map.getOrDefault(city, <span class="keyword">new</span> HashMap&lt;&gt;());</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> a: adj.keySet())&#123;</span><br><span class="line">                    <span class="keyword">if</span> (!set.contains(a))</span><br><span class="line">                        pq.add(<span class="keyword">new</span> <span class="keyword">int</span>[]&#123;adj.get(a) + price, a, stops - <span class="number">1</span>&#125;);</span><br><span class="line">                &#125;</span><br><span class="line">                </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Bloomberg</tag>
+        <tag>Heap</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode285-inorderSuccessorInBST</title>
+    <url>/2020/03/29/Leetcode285-inorderSuccessorInBST/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given a binary search tree and a node in it, find the in-order successor of that node in the BST.</p>
+<p>The successor of a node p is the node with the smallest key greater than p.val.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><img src="https://assets.leetcode.com/uploads/2019/01/23/285_example_1.PNG" alt=""><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: root = [2,1,3], p = 1</span><br><span class="line">Output: 2</span><br><span class="line">Explanation: 1&apos;s in-order successor node is 2. Note that both p and the return value is of TreeNode type.</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example 2:</strong><br><img src="https://assets.leetcode.com/uploads/2019/01/23/285_example_2.PNG" alt=""><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: root = [5,3,6,2,4,null,null,1], p = 6</span><br><span class="line">Output: null</span><br><span class="line">Explanation: There is no in-order successor of the current node, so the answer is null.</span><br></pre></td></tr></table></figure></p>
+<p><strong>Note:</strong></p>
+<ol>
+<li>If the given node has no in-order successor in the tree, return null.</li>
+<li>It’s guaranteed that the values of the tree are unique.</li>
+</ol>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p><strong>Solution 1:</strong> Basical Solution, O(h);<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * public class TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode left;</span></span><br><span class="line"><span class="comment"> *     TreeNode right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) &#123; val = x; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">// Solution 1: basic one, O(h)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> TreeNode <span class="title">inorderSuccessor</span><span class="params">(TreeNode root, TreeNode p)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        TreeNode res = <span class="keyword">null</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (p.right != <span class="keyword">null</span>)&#123;</span><br><span class="line">            p = p.right;</span><br><span class="line">            <span class="keyword">while</span>(p.left != <span class="keyword">null</span>)&#123;</span><br><span class="line">                p = p.left;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> p;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(root != p)&#123;</span><br><span class="line">            root = (p.val &gt; root.val) ? root.right : (res = root).left;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>Solution 2:</strong> Improved solution, O(h)<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * public class TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode left;</span></span><br><span class="line"><span class="comment"> *     TreeNode right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) &#123; val = x; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"><span class="comment">// Solution 2: more improved, O(h)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> TreeNode <span class="title">inorderSuccessor</span><span class="params">(TreeNode root, TreeNode p)</span> </span>&#123;</span><br><span class="line">        TreeNode res = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">while</span>(root != <span class="keyword">null</span>)&#123;</span><br><span class="line">            root = (root.val &gt; p.val) ? (res = root).left : root.right;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Bloomberg</tag>
+        <tag>Tree</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode237-deleteNodeInALinkedList</title>
+    <url>/2020/03/29/Leetcode237-deleteNodeInALinkedList/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Write a function to delete a node (except the tail) in a singly linked list, given only access to that node.</p>
+<p>Given linked list — head = [4,5,1,9], which looks like following</p>
+<p><img src="https://assets.leetcode.com/uploads/2018/12/28/237_example.png" alt=""></p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: head = [4,5,1,9], node = 5</span><br><span class="line">Output: [4,1,9]</span><br><span class="line">Explanation: You are given the second node with value 5, the linked list should become 4 -&gt; 1 -&gt; 9 after calling your function.</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: head = [4,5,1,9], node = 1</span><br><span class="line">Output: [4,5,9]</span><br><span class="line">Explanation: You are given the third node with value 1, the linked list should become 4 -&gt; 5 -&gt; 9 after calling your function.</span><br></pre></td></tr></table></figure></p>
+<p><strong>Note:</strong></p>
+<ul>
+<li>The linked list will have at least two elements.</li>
+<li>All of the nodes’ values will be unique.</li>
+<li>The given node will not be the tail and it will always be a valid node of the linked list.</li>
+<li>Do not return anything from your function.</li>
+</ul>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * public class ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) &#123; val = x; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deleteNode</span><span class="params">(ListNode node)</span> </span>&#123;</span><br><span class="line">        node.val = node.next.val;</span><br><span class="line">        node.next = node.next.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Linked List</tag>
+        <tag>Bloomberg</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Leetcode971-flipBinaryTreeToMatchPreorderTraversal</title>
     <url>/2020/03/28/Leetcode971-flipBinaryTreeToMatchPreorderTraversal/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
@@ -5762,8 +5911,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Google</tag>
         <tag>DFS</tag>
+        <tag>Google</tag>
         <tag>BFS</tag>
         <tag>Amazon</tag>
         <tag>Microsoft</tag>
