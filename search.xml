@@ -1,6 +1,445 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Leetcode299-bullsAndCows</title>
+    <url>/2020/04/07/Leetcode299-bullsAndCows/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>You are playing the following Bulls and Cows game with your friend: You write down a number and ask your friend to guess what the number is. Each time your friend makes a guess, you provide a hint that indicates how many digits in said guess match your secret number exactly in both digit and position (called “bulls”) and how many digits match the secret number but locate in the wrong position (called “cows”). Your friend will use successive guesses and hints to eventually derive the secret number.</p>
+<p>Write a function to return a hint according to the secret number and friend’s guess, use A to indicate the bulls and B to indicate the cows. </p>
+<p>Please note that both secret number and friend’s guess may contain duplicate digits.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: secret = &quot;1807&quot;, guess = &quot;7810&quot;</span><br><span class="line"></span><br><span class="line">Output: &quot;1A3B&quot;</span><br><span class="line"></span><br><span class="line">Explanation: 1 bull and 3 cows. The bull is 8, the cows are 0, 1 and 7.</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: secret = &quot;1123&quot;, guess = &quot;0111&quot;</span><br><span class="line"></span><br><span class="line">Output: &quot;1A1B&quot;</span><br><span class="line"></span><br><span class="line">Explanation: The 1st 1 in friend&apos;s guess is a bull, the 2nd or 3rd 1 is a cow.</span><br></pre></td></tr></table></figure></p>
+<p><strong>Note:</strong> You may assume that the secret number and your friend’s guess only contain digits, and their lengths are always equal.</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getHint</span><span class="params">(String secret, String guess)</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> bull = <span class="number">0</span>, cows = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">char</span>[] sec = secret.toCharArray();</span><br><span class="line">        <span class="keyword">char</span>[] gue = guess.toCharArray();</span><br><span class="line">        HashMap&lt;Character, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span>[] flag = <span class="keyword">new</span> <span class="keyword">int</span>[sec.length];</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; sec.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (sec[i] == gue[i]) &#123;</span><br><span class="line">                bull++;</span><br><span class="line">                flag[i] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (!map.containsKey(sec[i]))</span><br><span class="line">                    map.put(sec[i], <span class="number">1</span>);</span><br><span class="line">                <span class="keyword">else</span> map.put(sec[i], map.get(sec[i])+<span class="number">1</span>);</span><br><span class="line">                flag[i] = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; sec.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (flag[i] == <span class="number">1</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span> (map.containsKey(gue[i]))&#123;</span><br><span class="line">                    cows++;</span><br><span class="line">                    map.put(gue[i], map.get(gue[i])-<span class="number">1</span>);</span><br><span class="line">                    <span class="keyword">if</span> (map.get(gue[i]) == <span class="number">0</span>)</span><br><span class="line">                        map.remove(gue[i]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        String res = <span class="string">""</span>;</span><br><span class="line">        res = bull + <span class="string">"A"</span> + cows + <span class="string">"B"</span>;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Google</tag>
+        <tag>Hash Table</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode801-minimumSwapsToMakeSequencesIncreasing</title>
+    <url>/2020/04/07/Leetcode801-minimumSwapsToMakeSequencesIncreasing/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>We have two integer sequences A and B of the same non-zero length.</p>
+<p>We are allowed to swap elements A[i] and B[i].  Note that both elements are in the same index position in their respective sequences.</p>
+<p>At the end of some number of swaps, A and B are both strictly increasing.  (A sequence is strictly increasing if and only if A[0] &lt; A[1] &lt; A[2] &lt; … &lt; A[A.length - 1].)</p>
+<p>Given A and B, return the minimum number of swaps to make both sequences strictly increasing.  It is guaranteed that the given input always makes it possible.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: A = [1,3,5,4], B = [1,2,3,7]</span><br><span class="line">Output: 1</span><br><span class="line">Explanation: </span><br><span class="line">Swap A[3] and B[3].  Then the sequences are:</span><br><span class="line">A = [1, 3, 5, 7] and B = [1, 2, 3, 4]</span><br><span class="line">which are both strictly increasing.</span><br></pre></td></tr></table></figure>
+<p><strong>Note:</strong></p>
+<ul>
+<li>A, B are arrays with the same length, and that length will be in the range [1, 1000].</li>
+<li>A[i], B[i] are integer values in the range [0, 2000].<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2>swap[n] means the minimum swaps to make the A[i] and B[i] sequences increasing for 0 &lt;= i &lt;= n in condition that we swap A[n] and B[n]<br>not_swap[n] is the same with A[n] and B[n] not swapped.</li>
+</ul>
+<ol>
+<li><p>A[i - 1] &lt; A[i] &amp;&amp; B[i - 1] &lt; B[i]. In this case, if we want to keep A and B increasing before the index i, can only have two choices.<br>-&gt; 1.1 don’t swap at (i-1) and don’t swap at i, we can get not_swap[i] = not_swap[i-1]<br>-&gt; 1.2 swap at (i-1) and swap at i, we can get swap[i] = swap[i-1]+1<br>if swap at (i-1) and do not swap at i, we can not guarantee A and B increasing.</p>
+</li>
+<li><p>A[i-1] &lt; B[i] &amp;&amp; B[i-1] &lt; A[i]. In this case, if we want to keep A and B increasing before the index i, can only have two choices.<br>-&gt; 2.1 swap at (i-1) and do not swap at i, we can get notswap[i] = Math.min(swap[i-1], notswap[i] )<br>-&gt; 2.2 do not swap at (i-1) and swap at i, we can get swap[i]=Math.min(notswap[i-1]+1, swap[i])</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minSwap</span><span class="params">(<span class="keyword">int</span>[] A, <span class="keyword">int</span>[] B)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] swap = <span class="keyword">new</span> <span class="keyword">int</span>[A.length];</span><br><span class="line">        <span class="keyword">int</span>[] not_swap = <span class="keyword">new</span> <span class="keyword">int</span>[B.length];</span><br><span class="line">        swap[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; A.length; i++)&#123;</span><br><span class="line">            swap[i] = Integer.MAX_VALUE;</span><br><span class="line">            not_swap[i] = Integer.MAX_VALUE;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; A.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (A[i - <span class="number">1</span>] &lt; A[i] &amp;&amp; B[i - <span class="number">1</span>] &lt; B[i])&#123;</span><br><span class="line">                not_swap[i] = not_swap[i - <span class="number">1</span>];</span><br><span class="line">                swap[i] = swap[i - <span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (A[i - <span class="number">1</span>] &lt; B[i] &amp;&amp; B[i - <span class="number">1</span>] &lt; A[i])&#123;</span><br><span class="line">                not_swap[i] = Math.min(not_swap[i], swap[i - <span class="number">1</span>]);</span><br><span class="line">                swap[i] = Math.min(swap[i], not_swap[i - <span class="number">1</span>] + <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> Math.min(swap[A.length - <span class="number">1</span>], not_swap[A.length - <span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Google</tag>
+        <tag>DP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode465-optimalAccountBalancing</title>
+    <url>/2020/04/07/Leetcode465-optimalAccountBalancing/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>A group of friends went on holiday and sometimes lent each other money. For example, Alice paid for Bill’s lunch for $10. Then later Chris gave Alice $5 for a taxi ride. We can model each transaction as a tuple (x, y, z) which means person x gave person y $z. Assuming Alice, Bill, and Chris are person 0, 1, and 2 respectively (0, 1, 2 are the person’s ID), the transactions can be represented as [[0, 1, 10], [2, 0, 5]].</p>
+<p>Given a list of transactions between a group of people, return the minimum number of transactions required to settle the debt.</p>
+<p><strong>Note:</strong></p>
+<ol>
+<li>A transaction will be given as a tuple (x, y, z). Note that x ≠ y and z &gt; 0.</li>
+<li>Person’s IDs may not be linear, e.g. we could have the persons 0, 1, 2 or we could also have the persons 0, 2, 6.</li>
+</ol>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input:</span><br><span class="line">[[0,1,10], [2,0,5]]</span><br><span class="line"></span><br><span class="line">Output:</span><br><span class="line">2</span><br><span class="line"></span><br><span class="line">Explanation:</span><br><span class="line">Person #0 gave person #1 $10.</span><br><span class="line">Person #2 gave person #0 $5.</span><br><span class="line"></span><br><span class="line">Two transactions are needed. One way to settle the debt is person #1 pays person #0 and #2 $5 each.</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input:</span><br><span class="line">[[0,1,10], [1,0,1], [1,2,5], [2,0,5]]</span><br><span class="line"></span><br><span class="line">Output:</span><br><span class="line">1</span><br><span class="line"></span><br><span class="line">Explanation:</span><br><span class="line">Person #0 gave person #1 $10.</span><br><span class="line">Person #1 gave person #0 $1.</span><br><span class="line">Person #1 gave person #2 $5.</span><br><span class="line">Person #2 gave person #0 $5.</span><br><span class="line"></span><br><span class="line">Therefore, person #1 only need to give person #0 $4, and all debt is settled.</span><br></pre></td></tr></table></figure></p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>With all the given transactions, in the end, each person with ID = id will have an overall balance bal[id]. Note that the id value or any person coincidentally with 0 balance is irrelevant to debt settling count, so we can simply use an array debt[] to store all non-zero balances, where</p>
+<ul>
+<li>debt[i] &gt; 0 means a person needs to pay $ debt[i] to other person(s);</li>
+<li>debt[i] &lt; 0 means a person needs to collect $ debt[i] back from other person(s).</li>
+</ul>
+<p>Starting from first debt debt[0], we look for all other debts debt[i] (i&gt;0) which have opposite sign to debt[0]. Then each such debt[i] can make one transaction debt[i] += debt[0] to clear the person with debt debt[0]. From now on, the person with debt debt[0] is dropped out of the problem and we recursively drop persons one by one until everyone’s debt is cleared meanwhile updating the minimum number of transactions during DFS.</p>
+<p>Worest Time: O(n!), factorial of n<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minTransfers</span><span class="params">(<span class="keyword">int</span>[][] transactions)</span> </span>&#123;</span><br><span class="line">        HashMap&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span>[] trans: transactions)&#123;</span><br><span class="line">            map.put(trans[<span class="number">0</span>], map.getOrDefault(trans[<span class="number">0</span>], <span class="number">0</span>) - trans[<span class="number">2</span>]);</span><br><span class="line">            map.put(trans[<span class="number">1</span>], map.getOrDefault(trans[<span class="number">1</span>], <span class="number">0</span>) + trans[<span class="number">2</span>]);</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//      sort can improve speed</span></span><br><span class="line">        List&lt;Integer&gt; debt = <span class="keyword">new</span> ArrayList&lt;&gt;(map.values());</span><br><span class="line">        Collections.sort(debt);</span><br><span class="line"><span class="comment">//      -----------------------</span></span><br><span class="line">        <span class="keyword">return</span> helper(<span class="number">0</span>, debt);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">helper</span><span class="params">(<span class="keyword">int</span> cur, List&lt;Integer&gt; debt)</span></span>&#123;</span><br><span class="line">        <span class="keyword">while</span>(cur &lt; debt.size() &amp;&amp; debt.get(cur) == <span class="number">0</span>)</span><br><span class="line">            cur++;</span><br><span class="line">        <span class="keyword">if</span> (cur == debt.size())</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> res = Integer.MAX_VALUE;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = cur + <span class="number">1</span>; i &lt; debt.size(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (debt.get(cur) * debt.get(i) &lt; <span class="number">0</span>)&#123;</span><br><span class="line">                debt.set(i, debt.get(i) + debt.get(cur));</span><br><span class="line">                res = Math.min(res, <span class="number">1</span> + helper(cur + <span class="number">1</span>, debt));</span><br><span class="line">                debt.set(i, debt.get(i) - debt.get(cur));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Google</tag>
+        <tag>DFS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode363-maxSumOfRectangleNoLargerThanK</title>
+    <url>/2020/04/07/Leetcode363-maxSumOfRectangleNoLargerThanK/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given a non-empty 2D matrix matrix and an integer k, find the max sum of a rectangle in the matrix such that its sum is no larger than k.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: matrix = [[1,0,1],[0,-2,3]], k = 2</span><br><span class="line">Output: 2 </span><br><span class="line">Explanation: Because the sum of rectangle [[0, 1], [-2, 3]] is 2,</span><br><span class="line">             and 2 is the max number no larger than k (k = 2).</span><br></pre></td></tr></table></figure>
+<p><strong>Note:</strong></p>
+<ol>
+<li>The rectangle inside the matrix must have an area &gt; 0.</li>
+<li>What if the number of rows is much larger than the number of columns?</li>
+</ol>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p><strong>Solution 1: Brute force</strong><br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">// O((nm)^2)     </span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxSumSubmatrix</span><span class="params">(<span class="keyword">int</span>[][] matrix, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (matrix == <span class="keyword">null</span> || matrix.length == <span class="number">0</span> || matrix[<span class="number">0</span>].length == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> rows = matrix.length, cols = matrix[<span class="number">0</span>].length;</span><br><span class="line">        <span class="keyword">int</span>[][] areas = <span class="keyword">new</span> <span class="keyword">int</span>[rows][cols];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> r = <span class="number">0</span>; r &lt; rows; r++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> c = <span class="number">0</span>; c &lt; cols; c++) &#123;</span><br><span class="line">                <span class="keyword">int</span> area = matrix[r][c];</span><br><span class="line">                <span class="keyword">if</span> (r-<span class="number">1</span> &gt;= <span class="number">0</span>)</span><br><span class="line">                    area += areas[r-<span class="number">1</span>][c];</span><br><span class="line">                <span class="keyword">if</span> (c-<span class="number">1</span> &gt;= <span class="number">0</span>)</span><br><span class="line">                    area += areas[r][c-<span class="number">1</span>];</span><br><span class="line">                <span class="keyword">if</span> (r-<span class="number">1</span> &gt;= <span class="number">0</span> &amp;&amp; c-<span class="number">1</span> &gt;= <span class="number">0</span>)</span><br><span class="line">                    area -= areas[r-<span class="number">1</span>][c-<span class="number">1</span>];</span><br><span class="line">                areas[r][c] = area;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> max = Integer.MIN_VALUE;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> r1 = <span class="number">0</span>; r1 &lt; rows; r1++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> c1 = <span class="number">0</span>; c1 &lt; cols; c1++) &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> r2 = r1; r2 &lt; rows; r2++) &#123;</span><br><span class="line">                    <span class="keyword">for</span> (<span class="keyword">int</span> c2 = c1; c2 &lt; cols; c2++) &#123;</span><br><span class="line">                        <span class="keyword">int</span> area = areas[r2][c2];</span><br><span class="line">                        <span class="keyword">if</span> (r1-<span class="number">1</span> &gt;= <span class="number">0</span>)</span><br><span class="line">                            area -= areas[r1-<span class="number">1</span>][c2];</span><br><span class="line">                        <span class="keyword">if</span> (c1-<span class="number">1</span> &gt;= <span class="number">0</span>)</span><br><span class="line">                            area -= areas[r2][c1-<span class="number">1</span>];</span><br><span class="line">                        <span class="keyword">if</span> (r1-<span class="number">1</span> &gt;= <span class="number">0</span> &amp;&amp; c1 -<span class="number">1</span> &gt;= <span class="number">0</span>)</span><br><span class="line">                            area += areas[r1-<span class="number">1</span>][c1-<span class="number">1</span>];</span><br><span class="line">                        <span class="keyword">if</span> (area &lt;= k)</span><br><span class="line">                            max = Math.max(max, area);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>Solution 2: 2D Kadane’s algorithm + 1D maxSum problem with sum limit k</strong><br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"><span class="comment">//     O(n^2 * m * logm)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxSumSubmatrix</span><span class="params">(<span class="keyword">int</span>[][] matrix, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//2D Kadane's algorithm + 1D maxSum problem with sum limit k</span></span><br><span class="line">        <span class="comment">//2D subarray sum solution</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//boundary check</span></span><br><span class="line">        <span class="keyword">if</span>(matrix.length == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> m = matrix.length, n = matrix[<span class="number">0</span>].length;</span><br><span class="line">        <span class="keyword">int</span> result = Integer.MIN_VALUE;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//outer loop should use smaller axis</span></span><br><span class="line">        <span class="comment">//now we assume we have more rows than cols, therefore outer loop will be based on cols </span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> left = <span class="number">0</span>; left &lt; n; left++)&#123;</span><br><span class="line">            <span class="comment">//array that accumulate sums for each row from left to right </span></span><br><span class="line">            <span class="keyword">int</span>[] sums = <span class="keyword">new</span> <span class="keyword">int</span>[m];</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> right = left; right &lt; n; right++)&#123;</span><br><span class="line">                <span class="comment">//update sums[] to include values in curr right col</span></span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++)&#123;</span><br><span class="line">                    sums[i] += matrix[i][right];</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="comment">//we use TreeSet to help us find the rectangle with maxSum &lt;= k with O(logN) time</span></span><br><span class="line">                TreeSet&lt;Integer&gt; set = <span class="keyword">new</span> TreeSet&lt;Integer&gt;();</span><br><span class="line">                <span class="comment">//add 0 to cover the single row case</span></span><br><span class="line">                set.add(<span class="number">0</span>);</span><br><span class="line">                <span class="keyword">int</span> currSum = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> sum : sums)&#123;</span><br><span class="line">                    currSum += sum;</span><br><span class="line">                    <span class="comment">//we use sum subtraction (curSum - sum) to get the subarray with sum &lt;= k</span></span><br><span class="line">                    <span class="comment">//therefore we need to look for the smallest sum &gt;= currSum - k</span></span><br><span class="line">                    Integer num = set.ceiling(currSum - k);</span><br><span class="line">                    <span class="keyword">if</span>(num != <span class="keyword">null</span>) result = Math.max( result, currSum - num );</span><br><span class="line">                    set.add(currSum);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Google</tag>
+        <tag>DP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode946-validateStackSequences</title>
+    <url>/2020/04/07/Leetcode946-validateStackSequences/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given two sequences pushed and popped with distinct values, return true if and only if this could have been the result of a sequence of push and pop operations on an initially empty stack.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: pushed = [1,2,3,4,5], popped = [4,5,3,2,1]</span><br><span class="line">Output: true</span><br><span class="line">Explanation: We might do the following sequence:</span><br><span class="line">push(1), push(2), push(3), push(4), pop() -&gt; 4,</span><br><span class="line">push(5), pop() -&gt; 5, pop() -&gt; 3, pop() -&gt; 2, pop() -&gt; 1</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: pushed = [1,2,3,4,5], popped = [4,3,5,1,2]</span><br><span class="line">Output: false</span><br><span class="line">Explanation: 1 cannot be popped before 2.</span><br></pre></td></tr></table></figure></p>
+<p><strong>Note:</strong></p>
+<ol>
+<li>0 &lt;= pushed.length == popped.length &lt;= 1000</li>
+<li>0 &lt;= pushed[i], popped[i] &lt; 1000</li>
+<li>pushed is a permutation of popped.</li>
+<li>pushed and popped have distinct values.</li>
+</ol>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p><strong>Solution 1:</strong> Simulating</p>
+<p>Time: O(n)</p>
+<p>Space: O(n)<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">validateStackSequences</span><span class="params">(<span class="keyword">int</span>[] pushed, <span class="keyword">int</span>[] popped)</span> </span>&#123;</span><br><span class="line">        Stack&lt;Integer&gt; st = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> idx = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> num: pushed)&#123;</span><br><span class="line">            st.push(num);</span><br><span class="line">            <span class="keyword">while</span>(!st.isEmpty() &amp;&amp; st.peek() == popped[idx])&#123;</span><br><span class="line">                idx++;</span><br><span class="line">                st.pop();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> st.isEmpty();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>Solution 2: Used pushed as stack, change the input array</strong></p>
+<p>Time: O(n)</p>
+<p>Space: O(1)<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">validateStackSequences</span><span class="params">(<span class="keyword">int</span>[] pushed, <span class="keyword">int</span>[] popped)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> num: pushed)&#123;</span><br><span class="line">            pushed[i++] = num;</span><br><span class="line">            <span class="keyword">while</span>(i &gt; <span class="number">0</span> &amp;&amp; pushed[i - <span class="number">1</span>] == popped[j])&#123;</span><br><span class="line">                i--;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> i == <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Google</tag>
+        <tag>Stack</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode659-splitArrayIntoConsecutiveSubsequences</title>
+    <url>/2020/04/07/Leetcode659-splitArrayIntoConsecutiveSubsequences/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given an array nums sorted in ascending order, return true if and only if you can split it into 1 or more subsequences such that each subsequence consists of consecutive integers and has length at least 3.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [1,2,3,3,4,5]</span><br><span class="line">Output: True</span><br><span class="line">Explanation:</span><br><span class="line">You can split them into two consecutive subsequences : </span><br><span class="line">1, 2, 3</span><br><span class="line">3, 4, 5</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [1,2,3,3,4,4,5,5]</span><br><span class="line">Output: True</span><br><span class="line">Explanation:</span><br><span class="line">You can split them into two consecutive subsequences : </span><br><span class="line">1, 2, 3, 4, 5</span><br><span class="line">3, 4, 5</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example 3:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [1,2,3,4,4,5]</span><br><span class="line">Output: False</span><br></pre></td></tr></table></figure></p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>1 &lt;= nums.length &lt;= 10000</li>
+</ul>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>I used a greedy algorithm.</p>
+<p>leftis a hashmap, left[i] counts the number of i that I haven’t placed yet.</p>
+<p>endis a hashmap, end[i] counts the number of consecutive subsequences that ends at number i</p>
+<p>Then I tried to split the nums one by one.</p>
+<p>If I could neither add a number to the end of a existing consecutive subsequence nor find two following number in the left, I returned False</p>
+<p>Time: O(N)</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isPossible</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        HashMap&lt;Integer, Integer&gt; left = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        HashMap&lt;Integer, Integer&gt; end = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> num: nums)&#123;</span><br><span class="line">            left.put(num, left.getOrDefault(num, <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">            end.put(num, <span class="number">0</span>);            </span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> num: nums)&#123;</span><br><span class="line">            <span class="keyword">if</span> (left.get(num) == <span class="number">0</span>) <span class="keyword">continue</span>;</span><br><span class="line">            left.put(num, left.get(num) - <span class="number">1</span>);</span><br><span class="line">            <span class="keyword">if</span> (end.getOrDefault(num - <span class="number">1</span>, <span class="number">0</span>) &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                end.put(num - <span class="number">1</span>, end.get(num - <span class="number">1</span>) - <span class="number">1</span>);</span><br><span class="line">                end.put(num, end.get(num) + <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (left.getOrDefault(num + <span class="number">1</span>, <span class="number">0</span>) &gt; <span class="number">0</span> &amp;&amp; left.getOrDefault(num + <span class="number">2</span>, <span class="number">0</span>) &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                left.put(num + <span class="number">1</span>, left.get(num + <span class="number">1</span>) - <span class="number">1</span>);</span><br><span class="line">                left.put(num + <span class="number">2</span>, left.get(num + <span class="number">2</span>) - <span class="number">1</span>);</span><br><span class="line">                end.put(num + <span class="number">2</span>, end.get(num + <span class="number">2</span>) + <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Google</tag>
+        <tag>Greedy</tag>
+        <tag>Heap</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode1231-divideChocolate</title>
+    <url>/2020/04/07/Leetcode1231-divideChocolate/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>You have one chocolate bar that consists of some chunks. Each chunk has its own sweetness given by the array sweetness.</p>
+<p>You want to share the chocolate with your K friends so you start cutting the chocolate bar into K+1 pieces using K cuts, each piece consists of some consecutive chunks.</p>
+<p>Being generous, you will eat the piece with the minimum total sweetness and give the other pieces to your friends.</p>
+<p>Find the maximum total sweetness of the piece you can get by cutting the chocolate bar optimally.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: sweetness = [1,2,3,4,5,6,7,8,9], K = 5</span><br><span class="line">Output: 6</span><br><span class="line">Explanation: You can divide the chocolate to [1,2,3], [4,5], [6], [7], [8], [9]</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: sweetness = [5,6,7,8,9,1,2,3,4], K = 8</span><br><span class="line">Output: 1</span><br><span class="line">Explanation: There is only one way to cut the bar into 9 pieces.</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example 3:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: sweetness = [1,2,2,1,2,2,1,2,2], K = 2</span><br><span class="line">Output: 5</span><br><span class="line">Explanation: You can divide the chocolate to [1,2,2], [1,2,2], [1,2,2]</span><br></pre></td></tr></table></figure></p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>0 &lt;= K &lt; sweetness.length &lt;= 10^4</li>
+<li>1 &lt;= sweetness[i] &lt;= 10^5</li>
+</ul>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Binary Search</span></span><br><span class="line"><span class="comment">// Time O(Nlog(10^9))</span></span><br><span class="line"><span class="comment">// Space O(1)</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maximizeSweetness</span><span class="params">(<span class="keyword">int</span>[] sweetness, <span class="keyword">int</span> K)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> right = (<span class="keyword">int</span>)<span class="number">1e9</span>/(K + <span class="number">1</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(left &lt; right)&#123;</span><br><span class="line">            <span class="keyword">int</span> mid = (left + right + <span class="number">1</span>) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">int</span> cur = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> cuts = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> sweet: sweetness)&#123;</span><br><span class="line">                cur += sweet;</span><br><span class="line">                <span class="keyword">if</span> (cur &gt;= mid)&#123;</span><br><span class="line">                    cuts++;</span><br><span class="line">                    cur = <span class="number">0</span>;</span><br><span class="line">                    <span class="keyword">if</span> (cuts &gt; K) <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (cuts &gt; K)</span><br><span class="line">                left = mid;</span><br><span class="line">            <span class="keyword">else</span> right = mid - <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> left;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Google</tag>
+        <tag>Binary Search</tag>
+        <tag>Greedy</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode846-handOfStraights</title>
+    <url>/2020/04/07/Leetcode846-handOfStraights/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Alice has a hand of cards, given as an array of integers.</p>
+<p>Now she wants to rearrange the cards into groups so that each group is size W, and consists of W consecutive cards.</p>
+<p>Return true if and only if she can.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: hand = [1,2,3,6,2,3,4,7,8], W = 3</span><br><span class="line">Output: true</span><br><span class="line">Explanation: Alice&apos;s hand can be rearranged as [1,2,3],[2,3,4],[6,7,8].</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: hand = [1,2,3,4,5], W = 4</span><br><span class="line">Output: false</span><br><span class="line">Explanation: Alice&apos;s hand can&apos;t be rearranged into groups of 4.</span><br></pre></td></tr></table></figure></p>
+<p><strong>Note:</strong></p>
+<ol>
+<li>1 &lt;= hand.length &lt;= 10000</li>
+<li>0 &lt;= hand[i] &lt;= 10^9</li>
+<li>1 &lt;= W &lt;= hand.length</li>
+</ol>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p><strong>Solution 1:</strong></p>
+<ol>
+<li>Count number of different cards to a map c</li>
+<li>Loop from the smallest card number.</li>
+<li>Everytime we meet a new card i, we cut off i ~ i + W - 1 from the counter.</li>
+</ol>
+<p>O(MlogM + MW)</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isNStraightHand</span><span class="params">(<span class="keyword">int</span>[] hand, <span class="keyword">int</span> W)</span> </span>&#123;</span><br><span class="line">        Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> TreeMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> card: hand)</span><br><span class="line">            map.put(card, map.getOrDefault(card, <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> card: map.keySet())&#123;</span><br><span class="line">            <span class="keyword">if</span> (map.get(card) &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = W - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)&#123;</span><br><span class="line">                    <span class="keyword">if</span> (map.getOrDefault(card + i, <span class="number">0</span>) &lt; map.get(card)) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">                    map.put(card + i, map.get(card + i) - map.get(card));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Solution 2:</strong></p>
+<ol>
+<li>Count number of different cards to a map c</li>
+<li>Cur represent current open straight groups.</li>
+<li>In a deque start, we record the number of opened a straight group.</li>
+<li>Loop from the smallest card number.</li>
+</ol>
+<p>O(NlogM)</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isNStraightHand</span><span class="params">(<span class="keyword">int</span>[] hand, <span class="keyword">int</span> W)</span> </span>&#123;</span><br><span class="line">        Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> TreeMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> card: hand)</span><br><span class="line">            map.put(card, map.getOrDefault(card, <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">        Queue&lt;Integer&gt; start = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> cur = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> pre = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> card: map.keySet())&#123;</span><br><span class="line">            <span class="keyword">if</span> (cur &gt; <span class="number">0</span> &amp;&amp; card &gt; pre + <span class="number">1</span> || cur &gt; map.get(card)) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            start.add(map.get(card) - cur);</span><br><span class="line">            pre = card;</span><br><span class="line">            cur = map.get(card);</span><br><span class="line">            <span class="keyword">if</span> (start.size() == W) cur -= start.poll();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cur == <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Google</tag>
+        <tag>Array</tag>
+        <tag>Hash Table</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode1110-deleteNodesAndReturnForest</title>
+    <url>/2020/04/07/Leetcode1110-deleteNodesAndReturnForest/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given the root of a binary tree, each node in the tree has a distinct value.</p>
+<p>After deleting all nodes with a value in to_delete, we are left with a forest (a disjoint union of trees).</p>
+<p>Return the roots of the trees in the remaining forest.  You may return the result in any order.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><img src="https://assets.leetcode.com/uploads/2019/07/01/screen-shot-2019-07-01-at-53836-pm.png" alt=""><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: root = [1,2,3,4,5,6,7], to_delete = [3,5]</span><br><span class="line">Output: [[1,2,null,4],[6],[7]]</span><br></pre></td></tr></table></figure></p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>The number of nodes in the given tree is at most 1000.</li>
+<li>Each node has a distinct value between 1 and 1000.</li>
+<li>to_delete.length &lt;= 1000</li>
+<li>to_delete contains distinct values between 1 and 1000.</li>
+</ul>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * public class TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode left;</span></span><br><span class="line"><span class="comment"> *     TreeNode right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) &#123; val = x; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;TreeNode&gt; <span class="title">delNodes</span><span class="params">(TreeNode root, <span class="keyword">int</span>[] to_delete)</span> </span>&#123;</span><br><span class="line">        HashSet&lt;Integer&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> num: to_delete)</span><br><span class="line">            set.add(num);</span><br><span class="line">        List&lt;TreeNode&gt; res = <span class="keyword">new</span> ArrayList&lt;TreeNode&gt;();</span><br><span class="line">        helper(root, res, set, <span class="keyword">true</span>);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> TreeNode <span class="title">helper</span><span class="params">(TreeNode node, List&lt;TreeNode&gt; res, HashSet&lt;Integer&gt; set, <span class="keyword">boolean</span> isRoot)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (node == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">boolean</span> isDeleted = set.contains(node.val);</span><br><span class="line">        <span class="keyword">if</span> (isRoot &amp;&amp; !isDeleted) res.add(node);</span><br><span class="line">        node.left = helper(node.left, res, set, isDeleted);</span><br><span class="line">        node.right = helper(node.right, res, set, isDeleted);</span><br><span class="line">        <span class="keyword">return</span> isDeleted ? <span class="keyword">null</span> : node;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Google</tag>
+        <tag>DFS</tag>
+        <tag>Tree</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode1153-stringTransformsIntoAnotherString</title>
+    <url>/2020/04/07/Leetcode1153-stringTransformsIntoAnotherString/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given two strings str1 and str2 of the same length, determine whether you can transform str1 into str2 by doing zero or more conversions.</p>
+<p>In one conversion you can convert all occurrences of one character in str1 to any other lowercase English character.</p>
+<p>Return true if and only if you can transform str1 into str2.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: str1 = &quot;aabcc&quot;, str2 = &quot;ccdee&quot;</span><br><span class="line">Output: true</span><br><span class="line">Explanation: Convert &apos;c&apos; to &apos;e&apos; then &apos;b&apos; to &apos;d&apos; then &apos;a&apos; to &apos;c&apos;. Note that the order of conversions matter.</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: str1 = &quot;leetcode&quot;, str2 = &quot;codeleet&quot;</span><br><span class="line">Output: false</span><br><span class="line">Explanation: There is no way to transform str1 to str2.</span><br></pre></td></tr></table></figure></p>
+<p><strong>Note:</strong></p>
+<ol>
+<li>1 &lt;= str1.length == str2.length &lt;= 10^4</li>
+<li>Both str1 and str2 contain only lowercase English letters.</li>
+</ol>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>此题的对应有以下几个关系:</p>
+<ol>
+<li>一对一，每一个char互相对应转换即可 a-&gt;b</li>
+<li>多对一， aabcc,ccdee, a-&gt;c, c-&gt;e，其实只要有未在target string出现过的char，那么就可以拿来作为temp char桥梁，比如 a-&gt;g-&gt;c这样转换就不会同时影响c-&gt;e的转换</li>
+<li>一对多，a-&gt;f, a-&gt;g 这样是绝对不可能的，因为char会被同时影响</li>
+</ol>
+<p>另外还有一种特殊情况就是，source和target的unique char的数量是一样的时候，如果此时是26个<br>则说明完全不能转换，因为没有extra的temp char作为转换的桥梁<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//  there should at least one character that is unused, to use it as the tmp for transformation.</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">canConvert</span><span class="params">(String str1, String str2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (str1.equals(str2)) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        HashMap&lt;Character, Character&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; str1.length(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (map.getOrDefault(str1.charAt(i), str2.charAt(i)) != str2.charAt(i))</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            map.put(str1.charAt(i), str2.charAt(i));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> HashSet&lt;&gt;(map.values()).size() &lt; <span class="number">26</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Google</tag>
+        <tag>Hash Table</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode1088-confusingNumberII</title>
+    <url>/2020/04/07/Leetcode1088-confusingNumberII/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>We can rotate digits by 180 degrees to form new digits. When 0, 1, 6, 8, 9 are rotated 180 degrees, they become 0, 1, 9, 8, 6 respectively. When 2, 3, 4, 5 and 7 are rotated 180 degrees, they become invalid.</p>
+<p>A confusing number is a number that when rotated 180 degrees becomes a different number with each digit valid.(Note that the rotated number can be greater than the original number.)</p>
+<p>Given a positive integer N, return the number of confusing numbers between 1 and N inclusive.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: 20</span><br><span class="line">Output: 6</span><br><span class="line">Explanation: </span><br><span class="line">The confusing numbers are [6,9,10,16,18,19].</span><br><span class="line">6 converts to 9.</span><br><span class="line">9 converts to 6.</span><br><span class="line">10 converts to 01 which is just 1.</span><br><span class="line">16 converts to 91.</span><br><span class="line">18 converts to 81.</span><br><span class="line">19 converts to 61.</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: 100</span><br><span class="line">Output: 19</span><br><span class="line">Explanation: </span><br><span class="line">The confusing numbers are [6,9,10,16,18,19,60,61,66,68,80,81,86,89,90,91,98,99,100].</span><br></pre></td></tr></table></figure></p>
+<p><strong>Note:</strong></p>
+<p>1 &lt;= N &lt;= 10^9</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">    HashMap&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">confusingNumberII</span><span class="params">(<span class="keyword">int</span> N)</span> </span>&#123;</span><br><span class="line">        map.put(<span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">        map.put(<span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">        map.put(<span class="number">6</span>, <span class="number">9</span>);</span><br><span class="line">        map.put(<span class="number">8</span>, <span class="number">8</span>);</span><br><span class="line">        map.put(<span class="number">9</span>, <span class="number">6</span>);</span><br><span class="line">        </span><br><span class="line">        helper(<span class="number">0</span>, <span class="number">0</span>, N);</span><br><span class="line">        <span class="keyword">return</span> N == <span class="number">1000000000</span> ? res + <span class="number">1</span> : res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">helper</span><span class="params">(<span class="keyword">int</span> idx, <span class="keyword">int</span> cur, <span class="keyword">int</span> N)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (idx &gt; <span class="number">9</span> || cur &gt; N)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">if</span> (isConfused(cur))</span><br><span class="line">            res++;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> number: map.keySet())&#123;</span><br><span class="line">            <span class="keyword">if</span> (idx == <span class="number">0</span> &amp;&amp; number == <span class="number">0</span>)</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            helper(idx + <span class="number">1</span>, cur * <span class="number">10</span> + number, N);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">isConfused</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">        <span class="keyword">long</span> rot = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> temp = x;</span><br><span class="line">        <span class="keyword">while</span>(x &gt; <span class="number">0</span>)&#123;</span><br><span class="line">            rot = rot * <span class="number">10</span> + map.get(x % <span class="number">10</span>);</span><br><span class="line">            x /= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> rot != temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Google</tag>
+        <tag>DFS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode809-expressWords</title>
+    <url>/2020/04/07/Leetcode809-expressWords/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Sometimes people repeat letters to represent extra feeling, such as “hello” -&gt; “heeellooo”, “hi” -&gt; “hiiii”.  In these strings like “heeellooo”, we have groups of adjacent letters that are all the same:  “h”, “eee”, “ll”, “ooo”.</p>
+<p>For some given string S, a query word is stretchy if it can be made to be equal to S by any number of applications of the following extension operation: choose a group consisting of characters c, and add some number of characters c to the group so that the size of the group is 3 or more.</p>
+<p>For example, starting with “hello”, we could do an extension on the group “o” to get “hellooo”, but we cannot get “helloo” since the group “oo” has size less than 3.  Also, we could do another extension like “ll” -&gt; “lllll” to get “helllllooo”.  If S = “helllllooo”, then the query word “hello” would be stretchy because of these two extension operations: query = “hello” -&gt; “hellooo” -&gt; “helllllooo” = S.</p>
+<p>Given a list of query words, return the number of words that are stretchy. </p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: </span><br><span class="line">S = &quot;heeellooo&quot;</span><br><span class="line">words = [&quot;hello&quot;, &quot;hi&quot;, &quot;helo&quot;]</span><br><span class="line">Output: 1</span><br><span class="line">Explanation: </span><br><span class="line">We can extend &quot;e&quot; and &quot;o&quot; in the word &quot;hello&quot; to get &quot;heeellooo&quot;.</span><br><span class="line">We can&apos;t extend &quot;helo&quot; to get &quot;heeellooo&quot; because the group &quot;ll&quot; is not size 3 or more.</span><br></pre></td></tr></table></figure>
+<p><strong>Notes:</strong></p>
+<ul>
+<li>0 &lt;= len(S) &lt;= 100.</li>
+<li>0 &lt;= len(words) &lt;= 100.</li>
+<li>0 &lt;= len(words[i]) &lt;= 100.</li>
+<li>S and all words in words consist only of lowercase letters</li>
+</ul>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">1. If S[i] == W[j], i++, j++</span></span><br><span class="line"><span class="comment">2. If S[i - 2] == S[i - 1] == S[i] or S[i - 1] == S[i] == S[i + 1], i++</span></span><br><span class="line"><span class="comment">3. return false</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">expressiveWords</span><span class="params">(String S, String[] words)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (String word: words)</span><br><span class="line">            <span class="keyword">if</span> (check(S, word)) res++;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">check</span><span class="params">(String S, String word)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(i &lt; S.length())&#123;</span><br><span class="line">            <span class="keyword">if</span> (j &lt; word.length() &amp;&amp; S.charAt(i) == word.charAt(j))&#123;</span><br><span class="line">                i++;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (i &gt; <span class="number">1</span> &amp;&amp; S.charAt(i) == S.charAt(i - <span class="number">1</span>) &amp;&amp; S.charAt(i - <span class="number">2</span>) == S.charAt(i))&#123;</span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (i &gt; <span class="number">0</span> &amp;&amp; i &lt; S.length() - <span class="number">1</span> &amp;&amp; S.charAt(i) == S.charAt(i - <span class="number">1</span>) &amp;&amp; S.charAt(i) == S.charAt(i + <span class="number">1</span>))&#123;</span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> j == word.length();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Google</tag>
+        <tag>String</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode843-guessTheWord</title>
+    <url>/2020/04/07/Leetcode843-guessTheWord/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>This problem is an interactive problem new to the LeetCode platform.</p>
+<p>We are given a word list of unique words, each word is 6 letters long, and one word in this list is chosen as secret.</p>
+<p>You may call master.guess(word) to guess a word.  The guessed word should have type string and must be from the original list with 6 lowercase letters.</p>
+<p>This function returns an integer type, representing the number of exact matches (value and position) of your guess to the secret word.  Also, if your guess is not in the given wordlist, it will return -1 instead.</p>
+<p>For each test case, you have 10 guesses to guess the word. At the end of any number of calls, if you have made 10 or less calls to master.guess and at least one of these guesses was the secret, you pass the testcase.</p>
+<p>Besides the example test case below, there will be 5 additional test cases, each with 100 words in the word list.  The letters of each word in those testcases were chosen independently at random from ‘a’ to ‘z’, such that every word in the given word lists is unique.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Example 1:</span><br><span class="line">Input: secret = &quot;acckzz&quot;, wordlist = [&quot;acckzz&quot;,&quot;ccbazz&quot;,&quot;eiowzz&quot;,&quot;abcczz&quot;]</span><br><span class="line"></span><br><span class="line">Explanation:</span><br><span class="line"></span><br><span class="line">master.guess(&quot;aaaaaa&quot;) returns -1, because &quot;aaaaaa&quot; is not in wordlist.</span><br><span class="line">master.guess(&quot;acckzz&quot;) returns 6, because &quot;acckzz&quot; is secret and has all 6 matches.</span><br><span class="line">master.guess(&quot;ccbazz&quot;) returns 3, because &quot;ccbazz&quot; has 3 matches.</span><br><span class="line">master.guess(&quot;eiowzz&quot;) returns 2, because &quot;eiowzz&quot; has 2 matches.</span><br><span class="line">master.guess(&quot;abcczz&quot;) returns 4, because &quot;abcczz&quot; has 4 matches.</span><br><span class="line"></span><br><span class="line">We made 5 calls to master.guess and one of them was the secret, so we pass the test case.</span><br></pre></td></tr></table></figure>
+<p><strong>Note:</strong>  Any solutions that attempt to circumvent the judge will result in disqualification.</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p><strong>Solution 1: Guess a Random Word</strong></p>
+<p>All words are generated randomly.</p>
+<p>So why not we also guess a random word and let it be whatever will be.</p>
+<p><strong>Solution 2: Minimax</strong></p>
+<p>Generally, we will get 0 matches from the master.guess. As a result, the size of wordlist reduces slowly.</p>
+<p>Recall some math here, the possiblity that get 0 matched is:</p>
+<script type="math/tex; mode=display">(25/26) ^ 6 = 79.03%</script><p>That is to say, if we make a blind guess,<br>we have about 80% chance to get 0 matched with the secret word.</p>
+<p>To simplify the model,<br>we’re going to assume that,<br>we will always run into the worst case (get 0 matched).</p>
+<p>In this case,<br>we have 80% chance to eliminate the candidate word<br>as well as its close words which have at least 1 match.</p>
+<p>Additionally, in order to delete a max part of words,<br>we select a candidate who has a big “family”,<br>(that is, the fewest 0 matched with other words.)<br><strong>We want to guess a word that can minimum our worst outcome.</strong></p>
+<p>So we compare each two words and count their matches.<br>For each word, we note how many word of 0 matches it gets.<br>Then we guess the word with minimum words of 0 matches.</p>
+<p>In this solution, we apply a minimax idea.<br>We minimize our worst case,<br>The worst case is <em>max(the number of words with x matches)</em>,<br>and we assume it equal to “the number of words with 0 matches”</p>
+<p><strong>Solution 3: Count the occurrence of characters</strong></p>
+<p>In the previous solution, we compaired each two words.<br>This make the complexity O(N^2) for each turn.</p>
+<p>But actually we don’t have to do that.<br>We just need to count the occurrence for each character on each position.</p>
+<p>If we can guess the word that not in the wordlist,<br>we can guess the word based on the most frequent character on the position.</p>
+<p>Here we have to guess a word from the list,<br>we still can calculate a score of similarity for each word,<br>and guess the word with highest score.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * // This is the Master's API interface.</span></span><br><span class="line"><span class="comment"> * // You should not implement it, or speculate about its implementation</span></span><br><span class="line"><span class="comment"> * interface Master &#123;</span></span><br><span class="line"><span class="comment"> *     public int guess(String word) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">findSecretWord</span><span class="params">(String[] wordlist, Master master)</span> </span>&#123;</span><br><span class="line"><span class="comment">//      Solution 1: Randomly guess, Time: O(N), Space: O(N)</span></span><br><span class="line">        <span class="comment">// for (int i = 0; i &lt; 10; i++)&#123;</span></span><br><span class="line">        <span class="comment">//     String guess = wordlist[new Random().nextInt(wordlist.length)];</span></span><br><span class="line">        <span class="comment">//     int x = master.guess(guess);</span></span><br><span class="line">        <span class="comment">//     if (x &lt; 6)&#123;</span></span><br><span class="line">        <span class="comment">//         List&lt;String&gt; temp = new ArrayList&lt;&gt;();</span></span><br><span class="line">        <span class="comment">//         for (String word: wordlist)&#123;</span></span><br><span class="line">        <span class="comment">//             if (match(word, guess) == x)</span></span><br><span class="line">        <span class="comment">//                 temp.add(word);</span></span><br><span class="line">        <span class="comment">//         &#125;</span></span><br><span class="line">        <span class="comment">//         wordlist = temp.toArray(new String[temp.size()]);</span></span><br><span class="line">        <span class="comment">//     &#125;</span></span><br><span class="line">        <span class="comment">// &#125;</span></span><br><span class="line"><span class="comment">//      Solution 2: Minimax guess, Time: O(N^2), Space: O(N)</span></span><br><span class="line"><span class="comment">//         for (int i = 0; i &lt; 10; i++)&#123;</span></span><br><span class="line"><span class="comment">//             HashMap&lt;String, Integer&gt; count = new HashMap&lt;&gt;();</span></span><br><span class="line"><span class="comment">//             for (String word1: wordlist)</span></span><br><span class="line"><span class="comment">//                 for (String word2: wordlist)</span></span><br><span class="line"><span class="comment">//                     if (match(word1, word2) == 0)</span></span><br><span class="line"><span class="comment">//                         count.put(word1, count.getOrDefault(word1, 0) + 1);</span></span><br><span class="line">            </span><br><span class="line"><span class="comment">//             String guess = "";</span></span><br><span class="line"><span class="comment">//             int min = Integer.MAX_VALUE;</span></span><br><span class="line"><span class="comment">//             for (String word: wordlist)&#123;</span></span><br><span class="line"><span class="comment">//                 if (min &gt; count.getOrDefault(word, 0))&#123;</span></span><br><span class="line"><span class="comment">//                     guess = word;</span></span><br><span class="line"><span class="comment">//                     min = count.getOrDefault(word, 0);</span></span><br><span class="line"><span class="comment">//                 &#125;</span></span><br><span class="line"><span class="comment">//             &#125;</span></span><br><span class="line">            </span><br><span class="line"><span class="comment">//             int x = master.guess(guess);</span></span><br><span class="line"><span class="comment">//             List&lt;String&gt; temp = new ArrayList&lt;&gt;();</span></span><br><span class="line"><span class="comment">//             for (String word: wordlist)&#123;</span></span><br><span class="line"><span class="comment">//                 if (match(guess, word) == x)</span></span><br><span class="line"><span class="comment">//                     temp.add(word);</span></span><br><span class="line"><span class="comment">//             &#125;</span></span><br><span class="line"><span class="comment">//             wordlist = temp.toArray(new String[temp.size()]);</span></span><br><span class="line"><span class="comment">//         &#125;</span></span><br><span class="line"><span class="comment">//      Solution 3: Count the occurance of each characters, Time O(N), Space O(N)</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">int</span>[][] count = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">6</span>][<span class="number">26</span>];</span><br><span class="line">            <span class="keyword">for</span> (String word: wordlist)</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; <span class="number">6</span>; k++)</span><br><span class="line">                    count[k][word.charAt(k) - <span class="string">'a'</span>]++;</span><br><span class="line">            </span><br><span class="line">            String guess = wordlist[<span class="number">0</span>];</span><br><span class="line">            <span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (String word: wordlist)&#123;</span><br><span class="line">                <span class="keyword">int</span> score = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; <span class="number">6</span>; k++)</span><br><span class="line">                    score += count[k][word.charAt(k) - <span class="string">'a'</span>];</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">if</span> (score &gt; max)&#123;</span><br><span class="line">                    max = score;</span><br><span class="line">                    guess = word;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">int</span> x = master.guess(guess);</span><br><span class="line">            List&lt;String&gt; temp = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">            <span class="keyword">for</span> (String word: wordlist)</span><br><span class="line">                <span class="keyword">if</span> (match(guess, word) == x)</span><br><span class="line">                    temp.add(word);</span><br><span class="line">            wordlist = temp.toArray(<span class="keyword">new</span> String[temp.size()]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//  Used to count the number of matches between two words</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">match</span><span class="params">(String s1, String s2)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s1.length(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (s1.charAt(i) == s2.charAt(i))</span><br><span class="line">                count++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Google</tag>
+        <tag>Minimax</tag>
+        <tag>Random</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode1007-minimumDominoRotationsForEqualRow</title>
+    <url>/2020/04/07/Leetcode1007-minimumDominoRotationsForEqualRow/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>In a row of dominoes, A[i] and B[i] represent the top and bottom halves of the i-th domino.  (A domino is a tile with two numbers from 1 to 6 - one on each half of the tile.)</p>
+<p>We may rotate the i-th domino, so that A[i] and B[i] swap values.</p>
+<p>Return the minimum number of rotations so that all the values in A are the same, or all the values in B are the same.</p>
+<p>If it cannot be done, return -1.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><img src="https://assets.leetcode.com/uploads/2019/03/08/domino.png" alt=""><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: A = [2,1,2,4,2,2], B = [5,2,6,2,3,2]</span><br><span class="line">Output: 2</span><br><span class="line">Explanation: </span><br><span class="line">The first figure represents the dominoes as given by A and B: before we do any rotations.</span><br><span class="line">If we rotate the second and fourth dominoes, we can make every value in the top row equal to 2, as indicated by the second figure.</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: A = [3,5,1,2,3], B = [3,6,3,3,4]</span><br><span class="line">Output: -1</span><br><span class="line">Explanation: </span><br><span class="line">In this case, it is not possible to rotate the dominoes to make one row of values equal.</span><br></pre></td></tr></table></figure></p>
+<p><strong>Note:</strong></p>
+<ol>
+<li>1 &lt;= A[i], B[i] &lt;= 6</li>
+<li>2 &lt;= A.length == B.length &lt;= 20000</li>
+</ol>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minDominoRotations</span><span class="params">(<span class="keyword">int</span>[] A, <span class="keyword">int</span>[] B)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">6</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">boolean</span> flag = <span class="keyword">false</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; A.length; j++)&#123;</span><br><span class="line">                <span class="keyword">if</span> (A[j] != i &amp;&amp; B[j] != i)&#123;</span><br><span class="line">                    flag = <span class="keyword">true</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (flag) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">int</span> numa = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> numb = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; A.length; j++)&#123;</span><br><span class="line">                <span class="keyword">if</span> (A[j] != i) numa++;</span><br><span class="line">                <span class="keyword">if</span> (B[j] != i) numb++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> Math.min(numa, numb);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Google</tag>
+        <tag>Array</tag>
+        <tag>Greedy</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Leetcode813-largestSumOfAverages</title>
     <url>/2020/03/29/Leetcode813-largestSumOfAverages/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
@@ -235,8 +674,8 @@
       </categories>
       <tags>
         <tag>DFS</tag>
-        <tag>Bloomberg</tag>
         <tag>Hash Table</tag>
+        <tag>Bloomberg</tag>
       </tags>
   </entry>
   <entry>
@@ -260,8 +699,8 @@
       <tags>
         <tag>Array</tag>
         <tag>Bloomberg</tag>
-        <tag>Two Pointers</tag>
         <tag>Binary Search</tag>
+        <tag>Two Pointers</tag>
       </tags>
   </entry>
   <entry>
@@ -364,6 +803,7 @@
         <category>leetcode</category>
       </categories>
       <tags>
+        <tag>Google</tag>
         <tag>Hash Table</tag>
         <tag>Math</tag>
       </tags>
@@ -464,6 +904,7 @@
         <category>leetcode</category>
       </categories>
       <tags>
+        <tag>Google</tag>
         <tag>Sliding Window</tag>
         <tag>DP</tag>
       </tags>
@@ -625,8 +1066,9 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Bloomberg</tag>
+        <tag>Google</tag>
         <tag>Hash Table</tag>
+        <tag>Bloomberg</tag>
       </tags>
   </entry>
   <entry>
@@ -687,6 +1129,7 @@
         <category>leetcode</category>
       </categories>
       <tags>
+        <tag>Google</tag>
         <tag>Array</tag>
         <tag>Bloomberg</tag>
       </tags>
@@ -950,8 +1393,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Bloomberg</tag>
         <tag>Hash Table</tag>
+        <tag>Bloomberg</tag>
         <tag>Bit Manipulation</tag>
       </tags>
   </entry>
@@ -1155,8 +1598,9 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Bloomberg</tag>
+        <tag>Google</tag>
         <tag>Hash Table</tag>
+        <tag>Bloomberg</tag>
         <tag>Two Pointers</tag>
         <tag>String</tag>
         <tag>Sliding Window</tag>
@@ -1280,6 +1724,7 @@
         <category>leetcode</category>
       </categories>
       <tags>
+        <tag>Google</tag>
         <tag>DFS</tag>
         <tag>Bloomberg</tag>
       </tags>
@@ -1307,8 +1752,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Bloomberg</tag>
         <tag>Hash Table</tag>
+        <tag>Bloomberg</tag>
         <tag>Math</tag>
       </tags>
   </entry>
@@ -1383,6 +1828,7 @@
         <category>leetcode</category>
       </categories>
       <tags>
+        <tag>Google</tag>
         <tag>Bloomberg</tag>
         <tag>Graph</tag>
         <tag>Union Find</tag>
@@ -1523,6 +1969,7 @@
         <category>leetcode</category>
       </categories>
       <tags>
+        <tag>Google</tag>
         <tag>BFS</tag>
         <tag>Bloomberg</tag>
       </tags>
@@ -1547,8 +1994,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Bloomberg</tag>
         <tag>Hash Table</tag>
+        <tag>Bloomberg</tag>
         <tag>String</tag>
       </tags>
   </entry>
@@ -1847,8 +2294,8 @@
       </categories>
       <tags>
         <tag>Bloomberg</tag>
-        <tag>Two Pointers</tag>
         <tag>Binary Search</tag>
+        <tag>Two Pointers</tag>
       </tags>
   </entry>
   <entry>
@@ -1927,8 +2374,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Bloomberg</tag>
         <tag>Hash Table</tag>
+        <tag>Bloomberg</tag>
         <tag>Heap</tag>
       </tags>
   </entry>
@@ -2275,6 +2722,7 @@
         <tag>Array</tag>
         <tag>Bloomberg</tag>
         <tag>Two Pointers</tag>
+        <tag>Goolge</tag>
       </tags>
   </entry>
   <entry>
@@ -2386,8 +2834,8 @@
       </categories>
       <tags>
         <tag>Array</tag>
-        <tag>Bloomberg</tag>
         <tag>Hash Table</tag>
+        <tag>Bloomberg</tag>
         <tag>String</tag>
       </tags>
   </entry>
@@ -2429,8 +2877,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Bloomberg</tag>
         <tag>Hash Table</tag>
+        <tag>Bloomberg</tag>
       </tags>
   </entry>
   <entry>
@@ -2576,8 +3024,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Recursion</tag>
         <tag>DP</tag>
+        <tag>Recursion</tag>
         <tag>Tree</tag>
       </tags>
   </entry>
@@ -2824,8 +3272,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Recursion</tag>
         <tag>DP</tag>
+        <tag>Recursion</tag>
       </tags>
   </entry>
   <entry>
@@ -2974,8 +3422,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Bloomberg</tag>
         <tag>Hash Table</tag>
+        <tag>Bloomberg</tag>
         <tag>Math</tag>
       </tags>
   </entry>
@@ -4296,8 +4744,8 @@
       </categories>
       <tags>
         <tag>Linked List</tag>
-        <tag>Bloomberg</tag>
         <tag>Microsoft</tag>
+        <tag>Bloomberg</tag>
       </tags>
   </entry>
   <entry>
@@ -4316,8 +4764,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Bloomberg</tag>
         <tag>Microsoft</tag>
+        <tag>Bloomberg</tag>
         <tag>String</tag>
         <tag>Backtracking</tag>
       </tags>
@@ -4390,8 +4838,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Bloomberg</tag>
         <tag>Microsoft</tag>
+        <tag>Bloomberg</tag>
         <tag>String</tag>
       </tags>
   </entry>
@@ -4441,8 +4889,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Amazon</tag>
         <tag>Hash Table</tag>
+        <tag>Amazon</tag>
       </tags>
   </entry>
   <entry>
@@ -4592,8 +5040,8 @@
       </categories>
       <tags>
         <tag>DFS</tag>
-        <tag>Amazon</tag>
         <tag>Hash Table</tag>
+        <tag>Amazon</tag>
       </tags>
   </entry>
   <entry>
@@ -4615,8 +5063,8 @@
       </categories>
       <tags>
         <tag>Array</tag>
-        <tag>Amazon</tag>
         <tag>Hash Table</tag>
+        <tag>Amazon</tag>
       </tags>
   </entry>
   <entry>
@@ -4683,8 +5131,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Amazon</tag>
         <tag>Hash Table</tag>
+        <tag>Amazon</tag>
       </tags>
   </entry>
   <entry>
@@ -4861,8 +5309,8 @@
       </categories>
       <tags>
         <tag>Amazon</tag>
-        <tag>Bloomberg</tag>
         <tag>Microsoft</tag>
+        <tag>Bloomberg</tag>
         <tag>Tree</tag>
       </tags>
   </entry>
@@ -4923,9 +5371,9 @@
         <category>leetcode</category>
       </categories>
       <tags>
+        <tag>Hash Table</tag>
         <tag>Amazon</tag>
         <tag>Bloomberg</tag>
-        <tag>Hash Table</tag>
         <tag>Tree</tag>
       </tags>
   </entry>
@@ -5109,8 +5557,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Amazon</tag>
         <tag>Hash Table</tag>
+        <tag>Amazon</tag>
         <tag>Two Pointers</tag>
         <tag>Sliding Window</tag>
       </tags>
@@ -5135,8 +5583,8 @@
       </categories>
       <tags>
         <tag>Amazon</tag>
-        <tag>Bloomberg</tag>
         <tag>Microsoft</tag>
+        <tag>Bloomberg</tag>
         <tag>Tree</tag>
       </tags>
   </entry>
@@ -5337,8 +5785,8 @@
       </categories>
       <tags>
         <tag>Amazon</tag>
-        <tag>Bloomberg</tag>
         <tag>Microsoft</tag>
+        <tag>Bloomberg</tag>
         <tag>Divide and Conquer</tag>
       </tags>
   </entry>
@@ -5440,6 +5888,7 @@
         <category>leetcode</category>
       </categories>
       <tags>
+        <tag>Google</tag>
         <tag>Hash Table</tag>
         <tag>String</tag>
         <tag>Trie</tag>
@@ -5500,8 +5949,8 @@
       </categories>
       <tags>
         <tag>DFS</tag>
-        <tag>Amazon</tag>
         <tag>Hash Table</tag>
+        <tag>Amazon</tag>
         <tag>Trie</tag>
       </tags>
   </entry>
@@ -5663,10 +6112,10 @@
       </categories>
       <tags>
         <tag>Google</tag>
-        <tag>Amazon</tag>
-        <tag>Bloomberg</tag>
         <tag>Hash Table</tag>
+        <tag>Amazon</tag>
         <tag>Microsoft</tag>
+        <tag>Bloomberg</tag>
       </tags>
   </entry>
   <entry>
@@ -5687,8 +6136,8 @@
       <tags>
         <tag>Google</tag>
         <tag>Amazon</tag>
-        <tag>Bloomberg</tag>
         <tag>Microsoft</tag>
+        <tag>Bloomberg</tag>
         <tag>Two Pointers</tag>
       </tags>
   </entry>
@@ -5709,9 +6158,9 @@
         <category>leetcode</category>
       </categories>
       <tags>
+        <tag>Hash Table</tag>
         <tag>Amazon</tag>
         <tag>Bloomberg</tag>
-        <tag>Hash Table</tag>
         <tag>Heap</tag>
       </tags>
   </entry>
@@ -5869,8 +6318,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Amazon</tag>
         <tag>Hash Table</tag>
+        <tag>Amazon</tag>
       </tags>
   </entry>
   <entry>
@@ -5915,12 +6364,12 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>DFS</tag>
         <tag>Google</tag>
+        <tag>DFS</tag>
         <tag>BFS</tag>
         <tag>Amazon</tag>
-        <tag>Bloomberg</tag>
         <tag>Microsoft</tag>
+        <tag>Bloomberg</tag>
       </tags>
   </entry>
   <entry>
@@ -6043,9 +6492,9 @@
       </categories>
       <tags>
         <tag>Array</tag>
+        <tag>Hash Table</tag>
         <tag>Amazon</tag>
         <tag>Bloomberg</tag>
-        <tag>Hash Table</tag>
         <tag>Design</tag>
       </tags>
   </entry>
@@ -6139,8 +6588,8 @@
       <tags>
         <tag>Array</tag>
         <tag>Amazon</tag>
-        <tag>Bloomberg</tag>
         <tag>Microsoft</tag>
+        <tag>Bloomberg</tag>
         <tag>Divide and Conquer</tag>
         <tag>DP</tag>
       </tags>
@@ -6161,8 +6610,8 @@
       </categories>
       <tags>
         <tag>Amazon</tag>
-        <tag>Bloomberg</tag>
         <tag>Microsoft</tag>
+        <tag>Bloomberg</tag>
         <tag>Tree</tag>
       </tags>
   </entry>
@@ -6186,8 +6635,8 @@
       </categories>
       <tags>
         <tag>Amazon</tag>
-        <tag>Bloomberg</tag>
         <tag>Microsoft</tag>
+        <tag>Bloomberg</tag>
         <tag>Design</tag>
       </tags>
   </entry>
@@ -6283,9 +6732,9 @@
         <category>leetcode</category>
       </categories>
       <tags>
+        <tag>Hash Table</tag>
         <tag>Amazon</tag>
         <tag>Bloomberg</tag>
-        <tag>Hash Table</tag>
         <tag>String</tag>
       </tags>
   </entry>
@@ -6362,6 +6811,7 @@
         <category>leetcode</category>
       </categories>
       <tags>
+        <tag>Google</tag>
         <tag>Amazon</tag>
         <tag>Bloomberg</tag>
         <tag>Heap</tag>
@@ -6493,6 +6943,7 @@
         <category>leetcode</category>
       </categories>
       <tags>
+        <tag>Google</tag>
         <tag>Queue</tag>
         <tag>Amazon</tag>
         <tag>Design</tag>
@@ -6514,8 +6965,8 @@
 <h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Example:</span><br><span class="line">Operation: AutocompleteSystem([&quot;i love you&quot;, &quot;island&quot;,&quot;ironman&quot;, &quot;i love leetcode&quot;], [5,3,2,2])</span><br><span class="line">The system have already tracked down the following sentences and their corresponding times:</span><br><span class="line">&quot;i love you&quot; : 5 times</span><br><span class="line">&quot;island&quot; : 3 times</span><br><span class="line">&quot;ironman&quot; : 2 times</span><br><span class="line">&quot;i love leetcode&quot; : 2 times</span><br><span class="line">Now, the user begins another search:</span><br><span class="line"></span><br><span class="line">Operation: input(&apos;i&apos;)</span><br><span class="line">Output: [&quot;i love you&quot;, &quot;island&quot;,&quot;i love leetcode&quot;]</span><br><span class="line">Explanation:</span><br><span class="line">There are four sentences that have prefix &quot;i&quot;. Among them, &quot;ironman&quot; and &quot;i love leetcode&quot; have same hot degree. Since &apos; &apos; has ASCII code 32 and &apos;r&apos; has ASCII code 114, &quot;i love leetcode&quot; should be in front of &quot;ironman&quot;. Also we only need to output top 3 hot sentences, so &quot;ironman&quot; will be ignored.</span><br><span class="line"></span><br><span class="line">Operation: input(&apos; &apos;)</span><br><span class="line">Output: [&quot;i love you&quot;,&quot;i love leetcode&quot;]</span><br><span class="line">Explanation:</span><br><span class="line">There are only two sentences that have prefix &quot;i &quot;.</span><br><span class="line"></span><br><span class="line">Operation: input(&apos;a&apos;)</span><br><span class="line">Output: []</span><br><span class="line">Explanation:</span><br><span class="line">There are no sentences that have prefix &quot;i a&quot;.</span><br><span class="line"></span><br><span class="line">Operation: input(&apos;#&apos;)</span><br><span class="line">Output: []</span><br><span class="line">Explanation:</span><br><span class="line">The user finished the input, the sentence &quot;i a&quot; should be saved as a historical sentence in system. And the following input will be counted as a new search.</span><br></pre></td></tr></table></figure>
 <p><strong>Note:</strong></p>
 <p>The input sentence will always start with a letter and end with ‘#’, and only one blank space will exist between two words.<br>The number of complete sentences that to be searched won’t exceed 100. The length of each sentence including those in the historical data won’t exceed 100.<br>Please use double-quote instead of single-quote when you write test cases even for a character input.<br>Please remember to RESET your class variables declared in class AutocompleteSystem, as static/class variables are persisted across multiple test cases. Please see here for more details.</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AutocompleteSystem</span> </span>&#123;</span><br><span class="line">    String[] sentences;</span><br><span class="line">    <span class="keyword">int</span>[] times;</span><br><span class="line">    String search;</span><br><span class="line">    HashMap&lt;String, Integer&gt; history;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">AutocompleteSystem</span><span class="params">(String[] sentences, <span class="keyword">int</span>[] times)</span> </span>&#123;</span><br><span class="line">        history = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; sentences.length; i++)&#123;</span><br><span class="line">            history.put(sentences[i], times[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        search = <span class="string">""</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;String&gt; <span class="title">input</span><span class="params">(<span class="keyword">char</span> c)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (c == <span class="string">'#'</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span> (history.containsKey(search)) history.put(search, history.get(search)+<span class="number">1</span>);</span><br><span class="line">            <span class="keyword">else</span> history.put(search, <span class="number">1</span>);</span><br><span class="line">            search = <span class="string">""</span>;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">        &#125; </span><br><span class="line">        search += c;</span><br><span class="line">        <span class="keyword">int</span> len = search.length();</span><br><span class="line">        TreeMap&lt;Integer, PriorityQueue&lt;String&gt;&gt; map = <span class="keyword">new</span> TreeMap&lt;&gt;((a,b) -&gt; b-a);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (String s: history.keySet())&#123;</span><br><span class="line">            <span class="keyword">if</span> (s.length() &gt;= len)&#123;</span><br><span class="line">                String tmp = s.substring(<span class="number">0</span>, len);</span><br><span class="line">                <span class="keyword">if</span> (tmp.equals(search))&#123;</span><br><span class="line">                    <span class="keyword">if</span> (map.containsKey(history.get(s)))&#123;</span><br><span class="line">                        PriorityQueue&lt;String&gt; pq = map.get(history.get(s));</span><br><span class="line">                        pq.offer(s);</span><br><span class="line">                        map.put(history.get(s), pq);</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">else</span> &#123;</span><br><span class="line">                        PriorityQueue&lt;String&gt; pq = <span class="keyword">new</span> PriorityQueue&lt;&gt;();</span><br><span class="line">                        pq.offer(s);</span><br><span class="line">                        map.put(history.get(s),pq);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125; </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        List&lt;String&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> it: map.keySet())&#123;</span><br><span class="line">            PriorityQueue&lt;String&gt; pq = map.get(it);</span><br><span class="line">            <span class="keyword">while</span> (!pq.isEmpty())&#123;</span><br><span class="line">                res.add(pq.poll());</span><br><span class="line">                <span class="keyword">if</span> (res.size() == <span class="number">3</span>) <span class="keyword">return</span> res;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your AutocompleteSystem object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * AutocompleteSystem obj = new AutocompleteSystem(sentences, times);</span></span><br><span class="line"><span class="comment"> * List&lt;String&gt; param_1 = obj.input(c);</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
-<p>Trie Tree<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AutocompleteSystem</span> </span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">TrieNode</span> </span>&#123;</span><br><span class="line">        Map&lt;Character, TrieNode&gt; children;</span><br><span class="line">        Map&lt;String, Integer&gt; counts;</span><br><span class="line">        <span class="keyword">boolean</span> isWord;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">TrieNode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            children = <span class="keyword">new</span> HashMap&lt;Character, TrieNode&gt;();</span><br><span class="line">            counts = <span class="keyword">new</span> HashMap&lt;String, Integer&gt;();</span><br><span class="line">            isWord = <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Pair</span> </span>&#123;</span><br><span class="line">        String s;</span><br><span class="line">        <span class="keyword">int</span> c;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Pair</span><span class="params">(String s, <span class="keyword">int</span> c)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.s = s; <span class="keyword">this</span>.c = c;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    TrieNode root;</span><br><span class="line">    String prefix;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">AutocompleteSystem</span><span class="params">(String[] sentences, <span class="keyword">int</span>[] times)</span> </span>&#123;</span><br><span class="line">        root = <span class="keyword">new</span> TrieNode();</span><br><span class="line">        prefix = <span class="string">""</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; sentences.length; i++) &#123;</span><br><span class="line">            add(sentences[i], times[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(String s, <span class="keyword">int</span> count)</span> </span>&#123;</span><br><span class="line">        TrieNode curr = root;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">char</span> c : s.toCharArray()) &#123;</span><br><span class="line">            TrieNode next = curr.children.get(c);</span><br><span class="line">            <span class="keyword">if</span> (next == <span class="keyword">null</span>) &#123;</span><br><span class="line">                next = <span class="keyword">new</span> TrieNode();</span><br><span class="line">                curr.children.put(c, next);</span><br><span class="line">            &#125;</span><br><span class="line">            curr = next;</span><br><span class="line">            curr.counts.put(s, curr.counts.getOrDefault(s, <span class="number">0</span>) + count);</span><br><span class="line">        &#125;</span><br><span class="line">        curr.isWord = <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;String&gt; <span class="title">input</span><span class="params">(<span class="keyword">char</span> c)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (c == <span class="string">'#'</span>) &#123;</span><br><span class="line">            add(prefix, <span class="number">1</span>);</span><br><span class="line">            prefix = <span class="string">""</span>;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        prefix = prefix + c;</span><br><span class="line">        TrieNode curr = root;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">char</span> cc : prefix.toCharArray()) &#123;</span><br><span class="line">            TrieNode next = curr.children.get(cc);</span><br><span class="line">            <span class="keyword">if</span> (next == <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">            &#125;</span><br><span class="line">            curr = next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        PriorityQueue&lt;Pair&gt; pq = <span class="keyword">new</span> PriorityQueue&lt;&gt;((a, b) -&gt; (a.c == b.c ? a.s.compareTo(b.s) : b.c - a.c));</span><br><span class="line">        <span class="keyword">for</span> (String s : curr.counts.keySet()) &#123;</span><br><span class="line">            pq.add(<span class="keyword">new</span> Pair(s, curr.counts.get(s)));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        List&lt;String&gt; res = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span> &amp;&amp; !pq.isEmpty(); i++) &#123;</span><br><span class="line">            res.add(pq.poll().s);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p><strong>Solution 1: Basic Solution, HashMap</strong><br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AutocompleteSystem</span> </span>&#123;</span><br><span class="line">    String[] sentences;</span><br><span class="line">    <span class="keyword">int</span>[] times;</span><br><span class="line">    String search;</span><br><span class="line">    HashMap&lt;String, Integer&gt; history;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">AutocompleteSystem</span><span class="params">(String[] sentences, <span class="keyword">int</span>[] times)</span> </span>&#123;</span><br><span class="line">        history = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; sentences.length; i++)&#123;</span><br><span class="line">            history.put(sentences[i], times[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        search = <span class="string">""</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;String&gt; <span class="title">input</span><span class="params">(<span class="keyword">char</span> c)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (c == <span class="string">'#'</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span> (history.containsKey(search)) history.put(search, history.get(search)+<span class="number">1</span>);</span><br><span class="line">            <span class="keyword">else</span> history.put(search, <span class="number">1</span>);</span><br><span class="line">            search = <span class="string">""</span>;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">        &#125; </span><br><span class="line">        search += c;</span><br><span class="line">        <span class="keyword">int</span> len = search.length();</span><br><span class="line">        TreeMap&lt;Integer, PriorityQueue&lt;String&gt;&gt; map = <span class="keyword">new</span> TreeMap&lt;&gt;((a,b) -&gt; b-a);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (String s: history.keySet())&#123;</span><br><span class="line">            <span class="keyword">if</span> (s.length() &gt;= len)&#123;</span><br><span class="line">                String tmp = s.substring(<span class="number">0</span>, len);</span><br><span class="line">                <span class="keyword">if</span> (tmp.equals(search))&#123;</span><br><span class="line">                    <span class="keyword">if</span> (map.containsKey(history.get(s)))&#123;</span><br><span class="line">                        PriorityQueue&lt;String&gt; pq = map.get(history.get(s));</span><br><span class="line">                        pq.offer(s);</span><br><span class="line">                        map.put(history.get(s), pq);</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">else</span> &#123;</span><br><span class="line">                        PriorityQueue&lt;String&gt; pq = <span class="keyword">new</span> PriorityQueue&lt;&gt;();</span><br><span class="line">                        pq.offer(s);</span><br><span class="line">                        map.put(history.get(s),pq);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125; </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        List&lt;String&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> it: map.keySet())&#123;</span><br><span class="line">            PriorityQueue&lt;String&gt; pq = map.get(it);</span><br><span class="line">            <span class="keyword">while</span> (!pq.isEmpty())&#123;</span><br><span class="line">                res.add(pq.poll());</span><br><span class="line">                <span class="keyword">if</span> (res.size() == <span class="number">3</span>) <span class="keyword">return</span> res;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your AutocompleteSystem object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * AutocompleteSystem obj = new AutocompleteSystem(sentences, times);</span></span><br><span class="line"><span class="comment"> * List&lt;String&gt; param_1 = obj.input(c);</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>Solution 2: Trie Tree</strong><br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AutocompleteSystem</span> </span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">TrieNode</span> </span>&#123;</span><br><span class="line">        Map&lt;Character, TrieNode&gt; children;</span><br><span class="line">        Map&lt;String, Integer&gt; counts;</span><br><span class="line">        <span class="keyword">boolean</span> isWord;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">TrieNode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            children = <span class="keyword">new</span> HashMap&lt;Character, TrieNode&gt;();</span><br><span class="line">            counts = <span class="keyword">new</span> HashMap&lt;String, Integer&gt;();</span><br><span class="line">            isWord = <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Pair</span> </span>&#123;</span><br><span class="line">        String s;</span><br><span class="line">        <span class="keyword">int</span> c;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Pair</span><span class="params">(String s, <span class="keyword">int</span> c)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.s = s; <span class="keyword">this</span>.c = c;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    TrieNode root;</span><br><span class="line">    String prefix;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">AutocompleteSystem</span><span class="params">(String[] sentences, <span class="keyword">int</span>[] times)</span> </span>&#123;</span><br><span class="line">        root = <span class="keyword">new</span> TrieNode();</span><br><span class="line">        prefix = <span class="string">""</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; sentences.length; i++) &#123;</span><br><span class="line">            add(sentences[i], times[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(String s, <span class="keyword">int</span> count)</span> </span>&#123;</span><br><span class="line">        TrieNode curr = root;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">char</span> c : s.toCharArray()) &#123;</span><br><span class="line">            TrieNode next = curr.children.get(c);</span><br><span class="line">            <span class="keyword">if</span> (next == <span class="keyword">null</span>) &#123;</span><br><span class="line">                next = <span class="keyword">new</span> TrieNode();</span><br><span class="line">                curr.children.put(c, next);</span><br><span class="line">            &#125;</span><br><span class="line">            curr = next;</span><br><span class="line">            curr.counts.put(s, curr.counts.getOrDefault(s, <span class="number">0</span>) + count);</span><br><span class="line">        &#125;</span><br><span class="line">        curr.isWord = <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;String&gt; <span class="title">input</span><span class="params">(<span class="keyword">char</span> c)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (c == <span class="string">'#'</span>) &#123;</span><br><span class="line">            add(prefix, <span class="number">1</span>);</span><br><span class="line">            prefix = <span class="string">""</span>;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        prefix = prefix + c;</span><br><span class="line">        TrieNode curr = root;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">char</span> cc : prefix.toCharArray()) &#123;</span><br><span class="line">            TrieNode next = curr.children.get(cc);</span><br><span class="line">            <span class="keyword">if</span> (next == <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">            &#125;</span><br><span class="line">            curr = next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        PriorityQueue&lt;Pair&gt; pq = <span class="keyword">new</span> PriorityQueue&lt;&gt;((a, b) -&gt; (a.c == b.c ? a.s.compareTo(b.s) : b.c - a.c));</span><br><span class="line">        <span class="keyword">for</span> (String s : curr.counts.keySet()) &#123;</span><br><span class="line">            pq.add(<span class="keyword">new</span> Pair(s, curr.counts.get(s)));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        List&lt;String&gt; res = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span> &amp;&amp; !pq.isEmpty(); i++) &#123;</span><br><span class="line">            res.add(pq.poll().s);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <hr>]]></content>
       <categories>
         <category>leetcode</category>
@@ -6710,8 +7161,8 @@
       </categories>
       <tags>
         <tag>Amazon</tag>
-        <tag>Bloomberg</tag>
         <tag>Microsoft</tag>
+        <tag>Bloomberg</tag>
         <tag>Topological Sort</tag>
       </tags>
   </entry>
@@ -6799,8 +7250,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Bloomberg</tag>
         <tag>Hash Table</tag>
+        <tag>Bloomberg</tag>
       </tags>
   </entry>
   <entry>
@@ -6903,8 +7354,8 @@
       </categories>
       <tags>
         <tag>Amazon</tag>
-        <tag>Bloomberg</tag>
         <tag>Microsoft</tag>
+        <tag>Bloomberg</tag>
         <tag>LinkedList</tag>
       </tags>
   </entry>
@@ -6926,8 +7377,8 @@
       </categories>
       <tags>
         <tag>Amazon</tag>
-        <tag>Bloomberg</tag>
         <tag>Microsoft</tag>
+        <tag>Bloomberg</tag>
         <tag>LinkedList</tag>
       </tags>
   </entry>
@@ -7056,8 +7507,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Amazon</tag>
         <tag>Hash Table</tag>
+        <tag>Amazon</tag>
         <tag>Heap</tag>
       </tags>
   </entry>
@@ -7619,8 +8070,8 @@
       </categories>
       <tags>
         <tag>Amazon</tag>
-        <tag>Bloomberg</tag>
         <tag>Microsoft</tag>
+        <tag>Bloomberg</tag>
         <tag>String</tag>
         <tag>Palindrome</tag>
         <tag>Manacher</tag>
@@ -7687,9 +8138,9 @@
         <category>leetcode</category>
       </categories>
       <tags>
+        <tag>Hash Table</tag>
         <tag>Amazon</tag>
         <tag>Bloomberg</tag>
-        <tag>Hash Table</tag>
         <tag>Two Pointers</tag>
       </tags>
   </entry>
@@ -7716,10 +8167,10 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>medium</tag>
-        <tag>linkedlist</tag>
         <tag>Amazon</tag>
         <tag>Bloomberg</tag>
+        <tag>medium</tag>
+        <tag>linkedlist</tag>
       </tags>
   </entry>
   <entry>
@@ -7823,8 +8274,8 @@
         <category>Algorithms</category>
       </categories>
       <tags>
-        <tag>Algorithms</tag>
         <tag>Data Structure</tag>
+        <tag>Algorithms</tag>
       </tags>
   </entry>
   <entry>
