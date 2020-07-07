@@ -23,6 +23,6 @@
     "hexo-tag-aplayer": "^3.0.4",
     "hexo-tag-dplayer": "^0.3.3",
     "hexo-wordcount": "^3.0.2",
-    "npm": "^6.4.0"
+    "npm": "^6.14.6"
   }
 }
