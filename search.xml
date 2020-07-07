@@ -1,6 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Modify Github Pages Rep for Hexo-Blog</title>
+    <url>/2020/07/06/Modify-Github-Pages-Rep-for-Hexo-Blog/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/github_pages_hexo.jpg" alt="" style="width:100%"> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<ul>
+<li><a href="#push-a-new-branch">Push a new branch</a><ul>
+<li><a href="#create-a-new-branch">Create a new branch</a></li>
+<li><a href="#clone-rep-and-modify">Clone rep and modify</a></li>
+<li><a href="#push-to-github">Push to github</a></li>
+</ul>
+</li>
+<li><a href="#setup-on-a-new-device">Setup on a new device</a><ul>
+<li><a href="#setup-git">Setup git</a></li>
+<li><a href="#install-hexo">Install hexo</a></li>
+<li><a href="#clone-rep-and-deploy">Clone rep and deploy</a></li>
+</ul>
+</li>
+<li><a href="#tips">Tips</a></li>
+</ul>
+<h2 id="Push-a-new-branch"><a href="#Push-a-new-branch" class="headerlink" title="Push a new branch"></a>Push a new branch</h2><h3 id="Create-a-new-branch"><a href="#Create-a-new-branch" class="headerlink" title="Create a new branch"></a>Create a new branch</h3><p>Create a new branch like <code>hexo</code> in blog rep</p>
+<p>Set the new branch as <strong>default branch</strong> in settings</p>
+<h3 id="Clone-rep-and-modify"><a href="#Clone-rep-and-modify" class="headerlink" title="Clone rep and modify"></a>Clone rep and modify</h3><p>Under any local folder, clone the rep</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/&lt;Your username&gt;/&lt;Your username&gt;.github.io.git</span><br></pre></td></tr></table></figure>
+<p>Under this local rep folder, delete all items exclude <code>.git</code> folder</p>
+<p>Copy all items from the original blog file exclude <code>.deploy_git</code> folder. Check if there is a file called <code>.gitignore</code> and its content looks like:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.DS_Store</span><br><span class="line">Thumbs.db</span><br><span class="line">db.json</span><br><span class="line">*.log</span><br><span class="line">node_modules/</span><br><span class="line">public/</span><br><span class="line">.deploy*/</span><br></pre></td></tr></table></figure></p>
+<p>Meanwhile, focus on if there is any <code>.git</code> folder under your theme folders. Delete them all, or you will not have your themes config on your other devices.</p>
+<h3 id="Push-to-github"><a href="#Push-to-github" class="headerlink" title="Push to github"></a>Push to github</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit –m &quot;add branch&quot;</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+<p>Push done.</p>
+<p>You could check if all items exclude item in <code>.gitignore</code> exist in your github rep.</p>
+<h2 id="Setup-on-a-new-device"><a href="#Setup-on-a-new-device" class="headerlink" title="Setup on a new device"></a>Setup on a new device</h2><h3 id="Setup-git"><a href="#Setup-git" class="headerlink" title="Setup git"></a>Setup git</h3><p>Install git<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-get install git</span><br></pre></td></tr></table></figure></p>
+<p>Setup global config<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;yourgithubname&quot;</span><br><span class="line">git config --global user.email &quot;yourgithubemail&quot;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Install-hexo"><a href="#Install-hexo" class="headerlink" title="Install hexo"></a>Install hexo</h3><p>Install NodeJS<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-get install nodejs</span><br></pre></td></tr></table></figure></p>
+<p>Install npm, maybe already exist after installing nodejs<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-get install npm</span><br></pre></td></tr></table></figure></p>
+<p>Install hexo<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo npm install hexo-cli -g</span><br></pre></td></tr></table></figure></p>
+<h3 id="Clone-rep-and-deploy"><a href="#Clone-rep-and-deploy" class="headerlink" title="Clone rep and deploy"></a>Clone rep and deploy</h3><p>Under any folder, clone the rep<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/&lt;Your username&gt;/&lt;Your username&gt;.github.io.git</span><br></pre></td></tr></table></figure></p>
+<p>Under the local rep folder<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install</span><br><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
+<p>Generate and deploy<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure></p>
+<p>Then you could edit and deploy your blog as usual on this new device</p>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><ol>
+<li>Commit and push src rep to github after editing</li>
+<li>Pull first on blog existed device before editing</li>
+</ol>
+<hr>]]></content>
+      <categories>
+        <category>Hexo Blog</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Github</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Leetcode299-bullsAndCows</title>
     <url>/2020/04/07/Leetcode299-bullsAndCows/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
@@ -674,8 +728,8 @@
       </categories>
       <tags>
         <tag>DFS</tag>
-        <tag>Bloomberg</tag>
         <tag>Hash Table</tag>
+        <tag>Bloomberg</tag>
       </tags>
   </entry>
   <entry>
@@ -698,9 +752,9 @@
       </categories>
       <tags>
         <tag>Array</tag>
-        <tag>Binary Search</tag>
         <tag>Bloomberg</tag>
         <tag>Two Pointers</tag>
+        <tag>Binary Search</tag>
       </tags>
   </entry>
   <entry>
@@ -1067,8 +1121,8 @@
       </categories>
       <tags>
         <tag>Google</tag>
-        <tag>Bloomberg</tag>
         <tag>Hash Table</tag>
+        <tag>Bloomberg</tag>
       </tags>
   </entry>
   <entry>
@@ -1109,8 +1163,8 @@
       </categories>
       <tags>
         <tag>Array</tag>
-        <tag>Binary Search</tag>
         <tag>Bloomberg</tag>
+        <tag>Binary Search</tag>
       </tags>
   </entry>
   <entry>
@@ -1393,8 +1447,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Bloomberg</tag>
         <tag>Hash Table</tag>
+        <tag>Bloomberg</tag>
         <tag>Bit Manipulation</tag>
       </tags>
   </entry>
@@ -1467,8 +1521,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Binary Search</tag>
         <tag>Bloomberg</tag>
+        <tag>Binary Search</tag>
         <tag>DP</tag>
       </tags>
   </entry>
@@ -1599,8 +1653,8 @@
       </categories>
       <tags>
         <tag>Google</tag>
-        <tag>Bloomberg</tag>
         <tag>Hash Table</tag>
+        <tag>Bloomberg</tag>
         <tag>Two Pointers</tag>
         <tag>String</tag>
         <tag>Sliding Window</tag>
@@ -1649,8 +1703,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Binary Search</tag>
         <tag>Bloomberg</tag>
+        <tag>Binary Search</tag>
         <tag>Math</tag>
       </tags>
   </entry>
@@ -1752,8 +1806,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Bloomberg</tag>
         <tag>Hash Table</tag>
+        <tag>Bloomberg</tag>
         <tag>Math</tag>
       </tags>
   </entry>
@@ -1994,8 +2048,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Bloomberg</tag>
         <tag>Hash Table</tag>
+        <tag>Bloomberg</tag>
         <tag>String</tag>
       </tags>
   </entry>
@@ -2293,9 +2347,9 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Binary Search</tag>
         <tag>Bloomberg</tag>
         <tag>Two Pointers</tag>
+        <tag>Binary Search</tag>
       </tags>
   </entry>
   <entry>
@@ -2374,8 +2428,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Bloomberg</tag>
         <tag>Hash Table</tag>
+        <tag>Bloomberg</tag>
         <tag>Heap</tag>
       </tags>
   </entry>
@@ -2623,8 +2677,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Binary Search</tag>
         <tag>Bloomberg</tag>
+        <tag>Binary Search</tag>
       </tags>
   </entry>
   <entry>
@@ -2834,8 +2888,8 @@
       </categories>
       <tags>
         <tag>Array</tag>
-        <tag>Bloomberg</tag>
         <tag>Hash Table</tag>
+        <tag>Bloomberg</tag>
         <tag>String</tag>
       </tags>
   </entry>
@@ -2877,8 +2931,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Bloomberg</tag>
         <tag>Hash Table</tag>
+        <tag>Bloomberg</tag>
       </tags>
   </entry>
   <entry>
@@ -3422,8 +3476,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Bloomberg</tag>
         <tag>Hash Table</tag>
+        <tag>Bloomberg</tag>
         <tag>Math</tag>
       </tags>
   </entry>
@@ -4132,8 +4186,8 @@
       </categories>
       <tags>
         <tag>Google</tag>
-        <tag>Binary Search</tag>
         <tag>Bloomberg</tag>
+        <tag>Binary Search</tag>
         <tag>Tree</tag>
       </tags>
   </entry>
@@ -4744,8 +4798,8 @@
       </categories>
       <tags>
         <tag>Linked List</tag>
-        <tag>Bloomberg</tag>
         <tag>Microsoft</tag>
+        <tag>Bloomberg</tag>
       </tags>
   </entry>
   <entry>
@@ -4764,8 +4818,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Bloomberg</tag>
         <tag>Microsoft</tag>
+        <tag>Bloomberg</tag>
         <tag>String</tag>
         <tag>Backtracking</tag>
       </tags>
@@ -4838,8 +4892,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Bloomberg</tag>
         <tag>Microsoft</tag>
+        <tag>Bloomberg</tag>
         <tag>String</tag>
       </tags>
   </entry>
@@ -5109,8 +5163,8 @@
       </categories>
       <tags>
         <tag>Array</tag>
-        <tag>Bloomberg</tag>
         <tag>Amazon</tag>
+        <tag>Bloomberg</tag>
       </tags>
   </entry>
   <entry>
@@ -5152,8 +5206,8 @@
       </categories>
       <tags>
         <tag>Stack</tag>
-        <tag>Bloomberg</tag>
         <tag>Amazon</tag>
+        <tag>Bloomberg</tag>
       </tags>
   </entry>
   <entry>
@@ -5174,9 +5228,9 @@
         <category>leetcode</category>
       </categories>
       <tags>
+        <tag>Amazon</tag>
         <tag>Bloomberg</tag>
         <tag>Two Pointers</tag>
-        <tag>Amazon</tag>
       </tags>
   </entry>
   <entry>
@@ -5308,9 +5362,9 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Bloomberg</tag>
         <tag>Amazon</tag>
         <tag>Microsoft</tag>
+        <tag>Bloomberg</tag>
         <tag>Tree</tag>
       </tags>
   </entry>
@@ -5371,9 +5425,9 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Bloomberg</tag>
         <tag>Hash Table</tag>
         <tag>Amazon</tag>
+        <tag>Bloomberg</tag>
         <tag>Tree</tag>
       </tags>
   </entry>
@@ -5445,8 +5499,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Bloomberg</tag>
         <tag>Amazon</tag>
+        <tag>Bloomberg</tag>
         <tag>DP</tag>
       </tags>
   </entry>
@@ -5488,8 +5542,8 @@
       </categories>
       <tags>
         <tag>Array</tag>
-        <tag>Bloomberg</tag>
         <tag>Amazon</tag>
+        <tag>Bloomberg</tag>
         <tag>Math</tag>
       </tags>
   </entry>
@@ -5513,8 +5567,8 @@
       </categories>
       <tags>
         <tag>Linked List</tag>
-        <tag>Two Pointers</tag>
         <tag>Amazon</tag>
+        <tag>Two Pointers</tag>
       </tags>
   </entry>
   <entry>
@@ -5534,8 +5588,8 @@
       </categories>
       <tags>
         <tag>Array</tag>
-        <tag>Bloomberg</tag>
         <tag>Amazon</tag>
+        <tag>Bloomberg</tag>
         <tag>Sort</tag>
       </tags>
   </entry>
@@ -5558,8 +5612,8 @@
       </categories>
       <tags>
         <tag>Hash Table</tag>
-        <tag>Two Pointers</tag>
         <tag>Amazon</tag>
+        <tag>Two Pointers</tag>
         <tag>Sliding Window</tag>
       </tags>
   </entry>
@@ -5582,9 +5636,9 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Bloomberg</tag>
         <tag>Amazon</tag>
         <tag>Microsoft</tag>
+        <tag>Bloomberg</tag>
         <tag>Tree</tag>
       </tags>
   </entry>
@@ -5605,8 +5659,8 @@
       </categories>
       <tags>
         <tag>DFS</tag>
-        <tag>Bloomberg</tag>
         <tag>Amazon</tag>
+        <tag>Bloomberg</tag>
       </tags>
   </entry>
   <entry>
@@ -5636,8 +5690,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Bloomberg</tag>
         <tag>Amazon</tag>
+        <tag>Bloomberg</tag>
         <tag>DP</tag>
       </tags>
   </entry>
@@ -5664,8 +5718,8 @@
       </categories>
       <tags>
         <tag>Stack</tag>
-        <tag>Bloomberg</tag>
         <tag>Amazon</tag>
+        <tag>Bloomberg</tag>
         <tag>Design</tag>
       </tags>
   </entry>
@@ -5687,8 +5741,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Bloomberg</tag>
         <tag>Amazon</tag>
+        <tag>Bloomberg</tag>
         <tag>Tree</tag>
       </tags>
   </entry>
@@ -5784,9 +5838,9 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Bloomberg</tag>
         <tag>Amazon</tag>
         <tag>Microsoft</tag>
+        <tag>Bloomberg</tag>
         <tag>Divide and Conquer</tag>
       </tags>
   </entry>
@@ -5836,8 +5890,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Bloomberg</tag>
         <tag>Amazon</tag>
+        <tag>Bloomberg</tag>
         <tag>Tree</tag>
       </tags>
   </entry>
@@ -5867,8 +5921,8 @@
       </categories>
       <tags>
         <tag>Stack</tag>
-        <tag>Bloomberg</tag>
         <tag>Amazon</tag>
+        <tag>Bloomberg</tag>
         <tag>String</tag>
       </tags>
   </entry>
@@ -6042,8 +6096,8 @@
       </categories>
       <tags>
         <tag>DFS</tag>
-        <tag>Bloomberg</tag>
         <tag>Amazon</tag>
+        <tag>Bloomberg</tag>
       </tags>
   </entry>
   <entry>
@@ -6069,8 +6123,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Bloomberg</tag>
         <tag>Amazon</tag>
+        <tag>Bloomberg</tag>
         <tag>DP</tag>
       </tags>
   </entry>
@@ -6091,8 +6145,8 @@
       </categories>
       <tags>
         <tag>Array</tag>
-        <tag>Two Pointers</tag>
         <tag>Amazon</tag>
+        <tag>Two Pointers</tag>
       </tags>
   </entry>
   <entry>
@@ -6112,10 +6166,10 @@
       </categories>
       <tags>
         <tag>Google</tag>
-        <tag>Bloomberg</tag>
         <tag>Hash Table</tag>
         <tag>Amazon</tag>
         <tag>Microsoft</tag>
+        <tag>Bloomberg</tag>
       </tags>
   </entry>
   <entry>
@@ -6135,10 +6189,10 @@
       </categories>
       <tags>
         <tag>Google</tag>
-        <tag>Bloomberg</tag>
-        <tag>Two Pointers</tag>
         <tag>Amazon</tag>
         <tag>Microsoft</tag>
+        <tag>Bloomberg</tag>
+        <tag>Two Pointers</tag>
       </tags>
   </entry>
   <entry>
@@ -6158,9 +6212,9 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Bloomberg</tag>
         <tag>Hash Table</tag>
         <tag>Amazon</tag>
+        <tag>Bloomberg</tag>
         <tag>Heap</tag>
       </tags>
   </entry>
@@ -6343,8 +6397,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Two Pointers</tag>
         <tag>Amazon</tag>
+        <tag>Two Pointers</tag>
         <tag>Greedy</tag>
       </tags>
   </entry>
@@ -6367,9 +6421,9 @@
         <tag>DFS</tag>
         <tag>BFS</tag>
         <tag>Google</tag>
-        <tag>Bloomberg</tag>
         <tag>Amazon</tag>
         <tag>Microsoft</tag>
+        <tag>Bloomberg</tag>
       </tags>
   </entry>
   <entry>
@@ -6447,8 +6501,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Bloomberg</tag>
         <tag>Amazon</tag>
+        <tag>Bloomberg</tag>
         <tag>Heap</tag>
         <tag>Divide and Conquer</tag>
       </tags>
@@ -6492,9 +6546,9 @@
       </categories>
       <tags>
         <tag>Array</tag>
-        <tag>Bloomberg</tag>
         <tag>Hash Table</tag>
         <tag>Amazon</tag>
+        <tag>Bloomberg</tag>
         <tag>Design</tag>
       </tags>
   </entry>
@@ -6539,8 +6593,8 @@
       </categories>
       <tags>
         <tag>Array</tag>
-        <tag>Bloomberg</tag>
         <tag>Amazon</tag>
+        <tag>Bloomberg</tag>
         <tag>DP</tag>
       </tags>
   </entry>
@@ -6561,8 +6615,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Bloomberg</tag>
         <tag>Amazon</tag>
+        <tag>Bloomberg</tag>
         <tag>Greedy</tag>
         <tag>Heap</tag>
         <tag>Sort</tag>
@@ -6587,9 +6641,9 @@
       </categories>
       <tags>
         <tag>Array</tag>
-        <tag>Bloomberg</tag>
         <tag>Amazon</tag>
         <tag>Microsoft</tag>
+        <tag>Bloomberg</tag>
         <tag>Divide and Conquer</tag>
         <tag>DP</tag>
       </tags>
@@ -6609,9 +6663,9 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Bloomberg</tag>
         <tag>Amazon</tag>
         <tag>Microsoft</tag>
+        <tag>Bloomberg</tag>
         <tag>Tree</tag>
       </tags>
   </entry>
@@ -6634,9 +6688,9 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Bloomberg</tag>
         <tag>Amazon</tag>
         <tag>Microsoft</tag>
+        <tag>Bloomberg</tag>
         <tag>Design</tag>
       </tags>
   </entry>
@@ -6732,9 +6786,9 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Bloomberg</tag>
         <tag>Hash Table</tag>
         <tag>Amazon</tag>
+        <tag>Bloomberg</tag>
         <tag>String</tag>
       </tags>
   </entry>
@@ -6812,8 +6866,8 @@
       </categories>
       <tags>
         <tag>Google</tag>
-        <tag>Bloomberg</tag>
         <tag>Amazon</tag>
+        <tag>Bloomberg</tag>
         <tag>Heap</tag>
         <tag>Design</tag>
       </tags>
@@ -7160,9 +7214,9 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Bloomberg</tag>
         <tag>Amazon</tag>
         <tag>Microsoft</tag>
+        <tag>Bloomberg</tag>
         <tag>Topological Sort</tag>
       </tags>
   </entry>
@@ -7185,9 +7239,9 @@
       </categories>
       <tags>
         <tag>Array</tag>
+        <tag>Amazon</tag>
         <tag>Bloomberg</tag>
         <tag>Two Pointers</tag>
-        <tag>Amazon</tag>
       </tags>
   </entry>
   <entry>
@@ -7250,8 +7304,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Bloomberg</tag>
         <tag>Hash Table</tag>
+        <tag>Bloomberg</tag>
       </tags>
   </entry>
   <entry>
@@ -7353,9 +7407,9 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Bloomberg</tag>
         <tag>Amazon</tag>
         <tag>Microsoft</tag>
+        <tag>Bloomberg</tag>
         <tag>LinkedList</tag>
       </tags>
   </entry>
@@ -7376,9 +7430,9 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Bloomberg</tag>
         <tag>Amazon</tag>
         <tag>Microsoft</tag>
+        <tag>Bloomberg</tag>
         <tag>LinkedList</tag>
       </tags>
   </entry>
@@ -8069,9 +8123,9 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Bloomberg</tag>
         <tag>Amazon</tag>
         <tag>Microsoft</tag>
+        <tag>Bloomberg</tag>
         <tag>String</tag>
         <tag>Palindrome</tag>
         <tag>Manacher</tag>
@@ -8101,8 +8155,8 @@
       </categories>
       <tags>
         <tag>Google</tag>
-        <tag>Binary Search</tag>
         <tag>Bloomberg</tag>
+        <tag>Binary Search</tag>
       </tags>
   </entry>
   <entry>
@@ -8138,10 +8192,10 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Bloomberg</tag>
         <tag>Hash Table</tag>
-        <tag>Two Pointers</tag>
         <tag>Amazon</tag>
+        <tag>Bloomberg</tag>
+        <tag>Two Pointers</tag>
       </tags>
   </entry>
   <entry>
@@ -8167,8 +8221,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Bloomberg</tag>
         <tag>Amazon</tag>
+        <tag>Bloomberg</tag>
         <tag>medium</tag>
         <tag>linkedlist</tag>
       </tags>
@@ -8229,9 +8283,9 @@
         <category>Algorithms</category>
       </categories>
       <tags>
-        <tag>Searching</tag>
         <tag>DFS</tag>
         <tag>BFS</tag>
+        <tag>Searching</tag>
         <tag>Algorithms</tag>
       </tags>
   </entry>
@@ -8538,9 +8592,9 @@
         <category>Course</category>
       </categories>
       <tags>
-        <tag>Algorithm</tag>
         <tag>AI</tag>
         <tag>Course Note</tag>
+        <tag>Algorithm</tag>
         <tag>FOL</tag>
         <tag>First Order Logic</tag>
       </tags>
@@ -8678,9 +8732,9 @@
         <category>Course</category>
       </categories>
       <tags>
-        <tag>Algorithm</tag>
         <tag>AI</tag>
         <tag>Course Note</tag>
+        <tag>Algorithm</tag>
         <tag>Logical Agents</tag>
         <tag>Forward chaining</tag>
         <tag>Backward chaining</tag>
@@ -8806,9 +8860,9 @@
         <category>Course</category>
       </categories>
       <tags>
-        <tag>Algorithm</tag>
         <tag>AI</tag>
         <tag>Course Note</tag>
+        <tag>Algorithm</tag>
         <tag>Constraint Satisfacation Problems</tag>
         <tag>CSPs</tag>
       </tags>
@@ -9002,8 +9056,8 @@
         <category>Algorithm Problem</category>
       </categories>
       <tags>
-        <tag>Algorithm</tag>
         <tag>AI</tag>
+        <tag>Algorithm</tag>
         <tag>Game</tag>
         <tag>Adversarial Search</tag>
         <tag>Minimax</tag>
@@ -9045,9 +9099,9 @@
         <category>Course</category>
       </categories>
       <tags>
-        <tag>Algorithm</tag>
         <tag>AI</tag>
         <tag>Course Note</tag>
+        <tag>Algorithm</tag>
         <tag>Game</tag>
         <tag>Adversarial Search</tag>
         <tag>Minimax</tag>
@@ -9282,9 +9336,9 @@
         <category>Course</category>
       </categories>
       <tags>
-        <tag>Algorithm</tag>
         <tag>AI</tag>
         <tag>Course Note</tag>
+        <tag>Algorithm</tag>
         <tag>Search</tag>
         <tag>Hill Climbing</tag>
         <tag>Simulated annealing</tag>
@@ -9486,13 +9540,13 @@
         <category>Algorithm Problem</category>
       </categories>
       <tags>
-        <tag>Algorithm</tag>
         <tag>AI</tag>
-        <tag>Searching</tag>
-        <tag>A*</tag>
+        <tag>Algorithm</tag>
+        <tag>DFS</tag>
         <tag>IDS</tag>
         <tag>Iterative Deepening Search</tag>
-        <tag>DFS</tag>
+        <tag>A*</tag>
+        <tag>Searching</tag>
         <tag>15-puzzle</tag>
       </tags>
   </entry>
@@ -9564,15 +9618,15 @@
         <category>Course</category>
       </categories>
       <tags>
-        <tag>Algorithm</tag>
         <tag>AI</tag>
-        <tag>A*</tag>
+        <tag>Course Note</tag>
+        <tag>Algorithm</tag>
+        <tag>Search</tag>
+        <tag>DFS</tag>
+        <tag>BFS</tag>
         <tag>IDS</tag>
         <tag>Iterative Deepening Search</tag>
-        <tag>DFS</tag>
-        <tag>Course Note</tag>
-        <tag>Search</tag>
-        <tag>BFS</tag>
+        <tag>A*</tag>
         <tag>Uniform-Cost Search</tag>
         <tag>Greedy best-first Search</tag>
       </tags>
