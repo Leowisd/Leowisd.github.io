@@ -9394,4 +9394,24 @@
         <tag>Data Structure</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Update Hexo &amp; NexT to latest version</title>
+    <url>/2020/07/08/Update-Hexo-and-Next-to-latest-version/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="https://" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Upgrade-Hexo-to-v4-0"><a href="#Upgrade-Hexo-to-v4-0" class="headerlink" title="Upgrade Hexo to v4.0+"></a>Upgrade Hexo to v4.0+</h2><p>To upgrade to Hexo v4, change the following line in package.json in your hexo blog folder.<br><figure class="highlight"><table><tr><td class="code"><pre><span class="line">-  "hexo": "^3.9.0",</span><br><span class="line">+  "hexo": "^4.0.0",</span><br></pre></td></tr></table></figure></p>
+<p>Then excute the following command<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm update</span><br></pre></td></tr></table></figure></p>
+<p>Excute <code>hexo version</code> under your hexo blog directory to check the version upgrade</p>
+<h2 id="Upgrade-NexT-to-v7-x-from-v5-x"><a href="#Upgrade-NexT-to-v7-x-from-v5-x" class="headerlink" title="Upgrade NexT to v7.x from v5.x"></a>Upgrade NexT to v7.x from v5.x</h2><p>Following <a href="https://github.com/theme-next/hexo-theme-next/blob/master/docs/UPDATE-FROM-5.1.X.md" target="_blank" rel="noopener">offical instruction</a> to upgrade</p>
+<hr />]]></content>
+      <categories>
+        <category>Hexo Blog</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>NexT</tag>
+      </tags>
+  </entry>
 </search>
