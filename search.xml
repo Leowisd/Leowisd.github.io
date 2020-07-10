@@ -9414,4 +9414,46 @@
         <tag>NexT</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Git ignore already managed files</title>
+    <url>/2020/07/10/Git-ignore-tracked-file/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/git-github.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<p>When using git, we would meet a special situation. There is a necessary config file which must be exist, but each developer needs to modify it locally. In this case, this file needs to be modified times by times, which causes conflicts possibly. If wanna avoid conflicts, every developer needs to pay attention to avoid submitting this file.</p>
+<p>Generally, we would use <strong>.gitignore</strong> to ignore this file. However, if this file has already pushed, and is necessary to whole project, it should be saved in git. .gitignore cannot deal with this tracked file.</p>
+<p>In this situation, should we use two ways</p>
+<ul>
+<li><code>git update-index --skip-worktree FILE_NAME</code> </li>
+<li><code>git update-index --assume-unchanged FILE_NAME</code></li>
+</ul>
+<p>Those commands can make git ignores some files when scanning file list. In this case, git will never care about those files even if they have changes.</p>
+<h2 id="git-update-index-—skip-worktree"><a href="#git-update-index-—skip-worktree" class="headerlink" title="git update-index —skip-worktree"></a>git update-index —skip-worktree</h2><p><code>--skip-worktree</code> is the flag which means the files should change locally.</p>
+<p>That is, Use the command when you want to modify files managed by Git locally (or updated automatically) but you do not want Git to manage that change.</p>
+<h3 id="Exclude-from-tracking"><a href="#Exclude-from-tracking" class="headerlink" title="Exclude from tracking"></a>Exclude from tracking</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git update-index --skip-worktree FILE_NAME</span><br></pre></td></tr></table></figure>
+<h3 id="How-to-confirm"><a href="#How-to-confirm" class="headerlink" title="How to confirm"></a>How to confirm</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git ls-files -v | grep ^S</span><br></pre></td></tr></table></figure>
+<h3 id="Restore-tracking"><a href="#Restore-tracking" class="headerlink" title="Restore tracking"></a>Restore tracking</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git update-index --no-skip-worktree FILE_NAME</span><br></pre></td></tr></table></figure>
+<h2 id="git-update-index-—assume-unchanged"><a href="#git-update-index-—assume-unchanged" class="headerlink" title="git update-index —assume-unchanged"></a>git update-index —assume-unchanged</h2><p><code>--assume-unchanged</code> is the flag which means the files should not change locally.</p>
+<p>In other words, it is used when ignore files that you do not need to change locally (or should not change).</p>
+<p><code>--assume-unchanged</code> is used when you want to speed up Git’s behavior by ignoring unnecessary files.</p>
+<p>Also, since it is an idea to ignore local changes, git reset - hard command will delete local changes.</p>
+<h3 id="Exclude-from-tracking-1"><a href="#Exclude-from-tracking-1" class="headerlink" title="Exclude from tracking"></a>Exclude from tracking</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git update-index --assume-unchanged FILE_NAME</span><br></pre></td></tr></table></figure>
+<h3 id="How-to-confirm-1"><a href="#How-to-confirm-1" class="headerlink" title="How to confirm"></a>How to confirm</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git ls-files -v | grep ^h</span><br></pre></td></tr></table></figure>
+<h3 id="Restore-tracking-1"><a href="#Restore-tracking-1" class="headerlink" title="Restore tracking"></a>Restore tracking</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git update-index --no-assume-unchanged FILE_NAME</span><br></pre></td></tr></table></figure>
+<h2 id="Relationship-with-remote-repo"><a href="#Relationship-with-remote-repo" class="headerlink" title="Relationship with remote repo"></a>Relationship with remote repo</h2><p><code>--assume-unchanged</code> will closes tracking between this file and remote repo. It assumes that this file will never change, so pull will always get local file.</p>
+<p><code>--skip-worktree</code> will keep the tracking between this file and remote repo. It just tell git not to manage local changes, so pull will get latest changes and show conflicts. But because of not tracking local changes, execute <code>--no-skip-worktree</code> first then merge latest changes.</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li><a href="https://dev.to/nishina555/how-to-ignore-files-already-managed-with-git-locally-19oo" target="_blank" rel="noopener">How to ignore files already managed with Git locally</a></li>
+<li><a href="https://www.google.com/search?q=git+update-index&amp;oq=git+update-index&amp;aqs=chrome..69i57j69i59j69i64j69i60j69i61j69i60&amp;sourceid=chrome&amp;ie=UTF-8" target="_blank" rel="noopener">Git update-index document</a></li>
+</ul>
+<hr />]]></content>
+      <categories>
+        <category>Git/Github</category>
+      </categories>
+      <tags>
+        <tag>Github</tag>
+        <tag>Git</tag>
+      </tags>
+  </entry>
 </search>
