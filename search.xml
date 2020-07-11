@@ -9456,4 +9456,37 @@
         <tag>Git</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Syncing a fork repository using rebase</title>
+    <url>/2020/07/10/syncing-a-fork-repo-using-rebase/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/git-github.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<p>After forking one repository, if this repository updated, we need to keep up-to-date with this upstream repository.</p>
+<h2 id="Configuring-a-remote-for-a-fork"><a href="#Configuring-a-remote-for-a-fork" class="headerlink" title="Configuring a remote for a fork"></a>Configuring a remote for a fork</h2><h3 id="Check-current-configured-remote-repository-for-your-fork"><a href="#Check-current-configured-remote-repository-for-your-fork" class="headerlink" title="Check current configured remote repository for your fork."></a>Check current configured remote repository for your fork.</h3><p>Using <code>git remove -v</code> to check remote repository status.<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git remote -v</span><br><span class="line">&gt; origin  https:&#x2F;&#x2F;github.com&#x2F;YOUR_USERNAME&#x2F;YOUR_FORK.git (fetch)</span><br><span class="line">&gt; origin  https:&#x2F;&#x2F;github.com&#x2F;YOUR_USERNAME&#x2F;YOUR_FORK.git (push)</span><br></pre></td></tr></table></figure></p>
+<h3 id="Create-a-new-remote-upstream-repository"><a href="#Create-a-new-remote-upstream-repository" class="headerlink" title="Create a new remote upstream repository"></a>Create a new remote <em>upstream</em> repository</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git remote add upstream https:&#x2F;&#x2F;github.com&#x2F;ORIGINAL_OWNER&#x2F;ORIGINAL_REPOSITORY.git</span><br></pre></td></tr></table></figure>
+<h3 id="Verify"><a href="#Verify" class="headerlink" title="Verify"></a>Verify</h3><p>Verify the new <code>upstream</code> repository you’ve specified for your fork.<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git remote -v</span><br><span class="line">&gt; origin    https:&#x2F;&#x2F;github.com&#x2F;YOUR_USERNAME&#x2F;YOUR_FORK.git (fetch)</span><br><span class="line">&gt; origin    https:&#x2F;&#x2F;github.com&#x2F;YOUR_USERNAME&#x2F;YOUR_FORK.git (push)</span><br><span class="line">&gt; upstream  https:&#x2F;&#x2F;github.com&#x2F;ORIGINAL_OWNER&#x2F;ORIGINAL_REPOSITORY.git (fetch)</span><br><span class="line">&gt; upstream  https:&#x2F;&#x2F;github.com&#x2F;ORIGINAL_OWNER&#x2F;ORIGINAL_REPOSITORY.git (push)</span><br></pre></td></tr></table></figure></p>
+<h2 id="Syncing-a-fork"><a href="#Syncing-a-fork" class="headerlink" title="Syncing a fork"></a>Syncing a fork</h2><h3 id="Fetch"><a href="#Fetch" class="headerlink" title="Fetch"></a>Fetch</h3><p>Fetch the branches and their respective commits from the upstream repository. Commits to <code>master</code> will be stored in a local branch, <code>upstream/master</code>.<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git fetch upstream</span><br><span class="line">&gt; remote: Counting objects: 75, done.</span><br><span class="line">&gt; remote: Compressing objects: 100% (53&#x2F;53), done.</span><br><span class="line">&gt; remote: Total 62 (delta 27), reused 44 (delta 9)</span><br><span class="line">&gt; Unpacking objects: 100% (62&#x2F;62), done.</span><br><span class="line">&gt; From https:&#x2F;&#x2F;github.com&#x2F;ORIGINAL_OWNER&#x2F;ORIGINAL_REPOSITORY</span><br><span class="line">&gt;  * [new branch]      master     -&gt; upstream&#x2F;master</span><br></pre></td></tr></table></figure></p>
+<h3 id="Switch-to-local-master"><a href="#Switch-to-local-master" class="headerlink" title="Switch to local master"></a>Switch to local master</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">&gt; Switched to branch &#39;master&#39;</span><br></pre></td></tr></table></figure>
+<h3 id="Rebase-the-changes-from-upstream-master-into-your-local-master"><a href="#Rebase-the-changes-from-upstream-master-into-your-local-master" class="headerlink" title="Rebase the changes from upstream/master into your local master"></a>Rebase the changes from upstream/master into your local master</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git rebase -i upstream&#x2F;master</span><br></pre></td></tr></table></figure>
+<p>If no conflict, move to next step.</p>
+<p>If any conflict, figure out conflict part, then add changes.<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git add CONFLICT_FILE</span><br></pre></td></tr></table></figure></p>
+<p>Continue to rebase<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git rebase --continue</span><br></pre></td></tr></table></figure></p>
+<h3 id="Push-to-origin-master"><a href="#Push-to-origin-master" class="headerlink" title="Push to origin master"></a>Push to origin master</h3><p>Push your up-to-date local repo to origin master<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure></p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li><a href="https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/configuring-a-remote-for-a-fork" target="_blank" rel="noopener">Configuring a remote for a fork</a></li>
+<li><a href="https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork" target="_blank" rel="noopener">Syncing a fork</a></li>
+<li><a href="https://git-scm.com/docs/git-rebase" target="_blank" rel="noopener">git-rebase</a></li>
+<li><a href="https://www.atlassian.com/git/tutorials/merging-vs-rebasing" target="_blank" rel="noopener">Merging vs. Rebasing</a><hr /></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Git/Github</category>
+      </categories>
+      <tags>
+        <tag>Github</tag>
+        <tag>Git</tag>
+      </tags>
+  </entry>
 </search>

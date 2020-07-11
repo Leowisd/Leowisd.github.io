@@ -421,7 +421,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Constraint-Satisfacation-Problems"><span class="nav-number">1.</span> <span class="nav-text">Constraint Satisfacation Problems</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Constraint-Graph"><span class="nav-number">1.1.</span> <span class="nav-text">Constraint Graph</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Extra-example-Cryptarithmetic"><span class="nav-number">1.2.</span> <span class="nav-text">Extra example: Cryptarithmetic</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Backtracking-search"><span class="nav-number">2.</span> <span class="nav-text">Backtracking search</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Minimum-remaining-values-（最小剩余值）"><span class="nav-number">3.</span> <span class="nav-text">Minimum remaining values （最小剩余值）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Degree-heuristic-（度启发式）"><span class="nav-number">4.</span> <span class="nav-text">Degree heuristic （度启发式）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Least-constraining-value-（最少约束值）"><span class="nav-number">5.</span> <span class="nav-text">Least constraining value （最少约束值）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Forward-checking"><span class="nav-number">6.</span> <span class="nav-text">Forward checking</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Constraint-propagation"><span class="nav-number">6.1.</span> <span class="nav-text">Constraint propagation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Arc-consistency-弧相容算法-AC-3"><span class="nav-number">7.</span> <span class="nav-text">Arc consistency (弧相容算法 AC-3)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tree-structured-CSPs"><span class="nav-number">8.</span> <span class="nav-text">Tree-structured CSPs</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Algorithm-for-tree-structured-CSPs"><span class="nav-number">8.1.</span> <span class="nav-text">Algorithm for tree-structured CSPs</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Constraint-Satisfacation-Problems"><span class="nav-number">1.</span> <span class="nav-text">Constraint Satisfacation Problems</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Constraint-Graph"><span class="nav-number">1.1.</span> <span class="nav-text">Constraint Graph</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Extra-example-Cryptarithmetic"><span class="nav-number">1.2.</span> <span class="nav-text">Extra example: Cryptarithmetic</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Backtracking-search"><span class="nav-number">2.</span> <span class="nav-text">Backtracking search</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Minimum-remaining-values-（最小剩余值）"><span class="nav-number">3.</span> <span class="nav-text">Minimum remaining values （最小剩余值）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Degree-heuristic-（度启发式）"><span class="nav-number">4.</span> <span class="nav-text">Degree heuristic （度启发式）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Least-constraining-value-（最少约束值）"><span class="nav-number">5.</span> <span class="nav-text">Least constraining value （最少约束值）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Forward-checking"><span class="nav-number">6.</span> <span class="nav-text">Forward checking</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Constraint-propagation"><span class="nav-number">6.1.</span> <span class="nav-text">Constraint propagation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Arc-consistency-弧相容算法-AC-3"><span class="nav-number">7.</span> <span class="nav-text">Arc consistency (弧相容算法 AC-3)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tree-structured-CSPs"><span class="nav-number">8.</span> <span class="nav-text">Tree-structured CSPs</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Algorithm-for-tree-structured-CSPs"><span class="nav-number">8.1.</span> <span class="nav-text">Algorithm for tree-structured CSPs</span></a></li></ol></li></ol> </div>
       </div>
       <!--/noindex-->
 
@@ -437,7 +437,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">353</span>
+          <span class="site-state-item-count">354</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -467,6 +467,33 @@
       </span>
   </div>
 
+<span> Has been running </span><br>
+<span id="days"></span>
+<script>
+    function show_date_time(){
+        window.setTimeout("show_date_time()", 1000);
+        BirthDay=new Date("08/24/2018 20:00:00");
+        today=new Date();
+        timeold=(today.getTime()-BirthDay.getTime());
+        sectimeold=timeold/1000
+        secondsold=Math.floor(sectimeold);
+        msPerDay=24*60*60*1000
+        e_daysold=timeold/msPerDay
+        daysold=Math.floor(e_daysold);
+        e_hrsold=(e_daysold-daysold)*24;
+        hrsold=setzero(Math.floor(e_hrsold));
+        e_minsold=(e_hrsold-hrsold)*60;
+        minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+        seconds=setzero(Math.floor((e_minsold-minsold)*60));
+        document.getElementById('days').innerHTML= daysold+" days "+hrsold+"h "+minsold+"m "+seconds+"s ";
+    }
+    function setzero(i){
+        if (i<10) {i="0" + i};
+        return i;
+    }
+    show_date_time();
+</script>
+
 
   <div class="links-of-blogroll motion-element">
     <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
@@ -489,7 +516,7 @@
   </div>
 
       </div>
-
+      
     </div>
   </aside>
   <div id="sidebar-dimmer"></div>
@@ -515,6 +542,32 @@
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
   </div>
+
+<div id="time"></div>
+<script>
+    function show_date_time(){
+        window.setTimeout("show_date_time()", 1000);
+        BirthDay=new Date("08/24/2018 20:00:00");
+        today=new Date();
+        timeold=(today.getTime()-BirthDay.getTime());
+        sectimeold=timeold/1000
+        secondsold=Math.floor(sectimeold);
+        msPerDay=24*60*60*1000
+        e_daysold=timeold/msPerDay
+        daysold=Math.floor(e_daysold);
+        e_hrsold=(e_daysold-daysold)*24;
+        hrsold=setzero(Math.floor(e_hrsold));
+        e_minsold=(e_hrsold-hrsold)*60;
+        minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+        seconds=setzero(Math.floor((e_minsold-minsold)*60));
+        document.getElementById('time').innerHTML = "Has been running for " + daysold+" days "+hrsold+"h "+minsold+"m "+seconds+"s ";
+    }
+    function setzero(i){
+        if (i<10) {i="0" + i};
+        return i;
+    }
+    show_date_time();
+</script>
 
         
 
