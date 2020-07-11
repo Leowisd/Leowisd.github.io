@@ -26,7 +26,7 @@
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
         {%- if display_toc %}
-          <div class="post-toc motion-element">{{ toc }}</div>
+          <div class="post-toc motion-element">{{ toc }} </div>
         {%- endif %}
       </div>
       <!--/noindex-->
@@ -43,7 +43,7 @@
           <span>0%</span>
         </div>
       {%- endif %}
-
+      
     </div>
   </aside>
   <div id="sidebar-dimmer"></div>
