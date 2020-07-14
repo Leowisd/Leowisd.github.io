@@ -17,7 +17,8 @@
 
 // 渐变彩带，CSS 代码 Copy 自 https://githubuniverse.com
 .site-brand-container {
-    background-image: linear-gradient(90deg, #F79533 0%, #F37055 15%, #EF4E7B 30%, #A166AB 44%, #5073B8 58%, #1098AD 72%, #07B39B 86%, #6DBA82 100%);
+    background-color: #abcdef;
+    //background-image: linear-gradient(90deg, #F79533 0%, #F37055 15%, #EF4E7B 30%, #A166AB 44%, #5073B8 58%, #1098AD 72%, #07B39B 86%, #6DBA82 100%);
 }
 // 站点名背景
 .brand{
@@ -27,8 +28,8 @@
 }
 // 站点名字体
 .site-title {
-    font-size: 75px;
-    font-weight: bold;
+    font-size: 64px;
+    //font-weight: bold;
     font-style: italic;
     color: rgb(255, 255, 255);
     line-height: 80px;
@@ -42,9 +43,6 @@
     letter-spacing: 1px;
     padding-bottom: 3px;
     color: rgb(255, 255, 255);
-    border-bottom-width: 3px;
-    border-bottom-style: solid;
-    border-bottom-color: rgb(161, 102, 171);
 }
 // 菜单
 .menu {
@@ -52,7 +50,7 @@
     margin-top: 0px;
     margin-bottom: 0px;
     padding: 5px;
-    background-color: #e7e6e7;
+    background-color: #eeeeee;
     box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.15);
 }
 // 菜单超链接字体大小
@@ -67,7 +65,6 @@
 .menu .menu-item a:hover {
     border-bottom-color: rgba(161, 102, 171, 0);
 }
-
 
 // 页面留白更改
 .header-inner {
@@ -84,17 +81,47 @@
     margin-top: 0px;
 }
 
+// 文章标题动态效果
+.posts-expand .post-title-link::before {
+    background-image: linear-gradient(90deg, #a166ab 0%, #ef4e7b 25%, #f37055 50%, #ef4e7b 75%, #a166ab 100%);
+}
+
 // 页面背景色
 .container {
 //    background-color: rgba(255, 255, 255, 0.75);
     background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSBNMwxsKxK7t8ANQKKnsc8ar5DLfyuzT46og&usqp=CAU');
 }
 
-// 文章的描述description
-.posts-expand .post-meta .post-description {
+.index .post-body {
     font-style: italic;
     font-size: 16px;
     margin-top: 30px;
     margin-bottom: 0px;
     color: #666;
+    text-align: center;
+}
+
+.vpanel {
+    border-style:dotted;
+    border-width:thin;
+}
+
+// [Read More]按钮样式
+.post-button .btn {
+    color: rgb(255, 255, 255) !important;
+    background-color: #4a5a6a;
+    border-radius: 3px;
+    font-size: 15px;
+    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+    border: none !important;
+    transition-property: unset;
+    padding: 0px 15px;
+}
+.post-button .btn:hover {
+    color: rgb(255, 255, 255) !important;
+    border-radius: 3px;
+    font-size: 15px;
+    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+    background-image: linear-gradient(90deg, #a166ab 0%, #ef4e7b 25%, #f37055 50%, #ef4e7b 75%, #a166ab 100%);
+    //background-color: #abcdef;
 }
