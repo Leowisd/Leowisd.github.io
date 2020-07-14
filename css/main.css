@@ -1225,7 +1225,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ff9fc2;
+  background: #52ec5b;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2478,7 +2478,7 @@ embed {
   width: 100%;
 }
 .site-brand-container {
-  background-image: linear-gradient(90deg, #f79533 0%, #f37055 15%, #ef4e7b 30%, #a166ab 44%, #5073b8 58%, #1098ad 72%, #07b39b 86%, #6dba82 100%);
+  background-color: #abcdef;
 }
 .brand {
   background-color: rgba(255,255,255,0);
@@ -2486,8 +2486,7 @@ embed {
   padding: 0px;
 }
 .site-title {
-  font-size: 75px;
-  font-weight: bold;
+  font-size: 64px;
   font-style: italic;
   color: #fff;
   line-height: 80px;
@@ -2500,16 +2499,13 @@ embed {
   letter-spacing: 1px;
   padding-bottom: 3px;
   color: #fff;
-  border-bottom-width: 3px;
-  border-bottom-style: solid;
-  border-bottom-color: #a166ab;
 }
 .menu {
   text-align: center;
   margin-top: 0px;
   margin-bottom: 0px;
   padding: 5px;
-  background-color: #e7e6e7;
+  background-color: #eee;
   box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.15);
 }
 .menu .menu-item a {
@@ -2537,10 +2533,22 @@ embed {
 .container {
   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSBNMwxsKxK7t8ANQKKnsc8ar5DLfyuzT46og&usqp=CAU");
 }
+.content-wrap {
+  margin-top: 50px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+}
 .posts-expand .post-meta .post-description {
   font-style: italic;
   font-size: 16px;
   margin-top: 30px;
   margin-bottom: 0px;
   color: #666;
+}
+.post {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 45px 36px 36px 36px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+  background-color: #fff;
 }
