@@ -43,16 +43,7 @@
 .pagination .space {
     color: rgb(255, 255, 255);
 }
-// 页面底部页脚
-.footer {
-    line-height: 1.5;
-    background-color: rgba(255, 255, 255, 0.75);
-    color: #333;
-    border-top-width: 3px;
-    border-top-style: solid;
-    border-top-color: rgb(161, 102, 171);
-    box-shadow: 0px -10px 10px 0px rgba(0, 0, 0, 0.15);
-}
+
 // 文章底部的tags
 .posts-expand .post-tags a {
     border-bottom: none;
@@ -137,40 +128,8 @@ pre .addition {
 pre .deletion {
     background: #ffeef0;
 }
-// 右下角侧栏按钮样式
-.sidebar-toggle {
-    right: 10px;
-    bottom: 43px;
-    background-color: rgba(247, 149, 51, 0.75);
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
-}
-.page-post-detail .sidebar-toggle-line {
-    background: rgb(7, 179, 155);
-}
-// 右下角返回顶部按钮样式
-.back-to-top {
-    line-height: 1.5;
-    right: 10px;
-    padding-right: 5px;
-    padding-left: 5px;
-    padding-top: 2.5px;
-    padding-bottom: 2.5px;
-    background-color: rgba(247, 149, 51, 0.75);
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
-}
-.back-to-top.back-to-top-on {
-    bottom: 10px;
-}
-// 侧栏
-.sidebar {
-    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
-    background-color: rgba(0, 0, 0, 0.75);
-}
-.sidebar-inner {
-    margin-top: 30px;
-}
+
+
 // 侧栏顶部文字
 .sidebar-nav li {
     font-size: 15px;
@@ -418,19 +377,7 @@ h2.about-title {
     -webkit-text-fill-color: transparent;
     user-select: none;
 }
-// 本地搜索框
-.local-search-popup .search-icon, .local-search-popup .popup-btn-close {
-    color: rgb(247, 149, 51);
-    margin-top: 7px;
-}
-.local-search-popup .local-search-input-wrapper input {
-    padding: 9px 0px;
-    height: 21px;
-    background-color: rgb(255, 255, 255);
-}
-.local-search-popup .popup-btn-close {
-    border-left: none;
-}
+
 // 选中文字部分的样式
 ::selection {
     background-color: rgb(255, 241, 89);
