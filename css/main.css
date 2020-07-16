@@ -1225,7 +1225,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #7fa7b3;
+  background: #ff9fff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2478,7 +2478,7 @@ embed {
   width: 100%;
 }
 .site-brand-container {
-  background-color: #abcdef;
+  background-color: #69f;
 }
 .brand {
   background-color: rgba(255,255,255,0);
@@ -2514,9 +2514,6 @@ embed {
 .menu .menu-item {
   margin: 5px 15px;
 }
-.menu .menu-item a:hover {
-  border-bottom-color: rgba(161,102,171,0);
-}
 .header-inner {
   padding-top: 0px;
   padding-bottom: 0px;
@@ -2531,7 +2528,7 @@ embed {
   margin-top: 0px;
 }
 .posts-expand .post-title-link::before {
-  background-image: linear-gradient(90deg, #a166ab 0%, #ef4e7b 25%, #f37055 50%, #ef4e7b 75%, #a166ab 100%);
+  background-color: #69f;
 }
 .container {
   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSBNMwxsKxK7t8ANQKKnsc8ar5DLfyuzT46og&usqp=CAU");
@@ -2550,10 +2547,9 @@ embed {
 }
 .post-button .btn {
   color: #fff !important;
-  background-color: #4a5a6a;
+  background-color: #69f;
   border-radius: 3px;
   font-size: 15px;
-  box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.35);
   border: none !important;
   transition-property: unset;
   padding: 0px 15px;
@@ -2563,5 +2559,41 @@ embed {
   border-radius: 3px;
   font-size: 15px;
   box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.35);
-  background-image: linear-gradient(90deg, #a166ab 0%, #ef4e7b 25%, #f37055 50%, #ef4e7b 75%, #a166ab 100%);
+  background-color: #4a5a6a;
+}
+.footer {
+  background-color: #eee;
+}
+.sidebar-toggle {
+  right: 10px;
+  bottom: 43px;
+  background-color: #69f;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.35);
+}
+.page-post-detail .sidebar-toggle-line {
+  background: #07b39b;
+}
+.back-to-top {
+  line-height: 1.5;
+  right: 10px;
+  padding-right: 5px;
+  padding-left: 5px;
+  padding-top: 2.5px;
+  padding-bottom: 2.5px;
+  background-color: #69f;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.35);
+}
+.back-to-top.back-to-top-on {
+  bottom: 10px;
+}
+.pagination .page-number.current {
+  background: #69f;
+  border-top-color: #69f;
+  color: #fff;
+}
+.sidebar {
+  box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.75);
 }
