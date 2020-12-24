@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.3.0">
@@ -91,10 +91,14 @@
   </style>
 </noscript>
 
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -288,7 +292,6 @@
 
 <p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fyprl5cr2nj212w0m87a8.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
 <a id="more"></a>
-
 <h2 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dijstra</span>(<span class="params">s</span>):</span></span><br><span class="line">    <span class="keyword">global</span> n</span><br><span class="line">    <span class="keyword">global</span> cost</span><br><span class="line">    <span class="built_in">len</span> = [<span class="number">1000</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n)]</span><br><span class="line">    visit = [<span class="number">0</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n)]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">        <span class="built_in">len</span>[i] = cost[s][i]</span><br><span class="line">        visit[i] = <span class="number">0</span></span><br><span class="line">    visit[s] = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n-<span class="number">1</span>):</span><br><span class="line">        <span class="built_in">min</span> = <span class="number">10000</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            <span class="keyword">if</span> (visit[j]==<span class="number">0</span>  <span class="keyword">and</span> <span class="built_in">min</span>&gt;<span class="built_in">len</span>[j]):</span><br><span class="line">                <span class="built_in">min</span> = <span class="built_in">len</span>[j]</span><br><span class="line">                pos = j</span><br><span class="line"></span><br><span class="line">        visit[pos] = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            <span class="keyword">if</span> (visit[j] == <span class="number">0</span> <span class="keyword">and</span> <span class="built_in">len</span>[j]&gt;<span class="built_in">len</span>[pos] + cost[pos][j]):</span><br><span class="line">                <span class="built_in">len</span>[j] = <span class="built_in">len</span>[pos] + cost[pos][j]</span><br><span class="line"></span><br><span class="line">    print(<span class="built_in">len</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">floyd</span>():</span></span><br><span class="line">    <span class="keyword">global</span> n</span><br><span class="line">    <span class="keyword">global</span> cost</span><br><span class="line">    path = [[<span class="number">0</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n)]<span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(n)]</span><br><span class="line">    length = [[<span class="number">0</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n)]<span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(n)]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(n):            </span><br><span class="line">            length[i][j] = cost[i][j]</span><br><span class="line">            <span class="keyword">if</span> cost[i][j] &lt; <span class="number">1000</span>:</span><br><span class="line">                path[i][j] = i</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                path[i][j] = -<span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">                <span class="keyword">if</span> (length[i][k] &lt; <span class="number">1000</span>)<span class="keyword">and</span> (length[k][j] &lt; <span class="number">1000</span>):</span><br><span class="line">                    <span class="keyword">if</span> (length[i][j] &gt; length[i][k] + length[k][j]):</span><br><span class="line">                        length[i][j] = length[i][k] + length[k][j]</span><br><span class="line">                        path[i][j] = k</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">        print(length[i])</span><br><span class="line"></span><br><span class="line"><span class="keyword">global</span> n </span><br><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&#x27;Please input the number of notes: &#x27;</span>))</span><br><span class="line">cost = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    cost.append(<span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().split(<span class="string">&#x27; &#x27;</span>))))</span><br><span class="line"></span><br><span class="line">s = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&#x27;Please input the source: &#x27;</span>))</span><br><span class="line">dijstra(s)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">input</span>(<span class="string">&#x27;Please run floyd&#x27;</span>)</span><br><span class="line">floyd()</span><br></pre></td></tr></table></figure>
 <hr />
     </div>
@@ -393,7 +396,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">354</span>
+          <span class="site-state-item-count">355</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -406,7 +409,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">139</span>
+        <span class="site-state-item-count">141</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -662,7 +665,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     });
   }, window.Valine);
 });
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>

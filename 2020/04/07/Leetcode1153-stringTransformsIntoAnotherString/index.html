@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.3.0">
@@ -89,10 +89,14 @@
   </style>
 </noscript>
 
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -286,15 +290,10 @@
 
 <p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
 <a id="more"></a>
-
 <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given two strings str1 and str2 of the same length, determine whether you can transform str1 into str2 by doing zero or more conversions.</p>
 <p>In one conversion you can convert all occurrences of one character in str1 to any other lowercase English character.</p>
 <p>Return true if and only if you can transform str1 into str2.</p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: str1 &#x3D; &quot;aabcc&quot;, str2 &#x3D; &quot;ccdee&quot;</span><br><span class="line">Output: true</span><br><span class="line">Explanation: Convert &#39;c&#39; to &#39;e&#39; then &#39;b&#39; to &#39;d&#39; then &#39;a&#39; to &#39;c&#39;. Note that the order of conversions matter.</span><br></pre></td></tr></table></figure>
-<p><strong>Example 2:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: str1 &#x3D; &quot;leetcode&quot;, str2 &#x3D; &quot;codeleet&quot;</span><br><span class="line">Output: false</span><br><span class="line">Explanation: There is no way to transform str1 to str2.</span><br></pre></td></tr></table></figure>
-<p><strong>Note:</strong></p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: str1 &#x3D; &quot;aabcc&quot;, str2 &#x3D; &quot;ccdee&quot;</span><br><span class="line">Output: true</span><br><span class="line">Explanation: Convert &#39;c&#39; to &#39;e&#39; then &#39;b&#39; to &#39;d&#39; then &#39;a&#39; to &#39;c&#39;. Note that the order of conversions matter.</span><br></pre></td></tr></table></figure><br><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: str1 &#x3D; &quot;leetcode&quot;, str2 &#x3D; &quot;codeleet&quot;</span><br><span class="line">Output: false</span><br><span class="line">Explanation: There is no way to transform str1 to str2.</span><br></pre></td></tr></table></figure><br><strong>Note:</strong></p>
 <ol>
 <li>1 &lt;= str1.length == str2.length &lt;= 10^4</li>
 <li>Both str1 and str2 contain only lowercase English letters.</li>
@@ -305,8 +304,7 @@
 <li>多对一， aabcc,ccdee, a-&gt;c, c-&gt;e，其实只要有未在target string出现过的char，那么就可以拿来作为temp char桥梁，比如 a-&gt;g-&gt;c这样转换就不会同时影响c-&gt;e的转换</li>
 <li>一对多，a-&gt;f, a-&gt;g 这样是绝对不可能的，因为char会被同时影响</li>
 </ol>
-<p>另外还有一种特殊情况就是，source和target的unique char的数量是一样的时候，如果此时是26个<br>则说明完全不能转换，因为没有extra的temp char作为转换的桥梁</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  there should at least one character that is unused, to use it as the tmp for transformation.</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">canConvert</span><span class="params">(String str1, String str2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (str1.equals(str2)) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        HashMap&lt;Character, Character&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; str1.length(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (map.getOrDefault(str1.charAt(i), str2.charAt(i)) != str2.charAt(i))</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            map.put(str1.charAt(i), str2.charAt(i));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> HashSet&lt;&gt;(map.values()).size() &lt; <span class="number">26</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>另外还有一种特殊情况就是，source和target的unique char的数量是一样的时候，如果此时是26个<br>则说明完全不能转换，因为没有extra的temp char作为转换的桥梁<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  there should at least one character that is unused, to use it as the tmp for transformation.</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">canConvert</span><span class="params">(String str1, String str2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (str1.equals(str2)) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        HashMap&lt;Character, Character&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; str1.length(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (map.getOrDefault(str1.charAt(i), str2.charAt(i)) != str2.charAt(i))</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            map.put(str1.charAt(i), str2.charAt(i));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> HashSet&lt;&gt;(map.values()).size() &lt; <span class="number">26</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <hr />
     </div>
 
@@ -408,7 +406,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">354</span>
+          <span class="site-state-item-count">355</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -421,7 +419,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">139</span>
+        <span class="site-state-item-count">141</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -677,7 +675,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     });
   }, window.Valine);
 });
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>

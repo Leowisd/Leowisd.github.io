@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.3.0">
@@ -101,10 +101,14 @@
   </style>
 </noscript>
 
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -298,7 +302,6 @@
 
 <p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fxuntyysxzj212w0m8ab6.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
 <a id="more"></a>
-
 <h2 id="NP-completeness-and-the-classes-P-and-NP"><a href="#NP-completeness-and-the-classes-P-and-NP" class="headerlink" title="NP-completeness and the classes P and NP"></a>NP-completeness and the classes P and NP</h2><h3 id="Classes-P"><a href="#Classes-P" class="headerlink" title="Classes P"></a>Classes P</h3><p>The class P consists of those problems that are solvable in polynomial time.</p>
 <p>More specifically, they are problems that can be solved in time $O(n^k)$ for some<br>constant k, where n is the size of the input to the problem.</p>
 <h3 id="Classes-NP"><a href="#Classes-NP" class="headerlink" title="Classes NP"></a>Classes NP</h3><p>The class NP consists of those problems that are “verifiable” in polynomial time.</p>
@@ -310,38 +313,29 @@
 <h3 id="Endocing"><a href="#Endocing" class="headerlink" title="Endocing"></a>Endocing</h3><p>In order for a computer program to solve an abstract problem, we must represent<br>problem instances in a way that the program understands. An encoding of a set S<br>of abstract objects is a mapping e from S to the set of binary strings.</p>
 <h3 id="A-formal-language-framework"><a href="#A-formal-language-framework" class="headerlink" title="A formal-language framework"></a>A formal-language framework</h3><p>Omit!</p>
 <h3 id="Exercise"><a href="#Exercise" class="headerlink" title="Exercise"></a>Exercise</h3><p>Show that if an algorithm makes at most a constant number of calls to polynomial-time subroutines and performs an additional amount of work that also takes polynomial time, then it runs in polynomial time. Also show that a polynomial number of calls to polynomial-time subroutines may result in an exponential-time algorithm.</p>
-<p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fxuk9s3tlmj20h80d6q5j.jpg"><br><img src="http://ww1.sinaimg.cn/large/cf684029ly1fxuk9y886hj20hz073js2.jpg"></p>
+<p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fxuk9s3tlmj20h80d6q5j.jpg" alt=""><br><img src="http://ww1.sinaimg.cn/large/cf684029ly1fxuk9y886hj20hz073js2.jpg" alt=""></p>
 <h2 id="Polynomial-time-verification"><a href="#Polynomial-time-verification" class="headerlink" title="Polynomial-time verification"></a>Polynomial-time verification</h2><h3 id="Hamiltonian-cycles"><a href="#Hamiltonian-cycles" class="headerlink" title="Hamiltonian cycles"></a>Hamiltonian cycles</h3><p>A hamiltonian cycle of an undirected graph $G=(V;E)$ is a simple cycle that contains each vertex in $V$. A graph that contains a hamiltonian cycle is said to be hamiltonian; otherwise, it is nonhamiltonian.</p>
 <p>We can define the hamiltonian-cycle problem, “Does a graph G have a hamiltonian cycle?” as a formal language:</p>
-<p>$$HAM-CYCLE = {(G) : G is a hamiltonian graph}$$</p>
-<p>This naive algorithm does not run in polynomial time. In fact, the hamiltonian-cycle problem is NP-complete.</p>
+<script type="math/tex; mode=display">HAM-CYCLE = \{(G) : G is a hamiltonian graph\}</script><p>This naive algorithm does not run in polynomial time. In fact, the hamiltonian-cycle problem is NP-complete.</p>
 <h3 id="Verification-algorithms"><a href="#Verification-algorithms" class="headerlink" title="Verification algorithms"></a>Verification algorithms</h3><p>We define a verification algorithm as being a two-argument algorithm A, where one argument is an ordinary input string x and the other is a binary string y called a certificate. A two-argument algorithm A verifies an input string x if there exists a certificate y such that $A(x,y) = 1$. The language verified by a verification algorithm A is</p>
-<p>$$L = {x \in {0,1}^* : there \space exists \space y \in {0, 1}^* such \space that \space A(x,y) = 1}$$</p>
-<h3 id="The-complexity-class-NP"><a href="#The-complexity-class-NP" class="headerlink" title="The complexity class NP"></a>The complexity class NP</h3><p>Omit!</p>
+<script type="math/tex; mode=display">L = \{x \in \{0,1\}^* : there \space exists \space y \in \{0, 1\}^* such \space that \space A(x,y) = 1\}</script><h3 id="The-complexity-class-NP"><a href="#The-complexity-class-NP" class="headerlink" title="The complexity class NP"></a>The complexity class NP</h3><p>Omit!</p>
 <h3 id="Exercises"><a href="#Exercises" class="headerlink" title="Exercises"></a>Exercises</h3><h4 id="Question-1"><a href="#Question-1" class="headerlink" title="Question 1"></a>Question 1</h4><p>Prove that if $G$ is an undirected bipartite graph with an odd number of vertices, then $G$ is nonhamiltonian.</p>
 <h4 id="Answer"><a href="#Answer" class="headerlink" title="Answer"></a>Answer</h4><p>Let graph G be a bipartite graph with an odd number of vertices and G be Hamiltonian, meaning that there is a directed cycle that includes every vertex of G. As such, there exists a cycle in G would of odd length. However, a graph G is bipartite if and only if every cycle of G has even length. Proven by contradiction, if G is a bipartite graph with an odd number of vertices, then G is non-Hamiltonian.</p>
 <h4 id="Question-2"><a href="#Question-2" class="headerlink" title="Question 2"></a>Question 2</h4><p>Show that any language in NP can be decided by an algorithm running in time $2^{O(n^k)}$ for some constant k.</p>
-<h4 id="Answer-1"><a href="#Answer-1" class="headerlink" title="Answer"></a>Answer</h4><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fxukxkdlysj20go0av3zt.jpg"></p>
+<h4 id="Answer-1"><a href="#Answer-1" class="headerlink" title="Answer"></a>Answer</h4><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fxukxkdlysj20go0av3zt.jpg" alt=""></p>
 <h4 id="Question-3"><a href="#Question-3" class="headerlink" title="Question 3"></a>Question 3</h4><p>A hamiltonian path in a graph is a simple path that visits every vertex exactly<br>once. Show that the language $HAM-PATH = {(G, u , i): there \space is \space a \space hamiltonian \space path \space from \space u \space to \space i \space in \space graph \space G}$ belongs to NP.</p>
-<h4 id="Answer-2"><a href="#Answer-2" class="headerlink" title="Answer"></a>Answer</h4><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fxuleeazmtj20gq07hgn1.jpg"></p>
+<h4 id="Answer-2"><a href="#Answer-2" class="headerlink" title="Answer"></a>Answer</h4><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fxuleeazmtj20gq07hgn1.jpg" alt=""></p>
 <h4 id="Question-4"><a href="#Question-4" class="headerlink" title="Question 4"></a>Question 4</h4><p>Show that the hamiltonian-path problem from Exercise 34.2-6 can be solved in polynomial time on directed acyclic graphs. Give an efficient algorithm for the problem.</p>
 <h4 id="Answer-3"><a href="#Answer-3" class="headerlink" title="Answer"></a>Answer</h4><p>For this particular problem, we could find a polynomial-time solution for it and then it’s proven it could be solved in polynomial-time.</p>
 <p>In this following step, I will give some steps that will demonstrate it will resolve the problem:</p>
-<ol>
-<li><p>find a path in the original graph $G$ that in-degree is zero, because for a DAG it must have a source node that in-degree is zero. If there’re more than one nodes, then there is no solution, since every node must be visited, but the zero degree should start first and if there’re more than one point, then there must be some nodes that left cannot be visited at first.</p>
-</li>
-<li><p>remove the source node which in-degree is zero and its neighboring edges so that we could find the next node to start, let’s assume that the left graph is $G’$.</p>
-</li>
-<li><p>if the left graph $G’$ has more than two nodes or vertices that have the in-degree which is zero, then we could judge that it’s unsolvable, because as I said in 1) there is no way to visit those nodes since there in-degree is zero and there should only be one to visit after its predecessor.</p>
-</li>
-<li><p>keep doing the 3) until we have reached the end-point, which there is no other nodes to visit. If there is some nodes that are not visited but we cannot find an edge to reach it, then it’s unsolvable, otherwise we should get the solution.</p>
-</li>
-</ol>
-<p>From the above steps, we have found the solution for the hamiltonian-path, and its complexity if $O(|E|+|V|)$, while here $|V|$ is the number of vertices in the graph and $|E|$ is the number of edges in the graph, because we have to trace the vertices and its neighborhood edges from $v_{1}$ to $v_{n}$. We know that it is done in polynomial time.</p>
+<p>1) find a path in the original graph $G$ that in-degree is zero, because for a DAG it must have a source node that in-degree is zero. If there’re more than one nodes, then there is no solution, since every node must be visited, but the zero degree should start first and if there’re more than one point, then there must be some nodes that left cannot be visited at first.</p>
+<p>2) remove the source node which in-degree is zero and its neighboring edges so that we could find the next node to start, let’s assume that the left graph is $G’$.</p>
+<p>3) if the left graph $G’$ has more than two nodes or vertices that have the in-degree which is zero, then we could judge that it’s unsolvable, because as I said in 1) there is no way to visit those nodes since there in-degree is zero and there should only be one to visit after its predecessor.</p>
+<p>4) keep doing the 3) until we have reached the end-point, which there is no other nodes to visit. If there is some nodes that are not visited but we cannot find an edge to reach it, then it’s unsolvable, otherwise we should get the solution.</p>
+<p>From the above steps, we have found the solution for the hamiltonian-path, and its complexity if $O(|E|+|V|)$, while here $|V|$ is the number of vertices in the graph and $|E|$ is the number of edges in the graph, because we have to trace the vertices and its neighborhood edges from $v<em>{1}$ to $v</em>{n}$. We know that it is done in polynomial time.</p>
 <h2 id="NP-completeness-and-reducibility"><a href="#NP-completeness-and-reducibility" class="headerlink" title="NP-completeness and reducibility"></a>NP-completeness and reducibility</h2><h3 id="Reducibility"><a href="#Reducibility" class="headerlink" title="Reducibility"></a>Reducibility</h3><p>A language $L_1$ is polynomial-time reducible to a language $L_2$, written $L_1 \leq_p L_2$</p>
-<p>If there exists a polynomial-time computable function $f :{0, 1}^* \rightarrow {0, 1}^*$ such that for all $x \in {0, 1}^*$,</p>
-<p>$$x \in L_1 \space if \space and \space only \space if \space f(x) \in L_2 $$</p>
-<p>We call the function f the <strong>reduction function</strong>, and a polynomial-time algorithm F that computes f is a <strong>reduction algorithm</strong>.</p>
+<p>If there exists a polynomial-time computable function $f :{0, 1}^<em> \rightarrow {0, 1}^</em>$ such that for all $x \in {0, 1}^*$,</p>
+<script type="math/tex; mode=display">x \in L_1 \space if \space and \space only \space if \space f(x) \in L_2</script><p>We call the function f the <strong>reduction function</strong>, and a polynomial-time algorithm F that computes f is a <strong>reduction algorithm</strong>.</p>
 <h3 id="NP-completeness-1"><a href="#NP-completeness-1" class="headerlink" title="NP-completeness"></a>NP-completeness</h3><p>A language $L \in {0,1}$ is NP-complete if</p>
 <ol>
 <li>$L \in NP$, and</li>
@@ -350,7 +344,7 @@
 <p>If a language L satisfies property 2, but not necessarily property 1, we say that L is NP-hard. We also define NPC to be the class of NP-complete languages.</p>
 <h3 id="Circuit-satisfiability"><a href="#Circuit-satisfiability" class="headerlink" title="Circuit satisfiability"></a>Circuit satisfiability</h3><p>The language CIRCUIT-SAT is therefore at least as hard as any language in NP, and since it belongs to NP, it is NP-complete.</p>
 <h3 id="Exercise-1"><a href="#Exercise-1" class="headerlink" title="Exercise"></a>Exercise</h3><h4 id="Question-1-1"><a href="#Question-1-1" class="headerlink" title="Question 1"></a>Question 1</h4><p>Show that the $\leq_p$ relation is a transitive relation on languages. That is, show that if $L_1 \leq_p L_2$ and $L_2 \leq_p L_3$, then $L_1 \leq_p L_3$.</p>
-<h4 id="Answer-4"><a href="#Answer-4" class="headerlink" title="Answer"></a>Answer</h4><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fxumuzljmej20gk05yq3g.jpg"></p>
+<h4 id="Answer-4"><a href="#Answer-4" class="headerlink" title="Answer"></a>Answer</h4><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fxumuzljmej20gk05yq3g.jpg" alt=""></p>
 <h4 id="Question-2-1"><a href="#Question-2-1" class="headerlink" title="Question 2"></a>Question 2</h4><p>A language L is complete for a language class C with respect to polynomial-time reductions if $L \in C$ and $L’ \leq_p L$ for all $L’ \in C$. Show that $\empty$ and ${0,1}^*$ are the only languages in P that are not complete for P with respect to polynomial-time reductions.</p>
 <h4 id="Answer-5"><a href="#Answer-5" class="headerlink" title="Answer"></a>Answer</h4><p>Omit</p>
 <h2 id="NP-completeness-proofs"><a href="#NP-completeness-proofs" class="headerlink" title="NP-completeness proofs"></a>NP-completeness proofs</h2><p>Language L is NP-complete:</p>
@@ -365,10 +359,10 @@
 <h4 id="Theorem"><a href="#Theorem" class="headerlink" title="Theorem"></a>Theorem</h4><p>Satisfiability of boolean formulas in 3-conjunctive normal form is NP-complete.</p>
 <h3 id="Exercises-1"><a href="#Exercises-1" class="headerlink" title="Exercises"></a>Exercises</h3><h4 id="Question-1-2"><a href="#Question-1-2" class="headerlink" title="Question 1"></a>Question 1</h4><p>Consider the straightforward (nonpolynomial-time) reduction in the proof of Theorem 34.9. Describe a circuit of size n that, when converted to a formula by this method, yields a formula whose size is exponential in n.</p>
 <h4 id="Answer-6"><a href="#Answer-6" class="headerlink" title="Answer"></a>Answer</h4><h4 id="Question-2-2"><a href="#Question-2-2" class="headerlink" title="Question 2"></a>Question 2</h4><p>Suppose that someone gives you a polynomial-time algorithm to decide formula satisfiability. Describe how to use this algorithm to find satisfying assignments in polynomial time.</p>
-<h4 id="Answer-7"><a href="#Answer-7" class="headerlink" title="Answer"></a>Answer</h4><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fxvn7ofocfj20gq06agn7.jpg"><br><img src="http://ww1.sinaimg.cn/large/cf684029ly1fxvn8cgbw0j20gp03f0t3.jpg"></p>
-<h2 id="NP-complete-problems"><a href="#NP-complete-problems" class="headerlink" title="NP-complete problems"></a>NP-complete problems</h2><p>What the F***!</p>
+<h4 id="Answer-7"><a href="#Answer-7" class="headerlink" title="Answer"></a>Answer</h4><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fxvn7ofocfj20gq06agn7.jpg" alt=""><br><img src="http://ww1.sinaimg.cn/large/cf684029ly1fxvn8cgbw0j20gp03f0t3.jpg" alt=""></p>
+<h2 id="NP-complete-problems"><a href="#NP-complete-problems" class="headerlink" title="NP-complete problems"></a>NP-complete problems</h2><p>What the F<em>*</em>!</p>
 <h3 id="Exercises-2"><a href="#Exercises-2" class="headerlink" title="Exercises"></a>Exercises</h3><h4 id="Question-1-3"><a href="#Question-1-3" class="headerlink" title="Question 1"></a>Question 1</h4><p>The subgraph-isomorphism problem takes two undirected graphs $G_1$ and $G_2$, and it asks whether $G_1$ is isomorphic to a subgraph of $G_2$. Show that the subgraph-isomorphism problem is NP-complete.</p>
-<h4 id="Answer-8"><a href="#Answer-8" class="headerlink" title="Answer"></a>Answer</h4><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fxvo8qcea8j20g905575j.jpg"><br><img src="http://ww1.sinaimg.cn/large/cf684029ly1fxvo8w97ftj20i10ajgoz.jpg"></p>
+<h4 id="Answer-8"><a href="#Answer-8" class="headerlink" title="Answer"></a>Answer</h4><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fxvo8qcea8j20g905575j.jpg" alt=""><br><img src="http://ww1.sinaimg.cn/large/cf684029ly1fxvo8w97ftj20i10ajgoz.jpg" alt=""></p>
 <hr />
     </div>
 
@@ -472,7 +466,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">354</span>
+          <span class="site-state-item-count">355</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -485,7 +479,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">139</span>
+        <span class="site-state-item-count">141</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -741,7 +735,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     });
   }, window.Valine);
 });
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>

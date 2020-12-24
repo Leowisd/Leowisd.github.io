@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.3.0">
@@ -96,10 +96,14 @@
   </style>
 </noscript>
 
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -293,16 +297,13 @@
 
 <p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fvw28hncf5j212w0m8dh3.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
 <a id="more"></a>
-
 <h2 id="Usual-Data-Structures"><a href="#Usual-Data-Structures" class="headerlink" title="Usual Data Structures"></a>Usual Data Structures</h2><h4 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h4><p>Array is the simplest data structure in C#. It has the following characteristics:</p>
 <ul>
 <li>Array is stored in continuous memory.</li>
 <li>The contents of the array are all of the same type.</li>
 <li>Array can be accessed directly through subscript.</li>
 </ul>
-<p>The creation of Array:</p>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> size = <span class="number">5</span>;</span><br><span class="line"><span class="built_in">int</span>[] array = <span class="keyword">new</span> <span class="built_in">int</span>[size];</span><br></pre></td></tr></table></figure>
-<p>Because Array is stored in contiguous memory, its indexing speed is very fast. The time to access an element is constant, which means it is independent of the number of elements in the array. The assignment and modification of elements is also very simple.</p>
+<p>The creation of Array:<br><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> size = <span class="number">5</span>;</span><br><span class="line"><span class="built_in">int</span>[] array = <span class="keyword">new</span> <span class="built_in">int</span>[size];</span><br></pre></td></tr></table></figure><br>Because Array is stored in contiguous memory, its indexing speed is very fast. The time to access an element is constant, which means it is independent of the number of elements in the array. The assignment and modification of elements is also very simple.</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span>[] test2 = <span class="keyword">new</span> <span class="built_in">string</span>[<span class="number">3</span>];</span><br><span class="line"><span class="comment">//Assisgnmennt</span></span><br><span class="line">test2[<span class="number">0</span>] = <span class="string">&quot;yao&quot;</span>;</span><br><span class="line">test2[<span class="number">1</span>] = <span class="string">&quot;y&quot;</span>;</span><br><span class="line">test2[<span class="number">2</span>] = <span class="string">&quot;f&quot;</span>;</span><br><span class="line"><span class="comment">//Modification</span></span><br><span class="line">test2[<span class="number">0</span>] = <span class="string">&quot;yaoyf&quot;</span>;</span><br></pre></td></tr></table></figure>
 <p>But if there are advantages, then it will be accompanied by shortcomings. Because it is continuous storage, it is inconvenient to insert new elements between the two elements. And as the code above shows, when you declare a new array, you have to specify its length, which has the potential problem of wasting memory when we declare it too long, and the risk of overflowing when we declare it too short.</p>
 <p>In order to avoid such disadvantages， there is a data structure called ArrayList.</p>
@@ -347,7 +348,7 @@
 <li>The default capacity is 10.</li>
 <li>Use pop and push two methods to operate.</li>
 </ul>
-<h4 id="Dictionary-lt-K-T-gt"><a href="#Dictionary-lt-K-T-gt" class="headerlink" title="Dictionary&lt;K,T&gt;"></a>Dictionary&lt;K,T&gt;</h4><p>Very fast to add, modify, delete and find elemets. However, in order to speed up, we use more memory space.</p>
+<h4 id="Dictionary"><a href="#Dictionary" class="headerlink" title="Dictionary"></a>Dictionary<K,T></h4><p>Very fast to add, modify, delete and find elemets. However, in order to speed up, we use more memory space.</p>
 <h2 id="When-to-use-Which"><a href="#When-to-use-Which" class="headerlink" title="When to use Which"></a>When to use Which</h2><p><strong>Array</strong>: The number of elements and the need to use subscript can be considered, but List<T> is recommended.</p>
 <p><strong>ArrayList</strong>: It is not recommended. List<T> is recommended.</p>
 <p><strong>List</strong>: The number of elements is not sure. Most usual.</p>
@@ -447,7 +448,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Usual-Data-Structures"><span class="nav-number">1.</span> <span class="nav-text">Usual Data Structures</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Array"><span class="nav-number">1.0.1.</span> <span class="nav-text">Array</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ArrayList"><span class="nav-number">1.0.2.</span> <span class="nav-text">ArrayList</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#List"><span class="nav-number">1.0.3.</span> <span class="nav-text">List</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LinkedList"><span class="nav-number">1.0.4.</span> <span class="nav-text">LinkedList</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Queue"><span class="nav-number">1.0.5.</span> <span class="nav-text">Queue</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Stack"><span class="nav-number">1.0.6.</span> <span class="nav-text">Stack</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dictionary-lt-K-T-gt"><span class="nav-number">1.0.7.</span> <span class="nav-text">Dictionary&lt;K,T&gt;</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#When-to-use-Which"><span class="nav-number">2.</span> <span class="nav-text">When to use Which</span></a></li></ol> </div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Usual-Data-Structures"><span class="nav-number">1.</span> <span class="nav-text">Usual Data Structures</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Array"><span class="nav-number">1.0.1.</span> <span class="nav-text">Array</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ArrayList"><span class="nav-number">1.0.2.</span> <span class="nav-text">ArrayList</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#List"><span class="nav-number">1.0.3.</span> <span class="nav-text">List</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LinkedList"><span class="nav-number">1.0.4.</span> <span class="nav-text">LinkedList</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Queue"><span class="nav-number">1.0.5.</span> <span class="nav-text">Queue</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Stack"><span class="nav-number">1.0.6.</span> <span class="nav-text">Stack</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dictionary"><span class="nav-number">1.0.7.</span> <span class="nav-text">Dictionary</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#When-to-use-Which"><span class="nav-number">2.</span> <span class="nav-text">When to use Which</span></a></li></ol> </div>
       </div>
       <!--/noindex-->
 
@@ -463,7 +464,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">354</span>
+          <span class="site-state-item-count">355</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -476,7 +477,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">139</span>
+        <span class="site-state-item-count">141</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -679,7 +680,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     });
   }, window.Valine);
 });
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>

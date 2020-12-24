@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.3.0">
@@ -90,10 +90,14 @@
   </style>
 </noscript>
 
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -287,7 +291,6 @@
 
 <p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
 <a id="more"></a>
-
 <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>This problem is an interactive problem new to the LeetCode platform.</p>
 <p>We are given a word list of unique words, each word is 6 letters long, and one word in this list is chosen as secret.</p>
 <p>You may call master.guess(word) to guess a word.  The guessed word should have type string and must be from the original list with 6 lowercase letters.</p>
@@ -301,8 +304,8 @@
 <p>So why not we also guess a random word and let it be whatever will be.</p>
 <p><strong>Solution 2: Minimax</strong></p>
 <p>Generally, we will get 0 matches from the master.guess. As a result, the size of wordlist reduces slowly.</p>
-<p>Recall some math here, the possiblity that get 0 matched is:<br>$$(25/26) ^ 6 = 79.03%$$</p>
-<p>That is to say, if we make a blind guess,<br>we have about 80% chance to get 0 matched with the secret word.</p>
+<p>Recall some math here, the possiblity that get 0 matched is:</p>
+<script type="math/tex; mode=display">(25/26) ^ 6 = 79.03%</script><p>That is to say, if we make a blind guess,<br>we have about 80% chance to get 0 matched with the secret word.</p>
 <p>To simplify the model,<br>we’re going to assume that,<br>we will always run into the worst case (get 0 matched).</p>
 <p>In this case,<br>we have 80% chance to eliminate the candidate word<br>as well as its close words which have at least 1 match.</p>
 <p>Additionally, in order to delete a max part of words,<br>we select a candidate who has a big “family”,<br>(that is, the fewest 0 matched with other words.)<br><strong>We want to guess a word that can minimum our worst outcome.</strong></p>
@@ -416,7 +419,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">354</span>
+          <span class="site-state-item-count">355</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -429,7 +432,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">139</span>
+        <span class="site-state-item-count">141</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -685,7 +688,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     });
   }, window.Valine);
 });
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>

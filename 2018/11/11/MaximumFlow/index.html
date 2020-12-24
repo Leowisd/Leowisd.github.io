@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.3.0">
@@ -103,10 +103,14 @@
   </style>
 </noscript>
 
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -300,23 +304,22 @@
 
 <p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fx54cm6f9vj209b04374c.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
 <a id="more"></a>
-
-<h2 id="Ford-Fulkerson-method"><a href="#Ford-Fulkerson-method" class="headerlink" title="Ford-Fulkerson method"></a>Ford-Fulkerson method</h2><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fx53n0bi5ej20e70483yr.jpg"></p>
+<h2 id="Ford-Fulkerson-method"><a href="#Ford-Fulkerson-method" class="headerlink" title="Ford-Fulkerson method"></a>Ford-Fulkerson method</h2><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fx53n0bi5ej20e70483yr.jpg" alt=""></p>
 <h3 id="Residual-networks"><a href="#Residual-networks" class="headerlink" title="Residual networks"></a>Residual networks</h3><p>Intuitively, given a flow network $G$ and a flow $f$ , the residual network $G_f$ consists<br>of edges with capacities that represent how we can change the flow on edges of G.</p>
-<p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fx53u7mkpfj208j023glh.jpg"></p>
+<p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fx53u7mkpfj208j023glh.jpg" alt=""></p>
 <h3 id="Augmenting-paths"><a href="#Augmenting-paths" class="headerlink" title="Augmenting paths"></a>Augmenting paths</h3><p>Given a flow network $G=(V,E)$ and a flow $f$ , an <strong>augmenting path</strong> p is a<br>simple path from s to t in the residual network $G_f$.</p>
 <h3 id="Cuts-of-flow-networks"><a href="#Cuts-of-flow-networks" class="headerlink" title="Cuts of flow networks"></a>Cuts of flow networks</h3><p>A cut $(S,T)$ of flow network $G=(V,E)$ is a partition of $V$ into $S$ and<br>$T = V - S$ such that $s \in S$ and $t \in T$ .</p>
-<p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fx53tgp99pj205s021glh.jpg"></p>
-<h3 id="basic-Ford-Fulkerson-algorithm"><a href="#basic-Ford-Fulkerson-algorithm" class="headerlink" title="basic Ford-Fulkerson algorithm"></a>basic Ford-Fulkerson algorithm</h3><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fx53v378o5j20c004z74k.jpg"></p>
+<p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fx53tgp99pj205s021glh.jpg" alt=""></p>
+<h3 id="basic-Ford-Fulkerson-algorithm"><a href="#basic-Ford-Fulkerson-algorithm" class="headerlink" title="basic Ford-Fulkerson algorithm"></a>basic Ford-Fulkerson algorithm</h3><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fx53v378o5j20c004z74k.jpg" alt=""></p>
 <h3 id="The-Edmonds-Karp-algorithm"><a href="#The-Edmonds-Karp-algorithm" class="headerlink" title="The Edmonds-Karp algorithm"></a>The Edmonds-Karp algorithm</h3><p>We can improve the bound on <strong>FORD-FULKERSON</strong> by finding the augmenting<br>path p in line 3 with a breadth-first search. That is, we choose the augmenting<br>path as a shortest path from s to t in the residual network, where each edge has<br>unit distance (weight).</p>
 <p>Running Time: $O(VE^2)$</p>
 <h2 id="Maximum-bipartite-matching"><a href="#Maximum-bipartite-matching" class="headerlink" title="Maximum bipartite matching"></a>Maximum bipartite matching</h2><p>Thus, given a bipartite undirected graph $G$, we can find a maximum matching by<br>creating the flow network $G’$, running the Ford-Fulkerson method, and directly obtaining<br>a maximum matching $M$ from the integer-valued maximum flow $f$ found. Since anymatching in a bipartite graph has cardinality at most $min(L,R) = O(V)$, the value of the maximum flow in $G’$ is $O(V)$. We can therefore find a maximum matching in a bipartite graph in time $O(VE’) = O(VE)$</p>
-<h2 id="Push-relabel-algorithms"><a href="#Push-relabel-algorithms" class="headerlink" title="Push-relabel algorithms"></a>Push-relabel algorithms</h2><h3 id="The-push-operation"><a href="#The-push-operation" class="headerlink" title="The push operation"></a>The push operation</h3><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fx540vvnalj20di04xglz.jpg"></p>
-<h3 id="The-relabel-operation"><a href="#The-relabel-operation" class="headerlink" title="The relabel operation"></a>The relabel operation</h3><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fx541m4ezmj20dt02taa6.jpg"></p>
-<h3 id="The-generic-algorithm"><a href="#The-generic-algorithm" class="headerlink" title="The generic algorithm"></a>The generic algorithm</h3><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fx54248mjuj206906474g.jpg"></p>
-<p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fx5431wn83j20by02awei.jpg"></p>
-<h2 id="The-relabel-to-front-algorithm"><a href="#The-relabel-to-front-algorithm" class="headerlink" title="The relabel-to-front algorithm"></a>The relabel-to-front algorithm</h2><h3 id="Discharging-an-overflowing-vertex"><a href="#Discharging-an-overflowing-vertex" class="headerlink" title="Discharging an overflowing vertex"></a>Discharging an overflowing vertex</h3><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fx544unfqfj209504t74f.jpg"></p>
-<h3 id="The-relabel-to-front-algorithm-1"><a href="#The-relabel-to-front-algorithm-1" class="headerlink" title="The relabel-to-front algorithm"></a>The relabel-to-front algorithm</h3><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fx545m18jcj207i06c0t1.jpg"></p>
+<h2 id="Push-relabel-algorithms"><a href="#Push-relabel-algorithms" class="headerlink" title="Push-relabel algorithms"></a>Push-relabel algorithms</h2><h3 id="The-push-operation"><a href="#The-push-operation" class="headerlink" title="The push operation"></a>The push operation</h3><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fx540vvnalj20di04xglz.jpg" alt=""></p>
+<h3 id="The-relabel-operation"><a href="#The-relabel-operation" class="headerlink" title="The relabel operation"></a>The relabel operation</h3><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fx541m4ezmj20dt02taa6.jpg" alt=""></p>
+<h3 id="The-generic-algorithm"><a href="#The-generic-algorithm" class="headerlink" title="The generic algorithm"></a>The generic algorithm</h3><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fx54248mjuj206906474g.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fx5431wn83j20by02awei.jpg" alt=""></p>
+<h2 id="The-relabel-to-front-algorithm"><a href="#The-relabel-to-front-algorithm" class="headerlink" title="The relabel-to-front algorithm"></a>The relabel-to-front algorithm</h2><h3 id="Discharging-an-overflowing-vertex"><a href="#Discharging-an-overflowing-vertex" class="headerlink" title="Discharging an overflowing vertex"></a>Discharging an overflowing vertex</h3><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fx544unfqfj209504t74f.jpg" alt=""></p>
+<h3 id="The-relabel-to-front-algorithm-1"><a href="#The-relabel-to-front-algorithm-1" class="headerlink" title="The relabel-to-front algorithm"></a>The relabel-to-front algorithm</h3><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fx545m18jcj207i06c0t1.jpg" alt=""></p>
 <hr />
     </div>
 
@@ -422,7 +425,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">354</span>
+          <span class="site-state-item-count">355</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -435,7 +438,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">139</span>
+        <span class="site-state-item-count">141</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -691,7 +694,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     });
   }, window.Valine);
 });
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>

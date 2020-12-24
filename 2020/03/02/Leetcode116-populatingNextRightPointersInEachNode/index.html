@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.3.0">
@@ -92,10 +92,14 @@
   </style>
 </noscript>
 
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -289,7 +293,6 @@
 
 <p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
 <a id="more"></a>
-
 <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>You are given a perfect binary tree where all leaves are on the same level, and every parent has two children. The binary tree has the following definition:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">struct Node &#123;</span><br><span class="line">  int val;</span><br><span class="line">  Node *left;</span><br><span class="line">  Node *right;</span><br><span class="line">  Node *next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>}<br>Populate each next pointer to point to its next right node. If there is no next right node, the next pointer should be set to NULL.</p>
@@ -299,9 +302,7 @@
 <li>You may only use constant extra space.</li>
 <li>Recursive approach is fine, you may assume implicit stack space does not count as extra space for this problem.</li>
 </ul>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><img src="https://assets.leetcode.com/uploads/2019/02/14/116_sample.png"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: root &#x3D; [1,2,3,4,5,6,7]</span><br><span class="line">Output: [1,#,2,3,#,4,5,6,7,#]</span><br><span class="line">Explanation: Given the above perfect binary tree (Figure A), your function should populate each next pointer to point to its next right node, just like in Figure B. The serialized output is in level order as connected by the next pointers, with &#39;#&#39; signifying the end of each level.</span><br></pre></td></tr></table></figure>
-<p><strong>Constraints:</strong></p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><img src="https://assets.leetcode.com/uploads/2019/02/14/116_sample.png" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: root &#x3D; [1,2,3,4,5,6,7]</span><br><span class="line">Output: [1,#,2,3,#,4,5,6,7,#]</span><br><span class="line">Explanation: Given the above perfect binary tree (Figure A), your function should populate each next pointer to point to its next right node, just like in Figure B. The serialized output is in level order as connected by the next pointers, with &#39;#&#39; signifying the end of each level.</span><br></pre></td></tr></table></figure><br><strong>Constraints:</strong></p>
 <ul>
 <li>The number of nodes in the given tree is less than 4096.</li>
 <li>-1000 &lt;= node.val &lt;= 1000</li>
@@ -312,7 +313,6 @@
 <p><strong>Solution 2: General Solution</strong></p>
 <p>As the solution in next probelm. Used three pointers.</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">// Definition for a Node.</span></span><br><span class="line"><span class="comment">class Node &#123;</span></span><br><span class="line"><span class="comment">    public int val;</span></span><br><span class="line"><span class="comment">    public Node left;</span></span><br><span class="line"><span class="comment">    public Node right;</span></span><br><span class="line"><span class="comment">    public Node next;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    public Node() &#123;&#125;</span></span><br><span class="line"><span class="comment">    </span></span><br><span class="line"><span class="comment">    public Node(int _val) &#123;</span></span><br><span class="line"><span class="comment">        val = _val;</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    public Node(int _val, Node _left, Node _right, Node _next) &#123;</span></span><br><span class="line"><span class="comment">        val = _val;</span></span><br><span class="line"><span class="comment">        left = _left;</span></span><br><span class="line"><span class="comment">        right = _right;</span></span><br><span class="line"><span class="comment">        next = _next;</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">&#125;;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Node <span class="title">connect</span><span class="params">(Node root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span> root;</span><br><span class="line">        </span><br><span class="line">        Node pre = <span class="keyword">null</span>;</span><br><span class="line">        Node head = <span class="keyword">null</span>;</span><br><span class="line">        Node cur = root;</span><br><span class="line">        <span class="keyword">while</span> (cur != <span class="keyword">null</span>)&#123;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">while</span>(cur != <span class="keyword">null</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span> (cur.left != <span class="keyword">null</span>)&#123;</span><br><span class="line">                    <span class="keyword">if</span> (head == <span class="keyword">null</span>) </span><br><span class="line">                        head = cur.left;</span><br><span class="line">                    <span class="keyword">if</span> (pre != <span class="keyword">null</span>)</span><br><span class="line">                        pre.next = cur.left;</span><br><span class="line">                    pre = cur.left;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (cur.right != <span class="keyword">null</span>)&#123;</span><br><span class="line">                    <span class="keyword">if</span> (head == <span class="keyword">null</span>)</span><br><span class="line">                        head = cur.right;</span><br><span class="line">                    <span class="keyword">if</span> (pre != <span class="keyword">null</span>)</span><br><span class="line">                        pre.next = cur.right;</span><br><span class="line">                    pre = cur.right;</span><br><span class="line">                &#125;</span><br><span class="line">                cur = cur.next;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            cur = head;</span><br><span class="line">            head = <span class="keyword">null</span>;</span><br><span class="line">            pre = <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <hr />
     </div>
 
@@ -416,7 +416,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">354</span>
+          <span class="site-state-item-count">355</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -429,7 +429,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">139</span>
+        <span class="site-state-item-count">141</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -685,7 +685,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     });
   }, window.Valine);
 });
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>

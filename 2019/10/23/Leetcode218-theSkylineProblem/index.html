@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.3.0">
@@ -91,10 +91,14 @@
   </style>
 </noscript>
 
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -288,8 +292,7 @@
 
 <p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
 <a id="more"></a>
-
-<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>A city’s skyline is the outer contour of the silhouette formed by all the buildings in that city when viewed from a distance. Now suppose you are given the locations and height of all the buildings as shown on a cityscape photo (Figure A), write a program to output the skyline formed by these buildings collectively (Figure B).<br><img src="https://assets.leetcode.com/uploads/2018/10/22/skyline1.png"><br><img src="https://assets.leetcode.com/uploads/2018/10/22/skyline2.png"><br>The geometric information of each building is represented by a triplet of integers [Li, Ri, Hi], where Li and Ri are the x coordinates of the left and right edge of the ith building, respectively, and Hi is its height. It is guaranteed that 0 ≤ Li, Ri ≤ INT_MAX, 0 &lt; Hi ≤ INT_MAX, and Ri - Li &gt; 0. You may assume all buildings are perfect rectangles grounded on an absolutely flat surface at height 0.</p>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>A city’s skyline is the outer contour of the silhouette formed by all the buildings in that city when viewed from a distance. Now suppose you are given the locations and height of all the buildings as shown on a cityscape photo (Figure A), write a program to output the skyline formed by these buildings collectively (Figure B).<br><img src="https://assets.leetcode.com/uploads/2018/10/22/skyline1.png" alt=""><br><img src="https://assets.leetcode.com/uploads/2018/10/22/skyline2.png" alt=""><br>The geometric information of each building is represented by a triplet of integers [Li, Ri, Hi], where Li and Ri are the x coordinates of the left and right edge of the ith building, respectively, and Hi is its height. It is guaranteed that 0 ≤ Li, Ri ≤ INT_MAX, 0 &lt; Hi ≤ INT_MAX, and Ri - Li &gt; 0. You may assume all buildings are perfect rectangles grounded on an absolutely flat surface at height 0.</p>
 <p>For instance, the dimensions of all buildings in Figure A are recorded as: [ [2 9 10], [3 7 15], [5 12 12], [15 20 10], [19 24 8] ] .</p>
 <p>The output is a list of “key points” (red dots in Figure B) in the format of [ [x1,y1], [x2, y2], [x3, y3], … ] that uniquely defines a skyline. A key point is the left endpoint of a horizontal line segment. Note that the last key point, where the rightmost building ends, is merely used to mark the termination of the skyline, and always has zero height. Also, the ground in between any two adjacent buildings should be considered part of the skyline contour.</p>
 <p>For instance, the skyline in Figure B should be represented as:[ [2 10], [3 15], [7 12], [12 0], [15 10], [20 8], [24, 0] ].</p>
@@ -297,8 +300,7 @@
 <ul>
 <li>The number of buildings in any input list is guaranteed to be in the range [0, 10000].</li>
 <li>The input list is already sorted in ascending order by the left x position Li.</li>
-<li>The output list must be sorted by the x position.</li>
-<li>There must be no consecutive horizontal lines of equal height in the output skyline. For instance, […[2 3], [4 5], [7 5], [11 5], [12 7]…] is not acceptable; the three lines of height 5 should be merged into one in the final output as such: […[2 3], [4 5], [12 7], …]</li>
+<li>The output list must be sorted by the x position.<br>*There must be no consecutive horizontal lines of equal height in the output skyline. For instance, […[2 3], [4 5], [7 5], [11 5], [12 7]…] is not acceptable; the three lines of height 5 should be merged into one in the final output as such: […[2 3], [4 5], [12 7], …]</li>
 </ul>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; getSkyline(<span class="keyword">int</span>[][] buildings) &#123;</span><br><span class="line">        List&lt;List&lt;Integer&gt;&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        List&lt;<span class="keyword">int</span>[]&gt; height = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span>[] building: buildings)&#123;</span><br><span class="line">            height.add(<span class="keyword">new</span> <span class="keyword">int</span>[]&#123;building[<span class="number">0</span>], -building[<span class="number">2</span>]&#125;);</span><br><span class="line">            height.add(<span class="keyword">new</span> <span class="keyword">int</span>[]&#123;building[<span class="number">1</span>], building[<span class="number">2</span>]&#125;);</span><br><span class="line">        &#125;</span><br><span class="line">        Collections.sort(height, (a, b) -&gt; a[<span class="number">0</span>] == b[<span class="number">0</span>] ? a[<span class="number">1</span>] - b[<span class="number">1</span>] : a[<span class="number">0</span>] - b[<span class="number">0</span>]);</span><br><span class="line">        PriorityQueue&lt;Integer&gt; pq = <span class="keyword">new</span> PriorityQueue&lt;&gt;((a, b) -&gt; b - a);</span><br><span class="line">        pq.offer(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">int</span> preHeight = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span>[] h: height)&#123;</span><br><span class="line">            <span class="keyword">if</span> (h[<span class="number">1</span>] &lt; <span class="number">0</span>)</span><br><span class="line">                pq.offer(-h[<span class="number">1</span>]);</span><br><span class="line">            <span class="keyword">else</span> pq.remove(h[<span class="number">1</span>]);</span><br><span class="line">            <span class="keyword">int</span> curHeight = pq.peek();</span><br><span class="line">            <span class="keyword">if</span> (curHeight != preHeight)&#123;</span><br><span class="line">                List&lt;Integer&gt; tmp = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">                tmp.add(h[<span class="number">0</span>]);</span><br><span class="line">                tmp.add(curHeight);</span><br><span class="line">                res.add(tmp);</span><br><span class="line">                preHeight = curHeight;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr />
@@ -402,7 +404,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">354</span>
+          <span class="site-state-item-count">355</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -415,7 +417,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">139</span>
+        <span class="site-state-item-count">141</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -671,7 +673,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     });
   }, window.Valine);
 });
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>

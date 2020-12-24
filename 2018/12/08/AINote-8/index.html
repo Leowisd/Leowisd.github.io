@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.3.0">
@@ -91,10 +91,14 @@
   </style>
 </noscript>
 
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -288,19 +292,13 @@
 
 <p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fxzq5xephoj212w0m878l.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
 <a id="more"></a>
-
 <h2 id="Conditional-probability"><a href="#Conditional-probability" class="headerlink" title="Conditional probability"></a>Conditional probability</h2><p>Definition of conditional probability:</p>
-<p>$$ P(a|b) = {P(a \bigwedge b) \over P(b)}$$</p>
-<p><strong>Product rule</strong> gives an alternative formulation:</p>
-<p>$$ P(a \bigwedge b) = P(a|b)P(b) = P(b|a)P(a)$$</p>
-<p><strong>Chain rule</strong> is derived by successive application of product rule:</p>
-<p>$$P(X_1,…,X_n)=P(X_1,…,X_{n-1})P(X_n|X_1,…,X_{n-1})=…=\prod_{i=1}^nP(X_i|X_1,…,X_{i-1})$$</p>
-<h2 id="Independence"><a href="#Independence" class="headerlink" title="Independence"></a>Independence</h2><p>A and B are independent iff</p>
+<script type="math/tex; mode=display">P(a|b) = {P(a \bigwedge b) \over P(b)}</script><p><strong>Product rule</strong> gives an alternative formulation:</p>
+<script type="math/tex; mode=display">P(a \bigwedge b) = P(a|b)P(b) = P(b|a)P(a)</script><p><strong>Chain rule</strong> is derived by successive application of product rule:</p>
+<script type="math/tex; mode=display">P(X_1,...,X_n)=P(X_1,...,X_{n-1})P(X_n|X_1,...,X_{n-1})=...=\prod_{i=1}^nP(X_i|X_1,...,X_{i-1})</script><h2 id="Independence"><a href="#Independence" class="headerlink" title="Independence"></a>Independence</h2><p>A and B are independent iff</p>
 <p>$P(A|B)=P(A)$ or $P(B|A)=P(B)$ or $P(A,B)=P(A)P(B)$</p>
-<h2 id="Conditional-independence"><a href="#Conditional-independence" class="headerlink" title="Conditional independence"></a>Conditional independence</h2><p>$$P(Toothache,Catch|Cavity) = P(Toothache|Cavity)P(Catch|Cavity)$$</p>
-<p>Conditional independence is our most basic and robust form of knowledge about uncertain environments.</p>
-<h2 id="Bayes’-Rule"><a href="#Bayes’-Rule" class="headerlink" title="Bayes’ Rule"></a>Bayes’ Rule</h2><p>$$P(a|b)={P(b|a)P(a) \over P(b)}$$</p>
-<hr />
+<h2 id="Conditional-independence"><a href="#Conditional-independence" class="headerlink" title="Conditional independence"></a>Conditional independence</h2><script type="math/tex; mode=display">P(Toothache,Catch|Cavity) = P(Toothache|Cavity)P(Catch|Cavity)</script><p>Conditional independence is our most basic and robust form of knowledge about uncertain environments.</p>
+<h2 id="Bayes’-Rule"><a href="#Bayes’-Rule" class="headerlink" title="Bayes’ Rule"></a>Bayes’ Rule</h2><script type="math/tex; mode=display">P(a|b)={P(b|a)P(a) \over P(b)}</script><hr />
     </div>
 
     
@@ -403,7 +401,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">354</span>
+          <span class="site-state-item-count">355</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -416,7 +414,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">139</span>
+        <span class="site-state-item-count">141</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -672,7 +670,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     });
   }, window.Valine);
 });
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>

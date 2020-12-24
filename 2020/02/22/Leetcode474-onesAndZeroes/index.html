@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.3.0">
@@ -88,10 +88,14 @@
   </style>
 </noscript>
 
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -285,7 +289,6 @@
 
 <p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
 <a id="more"></a>
-
 <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Share<br>In the computer world, use restricted resource you have to generate maximum benefit is what we always want to pursue.</p>
 <p>For now, suppose you are a dominator of m 0s and n 1s respectively. On the other hand, there is an array with strings consisting of only 0s and 1s.</p>
 <p>Now your task is to find the maximum number of strings that you can form with given m 0s and n 1s. Each 0 and 1 can be used at most once.</p>
@@ -294,11 +297,8 @@
 <li>The given numbers of 0s and 1s will both not exceed 100</li>
 <li>The size of given string array won’t exceed 600.</li>
 </ol>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: Array &#x3D; &#123;&quot;10&quot;, &quot;0001&quot;, &quot;111001&quot;, &quot;1&quot;, &quot;0&quot;&#125;, m &#x3D; 5, n &#x3D; 3</span><br><span class="line">Output: 4</span><br><span class="line"></span><br><span class="line">Explanation: This are totally 4 strings can be formed by the using of 5 0s and 3 1s, which are “10,”0001”,”1”,”0”</span><br></pre></td></tr></table></figure>
-<p><strong>Example 2:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: Array &#x3D; &#123;&quot;10&quot;, &quot;0&quot;, &quot;1&quot;&#125;, m &#x3D; 1, n &#x3D; 1</span><br><span class="line">Output: 2</span><br><span class="line"></span><br><span class="line">Explanation: You could form &quot;10&quot;, but then you&#39;d have nothing left. Better form &quot;0&quot; and &quot;1&quot;.</span><br></pre></td></tr></table></figure>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>0-1 Backpack, dp[k][i][j] —–&gt; dp[i][j]</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: Array &#x3D; &#123;&quot;10&quot;, &quot;0001&quot;, &quot;111001&quot;, &quot;1&quot;, &quot;0&quot;&#125;, m &#x3D; 5, n &#x3D; 3</span><br><span class="line">Output: 4</span><br><span class="line"></span><br><span class="line">Explanation: This are totally 4 strings can be formed by the using of 5 0s and 3 1s, which are “10,”0001”,”1”,”0”</span><br></pre></td></tr></table></figure><br><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: Array &#x3D; &#123;&quot;10&quot;, &quot;0&quot;, &quot;1&quot;&#125;, m &#x3D; 1, n &#x3D; 1</span><br><span class="line">Output: 2</span><br><span class="line"></span><br><span class="line">Explanation: You could form &quot;10&quot;, but then you&#39;d have nothing left. Better form &quot;0&quot; and &quot;1&quot;.</span><br></pre></td></tr></table></figure></p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>0-1 Backpack, dp[k][i][j] ——-&gt; dp[i][j]</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findMaxForm</span><span class="params">(String[] strs, <span class="keyword">int</span> m, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[m + <span class="number">1</span>][n + <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span> (String str: strs)&#123;</span><br><span class="line">            <span class="keyword">int</span>[] count = helper(str);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = m; i &gt;= count[<span class="number">0</span>]; i--)&#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j = n; j &gt;= count[<span class="number">1</span>]; j--)&#123;</span><br><span class="line">                    dp[i][j] = Math.max(dp[i][j], dp[i - count[<span class="number">0</span>]][j - count[<span class="number">1</span>]] + <span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[m][n];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] helper(String str)&#123;</span><br><span class="line">        <span class="keyword">int</span>[] res = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">char</span> ch: str.toCharArray())&#123;</span><br><span class="line">            <span class="keyword">if</span> (ch == <span class="string">&#x27;0&#x27;</span>) res[<span class="number">0</span>]++;</span><br><span class="line">            <span class="keyword">else</span> res[<span class="number">1</span>]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr />
     </div>
@@ -400,7 +400,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">354</span>
+          <span class="site-state-item-count">355</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -413,7 +413,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">139</span>
+        <span class="site-state-item-count">141</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -669,7 +669,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     });
   }, window.Valine);
 });
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>

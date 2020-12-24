@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.3.0">
@@ -89,10 +89,14 @@
   </style>
 </noscript>
 
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -286,15 +290,10 @@
 
 <p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
 <a id="more"></a>
-
 <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>You are playing the following Bulls and Cows game with your friend: You write down a number and ask your friend to guess what the number is. Each time your friend makes a guess, you provide a hint that indicates how many digits in said guess match your secret number exactly in both digit and position (called “bulls”) and how many digits match the secret number but locate in the wrong position (called “cows”). Your friend will use successive guesses and hints to eventually derive the secret number.</p>
 <p>Write a function to return a hint according to the secret number and friend’s guess, use A to indicate the bulls and B to indicate the cows. </p>
 <p>Please note that both secret number and friend’s guess may contain duplicate digits.</p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Input: secret &#x3D; &quot;1807&quot;, guess &#x3D; &quot;7810&quot;</span><br><span class="line"></span><br><span class="line">Output: &quot;1A3B&quot;</span><br><span class="line"></span><br><span class="line">Explanation: 1 bull and 3 cows. The bull is 8, the cows are 0, 1 and 7.</span><br></pre></td></tr></table></figure>
-<p><strong>Example 2:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Input: secret &#x3D; &quot;1123&quot;, guess &#x3D; &quot;0111&quot;</span><br><span class="line"></span><br><span class="line">Output: &quot;1A1B&quot;</span><br><span class="line"></span><br><span class="line">Explanation: The 1st 1 in friend&#39;s guess is a bull, the 2nd or 3rd 1 is a cow.</span><br></pre></td></tr></table></figure>
-<p><strong>Note:</strong> You may assume that the secret number and your friend’s guess only contain digits, and their lengths are always equal.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Input: secret &#x3D; &quot;1807&quot;, guess &#x3D; &quot;7810&quot;</span><br><span class="line"></span><br><span class="line">Output: &quot;1A3B&quot;</span><br><span class="line"></span><br><span class="line">Explanation: 1 bull and 3 cows. The bull is 8, the cows are 0, 1 and 7.</span><br></pre></td></tr></table></figure><br><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Input: secret &#x3D; &quot;1123&quot;, guess &#x3D; &quot;0111&quot;</span><br><span class="line"></span><br><span class="line">Output: &quot;1A1B&quot;</span><br><span class="line"></span><br><span class="line">Explanation: The 1st 1 in friend&#39;s guess is a bull, the 2nd or 3rd 1 is a cow.</span><br></pre></td></tr></table></figure><br><strong>Note:</strong> You may assume that the secret number and your friend’s guess only contain digits, and their lengths are always equal.</p>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getHint</span><span class="params">(String secret, String guess)</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> bull = <span class="number">0</span>, cows = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">char</span>[] sec = secret.toCharArray();</span><br><span class="line">        <span class="keyword">char</span>[] gue = guess.toCharArray();</span><br><span class="line">        HashMap&lt;Character, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span>[] flag = <span class="keyword">new</span> <span class="keyword">int</span>[sec.length];</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; sec.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (sec[i] == gue[i]) &#123;</span><br><span class="line">                bull++;</span><br><span class="line">                flag[i] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (!map.containsKey(sec[i]))</span><br><span class="line">                    map.put(sec[i], <span class="number">1</span>);</span><br><span class="line">                <span class="keyword">else</span> map.put(sec[i], map.get(sec[i])+<span class="number">1</span>);</span><br><span class="line">                flag[i] = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; sec.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (flag[i] == <span class="number">1</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span> (map.containsKey(gue[i]))&#123;</span><br><span class="line">                    cows++;</span><br><span class="line">                    map.put(gue[i], map.get(gue[i])-<span class="number">1</span>);</span><br><span class="line">                    <span class="keyword">if</span> (map.get(gue[i]) == <span class="number">0</span>)</span><br><span class="line">                        map.remove(gue[i]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        String res = <span class="string">&quot;&quot;</span>;</span><br><span class="line">        res = bull + <span class="string">&quot;A&quot;</span> + cows + <span class="string">&quot;B&quot;</span>;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr />
     </div>
@@ -397,7 +396,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">354</span>
+          <span class="site-state-item-count">355</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -410,7 +409,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">139</span>
+        <span class="site-state-item-count">141</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -666,7 +665,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     });
   }, window.Valine);
 });
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>

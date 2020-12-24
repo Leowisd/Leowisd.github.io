@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.3.0">
@@ -90,10 +90,14 @@
   </style>
 </noscript>
 
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -287,7 +291,6 @@
 
 <p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
 <a id="more"></a>
-
 <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Create a timebased key-value store class TimeMap, that supports two operations.</p>
 <ol>
 <li>set(string key, string value, int timestamp)</li>
@@ -295,16 +298,15 @@
 <ul>
 <li>Stores the key and value, along with the given timestamp.</li>
 </ul>
-<ol start="2">
+<ol>
 <li>get(string key, int timestamp)</li>
 </ol>
 <ul>
 <li>Returns a value such that set(key, value, timestamp_prev) was called previously, with timestamp_prev &lt;= timestamp.</li>
 <li>If there are multiple such values, it returns the one with the largest timestamp_prev.</li>
-<li>If there are no values, it returns the empty string (“”).<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2></li>
-<li>*Example 1:**<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Input: inputs &#x3D; [&quot;TimeMap&quot;,&quot;set&quot;,&quot;get&quot;,&quot;get&quot;,&quot;set&quot;,&quot;get&quot;,&quot;get&quot;], inputs &#x3D; [[],[&quot;foo&quot;,&quot;bar&quot;,1],[&quot;foo&quot;,1],[&quot;foo&quot;,3],[&quot;foo&quot;,&quot;bar2&quot;,4],[&quot;foo&quot;,4],[&quot;foo&quot;,5]]</span><br><span class="line">Output: [null,null,&quot;bar&quot;,&quot;bar&quot;,null,&quot;bar2&quot;,&quot;bar2&quot;]</span><br><span class="line">Explanation:   </span><br><span class="line">TimeMap kv;   </span><br><span class="line">kv.set(&quot;foo&quot;, &quot;bar&quot;, 1); &#x2F;&#x2F; store the key &quot;foo&quot; and value &quot;bar&quot; along with timestamp &#x3D; 1   </span><br><span class="line">kv.get(&quot;foo&quot;, 1);  &#x2F;&#x2F; output &quot;bar&quot;   </span><br><span class="line">kv.get(&quot;foo&quot;, 3); &#x2F;&#x2F; output &quot;bar&quot; since there is no value corresponding to foo at timestamp 3 and timestamp 2, then the only value is at timestamp 1 ie &quot;bar&quot;   </span><br><span class="line">kv.set(&quot;foo&quot;, &quot;bar2&quot;, 4);   </span><br><span class="line">kv.get(&quot;foo&quot;, 4); &#x2F;&#x2F; output &quot;bar2&quot;   </span><br><span class="line">kv.get(&quot;foo&quot;, 5); &#x2F;&#x2F;output &quot;bar2&quot;   </span><br></pre></td></tr></table></figure></li>
-<li>*Example 2:**<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: inputs &#x3D; [&quot;TimeMap&quot;,&quot;set&quot;,&quot;set&quot;,&quot;get&quot;,&quot;get&quot;,&quot;get&quot;,&quot;get&quot;,&quot;get&quot;], inputs &#x3D; [[],[&quot;love&quot;,&quot;high&quot;,10],[&quot;love&quot;,&quot;low&quot;,20],[&quot;love&quot;,5],[&quot;love&quot;,10],[&quot;love&quot;,15],[&quot;love&quot;,20],[&quot;love&quot;,25]]</span><br><span class="line">Output: [null,null,null,&quot;&quot;,&quot;high&quot;,&quot;high&quot;,&quot;low&quot;,&quot;low&quot;]</span><br></pre></td></tr></table></figure></li>
-<li>*Note:**</li>
+<li>If there are no values, it returns the empty string (“”).<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><strong>Example 1:</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Input: inputs &#x3D; [&quot;TimeMap&quot;,&quot;set&quot;,&quot;get&quot;,&quot;get&quot;,&quot;set&quot;,&quot;get&quot;,&quot;get&quot;], inputs &#x3D; [[],[&quot;foo&quot;,&quot;bar&quot;,1],[&quot;foo&quot;,1],[&quot;foo&quot;,3],[&quot;foo&quot;,&quot;bar2&quot;,4],[&quot;foo&quot;,4],[&quot;foo&quot;,5]]</span><br><span class="line">Output: [null,null,&quot;bar&quot;,&quot;bar&quot;,null,&quot;bar2&quot;,&quot;bar2&quot;]</span><br><span class="line">Explanation:   </span><br><span class="line">TimeMap kv;   </span><br><span class="line">kv.set(&quot;foo&quot;, &quot;bar&quot;, 1); &#x2F;&#x2F; store the key &quot;foo&quot; and value &quot;bar&quot; along with timestamp &#x3D; 1   </span><br><span class="line">kv.get(&quot;foo&quot;, 1);  &#x2F;&#x2F; output &quot;bar&quot;   </span><br><span class="line">kv.get(&quot;foo&quot;, 3); &#x2F;&#x2F; output &quot;bar&quot; since there is no value corresponding to foo at timestamp 3 and timestamp 2, then the only value is at timestamp 1 ie &quot;bar&quot;   </span><br><span class="line">kv.set(&quot;foo&quot;, &quot;bar2&quot;, 4);   </span><br><span class="line">kv.get(&quot;foo&quot;, 4); &#x2F;&#x2F; output &quot;bar2&quot;   </span><br><span class="line">kv.get(&quot;foo&quot;, 5); &#x2F;&#x2F;output &quot;bar2&quot;   </span><br></pre></td></tr></table></figure>
+<strong>Example 2:</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: inputs &#x3D; [&quot;TimeMap&quot;,&quot;set&quot;,&quot;set&quot;,&quot;get&quot;,&quot;get&quot;,&quot;get&quot;,&quot;get&quot;,&quot;get&quot;], inputs &#x3D; [[],[&quot;love&quot;,&quot;high&quot;,10],[&quot;love&quot;,&quot;low&quot;,20],[&quot;love&quot;,5],[&quot;love&quot;,10],[&quot;love&quot;,15],[&quot;love&quot;,20],[&quot;love&quot;,25]]</span><br><span class="line">Output: [null,null,null,&quot;&quot;,&quot;high&quot;,&quot;high&quot;,&quot;low&quot;,&quot;low&quot;]</span><br></pre></td></tr></table></figure>
+<strong>Note:</strong></li>
 <li>All key/value strings are lowercase.</li>
 <li>All key/value strings have length in the range [1, 100]</li>
 <li>The timestamps for all TimeMap.set operations are strictly increasing.</li>
@@ -414,7 +416,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">354</span>
+          <span class="site-state-item-count">355</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -427,7 +429,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">139</span>
+        <span class="site-state-item-count">141</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -683,7 +685,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     });
   }, window.Valine);
 });
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>

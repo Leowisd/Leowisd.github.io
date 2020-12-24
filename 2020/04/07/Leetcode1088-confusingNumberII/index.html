@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.3.0">
@@ -89,10 +89,14 @@
   </style>
 </noscript>
 
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -286,15 +290,10 @@
 
 <p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
 <a id="more"></a>
-
 <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>We can rotate digits by 180 degrees to form new digits. When 0, 1, 6, 8, 9 are rotated 180 degrees, they become 0, 1, 9, 8, 6 respectively. When 2, 3, 4, 5 and 7 are rotated 180 degrees, they become invalid.</p>
 <p>A confusing number is a number that when rotated 180 degrees becomes a different number with each digit valid.(Note that the rotated number can be greater than the original number.)</p>
 <p>Given a positive integer N, return the number of confusing numbers between 1 and N inclusive.</p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Input: 20</span><br><span class="line">Output: 6</span><br><span class="line">Explanation: </span><br><span class="line">The confusing numbers are [6,9,10,16,18,19].</span><br><span class="line">6 converts to 9.</span><br><span class="line">9 converts to 6.</span><br><span class="line">10 converts to 01 which is just 1.</span><br><span class="line">16 converts to 91.</span><br><span class="line">18 converts to 81.</span><br><span class="line">19 converts to 61.</span><br></pre></td></tr></table></figure>
-<p><strong>Example 2:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: 100</span><br><span class="line">Output: 19</span><br><span class="line">Explanation: </span><br><span class="line">The confusing numbers are [6,9,10,16,18,19,60,61,66,68,80,81,86,89,90,91,98,99,100].</span><br></pre></td></tr></table></figure>
-<p><strong>Note:</strong></p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Input: 20</span><br><span class="line">Output: 6</span><br><span class="line">Explanation: </span><br><span class="line">The confusing numbers are [6,9,10,16,18,19].</span><br><span class="line">6 converts to 9.</span><br><span class="line">9 converts to 6.</span><br><span class="line">10 converts to 01 which is just 1.</span><br><span class="line">16 converts to 91.</span><br><span class="line">18 converts to 81.</span><br><span class="line">19 converts to 61.</span><br></pre></td></tr></table></figure><br><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: 100</span><br><span class="line">Output: 19</span><br><span class="line">Explanation: </span><br><span class="line">The confusing numbers are [6,9,10,16,18,19,60,61,66,68,80,81,86,89,90,91,98,99,100].</span><br></pre></td></tr></table></figure><br><strong>Note:</strong></p>
 <p>1 &lt;= N &lt;= 10^9</p>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">    HashMap&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">confusingNumberII</span><span class="params">(<span class="keyword">int</span> N)</span> </span>&#123;</span><br><span class="line">        map.put(<span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">        map.put(<span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">        map.put(<span class="number">6</span>, <span class="number">9</span>);</span><br><span class="line">        map.put(<span class="number">8</span>, <span class="number">8</span>);</span><br><span class="line">        map.put(<span class="number">9</span>, <span class="number">6</span>);</span><br><span class="line">        </span><br><span class="line">        helper(<span class="number">0</span>, <span class="number">0</span>, N);</span><br><span class="line">        <span class="keyword">return</span> N == <span class="number">1000000000</span> ? res + <span class="number">1</span> : res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">helper</span><span class="params">(<span class="keyword">int</span> idx, <span class="keyword">int</span> cur, <span class="keyword">int</span> N)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (idx &gt; <span class="number">9</span> || cur &gt; N)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">if</span> (isConfused(cur))</span><br><span class="line">            res++;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> number: map.keySet())&#123;</span><br><span class="line">            <span class="keyword">if</span> (idx == <span class="number">0</span> &amp;&amp; number == <span class="number">0</span>)</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            helper(idx + <span class="number">1</span>, cur * <span class="number">10</span> + number, N);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">isConfused</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">        <span class="keyword">long</span> rot = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> temp = x;</span><br><span class="line">        <span class="keyword">while</span>(x &gt; <span class="number">0</span>)&#123;</span><br><span class="line">            rot = rot * <span class="number">10</span> + map.get(x % <span class="number">10</span>);</span><br><span class="line">            x /= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> rot != temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr />
@@ -398,7 +397,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">354</span>
+          <span class="site-state-item-count">355</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -411,7 +410,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">139</span>
+        <span class="site-state-item-count">141</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -667,7 +666,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     });
   }, window.Valine);
 });
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>

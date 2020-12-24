@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.3.0">
@@ -90,10 +90,14 @@
   </style>
 </noscript>
 
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -287,7 +291,6 @@
 
 <p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
 <a id="more"></a>
-
 <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given two words word1 and word2, find the minimum number of operations required to convert word1 to word2.</p>
 <p>You have the following 3 operations permitted on a word:</p>
 <ol>
@@ -295,17 +298,10 @@
 <li>Delete a character</li>
 <li>Replace a character</li>
 </ol>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Input: word1 &#x3D; &quot;horse&quot;, word2 &#x3D; &quot;ros&quot;</span><br><span class="line">Output: 3</span><br><span class="line">Explanation: </span><br><span class="line">horse -&gt; rorse (replace &#39;h&#39; with &#39;r&#39;)</span><br><span class="line">rorse -&gt; rose (remove &#39;r&#39;)</span><br><span class="line">rose -&gt; ros (remove &#39;e&#39;)</span><br></pre></td></tr></table></figure>
-<p><strong>Example 2:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Input: word1 &#x3D; &quot;intention&quot;, word2 &#x3D; &quot;execution&quot;</span><br><span class="line">Output: 5</span><br><span class="line">Explanation: </span><br><span class="line">intention -&gt; inention (remove &#39;t&#39;)</span><br><span class="line">inention -&gt; enention (replace &#39;i&#39; with &#39;e&#39;)</span><br><span class="line">enention -&gt; exention (replace &#39;n&#39; with &#39;x&#39;)</span><br><span class="line">exention -&gt; exection (replace &#39;n&#39; with &#39;c&#39;)</span><br><span class="line">exection -&gt; execution (insert &#39;u&#39;)</span><br></pre></td></tr></table></figure>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Input: word1 &#x3D; &quot;horse&quot;, word2 &#x3D; &quot;ros&quot;</span><br><span class="line">Output: 3</span><br><span class="line">Explanation: </span><br><span class="line">horse -&gt; rorse (replace &#39;h&#39; with &#39;r&#39;)</span><br><span class="line">rorse -&gt; rose (remove &#39;r&#39;)</span><br><span class="line">rose -&gt; ros (remove &#39;e&#39;)</span><br></pre></td></tr></table></figure><br><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Input: word1 &#x3D; &quot;intention&quot;, word2 &#x3D; &quot;execution&quot;</span><br><span class="line">Output: 5</span><br><span class="line">Explanation: </span><br><span class="line">intention -&gt; inention (remove &#39;t&#39;)</span><br><span class="line">inention -&gt; enention (replace &#39;i&#39; with &#39;e&#39;)</span><br><span class="line">enention -&gt; exention (replace &#39;n&#39; with &#39;x&#39;)</span><br><span class="line">exention -&gt; exection (replace &#39;n&#39; with &#39;c&#39;)</span><br><span class="line">exection -&gt; execution (insert &#39;u&#39;)</span><br></pre></td></tr></table></figure></p>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>Let following be the function definition :-</p>
 <p>f(i, j) := minimum cost (or steps) required to convert first i characters of word1 to first j characters of word2</p>
-<p>Case 1: word1[i] == word2[j], i.e. the ith the jth character matches.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f(i, j) &#x3D; f(i - 1, j - 1)</span><br></pre></td></tr></table></figure>
-<p>Case 2: word1[i] != word2[j], then we must either insert, delete or replace, whichever is cheaper</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">f(i, j) &#x3D; 1 + min &#123; f(i, j - 1), f(i - 1, j), f(i - 1, j - 1) &#125;</span><br><span class="line"></span><br><span class="line">f(i, j - 1) represents insert operation</span><br><span class="line">f(i - 1, j) represents delete operation</span><br><span class="line">f(i - 1, j - 1) represents replace operation</span><br></pre></td></tr></table></figure>
-<p>Here, we consider any operation from word1 to word2. It means, when we say insert operation, we insert a new character after word1 that matches the jth character of word2. So, now have to match i characters of word1 to j - 1 characters of word2. Same goes for other 2 operations as well.</p>
+<p>Case 1: word1[i] == word2[j], i.e. the ith the jth character matches.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f(i, j) &#x3D; f(i - 1, j - 1)</span><br></pre></td></tr></table></figure><br>Case 2: word1[i] != word2[j], then we must either insert, delete or replace, whichever is cheaper<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">f(i, j) &#x3D; 1 + min &#123; f(i, j - 1), f(i - 1, j), f(i - 1, j - 1) &#125;</span><br><span class="line"></span><br><span class="line">f(i, j - 1) represents insert operation</span><br><span class="line">f(i - 1, j) represents delete operation</span><br><span class="line">f(i - 1, j - 1) represents replace operation</span><br></pre></td></tr></table></figure><br>Here, we consider any operation from word1 to word2. It means, when we say insert operation, we insert a new character after word1 that matches the jth character of word2. So, now have to match i characters of word1 to j - 1 characters of word2. Same goes for other 2 operations as well.</p>
 <p>Note that the problem is symmetric. The insert operation in one direction (i.e. from word1 to word2) is same as delete operation in other. So, we could choose any direction.</p>
 <p>Above equations become the recursive definitions for DP.</p>
 <p>Base Case:</p>
@@ -413,7 +409,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">354</span>
+          <span class="site-state-item-count">355</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -426,7 +422,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">139</span>
+        <span class="site-state-item-count">141</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -682,7 +678,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     });
   }, window.Valine);
 });
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>

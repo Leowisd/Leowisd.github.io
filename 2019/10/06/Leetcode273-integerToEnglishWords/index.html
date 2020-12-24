@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.3.0">
@@ -90,10 +90,14 @@
   </style>
 </noscript>
 
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -287,17 +291,9 @@
 
 <p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
 <a id="more"></a>
-
 <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Convert a non-negative integer to its english words representation. Given input is guaranteed to be less than $2^{31} - 1$.</p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: 123</span><br><span class="line">Output: &quot;One Hundred Twenty Three&quot;</span><br></pre></td></tr></table></figure>
-<p><strong>Example 2:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: 12345</span><br><span class="line">Output: &quot;Twelve Thousand Three Hundred Forty Five&quot;</span><br></pre></td></tr></table></figure>
-<p><strong>Example 3:</strong></p>
-<p>Input: 1234567<br>Output: “One Million Two Hundred Thirty Four Thousand Five Hundred Sixty Seven”</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**Example 4:**</span><br></pre></td></tr></table></figure>
-<p>Input: 1234567891<br>Output: “One Billion Two Hundred Thirty Four Million Five Hundred Sixty Seven Thousand Eight Hundred Ninety One”</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## Solution</span><br><span class="line">&#96;&#96;&#96;java</span><br><span class="line">class Solution &#123;</span><br><span class="line">    </span><br><span class="line">    private final String[] belowTen &#x3D; new String[] &#123;&quot;&quot;, &quot;One&quot;, &quot;Two&quot;, &quot;Three&quot;, &quot;Four&quot;, &quot;Five&quot;, &quot;Six&quot;, &quot;Seven&quot;, &quot;Eight&quot;, &quot;Nine&quot;&#125;;</span><br><span class="line">    private final String[] belowTwenty &#x3D; new String[] &#123;&quot;Ten&quot;, &quot;Eleven&quot;, &quot;Twelve&quot;, &quot;Thirteen&quot;, &quot;Fourteen&quot;, &quot;Fifteen&quot;, &quot;Sixteen&quot;, &quot;Seventeen&quot;, &quot;Eighteen&quot;, &quot;Nineteen&quot;&#125;;</span><br><span class="line">    private final String[] belowHundred &#x3D; new String[] &#123;&quot;&quot;, &quot;Ten&quot;, &quot;Twenty&quot;, &quot;Thirty&quot;, &quot;Forty&quot;, &quot;Fifty&quot;, &quot;Sixty&quot;, &quot;Seventy&quot;, &quot;Eighty&quot;, &quot;Ninety&quot;&#125;;</span><br><span class="line">    </span><br><span class="line">    public String numberToWords(int num) &#123;</span><br><span class="line">        if (num &#x3D;&#x3D; 0) return &quot;Zero&quot;;</span><br><span class="line">        return helper(num);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    private String helper(int num)&#123;</span><br><span class="line">        String res &#x3D; &quot;&quot;;</span><br><span class="line">        if (num &lt; 10) res &#x3D; belowTen[num];</span><br><span class="line">        else if (num &lt; 20) res &#x3D; belowTwenty[num-10];</span><br><span class="line">        else if (num &lt; 100) res &#x3D; belowHundred[num&#x2F;10] + &quot; &quot; + helper(num%10);</span><br><span class="line">        else if (num &lt; 1000) res &#x3D; helper(num&#x2F;100) +&quot; Hundred &quot; + helper(num%100);</span><br><span class="line">        else if (num &lt; 1000000) res &#x3D; helper(num&#x2F;1000) + &quot; Thousand &quot; + helper(num%1000);</span><br><span class="line">        else if (num &lt; 1000000000) res &#x3D; helper(num&#x2F;1000000) + &quot; Million &quot; + helper(num%1000000);</span><br><span class="line">        else res &#x3D; helper(num&#x2F;1000000000) + &quot; Billion &quot; + helper(num%1000000000);</span><br><span class="line">        return res.trim();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: 123</span><br><span class="line">Output: &quot;One Hundred Twenty Three&quot;</span><br></pre></td></tr></table></figure><br><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: 12345</span><br><span class="line">Output: &quot;Twelve Thousand Three Hundred Forty Five&quot;</span><br></pre></td></tr></table></figure><br><strong>Example 3:</strong></p>
+<p>Input: 1234567<br>Output: “One Million Two Hundred Thirty Four Thousand Five Hundred Sixty Seven”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**Example 4:**</span><br></pre></td></tr></table></figure><br>Input: 1234567891<br>Output: “One Billion Two Hundred Thirty Four Million Five Hundred Sixty Seven Thousand Eight Hundred Ninety One”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## Solution</span><br><span class="line">&#96;&#96;&#96;java</span><br><span class="line">class Solution &#123;</span><br><span class="line">    </span><br><span class="line">    private final String[] belowTen &#x3D; new String[] &#123;&quot;&quot;, &quot;One&quot;, &quot;Two&quot;, &quot;Three&quot;, &quot;Four&quot;, &quot;Five&quot;, &quot;Six&quot;, &quot;Seven&quot;, &quot;Eight&quot;, &quot;Nine&quot;&#125;;</span><br><span class="line">    private final String[] belowTwenty &#x3D; new String[] &#123;&quot;Ten&quot;, &quot;Eleven&quot;, &quot;Twelve&quot;, &quot;Thirteen&quot;, &quot;Fourteen&quot;, &quot;Fifteen&quot;, &quot;Sixteen&quot;, &quot;Seventeen&quot;, &quot;Eighteen&quot;, &quot;Nineteen&quot;&#125;;</span><br><span class="line">    private final String[] belowHundred &#x3D; new String[] &#123;&quot;&quot;, &quot;Ten&quot;, &quot;Twenty&quot;, &quot;Thirty&quot;, &quot;Forty&quot;, &quot;Fifty&quot;, &quot;Sixty&quot;, &quot;Seventy&quot;, &quot;Eighty&quot;, &quot;Ninety&quot;&#125;;</span><br><span class="line">    </span><br><span class="line">    public String numberToWords(int num) &#123;</span><br><span class="line">        if (num &#x3D;&#x3D; 0) return &quot;Zero&quot;;</span><br><span class="line">        return helper(num);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    private String helper(int num)&#123;</span><br><span class="line">        String res &#x3D; &quot;&quot;;</span><br><span class="line">        if (num &lt; 10) res &#x3D; belowTen[num];</span><br><span class="line">        else if (num &lt; 20) res &#x3D; belowTwenty[num-10];</span><br><span class="line">        else if (num &lt; 100) res &#x3D; belowHundred[num&#x2F;10] + &quot; &quot; + helper(num%10);</span><br><span class="line">        else if (num &lt; 1000) res &#x3D; helper(num&#x2F;100) +&quot; Hundred &quot; + helper(num%100);</span><br><span class="line">        else if (num &lt; 1000000) res &#x3D; helper(num&#x2F;1000) + &quot; Thousand &quot; + helper(num%1000);</span><br><span class="line">        else if (num &lt; 1000000000) res &#x3D; helper(num&#x2F;1000000) + &quot; Million &quot; + helper(num%1000000);</span><br><span class="line">        else res &#x3D; helper(num&#x2F;1000000000) + &quot; Billion &quot; + helper(num%1000000000);</span><br><span class="line">        return res.trim();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <hr />
     </div>
 
@@ -400,7 +396,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">354</span>
+          <span class="site-state-item-count">355</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -413,7 +409,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">139</span>
+        <span class="site-state-item-count">141</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -669,7 +665,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     });
   }, window.Valine);
 });
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>

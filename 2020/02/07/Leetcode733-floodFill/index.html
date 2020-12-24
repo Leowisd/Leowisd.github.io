@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.3.0">
@@ -88,10 +88,14 @@
   </style>
 </noscript>
 
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -285,14 +289,11 @@
 
 <p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
 <a id="more"></a>
-
 <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>An image is represented by a 2-D array of integers, each integer representing the pixel value of the image (from 0 to 65535).</p>
 <p>Given a coordinate (sr, sc) representing the starting pixel (row and column) of the flood fill, and a pixel value newColor, “flood fill” the image.</p>
 <p>To perform a “flood fill”, consider the starting pixel, plus any pixels connected 4-directionally to the starting pixel of the same color as the starting pixel, plus any pixels connected 4-directionally to those pixels (also with the same color as the starting pixel), and so on. Replace the color of all of the aforementioned pixels with the newColor.</p>
 <p>At the end, return the modified image.</p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Input: </span><br><span class="line">image &#x3D; [[1,1,1],[1,1,0],[1,0,1]]</span><br><span class="line">sr &#x3D; 1, sc &#x3D; 1, newColor &#x3D; 2</span><br><span class="line">Output: [[2,2,2],[2,2,0],[2,0,1]]</span><br><span class="line">Explanation: </span><br><span class="line">From the center of the image (with position (sr, sc) &#x3D; (1, 1)), all pixels connected </span><br><span class="line">by a path of the same color as the starting pixel are colored with the new color.</span><br><span class="line">Note the bottom corner is not colored 2, because it is not 4-directionally connected</span><br><span class="line">to the starting pixel.</span><br></pre></td></tr></table></figure>
-<p><strong>Note:</strong></p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Input: </span><br><span class="line">image &#x3D; [[1,1,1],[1,1,0],[1,0,1]]</span><br><span class="line">sr &#x3D; 1, sc &#x3D; 1, newColor &#x3D; 2</span><br><span class="line">Output: [[2,2,2],[2,2,0],[2,0,1]]</span><br><span class="line">Explanation: </span><br><span class="line">From the center of the image (with position (sr, sc) &#x3D; (1, 1)), all pixels connected </span><br><span class="line">by a path of the same color as the starting pixel are colored with the new color.</span><br><span class="line">Note the bottom corner is not colored 2, because it is not 4-directionally connected</span><br><span class="line">to the starting pixel.</span><br></pre></td></tr></table></figure><br><strong>Note:</strong></p>
 <p>The length of image and image[0] will be in the range [1, 50].<br>The given starting pixel will satisfy 0 &lt;= sr &lt; image.length and 0 &lt;= sc &lt; image[0].length.<br>The value of each color in image[i][j] and newColor will be an integer in [0, 65535].</p>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span>[][] direction = &#123;&#123;<span class="number">1</span>,<span class="number">0</span>&#125;,&#123;-<span class="number">1</span>,<span class="number">0</span>&#125;,&#123;<span class="number">0</span>,-<span class="number">1</span>&#125;,&#123;<span class="number">0</span>,<span class="number">1</span>&#125;&#125;;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[][] floodFill(<span class="keyword">int</span>[][] image, <span class="keyword">int</span> sr, <span class="keyword">int</span> sc, <span class="keyword">int</span> newColor) &#123;</span><br><span class="line">        <span class="keyword">if</span> (image.length== <span class="number">0</span> || image[<span class="number">0</span>].length == <span class="number">0</span>) <span class="keyword">return</span> image;</span><br><span class="line">        <span class="keyword">if</span> (image[sr][sc] == newColor) <span class="keyword">return</span> image;</span><br><span class="line">        helper(image, sr, sc, image[sr][sc], newColor);</span><br><span class="line">        <span class="keyword">return</span> image;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">helper</span><span class="params">(<span class="keyword">int</span>[][] image, <span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> old, <span class="keyword">int</span> color)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (image[x][y] != old) <span class="keyword">return</span>;</span><br><span class="line">        image[x][y] = color;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; direction.length; i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> nx = x + direction[i][<span class="number">0</span>];</span><br><span class="line">            <span class="keyword">int</span> ny = y + direction[i][<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">if</span> (nx &gt;=<span class="number">0</span> &amp;&amp; nx &lt; image.length &amp;&amp; ny &gt;=<span class="number">0</span> &amp;&amp; ny &lt; image[<span class="number">0</span>].length)</span><br><span class="line">                helper(image, nx, ny, old, color);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr />
@@ -395,7 +396,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">354</span>
+          <span class="site-state-item-count">355</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -408,7 +409,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">139</span>
+        <span class="site-state-item-count">141</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -664,7 +665,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     });
   }, window.Valine);
 });
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>

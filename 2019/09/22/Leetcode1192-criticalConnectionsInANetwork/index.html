@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.3.0">
@@ -90,10 +90,14 @@
   </style>
 </noscript>
 
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -287,7 +291,6 @@
 
 <p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
 <a id="more"></a>
-
 <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">There are n servers numbered from 0 to n-1 connected by undirected server-to-server connections forming a network where connections[i] &#x3D; [a, b] represents a connection between servers a and b. Any server can reach any other server directly or indirectly through the network.</span><br><span class="line"></span><br><span class="line">A critical connection is a connection that, if removed, will make some server unable to reach some other server.</span><br><span class="line"></span><br><span class="line">Return all critical connections in the network in any order.</span><br></pre></td></tr></table></figure>
 <h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Input: n &#x3D; 4, connections &#x3D; [[0,1],[1,2],[2,0],[1,3]]</span><br><span class="line">Output: [[1,3]]</span><br><span class="line">Explanation: [[3,1]] is also accepted.</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">Constraints:</span><br><span class="line"></span><br><span class="line">1 &lt;&#x3D; n &lt;&#x3D; 10^5</span><br><span class="line">n-1 &lt;&#x3D; connections.length &lt;&#x3D; 10^5</span><br><span class="line">connections[i][0] !&#x3D; connections[i][1]</span><br><span class="line">There are no repeated connections.</span><br></pre></td></tr></table></figure>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> time = <span class="number">0</span>;</span><br><span class="line">    List&lt;List&lt;Integer&gt;&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> u, List&lt;List&lt;Integer&gt;&gt; graph, <span class="keyword">int</span>[] disc, <span class="keyword">int</span>[] low, <span class="keyword">int</span>[] parent, <span class="keyword">boolean</span>[] visited)</span></span>&#123;</span><br><span class="line">        visited[u] = <span class="keyword">true</span>;</span><br><span class="line">        disc[u] = low[u] = ++ time;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> v : graph.get(u))&#123;</span><br><span class="line">            <span class="keyword">if</span> (!visited[v])&#123;</span><br><span class="line">                parent[v] = u;</span><br><span class="line">                dfs(v, graph, disc, low, parent,visited);</span><br><span class="line">                low[u] = Math.min(low[u], low[v]);</span><br><span class="line">                <span class="keyword">if</span> (low[v] &gt; disc[u])&#123;</span><br><span class="line">                    List&lt;Integer&gt; tmp = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">                    tmp.add(u);</span><br><span class="line">                    tmp.add(v);</span><br><span class="line">                    res.add(tmp);</span><br><span class="line">                &#125;</span><br><span class="line">                    </span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">if</span> (v != parent[u])&#123;</span><br><span class="line">                    low[u] = Math.min(low[u], disc[v]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; criticalConnections(<span class="keyword">int</span> n, List&lt;List&lt;Integer&gt;&gt; connections) &#123;</span><br><span class="line">        </span><br><span class="line">        List&lt;List&lt;Integer&gt;&gt; graph = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            graph.add(<span class="keyword">new</span> ArrayList&lt;Integer&gt;());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (List&lt;Integer&gt; pair : connections)&#123;</span><br><span class="line">            <span class="keyword">int</span> u = pair.get(<span class="number">0</span>);</span><br><span class="line">            <span class="keyword">int</span> v = pair.get(<span class="number">1</span>);</span><br><span class="line">            graph.get(u).add(v);</span><br><span class="line">            graph.get(v).add(u);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">boolean</span>[] visited = <span class="keyword">new</span> <span class="keyword">boolean</span>[n];</span><br><span class="line">        <span class="keyword">int</span>[] disc = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">        <span class="keyword">int</span>[] low = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">        <span class="keyword">int</span>[] parent = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; n; i++)&#123;</span><br><span class="line">            visited[i] = <span class="keyword">false</span>;</span><br><span class="line">            parent[i] = -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    </span><br><span class="line">        dfs(<span class="number">0</span>, graph, disc, low, parent,visited);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -393,7 +396,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">354</span>
+          <span class="site-state-item-count">355</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -406,7 +409,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">139</span>
+        <span class="site-state-item-count">141</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -662,7 +665,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     });
   }, window.Valine);
 });
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>

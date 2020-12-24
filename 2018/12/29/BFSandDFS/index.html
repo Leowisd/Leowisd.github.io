@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.3.0">
@@ -91,10 +91,14 @@
   </style>
 </noscript>
 
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -288,7 +292,6 @@
 
 <p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fynh2cx3u2j212w0m8tcu.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
 <a id="more"></a>
-
 <h2 id="Pseudocode"><a href="#Pseudocode" class="headerlink" title="Pseudocode"></a>Pseudocode</h2><h3 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">BFS</span>():</span></span><br><span class="line">    <span class="keyword">while</span> (q != <span class="literal">None</span>):</span><br><span class="line">        u = q.popleft()</span><br><span class="line">        <span class="keyword">for</span> v <span class="keyword">in</span> subState[u]:</span><br><span class="line">            <span class="keyword">if</span> Flag(v) <span class="keyword">and</span> Optimize(v):</span><br><span class="line">                setFlag(v)</span><br><span class="line">                v.pre = u</span><br><span class="line">                <span class="keyword">if</span> goalTest(v):</span><br><span class="line">                    outputResult()</span><br><span class="line">                q.append(v)</span><br></pre></td></tr></table></figure>
 <h3 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">DFS_working</span>(<span class="params">x</span>):</span></span><br><span class="line">    <span class="keyword">if</span> goalTest(x):</span><br><span class="line">        outputResult()</span><br><span class="line">    <span class="keyword">for</span> xi <span class="keyword">in</span> subState[x]:</span><br><span class="line">        <span class="keyword">if</span> Flag(xi) <span class="keyword">and</span> Optimize(xi):</span><br><span class="line">            setSomeAttrs(flag, pre, ...)</span><br><span class="line">            DFS_working(xi)</span><br><span class="line">            delSomeAttrs(flag, pre, ...)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">DFS</span>():</span></span><br><span class="line">    <span class="keyword">for</span> x <span class="keyword">in</span> subState[source]:</span><br><span class="line">        DFS_working(x)</span><br></pre></td></tr></table></figure>
 <h2 id="Stack-and-Queue-in-Python"><a href="#Stack-and-Queue-in-Python" class="headerlink" title="Stack and Queue in Python"></a>Stack and Queue in Python</h2><h3 id="Using-list-as-stack"><a href="#Using-list-as-stack" class="headerlink" title="Using list as stack"></a>Using list as stack</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>stack = [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>stack.append(<span class="number">6</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>stack.append(<span class="number">7</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>stack</span><br><span class="line">[<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>stack.pop()</span><br><span class="line"><span class="number">7</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>stack</span><br><span class="line">[<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>stack.pop()</span><br><span class="line"><span class="number">6</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>stack.pop()</span><br><span class="line"><span class="number">5</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>stack</span><br><span class="line">[<span class="number">3</span>, <span class="number">4</span>]</span><br></pre></td></tr></table></figure>
@@ -396,7 +399,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">354</span>
+          <span class="site-state-item-count">355</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -409,7 +412,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">139</span>
+        <span class="site-state-item-count">141</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -665,7 +668,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     });
   }, window.Valine);
 });
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>

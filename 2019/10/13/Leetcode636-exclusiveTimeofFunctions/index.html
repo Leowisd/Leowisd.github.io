@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.3.0">
@@ -90,10 +90,14 @@
   </style>
 </noscript>
 
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -287,16 +291,13 @@
 
 <p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
 <a id="more"></a>
-
 <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>On a single threaded CPU, we execute some functions.  Each function has a unique id between 0 and N-1.</p>
 <p>We store logs in timestamp order that describe when a function is entered or exited.</p>
 <p>Each log is a string with this format: “{function_id}:{“start” | “end”}:{timestamp}”.  For example, “0:start:3” means the function with id 0 started at the beginning of timestamp 3.  “1:end:2” means the function with id 1 ended at the end of timestamp 2.</p>
 <p>A function’s exclusive time is the number of units of time spent in this function.  Note that this does not include any recursive calls to child functions.</p>
 <p>The CPU is single threaded which means that only one function is being executed at a given time unit.</p>
 <p>Return the exclusive time of each function, sorted by their function id.</p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><img src="https://assets.leetcode.com/uploads/2019/04/05/diag1b.png"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Input:</span><br><span class="line">n &#x3D; 2</span><br><span class="line">logs &#x3D; [&quot;0:start:0&quot;,&quot;1:start:2&quot;,&quot;1:end:5&quot;,&quot;0:end:6&quot;]</span><br><span class="line">Output: [3, 4]</span><br><span class="line">Explanation:</span><br><span class="line">Function 0 starts at the beginning of time 0, then it executes 2 units of time and reaches the end of time 1.</span><br><span class="line">Now function 1 starts at the beginning of time 2, executes 4 units of time and ends at time 5.</span><br><span class="line">Function 0 is running again at the beginning of time 6, and also ends at the end of time 6, thus executing for 1 unit of time. </span><br><span class="line">So function 0 spends 2 + 1 &#x3D; 3 units of total time executing, and function 1 spends 4 units of total time executing.</span><br></pre></td></tr></table></figure>
-<p><strong>Note:</strong></p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><img src="https://assets.leetcode.com/uploads/2019/04/05/diag1b.png" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Input:</span><br><span class="line">n &#x3D; 2</span><br><span class="line">logs &#x3D; [&quot;0:start:0&quot;,&quot;1:start:2&quot;,&quot;1:end:5&quot;,&quot;0:end:6&quot;]</span><br><span class="line">Output: [3, 4]</span><br><span class="line">Explanation:</span><br><span class="line">Function 0 starts at the beginning of time 0, then it executes 2 units of time and reaches the end of time 1.</span><br><span class="line">Now function 1 starts at the beginning of time 2, executes 4 units of time and ends at time 5.</span><br><span class="line">Function 0 is running again at the beginning of time 6, and also ends at the end of time 6, thus executing for 1 unit of time. </span><br><span class="line">So function 0 spends 2 + 1 &#x3D; 3 units of total time executing, and function 1 spends 4 units of total time executing.</span><br></pre></td></tr></table></figure><br><strong>Note:</strong></p>
 <ol>
 <li>1 &lt;= n &lt;= 100</li>
 <li>Two functions won’t start or end at the same time.</li>
@@ -404,7 +405,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">354</span>
+          <span class="site-state-item-count">355</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -417,7 +418,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">139</span>
+        <span class="site-state-item-count">141</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -673,7 +674,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     });
   }, window.Valine);
 });
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>

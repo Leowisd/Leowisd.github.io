@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.3.0">
@@ -100,10 +100,14 @@
   </style>
 </noscript>
 
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -297,11 +301,10 @@
 
 <p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fvmrp426maj212w0m816v.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
 <a id="more"></a>
-
-<h2 id="Game-Tree-2-player-deterministic-turns"><a href="#Game-Tree-2-player-deterministic-turns" class="headerlink" title="Game Tree(2-player, deterministic, turns)"></a>Game Tree(2-player, deterministic, turns)</h2><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fvutmwlzmuj20gf0atwf1.jpg"></p>
+<h2 id="Game-Tree-2-player-deterministic-turns"><a href="#Game-Tree-2-player-deterministic-turns" class="headerlink" title="Game Tree(2-player, deterministic, turns)"></a>Game Tree(2-player, deterministic, turns)</h2><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fvutmwlzmuj20gf0atwf1.jpg" alt=""></p>
 <h2 id="Minimax-Algorithm"><a href="#Minimax-Algorithm" class="headerlink" title="Minimax Algorithm"></a>Minimax Algorithm</h2><h4 id="Concept"><a href="#Concept" class="headerlink" title="Concept"></a>Concept</h4><p>Perfect play for deterministic, perfect-information games</p>
 <p>Idea: choose move to position with highest minimax value =&gt; best achievable payoff against best play</p>
-<p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fvutqhdjr6j20ko07zq38.jpg"></p>
+<p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fvutqhdjr6j20ko07zq38.jpg" alt=""></p>
 <h4 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function MINIMAX-DECISION(state) returns an action</span><br><span class="line">    inputs: state, currrent state in game</span><br><span class="line">    return the a in ACTIONS(state) maximizing MIN-VALUE(RESULT(a.state))</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function MAX-VALUE(state) returns a utility value</span><br><span class="line">    if TERMINAL-TEST(state) then return UTILITY(state)</span><br><span class="line">    v &lt;- -infinity</span><br><span class="line">    for a.s in SUCCESSION(state) do v &lt;- MAX(v, MIN-VALUE(s))</span><br><span class="line">    return v</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function MIN-VALUE(state) returns a utility value</span><br><span class="line">    if TERMINAL-TEST(state) then return UTILITY(state)</span><br><span class="line">    v &lt;- infinity</span><br><span class="line">    for a.s in SUCCESSION(state) do v &lt;- MIN(v, MAX-VALUE(s))</span><br><span class="line">    return v</span><br></pre></td></tr></table></figure>
@@ -310,7 +313,7 @@
 <p>Time complexity: O(b^m)</p>
 <p>Space complexity: O(bm)</p>
 <p><strong>If we explore every path, the algorithm will run for a lot of time, so it’s necessary to reduce searching-width(d) or searching-depth(m)</strong></p>
-<h2 id="Reduce-searching-width-d-Alpha-Beta-purning"><a href="#Reduce-searching-width-d-Alpha-Beta-purning" class="headerlink" title="Reduce searching-width(d): Alpha-Beta purning"></a>Reduce searching-width(d): Alpha-Beta purning</h2><h4 id="Concept-1"><a href="#Concept-1" class="headerlink" title="Concept"></a>Concept</h4><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fvuu3g4qdxj20l10e7aax.jpg"></p>
+<h2 id="Reduce-searching-width-d-Alpha-Beta-purning"><a href="#Reduce-searching-width-d-Alpha-Beta-purning" class="headerlink" title="Reduce searching-width(d): Alpha-Beta purning"></a>Reduce searching-width(d): Alpha-Beta purning</h2><h4 id="Concept-1"><a href="#Concept-1" class="headerlink" title="Concept"></a>Concept</h4><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fvuu3g4qdxj20l10e7aax.jpg" alt=""></p>
 <h4 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">function ALPHA-BETA-DECISION(state) returns an action</span><br><span class="line">    return the a in ACTIONS(state) maximizing MIN-VALUE(RESULT(a,state))</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function MAX-VALUE(state,a,b) returns a utility value</span><br><span class="line">    inputs: state, current state in game</span><br><span class="line">            a, the value of the best alternative for MAX along the path to state</span><br><span class="line">            b, the value of the best alternative for MIN along the path to state</span><br><span class="line">    IF TERMINAL-TEST(state) then return UTILITY(state)</span><br><span class="line">    v &lt;- -infinity</span><br><span class="line">    for x.s in SUCCESSORS(state) do</span><br><span class="line">        v &lt;- MAX(v, MIN-VALUE(s,a,b))</span><br><span class="line">        if v &gt;&#x3D; b then return v</span><br><span class="line">        a &lt;- MAX(a, v)</span><br><span class="line">    return v</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">function MIN-VALUE(state,a,b) returns a utility value</span><br><span class="line">    same as MAX-VALUE but with roles of a,b reversed</span><br></pre></td></tr></table></figure>
@@ -318,10 +321,10 @@
 <p>Good move ordering improvres effectiveness of pruning</p>
 <p>With “perfect ordering” time complexity == O(b^(m/2))  =&gt; doubles solvable depth</p>
 <h2 id="Reduce-searching-depth-m-Evaluation-functions"><a href="#Reduce-searching-depth-m-Evaluation-functions" class="headerlink" title="Reduce searching-depth(m): Evaluation functions"></a>Reduce searching-depth(m): Evaluation functions</h2><p>An evaluation function returns an estimate of the expected utility of the game from a given position, just as the heuristic functions.</p>
-<p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fvuuqw60gwj20k803rmxi.jpg"></p>
-<h2 id="Stochatic-games"><a href="#Stochatic-games" class="headerlink" title="Stochatic games"></a>Stochatic games</h2><h4 id="Schematic-game-tree"><a href="#Schematic-game-tree" class="headerlink" title="Schematic game tree"></a>Schematic game tree</h4><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fvuutlwbyxj20hr0cmmxr.jpg"></p>
-<h4 id="Process-Formula"><a href="#Process-Formula" class="headerlink" title="Process Formula"></a>Process Formula</h4><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fvuuuer7pdj20lx05rjsa.jpg"></p>
-<h4 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h4><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fvuuxeh3gsj20l6097jrq.jpg"></p>
+<p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fvuuqw60gwj20k803rmxi.jpg" alt=""></p>
+<h2 id="Stochatic-games"><a href="#Stochatic-games" class="headerlink" title="Stochatic games"></a>Stochatic games</h2><h4 id="Schematic-game-tree"><a href="#Schematic-game-tree" class="headerlink" title="Schematic game tree"></a>Schematic game tree</h4><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fvuutlwbyxj20hr0cmmxr.jpg" alt=""></p>
+<h4 id="Process-Formula"><a href="#Process-Formula" class="headerlink" title="Process Formula"></a>Process Formula</h4><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fvuuuer7pdj20lx05rjsa.jpg" alt=""></p>
+<h4 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h4><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fvuuxeh3gsj20l6097jrq.jpg" alt=""></p>
 <hr />
     </div>
 
@@ -427,7 +430,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">354</span>
+          <span class="site-state-item-count">355</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -440,7 +443,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">139</span>
+        <span class="site-state-item-count">141</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -643,7 +646,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     });
   }, window.Valine);
 });
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>

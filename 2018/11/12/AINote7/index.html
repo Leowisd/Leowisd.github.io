@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.3.0">
@@ -92,10 +92,14 @@
   </style>
 </noscript>
 
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -289,7 +293,6 @@
 
 <p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fx69s00ej5j20ad06mdgf.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
 <a id="more"></a>
-
 <h2 id="First-Order-Logic-Formal-Natural-Languages"><a href="#First-Order-Logic-Formal-Natural-Languages" class="headerlink" title="First Order Logic: Formal/Natural Languages"></a>First Order Logic: Formal/Natural Languages</h2><p>Whereas propositional logic assumes world contains <strong>facts</strong>, fitst-order logic(like natural language) assumes the world contains.</p>
 <ul>
 <li>Objects: people, houses, numbers, theories …</li>
@@ -320,7 +323,7 @@
 <li><strong>Universal Quantifiers</strong>: $\forall (variable) (sentence)$, i.e. $\forall King(x) \Rightarrow Person(x)$<ul>
 <li><strong>A common mistake to avoid</strong>: <ul>
 <li>Typically, $\Rightarrow$ is the main connective with $\forall$. </li>
-<li> Common mistake: using $\bigwedge$ as the main connective with $\forall$: $$\forall x At(Berkeley) \bigwedge Smart(x)$$ means “Everyone is at Berkeley and everyone is smart”, not “Everyone at Berkeley is smart”, which should to be $$\forall x At(x, Berkeley) \Rightarrow Smart(x)$$</li>
+<li>Common mistake: using $\bigwedge$ as the main connective with $\forall$: <script type="math/tex">\forall x At(Berkeley) \bigwedge Smart(x)</script> means “Everyone is at Berkeley and everyone is smart”, not “Everyone at Berkeley is smart”, which should to be <script type="math/tex">\forall x At(x, Berkeley) \Rightarrow Smart(x)</script></li>
 </ul>
 </li>
 </ul>
@@ -328,7 +331,7 @@
 <li><strong>Existential Quantifiers</strong>: $\exists <variable> <sentence>$, i.e. $\exists Crown(x) \bigwedge OnHead(x,John)$<ul>
 <li><strong>A common mistake to avoid</strong>:<ul>
 <li>Typically, $\bigwedge$ is the main connective with $\exists$.</li>
-<li>Common mistake: using $\Rightarrow$ as the main connective with $\exists$: $$\exists x At(x, Standford) \Rightarrow Smart(x)$$ is true even if there is anyone who is at Stanford! The correct one is $$\exists x At(x, Standford) \bigwedge Smart(x)$$</li>
+<li>Common mistake: using $\Rightarrow$ as the main connective with $\exists$: <script type="math/tex">\exists x At(x, Standford) \Rightarrow Smart(x)</script> is true even if there is anyone who is at Stanford! The correct one is <script type="math/tex">\exists x At(x, Standford) \bigwedge Smart(x)</script></li>
 </ul>
 </li>
 </ul>
@@ -445,7 +448,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">354</span>
+          <span class="site-state-item-count">355</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -458,7 +461,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">139</span>
+        <span class="site-state-item-count">141</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -714,7 +717,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     });
   }, window.Valine);
 });
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>

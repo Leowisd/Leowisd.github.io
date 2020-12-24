@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.3.0">
@@ -101,10 +101,14 @@
   </style>
 </noscript>
 
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -325,10 +329,10 @@
 </ul>
 <h2 id="Decision-tree-learning"><a href="#Decision-tree-learning" class="headerlink" title="Decision tree learning"></a>Decision tree learning</h2><p>One possible representation for hypotheses</p>
 <p>E.g., here is the “true” tree for deciding whether to wait:</p>
-<p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fxzuinv5czj20dx08oq3p.jpg"></p>
+<p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fxzuinv5czj20dx08oq3p.jpg" alt=""></p>
 <h3 id="Expressiveness"><a href="#Expressiveness" class="headerlink" title="Expressiveness"></a>Expressiveness</h3><p>Decision trees can express any function of the input attributes.</p>
 <p>E.g., for Boolean functions, truth table row → path to leaf:</p>
-<p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fxzukg8b67j20fb04z74e.jpg"></p>
+<p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fxzukg8b67j20fb04z74e.jpg" alt=""></p>
 <p>There is another example:</p>
 <p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fy02ruj2k3j20nm0dxn0x.jpg" alt="4"></p>
 <h3 id="Hypothesis-spaces"><a href="#Hypothesis-spaces" class="headerlink" title="Hypothesis spaces"></a>Hypothesis spaces</h3><p>How many distinct decision trees with n Boolean attributes?</p>
@@ -336,12 +340,11 @@
 <p>= number of distinct truth tables with $2^n$ rows = $2^{2^n}$</p>
 <h3 id="Decision-tree-learning-algorithm"><a href="#Decision-tree-learning-algorithm" class="headerlink" title="Decision tree learning algorithm"></a>Decision tree learning algorithm</h3><p>Aim: find a small tree consostent with the training examples</p>
 <p>Idea: (recurisvely) choose “most significant” attribute as root of (sub)tree</p>
-<p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fxzuoap2e4j20fq07qabg.jpg"></p>
+<p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fxzuoap2e4j20fq07qabg.jpg" alt=""></p>
 <h4 id="Choosing-an-attribute"><a href="#Choosing-an-attribute" class="headerlink" title="Choosing an attribute"></a>Choosing an attribute</h4><p>Idea: a good attribute splits the examples into subsets that are (idealy) “all positive” or “all negative”</p>
 <h4 id="Using-information-theory"><a href="#Using-information-theory" class="headerlink" title="Using information theory"></a>Using information theory</h4><p>To implement Choose-Attribute in the DTL algorithm</p>
 <p>Information Content(Entropy)</p>
-<p>$$I(P(v_1),…,P(v_n)) = \sum_{i=1}^n -P(v_i)log_2P(v_i)$$</p>
-<p>For a training set containing p positive examples and n negative examples:</p>
+<script type="math/tex; mode=display">I(P(v_1),...,P(v_n)) = \sum_{i=1}^n -P(v_i)log_2P(v_i)</script><p>For a training set containing p positive examples and n negative examples:</p>
 <p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fy04e8ejmuj20c101rjr9.jpg" alt="5"></p>
 <h4 id="Information-gain"><a href="#Information-gain" class="headerlink" title="Information gain"></a>Information gain</h4><p>A chosen attribute A divides the training set E into subsets $E_1, … , E_v$ according to their values for A, where A has $v$ distinct values.</p>
 <p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fy04fpipfwj20c601m748.jpg" alt="6"></p>
@@ -459,7 +462,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">354</span>
+          <span class="site-state-item-count">355</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -472,7 +475,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">139</span>
+        <span class="site-state-item-count">141</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -728,7 +731,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     });
   }, window.Valine);
 });
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>

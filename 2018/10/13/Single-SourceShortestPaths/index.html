@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.3.0">
@@ -91,10 +91,14 @@
   </style>
 </noscript>
 
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -288,15 +292,11 @@
 
 <p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fw6z6dlblbj212w0m8ti0.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
 <a id="more"></a>
-
 <h2 id="Concept"><a href="#Concept" class="headerlink" title="Concept"></a>Concept</h2><h3 id="Lemma-24-1-Subpaths-of-shortest-paths-are-shortest-paths"><a href="#Lemma-24-1-Subpaths-of-shortest-paths-are-shortest-paths" class="headerlink" title="Lemma 24.1 (Subpaths of shortest paths are shortest paths)"></a>Lemma 24.1 (Subpaths of shortest paths are shortest paths)</h3><p>Given a weighted, directed graph G = (V, E) with weight function w:E-&gt;R, let P = (v0,v1,…,vk) be a shortest path from vertex v0 to vertex vk and, for any i and j such as 0&lt;=i&lt;=j&lt;=k, let Pij = (vi,vi+1,…,vj) be the subpath of P from vertex vi to vertex vj. Then, Pij is a shortest path from vi to vj.</p>
 <h3 id="Negative-weight-edges"><a href="#Negative-weight-edges" class="headerlink" title="Negative-weight edges"></a>Negative-weight edges</h3><p>Some instances of the single-source shortest-paths problem may include edges whose weights are negative. If the graph G(V,E) contains no negativeweight cycles reachable from the source s, then for all v &lt;- V , the shortest-path weight P(s,v) remains well defined, even if it has a negative value. If the graph contains a negative-weight cycle reachable from s, however, shortest-path weights are not well defined. No path from s to a vertex on the cycle can be a shortest path—we can always find a path with lower weight by following the proposed “shortest” path and then traversing the negative-weight cycle. If there is a negativeweight cycle on some path from s to v, we define P(s,v)=-infinity.</p>
 <h3 id="Cycle"><a href="#Cycle" class="headerlink" title="Cycle"></a>Cycle</h3><p>As we have just seen, it cannot contain a negative-weight cycle. Nor can it contain a positive-weight cycle, since removing the cycle from the path produces a path with the same source and destination vertices and a lower path weight. </p>
 <p>That leaves only 0-weight cycles. We can remove a 0-weight cycle from any path to produce another path whose weight is the same. Thus, if there is a shortest path from a source vertex s to a destination vertex v that contains a 0-weight cycle, then there is another shortest path from s to v without this cycle. As long as a shortest path has 0-weight cycles, we can repeatedly remove these cycles from the path until we have a shortest path that is cycle-free. Therefore, without loss of generality we can assume that when we are finding shortest paths, they have no cycles, i.e., they are simple paths.</p>
-<h3 id="Relaxation"><a href="#Relaxation" class="headerlink" title="Relaxation"></a>Relaxation</h3><p>For each vertex v&lt;-V, we maintain an attribute v.d, which is an upper bound on the weight of a shortest path from source s to v. We call v.d a shortest-path estimate.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">INITIALIZE-SINGLE-SOURCE(G,s)</span><br><span class="line">1   for each vertex v &lt;- G.V</span><br><span class="line">2       v.d &#x3D; infinity</span><br><span class="line">3       v.pre &#x3D; NIL</span><br><span class="line">4   s.d&#x3D;0</span><br></pre></td></tr></table></figure>
-<p>The following code performs a relaxation step on edge (u,v) in O(1) time:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">RELAX(u,v,w)</span><br><span class="line">1   if v.d &gt; u.d + w(u,v)</span><br><span class="line">2       v.d &#x3D; u.d + w(u,v)</span><br><span class="line">3       v.pre &#x3D; u </span><br></pre></td></tr></table></figure>
+<h3 id="Relaxation"><a href="#Relaxation" class="headerlink" title="Relaxation"></a>Relaxation</h3><p>For each vertex v&lt;-V, we maintain an attribute v.d, which is an upper bound on the weight of a shortest path from source s to v. We call v.d a shortest-path estimate.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">INITIALIZE-SINGLE-SOURCE(G,s)</span><br><span class="line">1   for each vertex v &lt;- G.V</span><br><span class="line">2       v.d &#x3D; infinity</span><br><span class="line">3       v.pre &#x3D; NIL</span><br><span class="line">4   s.d&#x3D;0</span><br></pre></td></tr></table></figure><br>The following code performs a relaxation step on edge (u,v) in O(1) time:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">RELAX(u,v,w)</span><br><span class="line">1   if v.d &gt; u.d + w(u,v)</span><br><span class="line">2       v.d &#x3D; u.d + w(u,v)</span><br><span class="line">3       v.pre &#x3D; u </span><br></pre></td></tr></table></figure></p>
 <h3 id="Properties-of-shortest-paths-and-relaxation"><a href="#Properties-of-shortest-paths-and-relaxation" class="headerlink" title="Properties of shortest paths and relaxation"></a>Properties of shortest paths and relaxation</h3><h4 id="Triangle-inequality-Lemma-24-10"><a href="#Triangle-inequality-Lemma-24-10" class="headerlink" title="Triangle inequality (Lemma 24.10)"></a>Triangle inequality (Lemma 24.10)</h4><p>For any edge(u,v) &lt;- E, we have d(s,v) &lt;= d(s,u) + w(u,v).</p>
 <h4 id="Upper-bound-property-Lemma-24-11"><a href="#Upper-bound-property-Lemma-24-11" class="headerlink" title="Upper-bound property (Lemma 24.11)"></a>Upper-bound property (Lemma 24.11)</h4><p>We always have v.d &gt;= P(s, v) for all vertices v &lt;- V , and once v.d achieves the value d(s,v), it never changes.</p>
 <h4 id="No-path-property-Corollary-24-12"><a href="#No-path-property-Corollary-24-12" class="headerlink" title="No-path property (Corollary 24.12)"></a>No-path property (Corollary 24.12)</h4><p>If there is no path from s to v, then we always have v.d = d(s,v) = infinity.</p>
@@ -417,7 +417,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">354</span>
+          <span class="site-state-item-count">355</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -430,7 +430,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">139</span>
+        <span class="site-state-item-count">141</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -686,7 +686,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     });
   }, window.Valine);
 });
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>

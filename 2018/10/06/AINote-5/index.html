@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.3.0">
@@ -97,10 +97,14 @@
   </style>
 </noscript>
 
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -294,14 +298,13 @@
 
 <p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fvzfi0y2tfj212w0m8aiw.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
 <a id="more"></a>
-
 <h2 id="Constraint-Satisfacation-Problems"><a href="#Constraint-Satisfacation-Problems" class="headerlink" title="Constraint Satisfacation Problems"></a>Constraint Satisfacation Problems</h2><p>For CSP, state is defined by variables X, with vlaues from domain D. Goal test is a set of constraints specifying, allowable combinations of values for subsets of variables.</p>
 <p>For example, Map-coloring problem:</p>
-<p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fvzfy7nqt1j20ir0duwg5.jpg"></p>
+<p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fvzfy7nqt1j20ir0duwg5.jpg" alt=""></p>
 <h3 id="Constraint-Graph"><a href="#Constraint-Graph" class="headerlink" title="Constraint Graph"></a>Constraint Graph</h3><p>Binary CSP: each constraint relates at most two variables</p>
 <p>Constraint graph: nodes are variables, arcs are constraints</p>
-<p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fvzg0x7i1rj20e707cmxb.jpg"></p>
-<h3 id="Extra-example-Cryptarithmetic"><a href="#Extra-example-Cryptarithmetic" class="headerlink" title="Extra example: Cryptarithmetic"></a>Extra example: Cryptarithmetic</h3><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fvzg2zl7b6j20hj094t9k.jpg"></p>
+<p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fvzg0x7i1rj20e707cmxb.jpg" alt=""></p>
+<h3 id="Extra-example-Cryptarithmetic"><a href="#Extra-example-Cryptarithmetic" class="headerlink" title="Extra example: Cryptarithmetic"></a>Extra example: Cryptarithmetic</h3><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fvzg2zl7b6j20hj094t9k.jpg" alt=""></p>
 <p>Variable：F T U W R O X1 X2 X3</p>
 <p>Domain：{0,1,2,3,4,5,6,7,8,9}</p>
 <p>Constraints：alldiff (F,T,U,W,R,O)</p>
@@ -320,7 +323,7 @@
 <h2 id="Forward-checking"><a href="#Forward-checking" class="headerlink" title="Forward checking"></a>Forward checking</h2><p>Idea: Keep track of remaining legal values for unassigned variables. Terminate search when any variable has no legal values</p>
 <p>对剩下的未赋值的变量的合法值进行跟踪检查，如果发现任一变量不再拥有合法值则终止搜索算法</p>
 <h3 id="Constraint-propagation"><a href="#Constraint-propagation" class="headerlink" title="Constraint propagation"></a>Constraint propagation</h3><p>Forward checking propagates information from assigned to unassigned variables, but doesn’t provide early detection for all failures:</p>
-<p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fvzi8yaqylj20dr05iq31.jpg"></p>
+<p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fvzi8yaqylj20dr05iq31.jpg" alt=""></p>
 <p>NT and SA cannot both be blue!</p>
 <p>Constraint propagation repeatedly enforces constraints locally</p>
 <p>前向检查从已赋值的变量向未赋值的变量传播信息，但是不对早期的失败提供早期的发现:</p>
@@ -328,7 +331,7 @@
 <h2 id="Arc-consistency-弧相容算法-AC-3"><a href="#Arc-consistency-弧相容算法-AC-3" class="headerlink" title="Arc consistency (弧相容算法 AC-3)"></a>Arc consistency (弧相容算法 AC-3)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function AC-3(csp) returns the CSP, possibly with reduced domains</span><br><span class="line">    inputs:csp, a binary CSP with variables &#123;X1,X2,...,Xn&#125;</span><br><span class="line">    local variables:queue, a queue of arcs, initially all the arcs in csp</span><br><span class="line">    while queue is not empty do</span><br><span class="line">        (Xi,Xj) ← REMOVE-FIRST(queue)</span><br><span class="line">        if REMOVE-INCONSISTENT-VALUES(Xi,Xj) then</span><br><span class="line">            for each Xk in NEIGHBORS[Xi] do</span><br><span class="line">                add (Xk,Xi) to queue</span><br><span class="line"></span><br><span class="line">function REMOVE-INCONSISTENT-VALUES(Xi,Xj) returns true iff succeeds</span><br><span class="line">    removed ← false</span><br><span class="line">    for each x in DOMAIN[Xi] do</span><br><span class="line">        if no value y in DOMAIN[Xj] allows (x,y) to satisfy the constraint (Xi, Xj)</span><br><span class="line">            then delete x from DOMAIN[Xi]; removed ← true</span><br><span class="line">    return removed</span><br></pre></td></tr></table></figure>
 <p>O(n^2^d^3^), can be reduced to O(n^2^d^2^) (but detecting all is NP-hard)</p>
 <h2 id="Tree-structured-CSPs"><a href="#Tree-structured-CSPs" class="headerlink" title="Tree-structured CSPs"></a>Tree-structured CSPs</h2><p>Theorem: if the constraint graph has no loops, the CSP can be solved in O(nd^2^) time</p>
-<h3 id="Algorithm-for-tree-structured-CSPs"><a href="#Algorithm-for-tree-structured-CSPs" class="headerlink" title="Algorithm for tree-structured CSPs"></a>Algorithm for tree-structured CSPs</h3><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fw038c5kc5j20fj03wwen.jpg"></p>
+<h3 id="Algorithm-for-tree-structured-CSPs"><a href="#Algorithm-for-tree-structured-CSPs" class="headerlink" title="Algorithm for tree-structured CSPs"></a>Algorithm for tree-structured CSPs</h3><p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fw038c5kc5j20fj03wwen.jpg" alt=""></p>
 <ol>
 <li>Choose a variable as root, order variables from root to leaves such that every node’s parent precedes it in the ordering</li>
 <li>For j from n down to 2, apply RemoveInconsistent(Parent(Xj), Xj)</li>
@@ -438,7 +441,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">354</span>
+          <span class="site-state-item-count">355</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -451,7 +454,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">139</span>
+        <span class="site-state-item-count">141</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -654,7 +657,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     });
   }, window.Valine);
 });
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>

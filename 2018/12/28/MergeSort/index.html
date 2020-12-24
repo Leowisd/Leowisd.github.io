@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.3.0">
@@ -89,10 +89,14 @@
   </style>
 </noscript>
 
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -286,7 +290,6 @@
 
 <p><img src="http://ww1.sinaimg.cn/large/cf684029gy1fym950zqvbj212w0m8q9p.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
 <a id="more"></a>
-
 <h2 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> copy <span class="keyword">import</span> deepcopy </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">mergeSort</span>(<span class="params">a1, s, m, t, a</span>):</span></span><br><span class="line">    i = s</span><br><span class="line">    j = m + <span class="number">1</span></span><br><span class="line">    k = s - <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (i &lt;= m) <span class="keyword">and</span> (j &lt;= t):</span><br><span class="line">        k += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> (a1[i] &lt;= a1[j]):</span><br><span class="line">            a[k] = a1[i]</span><br><span class="line">            i += <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            a[k] = a1[j]</span><br><span class="line">            j += <span class="number">1</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (i&lt;=m):</span><br><span class="line">        k += <span class="number">1</span></span><br><span class="line">        a[k] = a1[i]</span><br><span class="line">        i += <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> (j&lt;=t):</span><br><span class="line">        k += <span class="number">1</span></span><br><span class="line">        a[k] = a1[j]</span><br><span class="line">        j += <span class="number">1</span></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">mergeSortStep</span>(<span class="params">a, s, t</span>):</span></span><br><span class="line">    a1 = deepcopy(a)</span><br><span class="line">    <span class="keyword">if</span> (s&lt;t):</span><br><span class="line">        m = (s+t)//<span class="number">2</span></span><br><span class="line">        mergeSortStep(a1, s, m)</span><br><span class="line">        mergeSortStep(a1, m+<span class="number">1</span>, t)</span><br><span class="line">        mergeSort(a1, s, m, t, a)</span><br><span class="line"></span><br><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&#x27;Please input the number of the list: &#x27;</span>))</span><br><span class="line">a = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>(<span class="string">&#x27;Please input the unsorted list: &#x27;</span>).split()))</span><br><span class="line">mergeSortStep(a, <span class="number">0</span>, n-<span class="number">1</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    print(a[i], end=<span class="string">&#x27; &#x27;</span>)</span><br></pre></td></tr></table></figure>
 <p><strong>Hint: shadow/deep copy for lists</strong></p>
 <hr />
@@ -390,7 +393,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">354</span>
+          <span class="site-state-item-count">355</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -403,7 +406,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">139</span>
+        <span class="site-state-item-count">141</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -659,7 +662,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     });
   }, window.Valine);
 });
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>

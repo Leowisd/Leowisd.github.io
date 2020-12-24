@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.3.0">
@@ -89,10 +89,14 @@
   </style>
 </noscript>
 
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -286,7 +290,6 @@
 
 <p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
 <a id="more"></a>
-
 <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>There are 8 prison cells in a row, and each cell is either occupied or vacant.</p>
 <p>Each day, whether the cell is occupied or vacant changes according to the following rules:</p>
 <ul>
@@ -296,10 +299,7 @@
 <p>(Note that because the prison is a row, the first and the last cells in the row can’t have two adjacent neighbors.)</p>
 <p>We describe the current state of the prison in the following way: cells[i] == 1 if the i-th cell is occupied, else cells[i] == 0.</p>
 <p>Given the initial state of the prison, return the state of the prison after N days (and N such changes described above.)</p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Input: cells &#x3D; [0,1,0,1,1,0,0,1], N &#x3D; 7</span><br><span class="line">Output: [0,0,1,1,0,0,0,0]</span><br><span class="line">Explanation: </span><br><span class="line">The following table summarizes the state of the prison on each day:</span><br><span class="line">Day 0: [0, 1, 0, 1, 1, 0, 0, 1]</span><br><span class="line">Day 1: [0, 1, 1, 0, 0, 0, 0, 0]</span><br><span class="line">Day 2: [0, 0, 0, 0, 1, 1, 1, 0]</span><br><span class="line">Day 3: [0, 1, 1, 0, 0, 1, 0, 0]</span><br><span class="line">Day 4: [0, 0, 0, 0, 0, 1, 0, 0]</span><br><span class="line">Day 5: [0, 1, 1, 1, 0, 1, 0, 0]</span><br><span class="line">Day 6: [0, 0, 1, 0, 1, 1, 0, 0]</span><br><span class="line">Day 7: [0, 0, 1, 1, 0, 0, 0, 0]</span><br></pre></td></tr></table></figure>
-<p><strong>Example 2:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: cells &#x3D; [1,0,0,1,0,0,1,0], N &#x3D; 1000000000</span><br><span class="line">Output: [0,0,1,1,1,1,1,0]</span><br></pre></td></tr></table></figure>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Input: cells &#x3D; [0,1,0,1,1,0,0,1], N &#x3D; 7</span><br><span class="line">Output: [0,0,1,1,0,0,0,0]</span><br><span class="line">Explanation: </span><br><span class="line">The following table summarizes the state of the prison on each day:</span><br><span class="line">Day 0: [0, 1, 0, 1, 1, 0, 0, 1]</span><br><span class="line">Day 1: [0, 1, 1, 0, 0, 0, 0, 0]</span><br><span class="line">Day 2: [0, 0, 0, 0, 1, 1, 1, 0]</span><br><span class="line">Day 3: [0, 1, 1, 0, 0, 1, 0, 0]</span><br><span class="line">Day 4: [0, 0, 0, 0, 0, 1, 0, 0]</span><br><span class="line">Day 5: [0, 1, 1, 1, 0, 1, 0, 0]</span><br><span class="line">Day 6: [0, 0, 1, 0, 1, 1, 0, 0]</span><br><span class="line">Day 7: [0, 0, 1, 1, 0, 0, 0, 0]</span><br></pre></td></tr></table></figure><br><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: cells &#x3D; [1,0,0,1,0,0,1,0], N &#x3D; 1000000000</span><br><span class="line">Output: [0,0,1,1,1,1,1,0]</span><br></pre></td></tr></table></figure></p>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] prisonAfterNDays(<span class="keyword">int</span>[] cells, <span class="keyword">int</span> N) &#123;</span><br><span class="line">        Map&lt;String, Integer&gt; seen = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">while</span> (N &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span>[] cells2 = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">8</span>];</span><br><span class="line">            seen.put(Arrays.toString(cells), N--);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; <span class="number">7</span>; ++i)</span><br><span class="line">                cells2[i] = cells[i - <span class="number">1</span>] == cells[i + <span class="number">1</span>] ? <span class="number">1</span> : <span class="number">0</span>;</span><br><span class="line">            cells = cells2;</span><br><span class="line">            <span class="keyword">if</span> (seen.containsKey(Arrays.toString(cells))) &#123;</span><br><span class="line">                N %= seen.get(Arrays.toString(cells)) - N;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cells;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr />
     </div>
@@ -402,7 +402,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">354</span>
+          <span class="site-state-item-count">355</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -415,7 +415,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">139</span>
+        <span class="site-state-item-count">141</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -671,7 +671,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     });
   }, window.Valine);
 });
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
