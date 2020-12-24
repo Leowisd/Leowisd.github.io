@@ -21,6 +21,10 @@ image: #只在首页显示
 ```
 
 ## Solution
+
+* Time Complexity: $$O()$$
+* Space Complexity: $$O()$$
+
 ```java
 ```
 
