@@ -1,7 +1,7 @@
 ---
 title: Leetcode403-frogJump
 categories: leetcode
-tags: [DP,Amazon]
+tags: [DP, Amazon, TikTok]
 description: Solution Report of LeetCode Acceptted
 mathjax: true
 date: 2019-10-13 23:08:46
@@ -43,7 +43,7 @@ Return true. The frog can jump to the last stone by jumping
 2 units to the 4th stone, then 3 units to the 6th stone, 
 4 units to the 7th stone, and 5 units to the 8th stone.
 ```
-Example 2:
+**Example 2:**
 ```
 [0,1,2,3,4,8,9,11]
 
