@@ -213,21 +213,6 @@
       </tags>
   </entry>
   <entry>
-    <title>The Owner of 2018 Nobel Prize in Chemistry</title>
-    <url>/2018/10/03/2018NobelPrize/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
-
-<p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fvw2oxh2x2j212w0m8dyq.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
-<hr />]]></content>
-      <categories>
-        <category>Photo</category>
-      </categories>
-      <tags>
-        <tag>Nobel</tag>
-        <tag>photo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Happy 2018 Mid-Autumn Festival</title>
     <url>/2018/09/23/2018MidAutumn/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
@@ -240,6 +225,21 @@
       <tags>
         <tag>Mid-Autumn</tag>
         <tag>Photo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>The Owner of 2018 Nobel Prize in Chemistry</title>
+    <url>/2018/10/03/2018NobelPrize/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fvw2oxh2x2j212w0m8dyq.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
+<hr />]]></content>
+      <categories>
+        <category>Photo</category>
+      </categories>
+      <tags>
+        <tag>Nobel</tag>
+        <tag>photo</tag>
       </tags>
   </entry>
   <entry>
@@ -290,43 +290,6 @@
       <tags>
         <tag>AI</tag>
         <tag>Course Note</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>3-Local search algorithms</title>
-    <url>/2018/09/17/AINote-3/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
-
-<p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fvdcczwxmlj212w0m8n0c.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
-<a id="more"></a>
-<h2 id="Hill-Climbing"><a href="#Hill-Climbing" class="headerlink" title="Hill Climbing"></a>Hill Climbing</h2><p><em>“Like climbing Everest in thick fog with amnesia”</em></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function HILL-CLIMBING(problem) returns a state that is a local maximum</span><br><span class="line">    inputs: problem, a problem</span><br><span class="line">    local variables: current, a node</span><br><span class="line">                     neighbor, a node</span><br><span class="line">    current &lt;- MAKE-NODE(INITIAL-STATE[problem])</span><br><span class="line">    loop do</span><br><span class="line">        neighbor &lt;- a highest-valued successor of current</span><br><span class="line">        if VALUE[neighbor] &lt;&#x3D; VALUE[current] then return STATE[current]</span><br><span class="line">        current &lt;- neighbor</span><br><span class="line">    end</span><br></pre></td></tr></table></figure>
-<p>Random-restart hill climbing overcomes local maxima—trivially complete</p>
-<p>Random sideways moves escape from shoulders loop on flat maxima </p>
-<h2 id="Simulated-annealing"><a href="#Simulated-annealing" class="headerlink" title="Simulated annealing"></a>Simulated annealing</h2><p>Idea: escape local maxima by allowing some “bad” moves</p>
-<p>but gradually decrease their size and frequency</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function SIMULATED-ANNEALING(problem, schedule) returns a solution state</span><br><span class="line">    inputs: problem, a problem</span><br><span class="line">            schedule, a mapping from time to &quot;temperature&quot;</span><br><span class="line">    local variables: current, a node</span><br><span class="line">                     next, a node</span><br><span class="line">                     T1 a &quot;temperature&quot; controlling prob. of downward steps</span><br><span class="line">    current &lt;- MAKE-NODE(INITIAL-STATE[problem])</span><br><span class="line">    for t &lt;- 1 to infinity do</span><br><span class="line">        T &lt;- schedule[t]</span><br><span class="line">        if T&#x3D;0 then return current</span><br><span class="line">        next &lt;- a randomly selected successor of current</span><br><span class="line">        disE &lt;- VALUE[next] - VALUE[current]</span><br><span class="line">        if disE&gt;0 then current &lt;- next</span><br><span class="line">        else current &lt;- next only with probability e^(disE&#x2F;T)</span><br></pre></td></tr></table></figure>
-<h2 id="Local-beam-Search"><a href="#Local-beam-Search" class="headerlink" title="Local beam Search"></a>Local beam Search</h2><p>Idea: keep k states instead of 1; choose top k of all their successors</p>
-<p>Not the same as k searches run in parallel!</p>
-<p>Searches that find good states recruit other searches to join them</p>
-<p>Problem: quite often, all k states end up on same local hill</p>
-<p>Idea: choose k successors randomly, biased towards good ones</p>
-<p>Observe the close analogy to native selection!</p>
-<h2 id="Genetic-Algorithms"><a href="#Genetic-Algorithms" class="headerlink" title="Genetic Algorithms"></a>Genetic Algorithms</h2><p>= stochastic local beam search + generate successors from pairs of states</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function GENETIC-ALGORITHM(population, FITNESS-FN) returns an individual</span><br><span class="line">    inputs: population, a set of individuals</span><br><span class="line">            FITNESS-FN: a function that measures the fitness of an individual</span><br><span class="line">    repeat</span><br><span class="line">        new.population &lt;- empty set</span><br><span class="line">        for i&#x3D; 1 to SIZE(population) do</span><br><span class="line">            x &lt;- RANDOM-SELECTION(population, FITNESS-FN)</span><br><span class="line">            y &lt;- RANDOM-SELECTION(population, FITNESS-FN)</span><br><span class="line">            child &lt;- REPRODUCE(x,y)</span><br><span class="line">            if (small random probability) then child &lt;- MUTATE(child)</span><br><span class="line">            add child to new_population</span><br><span class="line">        population &#x3D; new_population</span><br><span class="line">    until some individual is fit enough, or enough time has clapsed</span><br><span class="line">    return the best individual in population, according to FITNESS-FN</span><br><span class="line"></span><br><span class="line">function REPRODUCE(x,y) returns an individual</span><br><span class="line">    inputs: x,y, parent individuals</span><br><span class="line"></span><br><span class="line">    n &lt;- LENGTH(x); c&lt;- random number from 1 to n</span><br><span class="line">    return APPEND(SUBSTRING(x,1,c), SUBSTRING(y, c+1, n))</span><br></pre></td></tr></table></figure>
-<hr />]]></content>
-      <categories>
-        <category>Course</category>
-      </categories>
-      <tags>
-        <tag>Algorithm</tag>
-        <tag>AI</tag>
-        <tag>Course Note</tag>
-        <tag>Search</tag>
-        <tag>Hill Climbing</tag>
-        <tag>Simulated annealing</tag>
-        <tag>Local beam search</tag>
-        <tag>Genetic Algorithms</tag>
       </tags>
   </entry>
   <entry>
@@ -408,6 +371,43 @@
         <tag>BFS</tag>
         <tag>Uniform-Cost Search</tag>
         <tag>Greedy best-first Search</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>3-Local search algorithms</title>
+    <url>/2018/09/17/AINote-3/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="http://ww1.sinaimg.cn/large/cf684029ly1fvdcczwxmlj212w0m8n0c.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Hill-Climbing"><a href="#Hill-Climbing" class="headerlink" title="Hill Climbing"></a>Hill Climbing</h2><p><em>“Like climbing Everest in thick fog with amnesia”</em></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function HILL-CLIMBING(problem) returns a state that is a local maximum</span><br><span class="line">    inputs: problem, a problem</span><br><span class="line">    local variables: current, a node</span><br><span class="line">                     neighbor, a node</span><br><span class="line">    current &lt;- MAKE-NODE(INITIAL-STATE[problem])</span><br><span class="line">    loop do</span><br><span class="line">        neighbor &lt;- a highest-valued successor of current</span><br><span class="line">        if VALUE[neighbor] &lt;&#x3D; VALUE[current] then return STATE[current]</span><br><span class="line">        current &lt;- neighbor</span><br><span class="line">    end</span><br></pre></td></tr></table></figure>
+<p>Random-restart hill climbing overcomes local maxima—trivially complete</p>
+<p>Random sideways moves escape from shoulders loop on flat maxima </p>
+<h2 id="Simulated-annealing"><a href="#Simulated-annealing" class="headerlink" title="Simulated annealing"></a>Simulated annealing</h2><p>Idea: escape local maxima by allowing some “bad” moves</p>
+<p>but gradually decrease their size and frequency</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function SIMULATED-ANNEALING(problem, schedule) returns a solution state</span><br><span class="line">    inputs: problem, a problem</span><br><span class="line">            schedule, a mapping from time to &quot;temperature&quot;</span><br><span class="line">    local variables: current, a node</span><br><span class="line">                     next, a node</span><br><span class="line">                     T1 a &quot;temperature&quot; controlling prob. of downward steps</span><br><span class="line">    current &lt;- MAKE-NODE(INITIAL-STATE[problem])</span><br><span class="line">    for t &lt;- 1 to infinity do</span><br><span class="line">        T &lt;- schedule[t]</span><br><span class="line">        if T&#x3D;0 then return current</span><br><span class="line">        next &lt;- a randomly selected successor of current</span><br><span class="line">        disE &lt;- VALUE[next] - VALUE[current]</span><br><span class="line">        if disE&gt;0 then current &lt;- next</span><br><span class="line">        else current &lt;- next only with probability e^(disE&#x2F;T)</span><br></pre></td></tr></table></figure>
+<h2 id="Local-beam-Search"><a href="#Local-beam-Search" class="headerlink" title="Local beam Search"></a>Local beam Search</h2><p>Idea: keep k states instead of 1; choose top k of all their successors</p>
+<p>Not the same as k searches run in parallel!</p>
+<p>Searches that find good states recruit other searches to join them</p>
+<p>Problem: quite often, all k states end up on same local hill</p>
+<p>Idea: choose k successors randomly, biased towards good ones</p>
+<p>Observe the close analogy to native selection!</p>
+<h2 id="Genetic-Algorithms"><a href="#Genetic-Algorithms" class="headerlink" title="Genetic Algorithms"></a>Genetic Algorithms</h2><p>= stochastic local beam search + generate successors from pairs of states</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function GENETIC-ALGORITHM(population, FITNESS-FN) returns an individual</span><br><span class="line">    inputs: population, a set of individuals</span><br><span class="line">            FITNESS-FN: a function that measures the fitness of an individual</span><br><span class="line">    repeat</span><br><span class="line">        new.population &lt;- empty set</span><br><span class="line">        for i&#x3D; 1 to SIZE(population) do</span><br><span class="line">            x &lt;- RANDOM-SELECTION(population, FITNESS-FN)</span><br><span class="line">            y &lt;- RANDOM-SELECTION(population, FITNESS-FN)</span><br><span class="line">            child &lt;- REPRODUCE(x,y)</span><br><span class="line">            if (small random probability) then child &lt;- MUTATE(child)</span><br><span class="line">            add child to new_population</span><br><span class="line">        population &#x3D; new_population</span><br><span class="line">    until some individual is fit enough, or enough time has clapsed</span><br><span class="line">    return the best individual in population, according to FITNESS-FN</span><br><span class="line"></span><br><span class="line">function REPRODUCE(x,y) returns an individual</span><br><span class="line">    inputs: x,y, parent individuals</span><br><span class="line"></span><br><span class="line">    n &lt;- LENGTH(x); c&lt;- random number from 1 to n</span><br><span class="line">    return APPEND(SUBSTRING(x,1,c), SUBSTRING(y, c+1, n))</span><br></pre></td></tr></table></figure>
+<hr />]]></content>
+      <categories>
+        <category>Course</category>
+      </categories>
+      <tags>
+        <tag>Algorithm</tag>
+        <tag>AI</tag>
+        <tag>Course Note</tag>
+        <tag>Search</tag>
+        <tag>Hill Climbing</tag>
+        <tag>Simulated annealing</tag>
+        <tag>Local beam search</tag>
+        <tag>Genetic Algorithms</tag>
       </tags>
   </entry>
   <entry>
@@ -1722,6 +1722,26 @@
       </tags>
   </entry>
   <entry>
+    <title>Leetcode035-searchInsertPosition</title>
+    <url>/2019/11/04/Leetcode035-searchInsertPosition/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.</p>
+<p>You may assume no duplicates in the array.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [1,3,5,6], 5</span><br><span class="line">Output: 2</span><br></pre></td></tr></table></figure><br><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [1,3,5,6], 2</span><br><span class="line">Output: 1</span><br></pre></td></tr></table></figure><br><strong>Example 3:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [1,3,5,6], 7</span><br><span class="line">Output: 4</span><br></pre></td></tr></table></figure><br><strong>Example 4:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [1,3,5,6], 0</span><br><span class="line">Output: 0</span><br></pre></td></tr></table></figure></p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">searchInsert</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums == <span class="keyword">null</span> || nums.length == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// O(logn) Method, Binary Search   </span></span><br><span class="line">        <span class="keyword">if</span> (target &gt; nums[nums.length - <span class="number">1</span>]) <span class="keyword">return</span> nums.length;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> right = nums.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(left &lt; right)&#123;</span><br><span class="line">            <span class="keyword">int</span> mid = left + (right - left)/<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[mid] == target) <span class="keyword">return</span> mid;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &lt; target) left = mid + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> right = mid;        </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> left;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// O(n) Method</span></span><br><span class="line">        <span class="comment">// for (int i = 0; i &lt; nums.length; i++)&#123;</span></span><br><span class="line">        <span class="comment">//     if (target &lt;= nums[i]) return i;</span></span><br><span class="line">        <span class="comment">// &#125;</span></span><br><span class="line">        <span class="comment">// return nums.length;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr />]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Array</tag>
+        <tag>Binary Search</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Leetcode036-validSudoku</title>
     <url>/2019/10/21/Leetcode036-validSudoku/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
@@ -1754,23 +1774,28 @@
       </tags>
   </entry>
   <entry>
-    <title>Leetcode035-searchInsertPosition</title>
-    <url>/2019/11/04/Leetcode035-searchInsertPosition/</url>
+    <title>Leetcode039-combiantionSum</title>
+    <url>/2019/09/17/Leetcode039-combiantionSum/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
 
 <p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
 <a id="more"></a>
-<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.</p>
-<p>You may assume no duplicates in the array.</p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [1,3,5,6], 5</span><br><span class="line">Output: 2</span><br></pre></td></tr></table></figure><br><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [1,3,5,6], 2</span><br><span class="line">Output: 1</span><br></pre></td></tr></table></figure><br><strong>Example 3:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [1,3,5,6], 7</span><br><span class="line">Output: 4</span><br></pre></td></tr></table></figure><br><strong>Example 4:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [1,3,5,6], 0</span><br><span class="line">Output: 0</span><br></pre></td></tr></table></figure></p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">searchInsert</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums == <span class="keyword">null</span> || nums.length == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// O(logn) Method, Binary Search   </span></span><br><span class="line">        <span class="keyword">if</span> (target &gt; nums[nums.length - <span class="number">1</span>]) <span class="keyword">return</span> nums.length;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> right = nums.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(left &lt; right)&#123;</span><br><span class="line">            <span class="keyword">int</span> mid = left + (right - left)/<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[mid] == target) <span class="keyword">return</span> mid;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &lt; target) left = mid + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> right = mid;        </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> left;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// O(n) Method</span></span><br><span class="line">        <span class="comment">// for (int i = 0; i &lt; nums.length; i++)&#123;</span></span><br><span class="line">        <span class="comment">//     if (target &lt;= nums[i]) return i;</span></span><br><span class="line">        <span class="comment">// &#125;</span></span><br><span class="line">        <span class="comment">// return nums.length;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given a set of candidate numbers (candidates) (without duplicates) and a target number (target), find all unique combinations in candidates where the candidate numbers sums to target.</p>
+<p>The same repeated number may be chosen from candidates unlimited number of times.</p>
+<p><strong>Note:</strong></p>
+<ul>
+<li>All numbers (including target) will be positive integers.</li>
+<li>The solution set must not contain duplicate combinations.</li>
+</ul>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example</strong> 1:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: candidates &#x3D; [2,3,6,7], target &#x3D; 7,</span><br><span class="line">A solution set is:</span><br><span class="line">[</span><br><span class="line">  [7],</span><br><span class="line">  [2,2,3]</span><br><span class="line">]</span><br></pre></td></tr></table></figure><br><strong>Example</strong> 2:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: candidates &#x3D; [2,3,5], target &#x3D; 8,</span><br><span class="line">A solution set is:</span><br><span class="line">[</span><br><span class="line">  [2,2,2,2],</span><br><span class="line">  [2,3,3],</span><br><span class="line">  [3,5]</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">backtracking</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; res, List&lt;Integer&gt; tmp, <span class="keyword">int</span>[] nums, <span class="keyword">int</span> target, <span class="keyword">int</span> start, <span class="keyword">int</span> sum)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (sum == target)&#123;</span><br><span class="line">            res.add(<span class="keyword">new</span> ArrayList&lt;Integer&gt;(tmp));</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = start; i &lt; nums.length; i++)&#123;</span><br><span class="line">            tmp.add(nums[i]);</span><br><span class="line">            <span class="keyword">if</span> (sum + nums[i] &lt;= target) backtracking(res, tmp, nums, target, i, sum + nums[i]);</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                tmp.remove(tmp.size()-<span class="number">1</span>);</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            tmp.remove(tmp.size()-<span class="number">1</span>);            </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; combinationSum(<span class="keyword">int</span>[] candidates, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        List&lt;List&lt;Integer&gt;&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span> (candidates == <span class="keyword">null</span>) <span class="keyword">return</span> res;</span><br><span class="line">        Arrays.sort(candidates);</span><br><span class="line">        backtracking(res, <span class="keyword">new</span> ArrayList&lt;Integer&gt;(), candidates, target, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr />]]></content>
       <categories>
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Array</tag>
-        <tag>Binary Search</tag>
+        <tag>Bloomberg</tag>
+        <tag>Backtracking</tag>
       </tags>
   </entry>
   <entry>
@@ -1794,31 +1819,6 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>Backtracking</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Leetcode039-combiantionSum</title>
-    <url>/2019/09/17/Leetcode039-combiantionSum/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
-
-<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
-<a id="more"></a>
-<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given a set of candidate numbers (candidates) (without duplicates) and a target number (target), find all unique combinations in candidates where the candidate numbers sums to target.</p>
-<p>The same repeated number may be chosen from candidates unlimited number of times.</p>
-<p><strong>Note:</strong></p>
-<ul>
-<li>All numbers (including target) will be positive integers.</li>
-<li>The solution set must not contain duplicate combinations.</li>
-</ul>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example</strong> 1:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: candidates &#x3D; [2,3,6,7], target &#x3D; 7,</span><br><span class="line">A solution set is:</span><br><span class="line">[</span><br><span class="line">  [7],</span><br><span class="line">  [2,2,3]</span><br><span class="line">]</span><br></pre></td></tr></table></figure><br><strong>Example</strong> 2:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: candidates &#x3D; [2,3,5], target &#x3D; 8,</span><br><span class="line">A solution set is:</span><br><span class="line">[</span><br><span class="line">  [2,2,2,2],</span><br><span class="line">  [2,3,3],</span><br><span class="line">  [3,5]</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">backtracking</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; res, List&lt;Integer&gt; tmp, <span class="keyword">int</span>[] nums, <span class="keyword">int</span> target, <span class="keyword">int</span> start, <span class="keyword">int</span> sum)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (sum == target)&#123;</span><br><span class="line">            res.add(<span class="keyword">new</span> ArrayList&lt;Integer&gt;(tmp));</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = start; i &lt; nums.length; i++)&#123;</span><br><span class="line">            tmp.add(nums[i]);</span><br><span class="line">            <span class="keyword">if</span> (sum + nums[i] &lt;= target) backtracking(res, tmp, nums, target, i, sum + nums[i]);</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                tmp.remove(tmp.size()-<span class="number">1</span>);</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            tmp.remove(tmp.size()-<span class="number">1</span>);            </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; combinationSum(<span class="keyword">int</span>[] candidates, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        List&lt;List&lt;Integer&gt;&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span> (candidates == <span class="keyword">null</span>) <span class="keyword">return</span> res;</span><br><span class="line">        Arrays.sort(candidates);</span><br><span class="line">        backtracking(res, <span class="keyword">new</span> ArrayList&lt;Integer&gt;(), candidates, target, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr />]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>Bloomberg</tag>
         <tag>Backtracking</tag>
       </tags>
   </entry>
@@ -6245,7 +6245,7 @@
 <li>Each stone’s position will be a non-negative integer &lt; 231.</li>
 <li>The first stone’s position is always 0.</li>
 </ul>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[0,1,3,5,6,8,12,17]</span><br><span class="line"></span><br><span class="line">There are a total of 8 stones.</span><br><span class="line">The first stone at the 0th unit, second stone at the 1st unit,</span><br><span class="line">third stone at the 3rd unit, and so on...</span><br><span class="line">The last stone at the 17th unit.</span><br><span class="line"></span><br><span class="line">Return true. The frog can jump to the last stone by jumping </span><br><span class="line">1 unit to the 2nd stone, then 2 units to the 3rd stone, then </span><br><span class="line">2 units to the 4th stone, then 3 units to the 6th stone, </span><br><span class="line">4 units to the 7th stone, and 5 units to the 8th stone.</span><br></pre></td></tr></table></figure><br>Example 2:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[0,1,2,3,4,8,9,11]</span><br><span class="line"></span><br><span class="line">Return false. There is no way to jump to the last stone as </span><br><span class="line">the gap between the 5th and 6th stone is too large.</span><br></pre></td></tr></table></figure></p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[0,1,3,5,6,8,12,17]</span><br><span class="line"></span><br><span class="line">There are a total of 8 stones.</span><br><span class="line">The first stone at the 0th unit, second stone at the 1st unit,</span><br><span class="line">third stone at the 3rd unit, and so on...</span><br><span class="line">The last stone at the 17th unit.</span><br><span class="line"></span><br><span class="line">Return true. The frog can jump to the last stone by jumping </span><br><span class="line">1 unit to the 2nd stone, then 2 units to the 3rd stone, then </span><br><span class="line">2 units to the 4th stone, then 3 units to the 6th stone, </span><br><span class="line">4 units to the 7th stone, and 5 units to the 8th stone.</span><br></pre></td></tr></table></figure><br><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[0,1,2,3,4,8,9,11]</span><br><span class="line"></span><br><span class="line">Return false. There is no way to jump to the last stone as </span><br><span class="line">the gap between the 5th and 6th stone is too large.</span><br></pre></td></tr></table></figure></p>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">canCross</span><span class="params">(<span class="keyword">int</span>[] stones)</span> </span>&#123;</span><br><span class="line">        HashMap&lt;Integer, HashSet&lt;Integer&gt;&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> stone: stones)&#123;</span><br><span class="line">            map.put(stone, <span class="keyword">new</span> HashSet&lt;Integer&gt;());</span><br><span class="line">        &#125;</span><br><span class="line">        map.get(<span class="number">0</span>).add(<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> stone: stones)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> step: map.get(stone))&#123;</span><br><span class="line">                <span class="keyword">int</span> reach = stone + step;</span><br><span class="line">                <span class="keyword">if</span> (reach == stones[stones.length-<span class="number">1</span>]) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">                <span class="keyword">if</span> (map.containsKey(reach))&#123;</span><br><span class="line">                    map.get(reach).add(step);</span><br><span class="line">                    <span class="keyword">if</span> (step &gt; <span class="number">1</span>) map.get(reach).add(step-<span class="number">1</span>);</span><br><span class="line">                    map.get(reach).add(step+<span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr />]]></content>
       <categories>
@@ -6254,6 +6254,7 @@
       <tags>
         <tag>Amazon</tag>
         <tag>DP</tag>
+        <tag>TikTok</tag>
       </tags>
   </entry>
   <entry>
@@ -6401,6 +6402,7 @@
         <tag>DFS</tag>
         <tag>BFS</tag>
         <tag>Bloomberg</tag>
+        <tag>TikTok</tag>
       </tags>
   </entry>
   <entry>
@@ -6798,6 +6800,30 @@
       </categories>
       <tags>
         <tag>DP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode493-reversePairs</title>
+    <url>/2020/12/24/Leetcode493-reversePairs/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given an array nums, we call (i, j) an important reverse pair if i &lt; j and nums[i] &gt; 2*nums[j].</p>
+<p>You need to return the number of important reverse pairs in the given array.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [1,3,2,3,1]</span><br><span class="line">Output: 2</span><br></pre></td></tr></table></figure><br><strong>Example2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [2,4,3,5,1]</span><br><span class="line">Output: 3</span><br></pre></td></tr></table></figure></p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul>
+<li>Time Complexity: <script type="math/tex">O(Nlog^N)</script></li>
+<li>Space Complexity: <script type="math/tex">O(N)</script></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">reversePairs</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums == <span class="keyword">null</span> || nums.length == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> mergeSort(nums, <span class="number">0</span>, nums.length - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">mergeSort</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (left &gt;= right) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> mid = left + (right - left) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        res += mergeSort(nums, left, mid);</span><br><span class="line">        res += mergeSort(nums, mid + <span class="number">1</span>, right);</span><br><span class="line">        res += merge(nums, left, mid, right);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> left, <span class="keyword">int</span> mid, <span class="keyword">int</span> right)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> p = left, q = mid + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (p &lt;= mid &amp;&amp; q &lt;= right)&#123;</span><br><span class="line">            <span class="keyword">if</span> ((<span class="keyword">long</span>) nums[p] &gt; <span class="number">2</span> * (<span class="keyword">long</span>) nums[q])&#123;</span><br><span class="line">                count += mid - p + <span class="number">1</span>;</span><br><span class="line">                q++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                p++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span>[] temp = <span class="keyword">new</span> <span class="keyword">int</span>[right - left + <span class="number">1</span>];</span><br><span class="line">        p = left; </span><br><span class="line">        q = mid + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (p &lt;= mid &amp;&amp; q &lt;= right)&#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[p] &gt; nums[q])&#123;</span><br><span class="line">                temp[index++] = nums[q++];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                temp[index++] = nums[p++];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (p &lt;= mid)&#123;</span><br><span class="line">            temp[index++] = nums[p++];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (q &lt;= right)&#123;</span><br><span class="line">            temp[index++] = nums[q++];</span><br><span class="line">        &#125;</span><br><span class="line">        System.arraycopy(temp, <span class="number">0</span>, nums, left, right - left + <span class="number">1</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr />]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>TikTok</tag>
+        <tag>Merge Sort</tag>
       </tags>
   </entry>
   <entry>
@@ -7720,6 +7746,42 @@
       </tags>
   </entry>
   <entry>
+    <title>Leetcode726-Number Of Atoms</title>
+    <url>/2020/12/25/Leetcode726-numberOfAtoms/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given a chemical formula (given as a string), return the count of each atom.</p>
+<p>The atomic element always starts with an uppercase character, then zero or more lowercase letters, representing the name.</p>
+<p>One or more digits representing that element’s count may follow if the count is greater than 1. If the count is 1, no digits will follow. For example, H2O and H2O2 are possible, but H1O2 is impossible.</p>
+<p>Two formulas concatenated together to produce another formula. For example, H2O2He3Mg4 is also a formula.</p>
+<p>A formula placed in parentheses, and a count (optionally added) is also a formula. For example, (H2O2) and (H2O2)3 are formulas.</p>
+<p>Given a formula, return the count of all elements as a string in the following form: the first name (in sorted order), followed by its count (if that count is more than 1), followed by the second name (in sorted order), followed by its count (if that count is more than 1), and so on.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: formula &#x3D; &quot;H2O&quot;</span><br><span class="line">Output: &quot;H2O&quot;</span><br><span class="line">Explanation: The count of elements are &#123;&#39;H&#39;: 2, &#39;O&#39;: 1&#125;.</span><br></pre></td></tr></table></figure><br><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: formula &#x3D; &quot;Mg(OH)2&quot;</span><br><span class="line">Output: &quot;H2MgO2&quot;</span><br><span class="line">Explanation: The count of elements are &#123;&#39;H&#39;: 2, &#39;Mg&#39;: 1, &#39;O&#39;: 2&#125;.</span><br></pre></td></tr></table></figure><br><strong>Example 3:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: formula &#x3D; &quot;K4(ON(SO3)2)2&quot;</span><br><span class="line">Output: &quot;K4N2O14S4&quot;</span><br><span class="line">Explanation: The count of elements are &#123;&#39;K&#39;: 4, &#39;N&#39;: 2, &#39;O&#39;: 14, &#39;S&#39;: 4&#125;.</span><br></pre></td></tr></table></figure><br><strong>Example 4:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: formula &#x3D; &quot;Be32&quot;</span><br><span class="line">Output: &quot;Be32&quot;</span><br></pre></td></tr></table></figure></p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>1 &lt;= formula.length &lt;= 1000</li>
+<li>formula consists of English letters, digits, ‘(‘, and ‘)’.</li>
+<li>formula is always valid.</li>
+</ul>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul>
+<li>Time Complexity: <script type="math/tex">O(N)</script> or <script type="math/tex">O(Mlog^M)  M = numOfAtomTypes</script></li>
+<li>Space Complexity: <script type="math/tex">O(N)</script></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> i;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">countOfAtoms</span><span class="params">(String formula)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (formula == <span class="keyword">null</span> || formula.length() == <span class="number">0</span>) <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line"></span><br><span class="line">        StringBuilder res = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        Map&lt;String, Integer&gt; count = helper(formula.toCharArray());</span><br><span class="line">        <span class="keyword">for</span> (String atom: count.keySet())&#123;</span><br><span class="line">            res.append(atom);</span><br><span class="line">            <span class="keyword">if</span> (count.get(atom) &gt; <span class="number">1</span>)&#123;</span><br><span class="line">                res.append(Integer.toString(count.get(atom)));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res.toString();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> Map&lt;String, Integer&gt; <span class="title">helper</span><span class="params">(<span class="keyword">char</span>[] formula)</span></span>&#123;</span><br><span class="line">        Map&lt;String, Integer&gt; res = <span class="keyword">new</span> TreeMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">while</span>(i &lt; formula.length)&#123;</span><br><span class="line">            <span class="keyword">if</span> (formula[i] == <span class="string">&#x27;(&#x27;</span>)&#123;</span><br><span class="line">                i++;</span><br><span class="line">                Map&lt;String, Integer&gt; tmp = helper(formula);</span><br><span class="line">                <span class="keyword">int</span> count = getCount(formula);</span><br><span class="line">                <span class="keyword">for</span> (String atom: tmp.keySet())&#123;</span><br><span class="line">                    res.put(atom, res.getOrDefault(atom, <span class="number">0</span>) + tmp.get(atom) * count);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (formula[i] == <span class="string">&#x27;)&#x27;</span>)&#123;</span><br><span class="line">                i++;</span><br><span class="line">                <span class="keyword">return</span> res;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                String name = getName(formula);</span><br><span class="line">                res.put(name, res.getOrDefault(name, <span class="number">0</span>) + getCount(formula));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">getName</span><span class="params">(<span class="keyword">char</span>[] formula)</span></span>&#123;</span><br><span class="line">        StringBuilder name = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        name.append(formula[i++]);</span><br><span class="line">        <span class="keyword">while</span>(i &lt; formula.length &amp;&amp; formula[i] &gt;= <span class="string">&#x27;a&#x27;</span> &amp;&amp; formula[i] &lt;=<span class="string">&#x27;z&#x27;</span>)&#123;</span><br><span class="line">            name.append(formula[i++]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> name.toString();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">getCount</span><span class="params">(<span class="keyword">char</span>[] formula)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(i &lt; formula.length &amp;&amp; formula[i] &gt;= <span class="string">&#x27;0&#x27;</span> &amp;&amp; formula[i] &lt;= <span class="string">&#x27;9&#x27;</span>)&#123;</span><br><span class="line">            res = res * <span class="number">10</span> + (formula[i++] - <span class="string">&#x27;0&#x27;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res == <span class="number">0</span> ? <span class="number">1</span> : res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr />]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Hash Table</tag>
+        <tag>String</tag>
+        <tag>Recursion</tag>
+        <tag>TikTok</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Leetcode733-floodFill</title>
     <url>/2020/02/07/Leetcode733-floodFill/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
@@ -7831,31 +7893,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Leetcode760-findAnagramMappings</title>
-    <url>/2020/03/16/Leetcode760-findAnagramMappings/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
-
-<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
-<a id="more"></a>
-<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given two lists Aand B, and B is an anagram of A. B is an anagram of A means B is made by randomizing the order of the elements in A.</p>
-<p>We want to find an index mapping P, from A to B. A mapping P[i] = j means the ith element in A appears in B at index j.</p>
-<p>These lists A and B may contain duplicates. If there are multiple answers, output any of them.</p>
-<p>For example, given<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">A &#x3D; [12, 28, 46, 32, 50]</span><br><span class="line">B &#x3D; [50, 12, 32, 46, 28]</span><br></pre></td></tr></table></figure><br>We should return<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[1, 4, 3, 2, 0]</span><br></pre></td></tr></table></figure><br>as P[0] = 1 because the 0th element of A appears at B[1], and P[1] = 4 because the 1st element of A appears at B[4], and so on.</p>
-<p><strong>Note:</strong></p>
-<ol>
-<li>A, B have equal lengths in range [1, 100].</li>
-<li>A[i], B[i] are integers in range [0, 10^5].</li>
-</ol>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] anagramMappings(<span class="keyword">int</span>[] A, <span class="keyword">int</span>[] B) &#123;</span><br><span class="line">        <span class="keyword">if</span> (B == <span class="keyword">null</span> || A == <span class="keyword">null</span> || B.length == <span class="number">0</span> || A.length == <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">0</span>];</span><br><span class="line">        HashMap&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; B.length; i++)</span><br><span class="line">            map.put(B[i], i);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span>[] res = <span class="keyword">new</span> <span class="keyword">int</span>[A.length];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; A.length; i++)&#123;</span><br><span class="line">            res[i] = map.get(A[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr />]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>Hash Table</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Leetcode763-partitionLabels</title>
     <url>/2019/10/07/Leetcode763-partitionLabels/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
@@ -7879,6 +7916,31 @@
         <tag>Amazon</tag>
         <tag>Two Pointers</tag>
         <tag>Greedy</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode760-findAnagramMappings</title>
+    <url>/2020/03/16/Leetcode760-findAnagramMappings/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given two lists Aand B, and B is an anagram of A. B is an anagram of A means B is made by randomizing the order of the elements in A.</p>
+<p>We want to find an index mapping P, from A to B. A mapping P[i] = j means the ith element in A appears in B at index j.</p>
+<p>These lists A and B may contain duplicates. If there are multiple answers, output any of them.</p>
+<p>For example, given<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">A &#x3D; [12, 28, 46, 32, 50]</span><br><span class="line">B &#x3D; [50, 12, 32, 46, 28]</span><br></pre></td></tr></table></figure><br>We should return<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[1, 4, 3, 2, 0]</span><br></pre></td></tr></table></figure><br>as P[0] = 1 because the 0th element of A appears at B[1], and P[1] = 4 because the 1st element of A appears at B[4], and so on.</p>
+<p><strong>Note:</strong></p>
+<ol>
+<li>A, B have equal lengths in range [1, 100].</li>
+<li>A[i], B[i] are integers in range [0, 10^5].</li>
+</ol>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] anagramMappings(<span class="keyword">int</span>[] A, <span class="keyword">int</span>[] B) &#123;</span><br><span class="line">        <span class="keyword">if</span> (B == <span class="keyword">null</span> || A == <span class="keyword">null</span> || B.length == <span class="number">0</span> || A.length == <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">0</span>];</span><br><span class="line">        HashMap&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; B.length; i++)</span><br><span class="line">            map.put(B[i], i);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span>[] res = <span class="keyword">new</span> <span class="keyword">int</span>[A.length];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; A.length; i++)&#123;</span><br><span class="line">            res[i] = map.get(A[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr />]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Hash Table</tag>
       </tags>
   </entry>
   <entry>
@@ -7955,6 +8017,31 @@
       </tags>
   </entry>
   <entry>
+    <title>Leetcode797-allPathsFromSourceToTarget</title>
+    <url>/2020/03/01/Leetcode797-allPathsFromSourceToTarget/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given a directed, acyclic graph of N nodes.  Find all possible paths from node 0 to node N-1, and return them in any order.</p>
+<p>The graph is given as follows:  the nodes are 0, 1, …, graph.length - 1.  graph[i] is a list of all nodes j for which the edge (i, j) exists.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Example:</span><br><span class="line">Input: [[1,2], [3], [3], []] </span><br><span class="line">Output: [[0,1,3],[0,2,3]] </span><br><span class="line">Explanation: The graph looks like this:</span><br><span class="line">0---&gt;1</span><br><span class="line">|    |</span><br><span class="line">v    v</span><br><span class="line">2---&gt;3</span><br><span class="line">There are two paths: 0 -&gt; 1 -&gt; 3 and 0 -&gt; 2 -&gt; 3.</span><br></pre></td></tr></table></figure>
+<p><strong>Note:</strong></p>
+<ul>
+<li>The number of nodes in the graph will be in the range [2, 15].</li>
+<li>You can print different paths in any order, but you should keep the order of nodes inside one path.</li>
+</ul>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; allPathsSourceTarget(<span class="keyword">int</span>[][] graph) &#123;</span><br><span class="line">        List&lt;List&lt;Integer&gt;&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span> (graph == <span class="keyword">null</span> || graph.length == <span class="number">0</span>) <span class="keyword">return</span> res;</span><br><span class="line">        </span><br><span class="line">        helper(graph, res, <span class="keyword">new</span> ArrayList&lt;Integer&gt;(Arrays.asList(<span class="number">0</span>)), <span class="number">0</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">helper</span><span class="params">(<span class="keyword">int</span>[][] graph, List&lt;List&lt;Integer&gt;&gt; res, List&lt;Integer&gt; cur, <span class="keyword">int</span> pos)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (pos == graph.length - <span class="number">1</span>)&#123;</span><br><span class="line">            res.add(<span class="keyword">new</span> ArrayList&lt;Integer&gt;(cur));</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> to: graph[pos])&#123;</span><br><span class="line">            cur.add(to);</span><br><span class="line">            helper(graph, res, cur, to);</span><br><span class="line">            cur.remove(cur.size() - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr />]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>DFS</tag>
+        <tag>Bloomberg</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Leetcode794-validTicTacToeState</title>
     <url>/2019/10/21/Leetcode794-validTicTacToeState/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
@@ -7984,31 +8071,6 @@
         <tag>Microsoft</tag>
         <tag>Math</tag>
         <tag>Matrix</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Leetcode797-allPathsFromSourceToTarget</title>
-    <url>/2020/03/01/Leetcode797-allPathsFromSourceToTarget/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
-
-<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
-<a id="more"></a>
-<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given a directed, acyclic graph of N nodes.  Find all possible paths from node 0 to node N-1, and return them in any order.</p>
-<p>The graph is given as follows:  the nodes are 0, 1, …, graph.length - 1.  graph[i] is a list of all nodes j for which the edge (i, j) exists.</p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Example:</span><br><span class="line">Input: [[1,2], [3], [3], []] </span><br><span class="line">Output: [[0,1,3],[0,2,3]] </span><br><span class="line">Explanation: The graph looks like this:</span><br><span class="line">0---&gt;1</span><br><span class="line">|    |</span><br><span class="line">v    v</span><br><span class="line">2---&gt;3</span><br><span class="line">There are two paths: 0 -&gt; 1 -&gt; 3 and 0 -&gt; 2 -&gt; 3.</span><br></pre></td></tr></table></figure>
-<p><strong>Note:</strong></p>
-<ul>
-<li>The number of nodes in the graph will be in the range [2, 15].</li>
-<li>You can print different paths in any order, but you should keep the order of nodes inside one path.</li>
-</ul>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; allPathsSourceTarget(<span class="keyword">int</span>[][] graph) &#123;</span><br><span class="line">        List&lt;List&lt;Integer&gt;&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span> (graph == <span class="keyword">null</span> || graph.length == <span class="number">0</span>) <span class="keyword">return</span> res;</span><br><span class="line">        </span><br><span class="line">        helper(graph, res, <span class="keyword">new</span> ArrayList&lt;Integer&gt;(Arrays.asList(<span class="number">0</span>)), <span class="number">0</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">helper</span><span class="params">(<span class="keyword">int</span>[][] graph, List&lt;List&lt;Integer&gt;&gt; res, List&lt;Integer&gt; cur, <span class="keyword">int</span> pos)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (pos == graph.length - <span class="number">1</span>)&#123;</span><br><span class="line">            res.add(<span class="keyword">new</span> ArrayList&lt;Integer&gt;(cur));</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> to: graph[pos])&#123;</span><br><span class="line">            cur.add(to);</span><br><span class="line">            helper(graph, res, cur, to);</span><br><span class="line">            cur.remove(cur.size() - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr />]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>DFS</tag>
-        <tag>Bloomberg</tag>
       </tags>
   </entry>
   <entry>
