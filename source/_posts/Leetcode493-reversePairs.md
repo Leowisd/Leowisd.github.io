@@ -1,5 +1,5 @@
 ---
-title: Leetcode493-reversePairs
+title: Leetcode493-Reverse Pairs
 categories: leetcode
 tags: [Merge Sort, TikTok]
 description: Solution Report of LeetCode Acceptted

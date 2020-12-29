@@ -1,5 +1,5 @@
 ---
-title: Leetcode417-pacificAtlanticWaterFlow
+title: Leetcode417-Pacific Atlantic Water Flow
 categories: leetcode
 tags: [DFS, BFS, Bloomberg, TikTok]
 description: Solution Report of LeetCode Acceptted

@@ -1,5 +1,5 @@
 ---
-title: Leetcode403-frogJump
+title: Leetcode403-Frog Jump
 categories: leetcode
 tags: [DP, Amazon, TikTok]
 description: Solution Report of LeetCode Acceptted
