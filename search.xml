@@ -969,6 +969,29 @@
       </tags>
   </entry>
   <entry>
+    <title>Leetcode001-twoSum</title>
+    <url>/2019/10/08/Leetcode001-twoSum/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p>
+<p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Given nums &#x3D; [2, 7, 11, 15], target &#x3D; 9,</span><br><span class="line"></span><br><span class="line">Because nums[0] + nums[1] &#x3D; 2 + 7 &#x3D; 9,</span><br><span class="line">return [0, 1].</span><br></pre></td></tr></table></figure>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] numbers, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="keyword">int</span>[] res = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>];</span><br><span class="line">        Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; numbers.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (map.containsKey(target - numbers[i])) &#123;</span><br><span class="line">                res[<span class="number">1</span>] = i;</span><br><span class="line">                res[<span class="number">0</span>] = map.get(target - numbers[i]);</span><br><span class="line">                <span class="keyword">return</span> res;</span><br><span class="line">            &#125;</span><br><span class="line">            map.put(numbers[i], i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr />]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Google</tag>
+        <tag>Hash Table</tag>
+        <tag>Amazon</tag>
+        <tag>Microsoft</tag>
+        <tag>Bloomberg</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Git ignore already managed files</title>
     <url>/2020/07/10/Git-ignore-tracked-file/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
@@ -1008,29 +1031,6 @@
       <tags>
         <tag>Git</tag>
         <tag>Github</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Leetcode001-twoSum</title>
-    <url>/2019/10/08/Leetcode001-twoSum/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
-
-<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
-<a id="more"></a>
-<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p>
-<p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Given nums &#x3D; [2, 7, 11, 15], target &#x3D; 9,</span><br><span class="line"></span><br><span class="line">Because nums[0] + nums[1] &#x3D; 2 + 7 &#x3D; 9,</span><br><span class="line">return [0, 1].</span><br></pre></td></tr></table></figure>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] numbers, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="keyword">int</span>[] res = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>];</span><br><span class="line">        Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; numbers.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (map.containsKey(target - numbers[i])) &#123;</span><br><span class="line">                res[<span class="number">1</span>] = i;</span><br><span class="line">                res[<span class="number">0</span>] = map.get(target - numbers[i]);</span><br><span class="line">                <span class="keyword">return</span> res;</span><br><span class="line">            &#125;</span><br><span class="line">            map.put(numbers[i], i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr />]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>Google</tag>
-        <tag>Hash Table</tag>
-        <tag>Amazon</tag>
-        <tag>Microsoft</tag>
-        <tag>Bloomberg</tag>
       </tags>
   </entry>
   <entry>
@@ -1401,6 +1401,26 @@
       </tags>
   </entry>
   <entry>
+    <title>Leetcode018-4Sum</title>
+    <url>/2020/02/10/Leetcode018-4Sum/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given an array nums of n integers and an integer target, are there elements a, b, c, and d in nums such that a + b + c + d = target? Find all unique quadruplets in the array which gives the sum of target.</p>
+<p><strong>Note:</strong></p>
+<p>The solution set must not contain duplicate quadruplets.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Given array nums &#x3D; [1, 0, -1, 0, -2, 2], and target &#x3D; 0.</span><br><span class="line"></span><br><span class="line">A solution set is:</span><br><span class="line">[</span><br><span class="line">  [-1,  0, 0, 1],</span><br><span class="line">  [-2, -1, 1, 2],</span><br><span class="line">  [-2,  0, 0, 2]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; fourSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        List&lt;List&lt;Integer&gt;&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        Arrays.sort(nums);</span><br><span class="line">        <span class="keyword">while</span> (i &lt; nums.length - <span class="number">3</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> j = i + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span> (j &lt; nums.length - <span class="number">2</span>)&#123;</span><br><span class="line">                List&lt;List&lt;Integer&gt;&gt; tmp = twoSum(nums, j + <span class="number">1</span>, target-nums[i]-nums[j]);</span><br><span class="line">                <span class="keyword">if</span> (tmp.size() &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                    <span class="keyword">for</span> (List&lt;Integer&gt; t : tmp)&#123;</span><br><span class="line">                        t.add(nums[i]);</span><br><span class="line">                        t.add(nums[j]);</span><br><span class="line">                        res.add(t);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                j ++;</span><br><span class="line">                <span class="keyword">while</span> (j &lt; nums.length - <span class="number">2</span> &amp;&amp; nums[j] == nums[j-<span class="number">1</span>]) j++;</span><br><span class="line">            &#125;</span><br><span class="line">            i++;</span><br><span class="line">            <span class="keyword">while</span>(i &lt; nums.length - <span class="number">3</span> &amp;&amp; nums[i] == nums[i-<span class="number">1</span>]) i++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span> List&lt;List&lt;Integer&gt;&gt; twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> i, <span class="keyword">int</span> target)&#123;</span><br><span class="line">        <span class="keyword">int</span> j = nums.length - <span class="number">1</span>;</span><br><span class="line">        List&lt;List&lt;Integer&gt;&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">while</span> (i &lt; j)&#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i] + nums[j] == target)&#123;</span><br><span class="line">                List&lt;Integer&gt; tmp = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">                tmp.add(nums[i]);</span><br><span class="line">                tmp.add(nums[j]);</span><br><span class="line">                res.add(tmp);</span><br><span class="line">                </span><br><span class="line">                i++;</span><br><span class="line">                j--;</span><br><span class="line">                <span class="keyword">while</span>(i &lt; j &amp;&amp; nums[i] == nums[i-<span class="number">1</span>]) i++;</span><br><span class="line">                <span class="keyword">while</span>(i &lt; j &amp;&amp; nums[j] == nums[j+<span class="number">1</span>]) j--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (nums[i] + nums[j] &lt; target) i++;</span><br><span class="line">            <span class="keyword">else</span> j--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr />]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Two Pointers</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Leetcode015-3Sum</title>
     <url>/2019/10/04/Leetcode015-3Sum/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
@@ -1421,26 +1441,6 @@
         <tag>Array</tag>
         <tag>Amazon</tag>
         <tag>Bloomberg</tag>
-        <tag>Two Pointers</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Leetcode018-4Sum</title>
-    <url>/2020/02/10/Leetcode018-4Sum/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
-
-<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
-<a id="more"></a>
-<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given an array nums of n integers and an integer target, are there elements a, b, c, and d in nums such that a + b + c + d = target? Find all unique quadruplets in the array which gives the sum of target.</p>
-<p><strong>Note:</strong></p>
-<p>The solution set must not contain duplicate quadruplets.</p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Given array nums &#x3D; [1, 0, -1, 0, -2, 2], and target &#x3D; 0.</span><br><span class="line"></span><br><span class="line">A solution set is:</span><br><span class="line">[</span><br><span class="line">  [-1,  0, 0, 1],</span><br><span class="line">  [-2, -1, 1, 2],</span><br><span class="line">  [-2,  0, 0, 2]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; fourSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        List&lt;List&lt;Integer&gt;&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        Arrays.sort(nums);</span><br><span class="line">        <span class="keyword">while</span> (i &lt; nums.length - <span class="number">3</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> j = i + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span> (j &lt; nums.length - <span class="number">2</span>)&#123;</span><br><span class="line">                List&lt;List&lt;Integer&gt;&gt; tmp = twoSum(nums, j + <span class="number">1</span>, target-nums[i]-nums[j]);</span><br><span class="line">                <span class="keyword">if</span> (tmp.size() &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                    <span class="keyword">for</span> (List&lt;Integer&gt; t : tmp)&#123;</span><br><span class="line">                        t.add(nums[i]);</span><br><span class="line">                        t.add(nums[j]);</span><br><span class="line">                        res.add(t);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                j ++;</span><br><span class="line">                <span class="keyword">while</span> (j &lt; nums.length - <span class="number">2</span> &amp;&amp; nums[j] == nums[j-<span class="number">1</span>]) j++;</span><br><span class="line">            &#125;</span><br><span class="line">            i++;</span><br><span class="line">            <span class="keyword">while</span>(i &lt; nums.length - <span class="number">3</span> &amp;&amp; nums[i] == nums[i-<span class="number">1</span>]) i++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span> List&lt;List&lt;Integer&gt;&gt; twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> i, <span class="keyword">int</span> target)&#123;</span><br><span class="line">        <span class="keyword">int</span> j = nums.length - <span class="number">1</span>;</span><br><span class="line">        List&lt;List&lt;Integer&gt;&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">while</span> (i &lt; j)&#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i] + nums[j] == target)&#123;</span><br><span class="line">                List&lt;Integer&gt; tmp = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">                tmp.add(nums[i]);</span><br><span class="line">                tmp.add(nums[j]);</span><br><span class="line">                res.add(tmp);</span><br><span class="line">                </span><br><span class="line">                i++;</span><br><span class="line">                j--;</span><br><span class="line">                <span class="keyword">while</span>(i &lt; j &amp;&amp; nums[i] == nums[i-<span class="number">1</span>]) i++;</span><br><span class="line">                <span class="keyword">while</span>(i &lt; j &amp;&amp; nums[j] == nums[j+<span class="number">1</span>]) j--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (nums[i] + nums[j] &lt; target) i++;</span><br><span class="line">            <span class="keyword">else</span> j--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr />]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-      <tags>
         <tag>Two Pointers</tag>
       </tags>
   </entry>
@@ -2169,27 +2169,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Leetcode069-sqrt(x)</title>
-    <url>/2019/09/12/Leetcode069-sqrt-x/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
-
-<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
-<a id="more"></a>
-<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Implement<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int sqrt(int x).</span><br></pre></td></tr></table></figure><br>Compute and return the square root of x, where x is guaranteed to be a non-negative integer.</p>
-<p>Since the return type is an integer, the decimal digits are truncated and only the integer part of the result is returned.</p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: 4</span><br><span class="line">Output: 2</span><br></pre></td></tr></table></figure><br><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: 8</span><br><span class="line">Output: 2</span><br><span class="line">Explanation: The square root of 8 is 2.82842..., and since </span><br><span class="line">             the decimal part is truncated, 2 is returned.</span><br></pre></td></tr></table></figure></p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>Newton’s method: <a href="https://blog.csdn.net/chenrenxiang/article/details/78286599">https://blog.csdn.net/chenrenxiang/article/details/78286599</a></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">mySqrt</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">//         Method 1 (Good to solve): Binary Search        </span></span><br><span class="line"><span class="comment">//         if (x == 0) return 0;</span></span><br><span class="line"><span class="comment">//         int left  = 1;</span></span><br><span class="line"><span class="comment">//         int right = Integer.MAX_VALUE;</span></span><br><span class="line">        </span><br><span class="line"><span class="comment">//         while(left &lt;= right)&#123;</span></span><br><span class="line"><span class="comment">//             int mid = left + (right - left)/2;</span></span><br><span class="line"><span class="comment">//             if (mid == x/mid) return mid;</span></span><br><span class="line"><span class="comment">//             else if (mid &lt; x/mid) left = mid + 1;</span></span><br><span class="line"><span class="comment">//             else if (mid &gt; x/mid) right = mid - 1;</span></span><br><span class="line"><span class="comment">//         &#125;</span></span><br><span class="line"><span class="comment">//         return right;</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">// Newton&#x27;s method</span></span><br><span class="line">        <span class="keyword">long</span> r = x;</span><br><span class="line">        <span class="keyword">while</span> (r*r &gt; x)&#123;</span><br><span class="line">            r = (r + x/r)/<span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">int</span>)r;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr />]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>Binary Search</tag>
-        <tag>Math</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Leetcode070-climbingStairs</title>
     <url>/2020/02/24/Leetcode070-climbingStairs/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
@@ -2208,6 +2187,27 @@
       <tags>
         <tag>Bloomberg</tag>
         <tag>DP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode069-sqrt(x)</title>
+    <url>/2019/09/12/Leetcode069-sqrt-x/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Implement<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int sqrt(int x).</span><br></pre></td></tr></table></figure><br>Compute and return the square root of x, where x is guaranteed to be a non-negative integer.</p>
+<p>Since the return type is an integer, the decimal digits are truncated and only the integer part of the result is returned.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: 4</span><br><span class="line">Output: 2</span><br></pre></td></tr></table></figure><br><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: 8</span><br><span class="line">Output: 2</span><br><span class="line">Explanation: The square root of 8 is 2.82842..., and since </span><br><span class="line">             the decimal part is truncated, 2 is returned.</span><br></pre></td></tr></table></figure></p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>Newton’s method: <a href="https://blog.csdn.net/chenrenxiang/article/details/78286599">https://blog.csdn.net/chenrenxiang/article/details/78286599</a></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">mySqrt</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">//         Method 1 (Good to solve): Binary Search        </span></span><br><span class="line"><span class="comment">//         if (x == 0) return 0;</span></span><br><span class="line"><span class="comment">//         int left  = 1;</span></span><br><span class="line"><span class="comment">//         int right = Integer.MAX_VALUE;</span></span><br><span class="line">        </span><br><span class="line"><span class="comment">//         while(left &lt;= right)&#123;</span></span><br><span class="line"><span class="comment">//             int mid = left + (right - left)/2;</span></span><br><span class="line"><span class="comment">//             if (mid == x/mid) return mid;</span></span><br><span class="line"><span class="comment">//             else if (mid &lt; x/mid) left = mid + 1;</span></span><br><span class="line"><span class="comment">//             else if (mid &gt; x/mid) right = mid - 1;</span></span><br><span class="line"><span class="comment">//         &#125;</span></span><br><span class="line"><span class="comment">//         return right;</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">// Newton&#x27;s method</span></span><br><span class="line">        <span class="keyword">long</span> r = x;</span><br><span class="line">        <span class="keyword">while</span> (r*r &gt; x)&#123;</span><br><span class="line">            r = (r + x/r)/<span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">int</span>)r;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr />]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Binary Search</tag>
+        <tag>Math</tag>
       </tags>
   </entry>
   <entry>
@@ -3917,6 +3917,44 @@
       </tags>
   </entry>
   <entry>
+    <title>Leetcode1352-Product Of The Last K Numbers</title>
+    <url>/2020/12/27/Leetcode1352-productOfTheLastKNumbers/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Implement the class ProductOfNumbers that supports two methods:</p>
+<ol>
+<li>add(int num)</li>
+</ol>
+<p>Adds the number num to the back of the current list of numbers.</p>
+<ol>
+<li>getProduct(int k)</li>
+</ol>
+<p>Returns the product of the last k numbers in the current list.<br>You can assume that always the current list has at least k numbers.<br>At any time, the product of any contiguous sequence of numbers will fit into a single 32-bit integer without overflowing.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input</span><br><span class="line">[&quot;ProductOfNumbers&quot;,&quot;add&quot;,&quot;add&quot;,&quot;add&quot;,&quot;add&quot;,&quot;add&quot;,&quot;getProduct&quot;,&quot;getProduct&quot;,&quot;getProduct&quot;,&quot;add&quot;,&quot;getProduct&quot;]</span><br><span class="line">[[],[3],[0],[2],[5],[4],[2],[3],[4],[8],[2]]</span><br><span class="line"></span><br><span class="line">Output</span><br><span class="line">[null,null,null,null,null,null,20,40,0,null,32]</span><br><span class="line"></span><br><span class="line">Explanation</span><br><span class="line">ProductOfNumbers productOfNumbers &#x3D; new ProductOfNumbers();</span><br><span class="line">productOfNumbers.add(3);        &#x2F;&#x2F; [3]</span><br><span class="line">productOfNumbers.add(0);        &#x2F;&#x2F; [3,0]</span><br><span class="line">productOfNumbers.add(2);        &#x2F;&#x2F; [3,0,2]</span><br><span class="line">productOfNumbers.add(5);        &#x2F;&#x2F; [3,0,2,5]</span><br><span class="line">productOfNumbers.add(4);        &#x2F;&#x2F; [3,0,2,5,4]</span><br><span class="line">productOfNumbers.getProduct(2); &#x2F;&#x2F; return 20. The product of the last 2 numbers is 5 * 4 &#x3D; 20</span><br><span class="line">productOfNumbers.getProduct(3); &#x2F;&#x2F; return 40. The product of the last 3 numbers is 2 * 5 * 4 &#x3D; 40</span><br><span class="line">productOfNumbers.getProduct(4); &#x2F;&#x2F; return 0. The product of the last 4 numbers is 0 * 2 * 5 * 4 &#x3D; 0</span><br><span class="line">productOfNumbers.add(8);        &#x2F;&#x2F; [3,0,2,5,4,8]</span><br><span class="line">productOfNumbers.getProduct(2); &#x2F;&#x2F; return 32. The product of the last 2 numbers is 4 * 8 &#x3D; 32 </span><br></pre></td></tr></table></figure>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>There will be at most 40000 operations considering both add and getProduct.</li>
+<li>0 &lt;= num &lt;= 100</li>
+<li>1 &lt;= k &lt;= 40000</li>
+</ul>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul>
+<li>Time Complexity: <script type="math/tex">O(1) each</script></li>
+<li>Space Complexity: <script type="math/tex">O(N)</script></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ProductOfNumbers</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> List&lt;Integer&gt; prefixProduction;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ProductOfNumbers</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        prefixProduction = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        prefixProduction.add(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (num &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            prefixProduction.add(prefixProduction.get(prefixProduction.size() - <span class="number">1</span>) * num);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            prefixProduction = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">            prefixProduction.add(<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getProduct</span><span class="params">(<span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = prefixProduction.size();</span><br><span class="line">        <span class="keyword">return</span> k &gt;= len ? <span class="number">0</span> : prefixProduction.get(len - <span class="number">1</span>) / prefixProduction.get(len - k - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your ProductOfNumbers object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * ProductOfNumbers obj = new ProductOfNumbers();</span></span><br><span class="line"><span class="comment"> * obj.add(num);</span></span><br><span class="line"><span class="comment"> * int param_2 = obj.getProduct(k);</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<hr />]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Array</tag>
+        <tag>Design</tag>
+        <tag>TikTok</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Leetcode136-singleNumber</title>
     <url>/2020/03/02/Leetcode136-singleNumber/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
@@ -4277,6 +4315,41 @@
         <tag>Google</tag>
         <tag>Hash Table</tag>
         <tag>Math</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode167-Two Sum II-Input Array Is Sorted</title>
+    <url>/2020/12/25/Leetcode167-twoSumII-InputArrayIsSorted/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given an array of integers that is already sorted in ascending order, find two numbers such that they add up to a specific target number.</p>
+<p>The function twoSum should return indices of the two numbers such that they add up to the target, where index1 must be less than index2.</p>
+<p><strong>Note:</strong></p>
+<ul>
+<li>Your returned answers (both index1 and index2) are not zero-based.</li>
+<li>You may assume that each input would have exactly one solution and you may not use the same element twice.</li>
+</ul>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: numbers &#x3D; [2,7,11,15], target &#x3D; 9</span><br><span class="line">Output: [1,2]</span><br><span class="line">Explanation: The sum of 2 and 7 is 9. Therefore index1 &#x3D; 1, index2 &#x3D; 2.</span><br></pre></td></tr></table></figure><br><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: numbers &#x3D; [2,3,4], target &#x3D; 6</span><br><span class="line">Output: [1,3]</span><br></pre></td></tr></table></figure><br><strong>Example 3:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: numbers &#x3D; [-1,0], target &#x3D; -1</span><br><span class="line">Output: [1,2]</span><br></pre></td></tr></table></figure><br><strong>Constraints:</strong></p>
+<ul>
+<li>2 &lt;= nums.length &lt;= 3 * 104</li>
+<li>-1000 &lt;= nums[i] &lt;= 1000</li>
+<li>nums is sorted in increasing order.</li>
+<li><p>-1000 &lt;= target &lt;= 1000</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2></li>
+<li><p>Time Complexity: <script type="math/tex">O(N)</script></p>
+</li>
+<li>Space Complexity: <script type="math/tex">O(1)</script></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] numbers, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> j = numbers.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(i &lt; j)&#123;</span><br><span class="line">            <span class="keyword">int</span> cur = numbers[i] + numbers[j];</span><br><span class="line">            <span class="keyword">if</span> (cur == target)&#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (cur &lt; target)&#123;</span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> j--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;i + <span class="number">1</span>, j + <span class="number">1</span>&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr />]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Two Pointers</tag>
+        <tag>TikTok</tag>
       </tags>
   </entry>
   <entry>
@@ -4749,26 +4822,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Leetcode217-containsDuplicate</title>
-    <url>/2019/10/14/Leetcode217-containsDuplicate/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
-
-<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
-<a id="more"></a>
-<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given an array of integers, find if the array contains any duplicates.</p>
-<p>Your function should return true if any value appears at least twice in the array, and it should return false if every element is distinct.</p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [1,2,3,1]</span><br><span class="line">Output: true</span><br></pre></td></tr></table></figure><br><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [1,2,3,4]</span><br><span class="line">Output: false</span><br></pre></td></tr></table></figure><br><strong>Example 3:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [1,1,1,3,3,4,3,2,4,2]</span><br><span class="line">Output: true</span><br></pre></td></tr></table></figure></p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">containsDuplicate</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        HashSet&lt;Integer&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> num: nums)&#123;</span><br><span class="line">            <span class="keyword">if</span> (set.contains(num)) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            set.add(num);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr />]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>Hash Table</tag>
-        <tag>Amazon</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Leetcode218-theSkylineProblem</title>
     <url>/2019/10/23/Leetcode218-theSkylineProblem/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
@@ -4793,6 +4846,26 @@
       <tags>
         <tag>Microsoft</tag>
         <tag>Heap</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode217-containsDuplicate</title>
+    <url>/2019/10/14/Leetcode217-containsDuplicate/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given an array of integers, find if the array contains any duplicates.</p>
+<p>Your function should return true if any value appears at least twice in the array, and it should return false if every element is distinct.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [1,2,3,1]</span><br><span class="line">Output: true</span><br></pre></td></tr></table></figure><br><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [1,2,3,4]</span><br><span class="line">Output: false</span><br></pre></td></tr></table></figure><br><strong>Example 3:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [1,1,1,3,3,4,3,2,4,2]</span><br><span class="line">Output: true</span><br></pre></td></tr></table></figure></p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">containsDuplicate</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        HashSet&lt;Integer&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> num: nums)&#123;</span><br><span class="line">            <span class="keyword">if</span> (set.contains(num)) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            set.add(num);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr />]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Hash Table</tag>
+        <tag>Amazon</tag>
       </tags>
   </entry>
   <entry>
@@ -5712,26 +5785,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Leetcode325-maximumSizeSubarraySumEqualsK</title>
-    <url>/2019/11/26/Leetcode325-maximumSizeSubarraySumEqualsK/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
-
-<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
-<a id="more"></a>
-<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given an array nums and a target value k, find the maximum length of a subarray that sums to k. If there isn’t one, return 0 instead.</p>
-<p><strong>Note:</strong><br>The sum of the entire nums array is guaranteed to fit within the 32-bit signed integer range.</p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: nums &#x3D; [1, -1, 5, -2, 3], k &#x3D; 3</span><br><span class="line">Output: 4 </span><br><span class="line">Explanation: The subarray [1, -1, 5, -2] sums to 3 and is the longest.</span><br></pre></td></tr></table></figure><br><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: nums &#x3D; [-2, -1, 2, 1], k &#x3D; 1</span><br><span class="line">Output: 2 </span><br><span class="line">Explanation: The subarray [-1, 2] sums to 1 and is the longest.</span><br></pre></td></tr></table></figure><br><strong>Follow Up:</strong><br>Can you do it in O(n) time?</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxSubArrayLen</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        HashMap&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">            sum += nums[i];</span><br><span class="line">            <span class="keyword">if</span> (sum == k) res = i + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (map.containsKey(sum - k))</span><br><span class="line">                res = Math.max(res, i - map.get(sum - k));</span><br><span class="line">            <span class="keyword">if</span> (!map.containsKey(sum)) map.put(sum, i);    </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr />]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>Array</tag>
-        <tag>Hash Table</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Leetcode328-oddEvenLinkedList</title>
     <url>/2020/03/02/Leetcode328-oddEvenLinkedList/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
@@ -5753,6 +5806,26 @@
       <tags>
         <tag>Linked List</tag>
         <tag>Bloomberg</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode325-maximumSizeSubarraySumEqualsK</title>
+    <url>/2019/11/26/Leetcode325-maximumSizeSubarraySumEqualsK/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given an array nums and a target value k, find the maximum length of a subarray that sums to k. If there isn’t one, return 0 instead.</p>
+<p><strong>Note:</strong><br>The sum of the entire nums array is guaranteed to fit within the 32-bit signed integer range.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: nums &#x3D; [1, -1, 5, -2, 3], k &#x3D; 3</span><br><span class="line">Output: 4 </span><br><span class="line">Explanation: The subarray [1, -1, 5, -2] sums to 3 and is the longest.</span><br></pre></td></tr></table></figure><br><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: nums &#x3D; [-2, -1, 2, 1], k &#x3D; 1</span><br><span class="line">Output: 2 </span><br><span class="line">Explanation: The subarray [-1, 2] sums to 1 and is the longest.</span><br></pre></td></tr></table></figure><br><strong>Follow Up:</strong><br>Can you do it in O(n) time?</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxSubArrayLen</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        HashMap&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">            sum += nums[i];</span><br><span class="line">            <span class="keyword">if</span> (sum == k) res = i + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (map.containsKey(sum - k))</span><br><span class="line">                res = Math.max(res, i - map.get(sum - k));</span><br><span class="line">            <span class="keyword">if</span> (!map.containsKey(sum)) map.put(sum, i);    </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr />]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Array</tag>
+        <tag>Hash Table</tag>
       </tags>
   </entry>
   <entry>
@@ -5911,6 +5984,46 @@
         <tag>Amazon</tag>
         <tag>Microsoft</tag>
         <tag>Design</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode350-intersectionOfTwoArraysII</title>
+    <url>/2020/12/25/Leetcode350-intersectionOfTwoArraysII/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given two arrays, write a function to compute their intersection.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: nums1 &#x3D; [1,2,2,1], nums2 &#x3D; [2,2]</span><br><span class="line">Output: [2,2]</span><br></pre></td></tr></table></figure><br><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: nums1 &#x3D; [4,9,5], nums2 &#x3D; [9,4,9,8,4]</span><br><span class="line">Output: [4,9]</span><br></pre></td></tr></table></figure><br><strong>Note:</strong></p>
+<ul>
+<li>Each element in the result should appear as many times as it shows in both arrays.</li>
+<li><p>The result can be in any order.<br><strong>Follow up:</strong></p>
+</li>
+<li><p>What if the given array is already sorted? How would you optimize your algorithm?</p>
+</li>
+<li>What if nums1’s size is small compared to nums2’s size? Which algorithm is better?</li>
+<li>What if elements of nums2 are stored on disk, and the memory is limited such that you cannot load all elements into the memory at once?</li>
+</ul>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul>
+<li>Time Complexity: <script type="math/tex">O(N)</script></li>
+<li>Space Complexity: <script type="math/tex">O(N)</script></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] intersect(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span>[] nums2) &#123;</span><br><span class="line">        HashMap&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        List&lt;Integer&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> num: nums1)&#123;</span><br><span class="line">            map.put(num, map.getOrDefault(num, <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> num: nums2)&#123;</span><br><span class="line">            <span class="keyword">if</span> (map.containsKey(num) &amp;&amp; map.get(num) &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                map.put(num, map.get(num) - <span class="number">1</span>);</span><br><span class="line">                res.add(num);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span>[] ans = <span class="keyword">new</span> <span class="keyword">int</span>[res.size()];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; res.size(); i++)</span><br><span class="line">            ans[i] = res.get(i);</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Follow up</strong></p>
+<ol>
+<li>Two pointer iteration.</li>
+<li>Let’s say nums1 is K size. Then we should do binary search for every element in nums1. Each lookup is O(log N), and if we do K times, we have O(K log N). If K this is small enough, O(K log N) &lt; O(max(N, M)). Otherwise, we have to use the previous two pointers method.</li>
+<li>External Merge-Sort / MapReduced?</li>
+</ol>
+<hr />]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Two Pointers</tag>
+        <tag>Binary Search</tag>
+        <tag>TikTok</tag>
+        <tag>Hash Map</tag>
       </tags>
   </entry>
   <entry>
@@ -6230,7 +6343,7 @@
       </tags>
   </entry>
   <entry>
-    <title>Leetcode403-frogJump</title>
+    <title>Leetcode403-Frog Jump</title>
     <url>/2019/10/13/Leetcode403-frogJump/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
 
@@ -6277,27 +6390,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Leetcode409-longestPalindrome</title>
-    <url>/2019/10/16/Leetcode409-longestPalindrome/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
-
-<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
-<a id="more"></a>
-<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given a string which consists of lowercase or uppercase letters, find the length of the longest palindromes that can be built with those letters.</p>
-<p>This is case sensitive, for example “Aa” is not considered a palindrome here.</p>
-<p><strong>Note:</strong><br>Assume the length of given string will not exceed 1,010.</p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input:</span><br><span class="line">&quot;abccccdd&quot;</span><br><span class="line"></span><br><span class="line">Output:</span><br><span class="line">7</span><br><span class="line"></span><br><span class="line">Explanation:</span><br><span class="line">One longest palindrome that can be built is &quot;dccaccd&quot;, whose length is 7.</span><br></pre></td></tr></table></figure>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">longestPalindrome</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (s == <span class="keyword">null</span> || s.length() == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        HashSet&lt;Character&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">char</span> ch: s.toCharArray())&#123;</span><br><span class="line">            <span class="keyword">if</span> (set.contains(ch))&#123;</span><br><span class="line">                set.remove(ch);</span><br><span class="line">                res++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> set.add(ch);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (!set.isEmpty()) <span class="keyword">return</span> <span class="number">2</span>*res + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span>*res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr />]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>Hash Table</tag>
-        <tag>Amazon</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Leetcode410-splitArrayLargestSum</title>
     <url>/2019/10/29/Leetcode410-splitArrayLargestSum/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
@@ -6324,6 +6416,27 @@
       <tags>
         <tag>Google</tag>
         <tag>Binary Search</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode409-longestPalindrome</title>
+    <url>/2019/10/16/Leetcode409-longestPalindrome/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given a string which consists of lowercase or uppercase letters, find the length of the longest palindromes that can be built with those letters.</p>
+<p>This is case sensitive, for example “Aa” is not considered a palindrome here.</p>
+<p><strong>Note:</strong><br>Assume the length of given string will not exceed 1,010.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input:</span><br><span class="line">&quot;abccccdd&quot;</span><br><span class="line"></span><br><span class="line">Output:</span><br><span class="line">7</span><br><span class="line"></span><br><span class="line">Explanation:</span><br><span class="line">One longest palindrome that can be built is &quot;dccaccd&quot;, whose length is 7.</span><br></pre></td></tr></table></figure>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">longestPalindrome</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (s == <span class="keyword">null</span> || s.length() == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        HashSet&lt;Character&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">char</span> ch: s.toCharArray())&#123;</span><br><span class="line">            <span class="keyword">if</span> (set.contains(ch))&#123;</span><br><span class="line">                set.remove(ch);</span><br><span class="line">                res++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> set.add(ch);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (!set.isEmpty()) <span class="keyword">return</span> <span class="number">2</span>*res + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span>*res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr />]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Hash Table</tag>
+        <tag>Amazon</tag>
       </tags>
   </entry>
   <entry>
@@ -6378,7 +6491,7 @@
       </tags>
   </entry>
   <entry>
-    <title>Leetcode417-pacificAtlanticWaterFlow</title>
+    <title>Leetcode417-Pacific Atlantic Water Flow</title>
     <url>/2020/03/02/Leetcode417-pacificAtlanticWaterFlow/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
 
@@ -6803,7 +6916,7 @@
       </tags>
   </entry>
   <entry>
-    <title>Leetcode493-reversePairs</title>
+    <title>Leetcode493-Reverse Pairs</title>
     <url>/2020/12/24/Leetcode493-reversePairs/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
 
@@ -7719,33 +7832,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Leetcode727-minimumWindowSubsequence</title>
-    <url>/2020/03/16/Leetcode727-minimumWindowSubsequence/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
-
-<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
-<a id="more"></a>
-<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given strings S and T, find the minimum (contiguous) substring W of S, so that T is a subsequence of W.</p>
-<p>If there is no such window in S that covers all characters in T, return the empty string “”. If there are multiple such minimum-length windows, return the one with the left-most starting index.</p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: </span><br><span class="line">S &#x3D; &quot;abcdebdde&quot;, T &#x3D; &quot;bde&quot;</span><br><span class="line">Output: &quot;bcde&quot;</span><br><span class="line">Explanation: </span><br><span class="line">&quot;bcde&quot; is the answer because it occurs before &quot;bdde&quot; which has the same length.</span><br><span class="line">&quot;deb&quot; is not a smaller window because the elements of T in the window must occur in order.</span><br></pre></td></tr></table></figure>
-<p><strong>Note:</strong></p>
-<ul>
-<li>All the strings in the input will only contain lowercase letters.</li>
-<li>The length of S will be in the range [1, 20000].</li>
-<li>The length of T will be in the range [1, 100].</li>
-</ul>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">minWindow</span><span class="params">(String S, String T)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sidx = <span class="number">0</span>, tidx = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> resStart = <span class="number">0</span>, resEnd = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> end = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> resMin = Integer.MAX_VALUE;</span><br><span class="line">        <span class="keyword">while</span>(sidx &lt; S.length())&#123;</span><br><span class="line">            <span class="keyword">if</span> (S.charAt(sidx) == T.charAt(tidx))&#123;</span><br><span class="line">                <span class="keyword">if</span> (tidx == T.length() - <span class="number">1</span>)&#123;</span><br><span class="line">                    end = sidx + <span class="number">1</span>;</span><br><span class="line">                    tidx--;</span><br><span class="line">                    <span class="keyword">while</span>(tidx &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">                        sidx--;</span><br><span class="line">                        <span class="keyword">while</span> (S.charAt(sidx) != T.charAt(tidx)) </span><br><span class="line">                            sidx--;</span><br><span class="line">                        tidx--;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">if</span>(end - sidx &lt; resMin)&#123;</span><br><span class="line">                        resMin = end - sidx;</span><br><span class="line">                        resStart = sidx;</span><br><span class="line">                        resEnd = end;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                tidx++;                </span><br><span class="line">            &#125;</span><br><span class="line">            sidx++;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> S.substring(resStart, resEnd);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr />]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>Google</tag>
-        <tag>Sliding Window</tag>
-        <tag>DP</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Leetcode726-Number Of Atoms</title>
     <url>/2020/12/25/Leetcode726-numberOfAtoms/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
@@ -7779,6 +7865,33 @@
         <tag>String</tag>
         <tag>Recursion</tag>
         <tag>TikTok</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode727-minimumWindowSubsequence</title>
+    <url>/2020/03/16/Leetcode727-minimumWindowSubsequence/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given strings S and T, find the minimum (contiguous) substring W of S, so that T is a subsequence of W.</p>
+<p>If there is no such window in S that covers all characters in T, return the empty string “”. If there are multiple such minimum-length windows, return the one with the left-most starting index.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: </span><br><span class="line">S &#x3D; &quot;abcdebdde&quot;, T &#x3D; &quot;bde&quot;</span><br><span class="line">Output: &quot;bcde&quot;</span><br><span class="line">Explanation: </span><br><span class="line">&quot;bcde&quot; is the answer because it occurs before &quot;bdde&quot; which has the same length.</span><br><span class="line">&quot;deb&quot; is not a smaller window because the elements of T in the window must occur in order.</span><br></pre></td></tr></table></figure>
+<p><strong>Note:</strong></p>
+<ul>
+<li>All the strings in the input will only contain lowercase letters.</li>
+<li>The length of S will be in the range [1, 20000].</li>
+<li>The length of T will be in the range [1, 100].</li>
+</ul>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">minWindow</span><span class="params">(String S, String T)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sidx = <span class="number">0</span>, tidx = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> resStart = <span class="number">0</span>, resEnd = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> end = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> resMin = Integer.MAX_VALUE;</span><br><span class="line">        <span class="keyword">while</span>(sidx &lt; S.length())&#123;</span><br><span class="line">            <span class="keyword">if</span> (S.charAt(sidx) == T.charAt(tidx))&#123;</span><br><span class="line">                <span class="keyword">if</span> (tidx == T.length() - <span class="number">1</span>)&#123;</span><br><span class="line">                    end = sidx + <span class="number">1</span>;</span><br><span class="line">                    tidx--;</span><br><span class="line">                    <span class="keyword">while</span>(tidx &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">                        sidx--;</span><br><span class="line">                        <span class="keyword">while</span> (S.charAt(sidx) != T.charAt(tidx)) </span><br><span class="line">                            sidx--;</span><br><span class="line">                        tidx--;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">if</span>(end - sidx &lt; resMin)&#123;</span><br><span class="line">                        resMin = end - sidx;</span><br><span class="line">                        resStart = sidx;</span><br><span class="line">                        resEnd = end;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                tidx++;                </span><br><span class="line">            &#125;</span><br><span class="line">            sidx++;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> S.substring(resStart, resEnd);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr />]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Google</tag>
+        <tag>Sliding Window</tag>
+        <tag>DP</tag>
       </tags>
   </entry>
   <entry>
@@ -7893,6 +8006,31 @@
       </tags>
   </entry>
   <entry>
+    <title>Leetcode760-findAnagramMappings</title>
+    <url>/2020/03/16/Leetcode760-findAnagramMappings/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given two lists Aand B, and B is an anagram of A. B is an anagram of A means B is made by randomizing the order of the elements in A.</p>
+<p>We want to find an index mapping P, from A to B. A mapping P[i] = j means the ith element in A appears in B at index j.</p>
+<p>These lists A and B may contain duplicates. If there are multiple answers, output any of them.</p>
+<p>For example, given<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">A &#x3D; [12, 28, 46, 32, 50]</span><br><span class="line">B &#x3D; [50, 12, 32, 46, 28]</span><br></pre></td></tr></table></figure><br>We should return<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[1, 4, 3, 2, 0]</span><br></pre></td></tr></table></figure><br>as P[0] = 1 because the 0th element of A appears at B[1], and P[1] = 4 because the 1st element of A appears at B[4], and so on.</p>
+<p><strong>Note:</strong></p>
+<ol>
+<li>A, B have equal lengths in range [1, 100].</li>
+<li>A[i], B[i] are integers in range [0, 10^5].</li>
+</ol>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] anagramMappings(<span class="keyword">int</span>[] A, <span class="keyword">int</span>[] B) &#123;</span><br><span class="line">        <span class="keyword">if</span> (B == <span class="keyword">null</span> || A == <span class="keyword">null</span> || B.length == <span class="number">0</span> || A.length == <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">0</span>];</span><br><span class="line">        HashMap&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; B.length; i++)</span><br><span class="line">            map.put(B[i], i);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span>[] res = <span class="keyword">new</span> <span class="keyword">int</span>[A.length];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; A.length; i++)&#123;</span><br><span class="line">            res[i] = map.get(A[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr />]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Hash Table</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Leetcode763-partitionLabels</title>
     <url>/2019/10/07/Leetcode763-partitionLabels/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
@@ -7919,31 +8057,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Leetcode760-findAnagramMappings</title>
-    <url>/2020/03/16/Leetcode760-findAnagramMappings/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
-
-<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
-<a id="more"></a>
-<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given two lists Aand B, and B is an anagram of A. B is an anagram of A means B is made by randomizing the order of the elements in A.</p>
-<p>We want to find an index mapping P, from A to B. A mapping P[i] = j means the ith element in A appears in B at index j.</p>
-<p>These lists A and B may contain duplicates. If there are multiple answers, output any of them.</p>
-<p>For example, given<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">A &#x3D; [12, 28, 46, 32, 50]</span><br><span class="line">B &#x3D; [50, 12, 32, 46, 28]</span><br></pre></td></tr></table></figure><br>We should return<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[1, 4, 3, 2, 0]</span><br></pre></td></tr></table></figure><br>as P[0] = 1 because the 0th element of A appears at B[1], and P[1] = 4 because the 1st element of A appears at B[4], and so on.</p>
-<p><strong>Note:</strong></p>
-<ol>
-<li>A, B have equal lengths in range [1, 100].</li>
-<li>A[i], B[i] are integers in range [0, 10^5].</li>
-</ol>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] anagramMappings(<span class="keyword">int</span>[] A, <span class="keyword">int</span>[] B) &#123;</span><br><span class="line">        <span class="keyword">if</span> (B == <span class="keyword">null</span> || A == <span class="keyword">null</span> || B.length == <span class="number">0</span> || A.length == <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">0</span>];</span><br><span class="line">        HashMap&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; B.length; i++)</span><br><span class="line">            map.put(B[i], i);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span>[] res = <span class="keyword">new</span> <span class="keyword">int</span>[A.length];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; A.length; i++)&#123;</span><br><span class="line">            res[i] = map.get(A[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr />]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>Hash Table</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Leetcode772-basicCalculatorIII</title>
     <url>/2019/10/04/Leetcode772-basicCalculatorIII/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
@@ -7965,6 +8078,34 @@
         <tag>Stack</tag>
         <tag>Amazon</tag>
         <tag>String</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode777-Swap Adjacent In LR String</title>
+    <url>/2020/12/25/Leetcode777-swapAdjacentInLRString/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>In a string composed of ‘L’, ‘R’, and ‘X’ characters, like “RXXLRXRXL”, a move consists of either replacing one occurrence of “XL” with “LX”, or replacing one occurrence of “RX” with “XR”. Given the starting string start and the ending string end, return True if and only if there exists a sequence of moves to transform one string to the other.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: start &#x3D; &quot;RXXLRXRXL&quot;, end &#x3D; &quot;XRLXXRRLX&quot;</span><br><span class="line">Output: true</span><br><span class="line">Explanation: We can transform start to end following these steps:</span><br><span class="line">RXXLRXRXL -&gt;</span><br><span class="line">XRXLRXRXL -&gt;</span><br><span class="line">XRLXRXRXL -&gt;</span><br><span class="line">XRLXXRRXL -&gt;</span><br><span class="line">XRLXXRRLX</span><br></pre></td></tr></table></figure><br><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: start &#x3D; &quot;X&quot;, end &#x3D; &quot;L&quot;</span><br><span class="line">Output: false</span><br></pre></td></tr></table></figure><br><strong>Example 3:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: start &#x3D; &quot;LLR&quot;, end &#x3D; &quot;RRL&quot;</span><br><span class="line">Output: false</span><br></pre></td></tr></table></figure><br><strong>Example 4:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: start &#x3D; &quot;XL&quot;, end &#x3D; &quot;LX&quot;</span><br><span class="line">Output: true</span><br></pre></td></tr></table></figure><br><strong>Example 5:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: start &#x3D; &quot;XLLR&quot;, end &#x3D; &quot;LXLX&quot;</span><br><span class="line">Output: false</span><br></pre></td></tr></table></figure><br><strong>Constraints:</strong></p>
+<ul>
+<li>1 &lt;= start.length &lt;= 104</li>
+<li>start.length == end.length</li>
+<li>Both start and end will only consist of characters in ‘L’, ‘R’, and ‘X’.</li>
+</ul>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul>
+<li>Time Complexity: <script type="math/tex">O(N)</script></li>
+<li>Space Complexity: <script type="math/tex">O(N)</script></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">canTransform</span><span class="params">(String start, String end)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (start.length() != end.length()) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="comment">// if (!start.replace(&quot;X&quot;, &quot;&quot;).equals(end.replace(&quot;X&quot;, &quot;&quot;))) return false;</span></span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">char</span>[] startArr = start.toCharArray();</span><br><span class="line">        <span class="keyword">char</span>[] endArr = end.toCharArray();</span><br><span class="line">        <span class="comment">// while (i &lt; startArr.length &amp;&amp; j &lt; endArr.length)&#123;</span></span><br><span class="line">        <span class="keyword">while</span> (i &lt; startArr.length || j &lt; endArr.length)&#123;</span><br><span class="line">            <span class="keyword">while</span>(i &lt; startArr.length &amp;&amp; startArr[i] == <span class="string">&#x27;X&#x27;</span>) i++;</span><br><span class="line">            <span class="keyword">while</span>(j &lt; endArr.length &amp;&amp; endArr[j] == <span class="string">&#x27;X&#x27;</span>) j++;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (i == startArr.length &amp;&amp; j == endArr.length) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            <span class="keyword">if</span> (i == startArr.length || j == endArr.length) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (startArr[i] != endArr[j]) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            <span class="keyword">if</span> (startArr[i] == <span class="string">&#x27;L&#x27;</span> &amp;&amp; i &lt; j) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            <span class="keyword">if</span> (startArr[i] == <span class="string">&#x27;R&#x27;</span> &amp;&amp; i &gt; j) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            i++;</span><br><span class="line">            j++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// return true;</span></span><br><span class="line">        <span class="keyword">return</span> i == j;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr />]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Two Pointers</tag>
+        <tag>TikTok</tag>
       </tags>
   </entry>
   <entry>
@@ -8017,31 +8158,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Leetcode797-allPathsFromSourceToTarget</title>
-    <url>/2020/03/01/Leetcode797-allPathsFromSourceToTarget/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
-
-<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
-<a id="more"></a>
-<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given a directed, acyclic graph of N nodes.  Find all possible paths from node 0 to node N-1, and return them in any order.</p>
-<p>The graph is given as follows:  the nodes are 0, 1, …, graph.length - 1.  graph[i] is a list of all nodes j for which the edge (i, j) exists.</p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Example:</span><br><span class="line">Input: [[1,2], [3], [3], []] </span><br><span class="line">Output: [[0,1,3],[0,2,3]] </span><br><span class="line">Explanation: The graph looks like this:</span><br><span class="line">0---&gt;1</span><br><span class="line">|    |</span><br><span class="line">v    v</span><br><span class="line">2---&gt;3</span><br><span class="line">There are two paths: 0 -&gt; 1 -&gt; 3 and 0 -&gt; 2 -&gt; 3.</span><br></pre></td></tr></table></figure>
-<p><strong>Note:</strong></p>
-<ul>
-<li>The number of nodes in the graph will be in the range [2, 15].</li>
-<li>You can print different paths in any order, but you should keep the order of nodes inside one path.</li>
-</ul>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; allPathsSourceTarget(<span class="keyword">int</span>[][] graph) &#123;</span><br><span class="line">        List&lt;List&lt;Integer&gt;&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span> (graph == <span class="keyword">null</span> || graph.length == <span class="number">0</span>) <span class="keyword">return</span> res;</span><br><span class="line">        </span><br><span class="line">        helper(graph, res, <span class="keyword">new</span> ArrayList&lt;Integer&gt;(Arrays.asList(<span class="number">0</span>)), <span class="number">0</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">helper</span><span class="params">(<span class="keyword">int</span>[][] graph, List&lt;List&lt;Integer&gt;&gt; res, List&lt;Integer&gt; cur, <span class="keyword">int</span> pos)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (pos == graph.length - <span class="number">1</span>)&#123;</span><br><span class="line">            res.add(<span class="keyword">new</span> ArrayList&lt;Integer&gt;(cur));</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> to: graph[pos])&#123;</span><br><span class="line">            cur.add(to);</span><br><span class="line">            helper(graph, res, cur, to);</span><br><span class="line">            cur.remove(cur.size() - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr />]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>DFS</tag>
-        <tag>Bloomberg</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Leetcode794-validTicTacToeState</title>
     <url>/2019/10/21/Leetcode794-validTicTacToeState/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
@@ -8071,6 +8187,31 @@
         <tag>Microsoft</tag>
         <tag>Math</tag>
         <tag>Matrix</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode797-allPathsFromSourceToTarget</title>
+    <url>/2020/03/01/Leetcode797-allPathsFromSourceToTarget/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given a directed, acyclic graph of N nodes.  Find all possible paths from node 0 to node N-1, and return them in any order.</p>
+<p>The graph is given as follows:  the nodes are 0, 1, …, graph.length - 1.  graph[i] is a list of all nodes j for which the edge (i, j) exists.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Example:</span><br><span class="line">Input: [[1,2], [3], [3], []] </span><br><span class="line">Output: [[0,1,3],[0,2,3]] </span><br><span class="line">Explanation: The graph looks like this:</span><br><span class="line">0---&gt;1</span><br><span class="line">|    |</span><br><span class="line">v    v</span><br><span class="line">2---&gt;3</span><br><span class="line">There are two paths: 0 -&gt; 1 -&gt; 3 and 0 -&gt; 2 -&gt; 3.</span><br></pre></td></tr></table></figure>
+<p><strong>Note:</strong></p>
+<ul>
+<li>The number of nodes in the graph will be in the range [2, 15].</li>
+<li>You can print different paths in any order, but you should keep the order of nodes inside one path.</li>
+</ul>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; allPathsSourceTarget(<span class="keyword">int</span>[][] graph) &#123;</span><br><span class="line">        List&lt;List&lt;Integer&gt;&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span> (graph == <span class="keyword">null</span> || graph.length == <span class="number">0</span>) <span class="keyword">return</span> res;</span><br><span class="line">        </span><br><span class="line">        helper(graph, res, <span class="keyword">new</span> ArrayList&lt;Integer&gt;(Arrays.asList(<span class="number">0</span>)), <span class="number">0</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">helper</span><span class="params">(<span class="keyword">int</span>[][] graph, List&lt;List&lt;Integer&gt;&gt; res, List&lt;Integer&gt; cur, <span class="keyword">int</span> pos)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (pos == graph.length - <span class="number">1</span>)&#123;</span><br><span class="line">            res.add(<span class="keyword">new</span> ArrayList&lt;Integer&gt;(cur));</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> to: graph[pos])&#123;</span><br><span class="line">            cur.add(to);</span><br><span class="line">            helper(graph, res, cur, to);</span><br><span class="line">            cur.remove(cur.size() - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr />]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>DFS</tag>
+        <tag>Bloomberg</tag>
       </tags>
   </entry>
   <entry>
@@ -8163,36 +8304,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Leetcode819-mostCommonWord</title>
-    <url>/2019/10/07/Leetcode819-mostCommonWord/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
-
-<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
-<a id="more"></a>
-<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given a paragraph and a list of banned words, return the most frequent word that is not in the list of banned words.  It is guaranteed there is at least one word that isn’t banned, and that the answer is unique.</p>
-<p>Words in the list of banned words are given in lowercase, and free of punctuation.  Words in the paragraph are not case sensitive.  The answer is in lowercase.</p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: </span><br><span class="line">paragraph &#x3D; &quot;Bob hit a ball, the hit BALL flew far after it was hit.&quot;</span><br><span class="line">banned &#x3D; [&quot;hit&quot;]</span><br><span class="line">Output: &quot;ball&quot;</span><br><span class="line">Explanation: </span><br><span class="line">&quot;hit&quot; occurs 3 times, but it is a banned word.</span><br><span class="line">&quot;ball&quot; occurs twice (and no other word does), so it is the most frequent non-banned word in the paragraph. </span><br><span class="line">Note that words in the paragraph are not case sensitive,</span><br><span class="line">that punctuation is ignored (even if adjacent to words, such as &quot;ball,&quot;), </span><br><span class="line">and that &quot;hit&quot; isn&#39;t the answer even though it occurs more because it is banned.</span><br></pre></td></tr></table></figure>
-<p><strong>Note:</strong></p>
-<ul>
-<li>1 &lt;= paragraph.length &lt;= 1000.</li>
-<li>0 &lt;= banned.length &lt;= 100.</li>
-<li>1 &lt;= banned[i].length &lt;= 10.</li>
-<li>The answer is unique, and written in lowercase (even if its occurrences in paragraph may have uppercase symbols, and even if it is a proper noun.)</li>
-<li>paragraph only consists of letters, spaces, or the punctuation symbols !?’,;.</li>
-<li>There are no hyphens or hyphenated words.</li>
-<li>Words only consist of letters, never apostrophes or other punctuation symbols.</li>
-</ul>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">// public String mostCommonWord(String p, String[] banned) &#123;</span></span><br><span class="line">    <span class="comment">//     Set&lt;String&gt; ban = new HashSet&lt;&gt;(Arrays.asList(banned));</span></span><br><span class="line">    <span class="comment">//     Map&lt;String, Integer&gt; count = new HashMap&lt;&gt;();</span></span><br><span class="line">    <span class="comment">//     String[] words = p.replaceAll(&quot;\\W+&quot; , &quot; &quot;).toLowerCase().split(&quot;\\s+&quot;);</span></span><br><span class="line">    <span class="comment">//     for (String w : words) if (!ban.contains(w)) count.put(w, count.getOrDefault(w, 0) + 1);</span></span><br><span class="line">    <span class="comment">//     return Collections.max(count.entrySet(), Map.Entry.comparingByValue()).getKey();</span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">mostCommonWord</span><span class="params">(String paragraph, String[] banned)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (paragraph == <span class="keyword">null</span> || paragraph.length() == <span class="number">0</span>) <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        </span><br><span class="line">        HashSet&lt;String&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (String st: banned) set.add(st);</span><br><span class="line">        </span><br><span class="line">        HashMap&lt;String, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        String p = <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">char</span> c : paragraph.toCharArray())&#123;</span><br><span class="line">            <span class="keyword">if</span> (Character.isLowerCase(c) || Character.isUpperCase(c))&#123;</span><br><span class="line">                p += c;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (p.length() &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                p = p.toLowerCase();</span><br><span class="line">                map.put(p, map.getOrDefault(p, <span class="number">0</span>)+<span class="number">1</span>);    </span><br><span class="line">                p = <span class="string">&quot;&quot;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (p.length()&gt;<span class="number">0</span>)&#123;</span><br><span class="line">            p = p.toLowerCase();</span><br><span class="line">            map.put(p, map.getOrDefault(p, <span class="number">0</span>)+<span class="number">1</span>);    </span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> max = -<span class="number">1</span>;</span><br><span class="line">        String res = <span class="string">&quot;&quot;</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (String s: map.keySet())&#123;</span><br><span class="line">            <span class="keyword">if</span> (max &lt; map.get(s) &amp;&amp; !set.contains(s))&#123;</span><br><span class="line">                max = map.get(s);</span><br><span class="line">                res = s;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr />]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>Hash Table</tag>
-        <tag>String</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Leetcode843-guessTheWord</title>
     <url>/2020/04/07/Leetcode843-guessTheWord/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
@@ -8233,6 +8344,36 @@
         <tag>Google</tag>
         <tag>Minimax</tag>
         <tag>Random</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode819-mostCommonWord</title>
+    <url>/2019/10/07/Leetcode819-mostCommonWord/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given a paragraph and a list of banned words, return the most frequent word that is not in the list of banned words.  It is guaranteed there is at least one word that isn’t banned, and that the answer is unique.</p>
+<p>Words in the list of banned words are given in lowercase, and free of punctuation.  Words in the paragraph are not case sensitive.  The answer is in lowercase.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: </span><br><span class="line">paragraph &#x3D; &quot;Bob hit a ball, the hit BALL flew far after it was hit.&quot;</span><br><span class="line">banned &#x3D; [&quot;hit&quot;]</span><br><span class="line">Output: &quot;ball&quot;</span><br><span class="line">Explanation: </span><br><span class="line">&quot;hit&quot; occurs 3 times, but it is a banned word.</span><br><span class="line">&quot;ball&quot; occurs twice (and no other word does), so it is the most frequent non-banned word in the paragraph. </span><br><span class="line">Note that words in the paragraph are not case sensitive,</span><br><span class="line">that punctuation is ignored (even if adjacent to words, such as &quot;ball,&quot;), </span><br><span class="line">and that &quot;hit&quot; isn&#39;t the answer even though it occurs more because it is banned.</span><br></pre></td></tr></table></figure>
+<p><strong>Note:</strong></p>
+<ul>
+<li>1 &lt;= paragraph.length &lt;= 1000.</li>
+<li>0 &lt;= banned.length &lt;= 100.</li>
+<li>1 &lt;= banned[i].length &lt;= 10.</li>
+<li>The answer is unique, and written in lowercase (even if its occurrences in paragraph may have uppercase symbols, and even if it is a proper noun.)</li>
+<li>paragraph only consists of letters, spaces, or the punctuation symbols !?’,;.</li>
+<li>There are no hyphens or hyphenated words.</li>
+<li>Words only consist of letters, never apostrophes or other punctuation symbols.</li>
+</ul>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">// public String mostCommonWord(String p, String[] banned) &#123;</span></span><br><span class="line">    <span class="comment">//     Set&lt;String&gt; ban = new HashSet&lt;&gt;(Arrays.asList(banned));</span></span><br><span class="line">    <span class="comment">//     Map&lt;String, Integer&gt; count = new HashMap&lt;&gt;();</span></span><br><span class="line">    <span class="comment">//     String[] words = p.replaceAll(&quot;\\W+&quot; , &quot; &quot;).toLowerCase().split(&quot;\\s+&quot;);</span></span><br><span class="line">    <span class="comment">//     for (String w : words) if (!ban.contains(w)) count.put(w, count.getOrDefault(w, 0) + 1);</span></span><br><span class="line">    <span class="comment">//     return Collections.max(count.entrySet(), Map.Entry.comparingByValue()).getKey();</span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">mostCommonWord</span><span class="params">(String paragraph, String[] banned)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (paragraph == <span class="keyword">null</span> || paragraph.length() == <span class="number">0</span>) <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        </span><br><span class="line">        HashSet&lt;String&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (String st: banned) set.add(st);</span><br><span class="line">        </span><br><span class="line">        HashMap&lt;String, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        String p = <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">char</span> c : paragraph.toCharArray())&#123;</span><br><span class="line">            <span class="keyword">if</span> (Character.isLowerCase(c) || Character.isUpperCase(c))&#123;</span><br><span class="line">                p += c;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (p.length() &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                p = p.toLowerCase();</span><br><span class="line">                map.put(p, map.getOrDefault(p, <span class="number">0</span>)+<span class="number">1</span>);    </span><br><span class="line">                p = <span class="string">&quot;&quot;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (p.length()&gt;<span class="number">0</span>)&#123;</span><br><span class="line">            p = p.toLowerCase();</span><br><span class="line">            map.put(p, map.getOrDefault(p, <span class="number">0</span>)+<span class="number">1</span>);    </span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> max = -<span class="number">1</span>;</span><br><span class="line">        String res = <span class="string">&quot;&quot;</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (String s: map.keySet())&#123;</span><br><span class="line">            <span class="keyword">if</span> (max &lt; map.get(s) &amp;&amp; !set.contains(s))&#123;</span><br><span class="line">                max = map.get(s);</span><br><span class="line">                res = s;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr />]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Hash Table</tag>
+        <tag>String</tag>
       </tags>
   </entry>
   <entry>
@@ -9137,6 +9278,33 @@
       <tags>
         <tag>Tree</tag>
         <tag>Trie</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>leetcode349-Intersection Of Two Arrays</title>
+    <url>/2020/12/27/leetcode349-intersectionOfTwoArrays/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given two arrays, write a function to compute their intersection.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: nums1 &#x3D; [1,2,2,1], nums2 &#x3D; [2,2]</span><br><span class="line">Output: [2]</span><br></pre></td></tr></table></figure><br><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: nums1 &#x3D; [4,9,5], nums2 &#x3D; [9,4,9,8,4]</span><br><span class="line">Output: [9,4]</span><br></pre></td></tr></table></figure><br><strong>Note:</strong></p>
+<ul>
+<li>Each element in the result must be unique.</li>
+<li>The result can be in any order.</li>
+</ul>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul>
+<li>Time Complexity: <script type="math/tex">O(N)</script></li>
+<li>Space Complexity: <script type="math/tex">O(N)</script></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] intersection(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span>[] nums2) &#123;</span><br><span class="line">        <span class="keyword">if</span> (nums1.length == <span class="number">0</span> || nums2.length == <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">0</span>];</span><br><span class="line">        HashSet&lt;Integer&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> num: nums1)&#123;</span><br><span class="line">            set.add(num);</span><br><span class="line">        &#125;</span><br><span class="line">        List&lt;Integer&gt; tmp = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> num: nums2)&#123;</span><br><span class="line">            <span class="keyword">if</span> (set.contains(num))&#123;</span><br><span class="line">                tmp.add(num);</span><br><span class="line">                set.remove(num);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span>[] res = <span class="keyword">new</span> <span class="keyword">int</span>[tmp.size()];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; tmp.size(); i++)&#123;</span><br><span class="line">            res[i] = tmp.get(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr />]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Hash Table</tag>
+        <tag>TikTok</tag>
       </tags>
   </entry>
   <entry>
