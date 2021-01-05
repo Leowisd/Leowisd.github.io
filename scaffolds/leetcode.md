@@ -17,8 +17,6 @@ image: #只在首页显示
 ## Description
 
 ## Example
-```
-```
 
 ## Solution
 
