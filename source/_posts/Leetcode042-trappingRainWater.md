@@ -1,7 +1,7 @@
 ---
 title: Leetcode042-trappingRainWater
 categories: leetcode
-tags: [Two Pointers, Amazon, Microsoft, Google, Bloomberg]
+tags: [Two Pointers, Amazon, Microsoft, Google, Bloomberg, TikTok]
 description: Solution Report of LeetCode Acceptted
 mathjax: true
 date: 2019-10-08 17:21:43

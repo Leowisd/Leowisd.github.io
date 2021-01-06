@@ -1,7 +1,7 @@
 ---
 title: Leetcode146-LRUcache
 categories: leetcode
-tags: [Design, Amazon, Microsoft, Bloomberg]
+tags: [Design, Amazon, Microsoft, Bloomberg, TikTok]
 description: Solution Report of LeetCode Acceptted
 mathjax: true
 date: 2019-10-06 17:06:50

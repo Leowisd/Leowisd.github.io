@@ -1,7 +1,7 @@
 ---
 title: Leetcode221-maximalSquare
 categories: leetcode
-tags: [DP, Google, Bloomberg]
+tags: [DP, Google, Bloomberg, TikTok]
 description: Solution Report of LeetCode Acceptted
 mathjax: true
 date: 2019-10-28 11:35:54

@@ -1,7 +1,7 @@
 ---
 title: Leetcode295-findMedianFromDataStream
 categories: leetcode
-tags: [Design, Heap, Amazon, Bloomberg, Google]
+tags: [Design, Heap, Amazon, Bloomberg, Google, TikTok]
 description: Solution Report of LeetCode Acceptted
 mathjax: true
 date: 2019-10-06 09:36:20

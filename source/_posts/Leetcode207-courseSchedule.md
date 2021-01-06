@@ -1,7 +1,7 @@
 ---
 title: Leetcode207-courseSchedule
 categories: leetcode
-tags: [Topological Sort, BFS, Amazon]
+tags: [Topological Sort, BFS, Amazon, TikTok]
 description: Solution Report of LeetCode Acceptted
 mathjax: true
 date: 2019-10-05 10:32:24

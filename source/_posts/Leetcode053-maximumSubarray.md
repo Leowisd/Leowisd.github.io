@@ -1,7 +1,7 @@
 ---
 title: Leetcode053-maximumSubarray
 categories: leetcode
-tags: [Array, Divide and Conquer, DP, Amazon, Microsoft, Bloomberg]
+tags: [Array, Divide and Conquer, DP, Amazon, Microsoft, Bloomberg, TikTok]
 description: Solution Report of LeetCode Acceptted
 mathjax: true
 date: 2019-10-06 20:16:21

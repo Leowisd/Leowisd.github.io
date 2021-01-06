@@ -1,7 +1,7 @@
 ---
 title: Leetcode202-happyNumber
 categories: leetcode
-tags: [Hash Table, Math, Bloomberg]
+tags: [Hash Table, Math, Bloomberg, TikTok]
 description: Solution Report of LeetCode Acceptted
 mathjax: true
 date: 2020-02-20 16:37:55

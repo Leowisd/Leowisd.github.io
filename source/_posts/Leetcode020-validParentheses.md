@@ -1,7 +1,7 @@
 ---
 title: Leetcode020-validParentheses
 categories: leetcode
-tags: [String, Stack, Amazon, Bloomberg]
+tags: [String, Stack, Amazon, Bloomberg, TikTok]
 description: Solution Report of LeetCode Acceptted
 mathjax: true
 date: 2019-10-11 12:15:02

@@ -1,7 +1,7 @@
 ---
 title: Leetcode416-partitionEqualSubsetSum
 categories: leetcode
-tags: [DP]
+tags: [DP, TikTok]
 description: Solution Report of LeetCode Acceptted
 mathjax: true
 date: 2020-02-20 16:23:54

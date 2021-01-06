@@ -1,7 +1,7 @@
 ---
 title: Leetcode611-validTriangleNumber
 categories: leetcode
-tags: [Array, Two Pointers, Bloomberg]
+tags: [Array, Two Pointers, Bloomberg, TikTok]
 description: Solution Report of LeetCode Acceptted
 mathjax: true
 date: 2020-03-02 15:17:23

@@ -1,7 +1,7 @@
 ---
 title: Leetcode076-minimumWindowSubstring
 categories: leetcode
-tags: [Hash Table, Two Pointers, String, Sliding Window, Bloomberg, Google]
+tags: [Hash Table, Two Pointers, String, Sliding Window, Bloomberg, Google, TikTok]
 description: Solution Report of LeetCode Acceptted
 mathjax: true
 date: 2020-03-02 21:52:51

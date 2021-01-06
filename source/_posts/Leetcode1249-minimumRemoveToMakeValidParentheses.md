@@ -1,7 +1,7 @@
 ---
 title: Leetcode1249-minimumRemoveToMakeValidParentheses
 categories: leetcode
-tags: [Stack, String, Bloomberg]
+tags: [Stack, String, Bloomberg, TikTok]
 description: Solution Report of LeetCode Acceptted
 mathjax: true
 date: 2020-03-02 15:13:41

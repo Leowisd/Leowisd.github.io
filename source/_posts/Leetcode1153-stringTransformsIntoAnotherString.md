@@ -1,7 +1,7 @@
 ---
 title: Leetcode1153-stringTransformsIntoAnotherString
 categories: leetcode
-tags: [Hash Table, Google]
+tags: [Hash Table, Google, TikTok]
 description: Solution Report of LeetCode Acceptted
 mathjax: true
 date: 2020-04-07 15:51:35

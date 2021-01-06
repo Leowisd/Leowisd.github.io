@@ -1,7 +1,7 @@
 ---
 title: Leetcode322-coinChange
 categories: leetcode
-tags: [DP, Bloomberg]
+tags: [DP, Bloomberg, TikTok]
 description: Solution Report of LeetCode Acceptted
 mathjax: true
 date: 2020-02-20 16:31:28

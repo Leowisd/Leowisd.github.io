@@ -1,7 +1,7 @@
 ---
 title: Leetcode200-numberOfIslands
 categories: leetcode
-tags: [DFS, BFS, Amazon, Microsoft, Google, Bloomberg]
+tags: [DFS, BFS, Amazon, Microsoft, Google, Bloomberg, TikTok]
 description: Solution Report of LeetCode Acceptted
 mathjax: true
 date: 2019-10-07 18:45:17

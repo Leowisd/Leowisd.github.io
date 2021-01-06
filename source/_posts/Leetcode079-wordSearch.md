@@ -1,7 +1,7 @@
 ---
 title: Leetcode079-wordSearch
 categories: leetcode
-tags: [DFS, Amazon, Bloomberg]
+tags: [DFS, Amazon, Bloomberg, TikTok]
 description: Solution Report of LeetCode Acceptted
 mathjax: true
 date: 2019-10-13 11:22:01

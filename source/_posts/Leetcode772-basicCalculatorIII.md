@@ -1,7 +1,7 @@
 ---
 title: Leetcode772-basicCalculatorIII
 categories: leetcode
-tags: [Stack, String, Amazon]
+tags: [Stack, String, Amazon, TikTok]
 description: Solution Report of LeetCode Acceptted
 mathjax: true
 date: 2019-10-04 18:12:50

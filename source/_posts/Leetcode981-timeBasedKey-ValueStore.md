@@ -1,7 +1,7 @@
 ---
 title: Leetcode981-timeBasedKey-ValueStore
 categories: leetcode
-tags: [Hash Table, Divide and Conquer, Google]
+tags: [Hash Table, Divide and Conquer, Google, TikTok]
 description: Solution Report of LeetCode Acceptted
 mathjax: true
 date: 2019-10-28 11:33:13

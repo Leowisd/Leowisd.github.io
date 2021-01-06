@@ -1,7 +1,7 @@
 ---
 title: Leetcode084-langestRectangleInHistogram
 categories: leetcode
-tags: [Array, Stack, Bloomberg]
+tags: [Array, Stack, Bloomberg, TikTok]
 description: Solution Report of LeetCode Acceptted
 mathjax: true
 date: 2020-02-24 21:52:01

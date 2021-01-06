@@ -1,7 +1,7 @@
 ---
 title: Leetcode033-searchInRotatedSortedArray
 categories: leetcode
-tags: [Divide and Conquer, Amazon, Microsoft, Bloomberg]
+tags: [Divide and Conquer, Amazon, Microsoft, Bloomberg, TikTok]
 description: Solution Report of LeetCode Acceptted
 mathjax: true
 date: 2019-10-12 11:01:56

@@ -1,7 +1,7 @@
 ---
 title: Leetcode286-wallsAndGates
 categories: leetcode
-tags: [BFS, Bloomberg]
+tags: [BFS, Bloomberg, TikTok]
 description: Solution Report of LeetCode Acceptted
 mathjax: true
 date: 2020-03-02 20:31:12

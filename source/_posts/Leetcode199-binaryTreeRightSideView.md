@@ -1,7 +1,7 @@
 ---
 title: Leetcode199-binaryTreeRightSideView
 categories: leetcode
-tags: [Tree, DFS, BFS, Bloomberg]
+tags: [Tree, DFS, BFS, Bloomberg, TikTok]
 description: Solution Report of LeetCode Acceptted
 mathjax: true
 date: 2020-03-02 15:21:21

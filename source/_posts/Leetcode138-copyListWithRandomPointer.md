@@ -1,7 +1,7 @@
 ---
 title: Leetcode138-copyListWithRandomPointer
 categories: leetcode
-tags: [LinkedList, Amazon, Microsoft, Bloomberg]
+tags: [LinkedList, Amazon, Microsoft, Bloomberg, TikTok]
 description: Solution Report of LeetCode Acceptted
 mathjax: true
 date: 2019-09-23 11:38:39

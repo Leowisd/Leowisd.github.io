@@ -1,7 +1,7 @@
 ---
 title: Leetcode410-splitArrayLargestSum
 categories: leetcode
-tags: [Binary Search, Google]
+tags: [Binary Search, Google, TikTok]
 description: Solution Report of LeetCode Acceptted
 mathjax: true
 date: 2019-10-29 11:07:20

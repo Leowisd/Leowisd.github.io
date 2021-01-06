@@ -1,7 +1,7 @@
 ---
 title: Leetcode023-mergeKSortedLists
 categories: leetcode
-tags: [Heap, Divide and Conquer, Amazon, Bloomberg]
+tags: [Heap, Divide and Conquer, Amazon, Bloomberg, TikTok]
 description: Solution Report of LeetCode Acceptted
 mathjax: true
 date: 2019-10-07 15:44:56

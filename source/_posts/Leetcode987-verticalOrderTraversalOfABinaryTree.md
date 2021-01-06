@@ -1,7 +1,7 @@
 ---
 title: Leetcode987-verticalOrderTraversalOfABinaryTree
 categories: leetcode
-tags: [Hash Map, Tree, Bloomberg]
+tags: [Hash Map, Tree, Bloomberg, TikTok]
 description: Solution Report of LeetCode Acceptted
 mathjax: true
 date: 2020-03-02 15:28:30

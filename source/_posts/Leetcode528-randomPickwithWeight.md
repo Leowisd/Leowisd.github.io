@@ -1,7 +1,7 @@
 ---
 title: Leetcode528-randomPickwithWeight
 categories: leetcode
-tags: [Binary Search, Random, Google]
+tags: [Binary Search, Random, Google, TikTok]
 description: Solution Report of LeetCode Acceptted
 mathjax: true
 date: 2019-11-04 14:17:18

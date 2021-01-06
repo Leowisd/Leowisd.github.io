@@ -1,7 +1,7 @@
 ---
 title: Leetcode105-constructBinaryTreeFromPreorderAndInorderTraversal
 categories: leetcode
-tags: [Tree, DFS, Bloomberg]
+tags: [Tree, DFS, Bloomberg, TikTok]
 description: Solution Report of LeetCode Acceptted
 mathjax: true
 date: 2020-02-08 23:40:22

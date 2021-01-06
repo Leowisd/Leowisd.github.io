@@ -1,7 +1,7 @@
 ---
 title: Leetcode239-slidingWindowMaximum
 categories: leetcode
-tags: [Heap, Deque, Amazon]
+tags: [Heap, Deque, Amazon, TikTok]
 description: Solution Report of LeetCode Acceptted
 mathjax: true
 date: 2019-10-08 11:32:45

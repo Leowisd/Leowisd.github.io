@@ -1,6 +1,6 @@
 ---
 title: Leetcode004-findMedianSortedArrays
-tags: [Binary Search, Google, Bloomberg]
+tags: [Binary Search, Google, Bloomberg, TikTok]
 mathjax: true
 date: 2019-01-22 09:36:28
 categories: leetcode

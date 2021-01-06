@@ -1,7 +1,7 @@
 ---
 title: Leetcode054-spiralMatrix
 categories: leetcode
-tags: [Array, Microsoft]
+tags: [Array, Microsoft, TikTok]
 description: Solution Report of LeetCode Acceptted
 mathjax: true
 date: 2019-10-21 14:23:22

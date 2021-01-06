@@ -1,7 +1,7 @@
 ---
 title: Leetcode066-plusOne
 categories: leetcode
-tags: [Array, Math]
+tags: [Array, Math, TikTok]
 description: Solution Report of LeetCode Acceptted
 mathjax: true
 date: 2019-09-12 21:15:12

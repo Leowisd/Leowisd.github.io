@@ -1,7 +1,7 @@
 ---
 title: Leetcode046-permutations
 categories: leetcode
-tags: [Backtracking, Bloomberg]
+tags: [Backtracking, Bloomberg, TikTok]
 description: Solution Report of LeetCode Acceptted
 mathjax: true
 date: 2020-03-02 21:46:06

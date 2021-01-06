@@ -1,7 +1,7 @@
 ---
 title: Leetcode543-diameterOfBinaryTree
 categories: leetcode
-tags: [Tree, Bloomberg]
+tags: [Tree, Bloomberg, TikTok]
 description: Solution Report of LeetCode Acceptted
 mathjax: true
 date: 2020-03-02 22:44:39

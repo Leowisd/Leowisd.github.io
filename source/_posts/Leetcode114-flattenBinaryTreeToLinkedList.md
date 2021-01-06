@@ -1,7 +1,7 @@
 ---
 title: Leetcode114-flattenBinaryTreeToLinkedList
 categories: leetcode
-tags: [DFS, Tree, Stack, Bloomberg]
+tags: [DFS, Tree, Stack, Bloomberg, TikTok]
 description: Solution Report of LeetCode Acceptted
 mathjax: true
 date: 2020-02-10 21:41:56

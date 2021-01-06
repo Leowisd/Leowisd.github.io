@@ -1,7 +1,7 @@
 ---
 title: Leetcode394-decodeString
 categories: leetcode
-tags: [Stack, Recursion, Bloomberg]
+tags: [Stack, Recursion, Bloomberg, TikTok]
 description: Solution Report of LeetCode Acceptted
 mathjax: true
 date: 2020-03-01 23:49:27

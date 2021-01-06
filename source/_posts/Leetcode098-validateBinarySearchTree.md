@@ -1,7 +1,7 @@
 ---
 title: Leetcode098-validateBinarySearchTree
 categories: leetcode
-tags: [Tree, Amazon, Microsoft, Bloomberg]
+tags: [Tree, Amazon, Microsoft, Bloomberg, TikTok]
 description: Solution Report of LeetCode Acceptted
 mathjax: true
 date: 2019-10-13 22:49:56

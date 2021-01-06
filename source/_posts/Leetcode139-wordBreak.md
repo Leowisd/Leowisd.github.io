@@ -1,7 +1,7 @@
 ---
 title: Leetcode139-wordBreak
 categories: leetcode
-tags: [DP, Amazon, Bloomberg]
+tags: [DP, Amazon, Bloomberg, TikTok]
 description: Solution Report of LeetCode Acceptted
 mathjax: true
 date: 2019-10-08 21:04:59
