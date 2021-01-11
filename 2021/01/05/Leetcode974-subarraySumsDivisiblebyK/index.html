@@ -29,7 +29,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://yfygoing.com/images/LeetCode.jpg">
 <meta property="article:published_time" content="2021-01-06T00:21:27.000Z">
-<meta property="article:modified_time" content="2021-01-06T00:25:13.077Z">
+<meta property="article:modified_time" content="2021-01-11T09:06:05.616Z">
 <meta property="article:author" content="YF">
 <meta property="article:tag" content="Array">
 <meta property="article:tag" content="Hash Table">
@@ -234,10 +234,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-01-05 18:21:27 / Modified: 18:25:13" itemprop="dateCreated datePublished" datetime="2021-01-05T18:21:27-06:00">2021-01-05</time>
+              <time title="Created: 2021-01-05 18:21:27" itemprop="dateCreated datePublished" datetime="2021-01-05T18:21:27-06:00">2021-01-05</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-01-11 03:06:05" itemprop="dateModified" datetime="2021-01-11T03:06:05-06:00">2021-01-11</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -292,7 +298,8 @@
 <li>-10000 &lt;= A[i] &lt;= 10000</li>
 <li>2 &lt;= K &lt;= 10000</li>
 </ul>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h3 id="Solution-1-Prefix-Hash-Table"><a href="#Solution-1-Prefix-Hash-Table" class="headerlink" title="Solution 1: Prefix + Hash Table"></a>Solution 1: Prefix + Hash Table</h3><ul>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">If a subarray is divisible by K, it has to be a multiple of K</span><br><span class="line"></span><br><span class="line">a-b&#x3D;n*k, a &#x3D; running total, b &#x3D; any previous subarray sum, same as original prefix sum problems.</span><br><span class="line"></span><br><span class="line">We want to solve for b, so using basic algebra, b&#x3D;a-n*k</span><br><span class="line"></span><br><span class="line">We don&#39;t know what n is, so we can get rid of n by modding every element by k</span><br><span class="line">(b%k) &#x3D; (a%k) - (n*k)%k</span><br><span class="line"></span><br><span class="line">since n*k is a multiple of k and k goes into it evenly, the result of the (n *k)%k will be 0</span><br><span class="line"></span><br><span class="line">therefore</span><br><span class="line">b%k &#x3D; a%k</span><br><span class="line"></span><br><span class="line">is the same as the formula we defined earlier, a-b&#x3D;n*k</span><br><span class="line"></span><br><span class="line">where b &#x3D; running total, a &#x3D; any previous subarray sum</span><br><span class="line"></span><br><span class="line">So we just have to see if running total mod k is equal to any previous running total mod k</span><br></pre></td></tr></table></figure>
+<h3 id="Solution-1-Prefix-Hash-Table"><a href="#Solution-1-Prefix-Hash-Table" class="headerlink" title="Solution 1: Prefix + Hash Table"></a>Solution 1: Prefix + Hash Table</h3><ul>
 <li>Time Complexity: <script type="math/tex">O(N)</script>, N = A.length</li>
 <li>Space Complexity: <script type="math/tex">O(K)</script></li>
 </ul>
@@ -413,7 +420,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">143</span>
+        <span class="site-state-item-count">144</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
