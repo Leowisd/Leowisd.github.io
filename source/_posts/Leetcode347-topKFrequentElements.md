@@ -1,7 +1,7 @@
 ---
 title: Leetcode347-topKFrequentElements
 categories: leetcode
-tags: [Hash Table, Heap, Amazon, TikTok]
+tags: [Hash Table, Heap, Quick Select, Amazon, TikTok]
 description: Solution Report of LeetCode Acceptted
 mathjax: true
 date: 2019-09-18 22:34:41
@@ -35,6 +35,13 @@ Output: [1]
 * Your algorithm's time complexity must be better than O(n log n), where n is the array's size.
 
 ## Solution
+
+### Solution 1: Heap
+
+**Time Complexity:** $$O(Nlogk)$$
+
+**Space Complexity:** $$O(N)$$
+
 ```java
 class Solution {
     public List<Integer> topKFrequent(int[] nums, int k) {
@@ -75,6 +82,58 @@ class Solution {
         }
     }
 
+}
+```
+
+### Solution 2: Quick Select
+
+**Time Complexity:** $$O(N)$$, worest case $$O(N)$$
+
+**Space Complexity:** $$O(N)$$
+```java
+class Solution {
+    Map<Integer, Integer> map = new HashMap<>();
+    public int[] topKFrequent(int[] nums, int k) {
+        for (int num: nums)
+            map.put(num, map.getOrDefault(num,0) + 1);
+        
+        nums = map.keySet().stream().mapToInt(i->i).toArray();
+        int start = 0, end = nums.length - 1;
+        while(start < end) {
+            int partitionIndex = partition(nums, start, end);
+            if(partitionIndex < k - 1) 
+                start = partitionIndex + 1;
+            else if(partitionIndex > k - 1)
+                end = partitionIndex - 1;
+            else 
+                break;
+        }
+        
+       return Arrays.copyOfRange(nums,0,k);
+    }
+
+    // Randomized Quick Partition....
+    private int partition(int[] nums, int start, int end) {
+        int partitionIndex = start;
+        int randomIndex = ThreadLocalRandom.current().nextInt(start, end);
+        swap(nums, start , randomIndex);
+        int pivot = map.get(nums[end]);
+        
+        for(int i = start; i < end; i++) {
+            int cur = map.get(nums[i]);
+            if(cur >= pivot) 
+                swap(nums, i, partitionIndex++);
+        }
+        
+        swap(nums, partitionIndex, end);
+        return partitionIndex;
+    }
+
+    private void swap(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
 }
 ```
 

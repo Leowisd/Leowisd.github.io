@@ -80,7 +80,7 @@ class Solution {
         dp[0][0] = 1;
         for (int i = 1; i <= d; i++){
             for (int j = 1; j <= target; j++){
-                if (j > i * target){
+                if (j > i * f){
                     break;
                 }
                 for (int k = 1; k <= f && k <= j; k++){
