@@ -10586,4 +10586,23 @@
         <tag>Minimax</tag>
       </tags>
   </entry>
+  <entry>
+    <title>React Router with MobX Doesn&#39;t Re-render Using History.push()</title>
+    <url>/2021/02/28/ReactRouterNotRerender/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/react-mobx.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Issue-Description"><a href="#Issue-Description" class="headerlink" title="Issue Description"></a>Issue Description</h2><p>Issue happened with react-router-dom and MobX. Tryed to use <code>history.push()</code> for navigating after an action conducted. The problem is only updating the urls but components are not re-rendering.</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>Used <code>&lt;BrowserRouter&gt;</code> as router component in application. Followed by <a href="https://reactrouter.com/web/api/Router">offical document</a>, need to replace it with <code>&lt;Router history=&#123;history&#125;&gt;</code> because MobX was used to manage state, where <code>history</code> is return by <code>syncHistoryWithStore()</code> from <code>mobx-react-router</code>.</p>
+<hr />]]></content>
+      <categories>
+        <category>Issues</category>
+      </categories>
+      <tags>
+        <tag>React</tag>
+        <tag>React-Router</tag>
+        <tag>MobX</tag>
+      </tags>
+  </entry>
 </search>
