@@ -4323,7 +4323,7 @@
       </tags>
   </entry>
   <entry>
-    <title>Leetcode131-palindromePartitioning</title>
+    <title>Leetcode131-Palindrome Partitioning</title>
     <url>/2020/02/08/Leetcode131-palindromePartitioning/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
 
@@ -4339,6 +4339,7 @@
       </categories>
       <tags>
         <tag>Backtracking</tag>
+        <tag>TuSimple</tag>
       </tags>
   </entry>
   <entry>
@@ -4401,6 +4402,7 @@
       <tags>
         <tag>BFS</tag>
         <tag>TikTok</tag>
+        <tag>TuSimple</tag>
       </tags>
   </entry>
   <entry>
@@ -5672,6 +5674,7 @@
         <tag>Microsoft</tag>
         <tag>Bloomberg</tag>
         <tag>Tree</tag>
+        <tag>TuSimple</tag>
       </tags>
   </entry>
   <entry>
@@ -5876,6 +5879,7 @@
       </categories>
       <tags>
         <tag>DP</tag>
+        <tag>TuSimple</tag>
       </tags>
   </entry>
   <entry>
@@ -7603,6 +7607,7 @@
         <tag>DFS</tag>
         <tag>Amazon</tag>
         <tag>Trie</tag>
+        <tag>TuSimple</tag>
       </tags>
   </entry>
   <entry>
@@ -10603,6 +10608,226 @@
         <tag>React</tag>
         <tag>React-Router</tag>
         <tag>MobX</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcod132-Palindrome Partitioning II</title>
+    <url>/2021/03/22/Leetcod132-palindromePartitioningII/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given a string s, partition s such that every substring of the partition is a palindrome.</p>
+<p>Return the minimum cuts needed for a palindrome partitioning of s.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: s &#x3D; &quot;aab&quot;</span><br><span class="line">Output: 1</span><br><span class="line">Explanation: The palindrome partitioning [&quot;aa&quot;,&quot;b&quot;] could be produced using 1 cut.</span><br></pre></td></tr></table></figure><br><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: s &#x3D; &quot;a&quot;</span><br><span class="line">Output: 0</span><br></pre></td></tr></table></figure><br><strong>Example 3:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: s &#x3D; &quot;ab&quot;</span><br><span class="line">Output: 1</span><br></pre></td></tr></table></figure><br><strong>Constraints:</strong></p>
+<ul>
+<li>1 &lt;= s.length &lt;= 2000</li>
+<li>s consists of lower-case English letters only.</li>
+</ul>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul>
+<li>Time Complexity: <script type="math/tex">O(N^2)</script></li>
+<li>Space Complexity: <script type="math/tex">O(N^2)</script></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// This can be solved by two points:</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// cut[i] is the minimum of cut[j - 1] + 1 (j &lt;= i), if [j, i] is palindrome.</span></span><br><span class="line"><span class="comment">// If [j, i] is palindrome, [j + 1, i - 1] is palindrome, and c[j] == c[i].</span></span><br><span class="line"><span class="comment">// The 2nd point reminds us of using dp (caching).</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// a   b   a   |   c  c</span></span><br><span class="line"><span class="comment">//                 j  i</span></span><br><span class="line"><span class="comment">//        j-1  |  [j, i] is palindrome</span></span><br><span class="line"><span class="comment">//    cut(j-1) +  1</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> res = Integer.MAX_VALUE;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minCut</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = s.length();</span><br><span class="line">        <span class="keyword">boolean</span>[][] isPalindrome = <span class="keyword">new</span> <span class="keyword">boolean</span>[n][n];</span><br><span class="line">        <span class="keyword">int</span>[] minCuts = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            minCuts[i] = i;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= i; j++)&#123;</span><br><span class="line">                <span class="keyword">if</span> (s.charAt(i) == s.charAt(j) &amp;&amp; (j + <span class="number">1</span> &gt; i - <span class="number">1</span> || isPalindrome[j + <span class="number">1</span>][i - <span class="number">1</span>]))&#123;</span><br><span class="line">                    isPalindrome[j][i] = <span class="keyword">true</span>;</span><br><span class="line">                    minCuts[i] = j == <span class="number">0</span> ? <span class="number">0</span> : Math.min(minCuts[i], minCuts[j - <span class="number">1</span>] + <span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> minCuts[n - <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr />]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>DP</tag>
+        <tag>TuSimple</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode1278-palindromePartitioningIII</title>
+    <url>/2021/03/22/Leetcode1278-palindromePartitioningIII/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>You are given a string s containing lowercase letters and an integer k. You need to :</p>
+<ul>
+<li>First, change some characters of s to other lowercase English letters.</li>
+<li>Then divide s into k non-empty disjoint substrings such that each substring is palindrome.</li>
+</ul>
+<p>Return the minimal number of characters that you need to change to divide the string.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: s &#x3D; &quot;abc&quot;, k &#x3D; 2</span><br><span class="line">Output: 1</span><br><span class="line">Explanation: You can split the string into &quot;ab&quot; and &quot;c&quot;, and change 1 character in &quot;ab&quot; to make it palindrome.</span><br></pre></td></tr></table></figure><br><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: s &#x3D; &quot;aabbc&quot;, k &#x3D; 3</span><br><span class="line">Output: 0</span><br><span class="line">Explanation: You can split the string into &quot;aa&quot;, &quot;bb&quot; and &quot;c&quot;, all of them are palindrome.</span><br></pre></td></tr></table></figure><br><strong>Example 3:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: s &#x3D; &quot;leetcode&quot;, k &#x3D; 8</span><br><span class="line">Output: 0</span><br></pre></td></tr></table></figure><br><strong>Constraints:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1 &lt;&#x3D; k &lt;&#x3D; s.length &lt;&#x3D; 100.</span><br><span class="line">s only contains lowercase English letters.</span><br></pre></td></tr></table></figure></p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul>
+<li>Time Complexity: <script type="math/tex">O(k*N^2)</script></li>
+<li>Space Complexity: <script type="math/tex">O(n^2)</script></li>
+</ul>
+<p>If we break the question apart we get:</p>
+<ol>
+<li>How many changes do I need to perform to make S.substring(i, j) to a palindrome.</li>
+<li>How many ways can I split the string from i to j into groups and what are their costs.</li>
+<li>What is the minimum combination of these groups.</li>
+</ol>
+<p>Given: aabbcc, k = 3<br>The possible groups can be<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(aabb)(c)(c), (aab)(bc)(c), (aa)(bbc)(c), (a)(abbc)(c) -(third group is (c))</span><br><span class="line">(aab)(b)(cc), (aa)(bb)(cc), (aa)(bb)(cc) --------------(third group is (cc))</span><br><span class="line">(aa)(b)(bcc), (a)(ab)(bcc) ---------------------------(third group is (bcc))</span><br><span class="line">(a)(a)(bbcc) ----------------------------------------(third group is (bbcc))</span><br></pre></td></tr></table></figure><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">dp[k][end]</span><br><span class="line">min((aabb)(c), (aab)(bc), (aa)(bbc), (a)(abbc)) &#x3D; dp[2][4]</span><br><span class="line">or dp[2][4] &#x3D; Math.min(toPal[0][3] + toPal[4][4], toPal[0][2] + toPal[3][4], toPal[0][1] + toPal[2][4], toPal[0][0] + toPal[1][4])</span><br><span class="line">min((aab)(b), (aa)(bb), (aa)(bb)) &#x3D; dp[2][3]</span><br><span class="line">or dp[2][3] &#x3D; Math.min(toPal[0][2] + toPal[3][3], toPal[0][1] + toPal[2][3], toPal[0][0] + toPal[1][3])</span><br><span class="line">min((aa)(b), (a)(ab)) &#x3D; dp[2][2]</span><br><span class="line">or dp[2][2] &#x3D; Math.min(toPal[0][1] + toPal[2][2], toPal[0][0] + toPal[1][2])</span><br><span class="line">min((a)(a)) &#x3D; dp[2][1]</span><br><span class="line">or dp[2][1] &#x3D; toPal[0][0] + toPal[1][1]</span><br><span class="line"></span><br><span class="line">dp[3][5] &#x3D; Math.min(dp[2][4] + toPal[5][5], dp[2][3] + toPal[4][5], dp[2][2] + toPal[3][5], dp[2][1] + toPal[2][5])</span><br></pre></td></tr></table></figure><br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">palindromePartition</span><span class="params">(String s, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = s.length();</span><br><span class="line">        <span class="keyword">int</span>[][] toPlindrome = <span class="keyword">new</span> <span class="keyword">int</span>[n][n];</span><br><span class="line">        <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[k + <span class="number">1</span>][n];</span><br><span class="line">        </span><br><span class="line"><span class="comment">//      how many changes to make s[i .. j] a palindrome</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = n - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; n; j++)&#123;</span><br><span class="line">                toPlindrome[i][j] = s.charAt(i) == s.charAt(j) ? toPlindrome[i + <span class="number">1</span>][j - <span class="number">1</span>] : toPlindrome[i + <span class="number">1</span>][j - <span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line"><span class="comment">//      dp[k][end]</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            dp[<span class="number">1</span>][i] = toPlindrome[<span class="number">0</span>][i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= k; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> end = i - <span class="number">1</span>; end &lt; n; end++ )&#123;</span><br><span class="line">                <span class="keyword">int</span> temp = n;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> start = end - <span class="number">1</span>; start &gt;= i - <span class="number">2</span>; start --)&#123;</span><br><span class="line">                    temp = Math.min(temp, dp[i - <span class="number">1</span>][start] + toPlindrome[start + <span class="number">1</span>][end]);</span><br><span class="line">                &#125;</span><br><span class="line">                dp[i][end] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[k][n - <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr />]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>DP</tag>
+        <tag>TuSimple</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode1413-Minimum Value To Get Positive Step By Step Sum</title>
+    <url>/2021/03/21/Leetcode1413-minimumValueToGetPositiveStepByStepSum/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given an array of integers nums, you start with an initial positive value startValue.</p>
+<p>In each iteration, you calculate the step by step sum of startValue plus elements in nums (from left to right).</p>
+<p>Return the minimum positive value of startValue such that the step by step sum is never less than 1.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: nums &#x3D; [-3,2,-3,4,2]</span><br><span class="line">Output: 5</span><br><span class="line">Explanation: If you choose startValue &#x3D; 4, in the third iteration your step by step sum is less than 1.</span><br><span class="line">                step by step sum</span><br><span class="line">                startValue &#x3D; 4 | startValue &#x3D; 5 | nums</span><br><span class="line">                  (4 -3 ) &#x3D; 1  | (5 -3 ) &#x3D; 2    |  -3</span><br><span class="line">                  (1 +2 ) &#x3D; 3  | (2 +2 ) &#x3D; 4    |   2</span><br><span class="line">                  (3 -3 ) &#x3D; 0  | (4 -3 ) &#x3D; 1    |  -3</span><br><span class="line">                  (0 +4 ) &#x3D; 4  | (1 +4 ) &#x3D; 5    |   4</span><br><span class="line">                  (4 +2 ) &#x3D; 6  | (5 +2 ) &#x3D; 7    |   2</span><br></pre></td></tr></table></figure><br><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: nums &#x3D; [1,2]</span><br><span class="line">Output: 1</span><br><span class="line">Explanation: Minimum start value should be positive. </span><br></pre></td></tr></table></figure><br><strong>Example 3:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: nums &#x3D; [1,-2,-3]</span><br><span class="line">Output: 5</span><br></pre></td></tr></table></figure><br><strong>Constraints:</strong></p>
+<ul>
+<li>1 &lt;= nums.length &lt;= 100</li>
+<li>-100 &lt;= nums[i] &lt;= 100</li>
+</ul>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul>
+<li>Time Complexity: <script type="math/tex">O(N)</script></li>
+<li>Space Complexity: <script type="math/tex">O(1)</script></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minStartValue</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> minSum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> num: nums)&#123;</span><br><span class="line">            sum += num;</span><br><span class="line">            minSum = Math.min(sum, minSum);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span> - minSum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr />]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Array</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode1578-Minimum Deletion Cost To Avoid Repeating Letters</title>
+    <url>/2021/03/21/Leetcode1578-minimumDeletionCostToAvoidRepeatingLetters/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given a string s and an array of integers cost where cost[i] is the cost of deleting the ith character in s.</p>
+<p>Return the minimum cost of deletions such that there are no two identical letters next to each other.</p>
+<p>Notice that you will delete the chosen characters at the same time, in other words, after deleting a character, the costs of deleting other characters will not change.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: s &#x3D; &quot;abaac&quot;, cost &#x3D; [1,2,3,4,5]</span><br><span class="line">Output: 3</span><br><span class="line">Explanation: Delete the letter &quot;a&quot; with cost 3 to get &quot;abac&quot; (String without two identical letters next to each other).</span><br></pre></td></tr></table></figure><br><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: s &#x3D; &quot;abc&quot;, cost &#x3D; [1,2,3]</span><br><span class="line">Output: 0</span><br><span class="line">Explanation: You don&#39;t need to delete any character because there are no identical letters next to each other.</span><br></pre></td></tr></table></figure><br><strong>Example 3:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: s &#x3D; &quot;aabaa&quot;, cost &#x3D; [1,2,3,4,1]</span><br><span class="line">Output: 2</span><br><span class="line">Explanation: Delete the first and the last character, getting the string (&quot;aba&quot;).</span><br></pre></td></tr></table></figure><br><strong>Constraints:</strong></p>
+<ul>
+<li>s.length == cost.length</li>
+<li>1 &lt;= s.length, cost.length &lt;= 10^5</li>
+<li>1 &lt;= cost[i] &lt;= 10^4</li>
+<li>s contains only lowercase English letters.</li>
+</ul>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul>
+<li>Time Complexity: <script type="math/tex">O(N)</script></li>
+<li>Space Complexity: <script type="math/tex">O(1)</script></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minCost</span><span class="params">(String s, <span class="keyword">int</span>[] cost)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> curMax = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> curSum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> n = s.length();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (i &gt; <span class="number">0</span> &amp;&amp; s.charAt(i) != s.charAt(i - <span class="number">1</span>))&#123;</span><br><span class="line">                res += curSum - curMax;</span><br><span class="line">                curSum = <span class="number">0</span>;</span><br><span class="line">                curMax = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            curSum += cost[i];</span><br><span class="line">            curMax = Math.max(curMax, cost[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        res += curSum - curMax;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr />]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Greedy</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode1615-Maximal Network Rank</title>
+    <url>/2021/03/21/Leetcode1615-maximalNetworkRank/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>There is an infrastructure of n cities with some number of roads connecting these cities. Each roads[i] = [ai, bi] indicates that there is a bidirectional road between cities ai and bi.</p>
+<p>The network rank of two different cities is defined as the total number of directly connected roads to either city. If a road is directly connected to both cities, it is only counted once.</p>
+<p>The maximal network rank of the infrastructure is the maximum network rank of all pairs of different cities.</p>
+<p>Given the integer n and the array roads, return the maximal network rank of the entire infrastructure.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong></p>
+<p><img src="https://assets.leetcode.com/uploads/2020/09/21/ex1.png" alt=""><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: n &#x3D; 4, roads &#x3D; [[0,1],[0,3],[1,2],[1,3]]</span><br><span class="line">Output: 4</span><br><span class="line">Explanation: The network rank of cities 0 and 1 is 4 as there are 4 roads that are connected to either 0 or 1. The road between 0 and 1 is only counted once.</span><br></pre></td></tr></table></figure><br><strong>Example 2:</strong></p>
+<p><img src="https://assets.leetcode.com/uploads/2020/09/21/ex2.png" alt=""><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: n &#x3D; 5, roads &#x3D; [[0,1],[0,3],[1,2],[1,3],[2,3],[2,4]]</span><br><span class="line">Output: 5</span><br><span class="line">Explanation: There are 5 roads that are connected to cities 1 or 2.</span><br></pre></td></tr></table></figure><br><strong>Example 3:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: n &#x3D; 8, roads &#x3D; [[0,1],[1,2],[2,3],[2,4],[5,6],[5,7]]</span><br><span class="line">Output: 5</span><br><span class="line">Explanation: The network rank of 2 and 5 is 5. Notice that all the cities do not have to be connected.</span><br></pre></td></tr></table></figure></p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>2 &lt;= n &lt;= 100</li>
+<li>0 &lt;= roads.length &lt;= n * (n - 1) / 2</li>
+<li>roads[i].length == 2</li>
+<li>0 &lt;= ai, bi &lt;= n-1</li>
+<li>ai != bi</li>
+<li>Each pair of cities has at most one road connecting them.</li>
+</ul>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul>
+<li>Time Complexity: <script type="math/tex">O(N^2)</script></li>
+<li>Space Complexity: <script type="math/tex">O(N^2)</script></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maximalNetworkRank</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span>[][] roads)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] degrees = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">        <span class="keyword">boolean</span>[][] connections = <span class="keyword">new</span> <span class="keyword">boolean</span>[n][n];</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span>[] road: roads)&#123;</span><br><span class="line">            degrees[road[<span class="number">0</span>]]++;</span><br><span class="line">            degrees[road[<span class="number">1</span>]]++;</span><br><span class="line">            connections[road[<span class="number">0</span>]][road[<span class="number">1</span>]] = <span class="keyword">true</span>;</span><br><span class="line">            connections[road[<span class="number">1</span>]][road[<span class="number">0</span>]] = <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; n; j++)&#123;</span><br><span class="line">                res = Math.max(res, degrees[i] + degrees[j] - (connections[i][j] ? <span class="number">1</span> : <span class="number">0</span>));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr />]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Graph</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode583-Delete Operation For TwoStrings</title>
+    <url>/2021/03/21/Leetcode583-deleteOperationForTwoStrings/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given two strings word1 and word2, return the minimum number of steps required to make word1 and word2 the same.</p>
+<p>In one step, you can delete exactly one character in either string.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: word1 &#x3D; &quot;sea&quot;, word2 &#x3D; &quot;eat&quot;</span><br><span class="line">Output: 2</span><br><span class="line">Explanation: You need one step to make &quot;sea&quot; to &quot;ea&quot; and another step to make &quot;eat&quot; to &quot;ea&quot;.</span><br></pre></td></tr></table></figure><br><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: word1 &#x3D; &quot;leetcode&quot;, word2 &#x3D; &quot;etco&quot;</span><br><span class="line">Output: 4</span><br></pre></td></tr></table></figure><br><strong>Constraints:</strong></p>
+<ul>
+<li>1 &lt;= word1.length, word2.length &lt;= 500</li>
+<li>word1 and word2 consist of only lowercase English letters.</li>
+</ul>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul>
+<li>Time Complexity: <script type="math/tex">O(M * N)</script></li>
+<li>Space Complexity: <script type="math/tex">O(M * N)</script></li>
+</ul>
+<p>Like <strong>Longest Common Subsequence</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minDistance</span><span class="params">(String word1, String word2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m = word1.length();</span><br><span class="line">        <span class="keyword">int</span> n = word2.length();</span><br><span class="line">        <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[m + <span class="number">1</span>][n + <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++)&#123;</span><br><span class="line">                <span class="keyword">if</span> (word1.charAt(i - <span class="number">1</span>) == word2.charAt(j - <span class="number">1</span>))&#123;</span><br><span class="line">                    dp[i][j] = dp[i - <span class="number">1</span>][j - <span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                    dp[i][j] = Math.max(dp[i][j - <span class="number">1</span>], dp[i - <span class="number">1</span>][j]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> m + n - <span class="number">2</span> * dp[m][n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr />]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>DP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode994-Rotting Orange</title>
+    <url>/2021/03/21/Leetcode994-rottingOrange/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>You are given an m x n grid where each cell can have one of three values:</p>
+<ul>
+<li>0 representing an empty cell,</li>
+<li>1 representing a fresh orange, or</li>
+<li>2 representing a rotten orange.</li>
+</ul>
+<p>Every minute, any fresh orange that is 4-directionally adjacent to a rotten orange becomes rotten.</p>
+<p>Return the minimum number of minutes that must elapse until no cell has a fresh orange. If this is impossible, return -1.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><img src="https://assets.leetcode.com/uploads/2019/02/16/oranges.png" alt=""><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: grid &#x3D; [[2,1,1],[1,1,0],[0,1,1]]</span><br><span class="line">Output: 4</span><br></pre></td></tr></table></figure><br><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: grid &#x3D; [[2,1,1],[0,1,1],[1,0,1]]</span><br><span class="line">Output: -1</span><br><span class="line">Explanation: The orange in the bottom left corner (row 2, column 0) is never rotten, because rotting only happens 4-directionally.</span><br></pre></td></tr></table></figure><br><strong>Example 3:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: grid &#x3D; [[0,2]]</span><br><span class="line">Output: 0</span><br><span class="line">Explanation: Since there are already no fresh oranges at minute 0, the answer is just 0.</span><br></pre></td></tr></table></figure><br><strong>Constraints:</strong></p>
+<ul>
+<li>m == grid.length</li>
+<li>n == grid[i].length</li>
+<li>1 &lt;= m, n &lt;= 10</li>
+<li>grid[i][j] is 0, 1, or 2.</li>
+</ul>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul>
+<li>Time Complexity: <script type="math/tex">O(M * N)</script></li>
+<li>Space Complexity: <script type="math/tex">O(M * N)</script></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">orangesRotting</span><span class="params">(<span class="keyword">int</span>[][] grid)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m = grid.length;</span><br><span class="line">        <span class="keyword">int</span> n = grid[<span class="number">0</span>].length;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> total = <span class="number">0</span>;</span><br><span class="line">        Queue&lt;<span class="keyword">int</span>[]&gt; q = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++)&#123;</span><br><span class="line">                <span class="keyword">if</span> (grid[i][j] == <span class="number">1</span>)&#123;</span><br><span class="line">                    total++;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (grid[i][j] == <span class="number">2</span>)&#123;</span><br><span class="line">                    q.offer(<span class="keyword">new</span> <span class="keyword">int</span>[]&#123;i, j&#125;);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (total == <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> res;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span>[] dir = &#123;<span class="number">1</span>, <span class="number">0</span>, -<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>&#125;;</span><br><span class="line">        <span class="keyword">while</span>(!q.isEmpty())&#123;</span><br><span class="line">            <span class="keyword">int</span> size = q.size();</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++)&#123;</span><br><span class="line">                <span class="keyword">int</span>[] cur = q.poll();</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">4</span>; j++)&#123;</span><br><span class="line">                    <span class="keyword">int</span> nx = cur[<span class="number">0</span>] + dir[j];</span><br><span class="line">                    <span class="keyword">int</span> ny = cur[<span class="number">1</span>] + dir[j + <span class="number">1</span>];</span><br><span class="line">                    <span class="keyword">if</span> (nx &gt;=<span class="number">0</span> &amp;&amp; ny &gt;= <span class="number">0</span> &amp;&amp; nx &lt; m &amp;&amp; ny &lt; n  &amp;&amp; grid[nx][ny] == <span class="number">1</span>)&#123;</span><br><span class="line">                        total--;</span><br><span class="line">                        q.offer(<span class="keyword">new</span> <span class="keyword">int</span>[]&#123;nx, ny&#125;);</span><br><span class="line">                        grid[nx][ny] = <span class="number">2</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (total == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            res++;</span><br><span class="line">            <span class="keyword">if</span> (total == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> total == <span class="number">0</span> ? res : -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr />]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>BFS</tag>
+        <tag>TuSimple</tag>
       </tags>
   </entry>
 </search>
