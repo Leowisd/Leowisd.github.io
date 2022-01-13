@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-60x60.png">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-32x32.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yfygoing.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#6699ff","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"yfygoing.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="Solution Report of LeetCode Acceptted">
@@ -29,7 +29,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://yfygoing.com/images/LeetCode.jpg">
 <meta property="article:published_time" content="2020-03-03T03:52:51.000Z">
-<meta property="article:modified_time" content="2020-07-07T02:59:25.899Z">
+<meta property="article:modified_time" content="2022-01-13T08:19:02.000Z">
 <meta property="article:author" content="YF">
 <meta property="article:tag" content="Google">
 <meta property="article:tag" content="Hash Table">
@@ -37,6 +37,7 @@
 <meta property="article:tag" content="Two Pointers">
 <meta property="article:tag" content="String">
 <meta property="article:tag" content="Sliding Window">
+<meta property="article:tag" content="TikTok">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yfygoing.com/images/LeetCode.jpg">
 
@@ -93,10 +94,14 @@
   </style>
 </noscript>
 
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -197,8 +202,6 @@
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
-  <div class="reading-progress-bar"></div>
-  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 
 
     <main class="main">
@@ -243,7 +246,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-07-06 21:59:25" itemprop="dateModified" datetime="2020-07-06T21:59:25-05:00">2020-07-06</time>
+                <time title="Modified: 2022-01-13 02:19:02" itemprop="dateModified" datetime="2022-01-13T02:19:02-06:00">2022-01-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -291,7 +294,7 @@
         <p class="description"></p>
 
 <p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given a string S and a string T, find the minimum window in S which will contain all the characters in T in complexity O(n).</p>
 <h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: S &#x3D; &quot;ADOBECODEBANC&quot;, T &#x3D; &quot;ABC&quot;</span><br><span class="line">Output: &quot;BANC&quot;</span><br></pre></td></tr></table></figure>
 <p><strong>Note:</strong></p>
@@ -299,7 +302,7 @@
 <li>If there is no such window in S that covers all characters in T, return the empty string “”.</li>
 <li>If there is such window, you are guaranteed that there will always be only one unique minimum window in S.</li>
 </ul>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// For most substring problem, we are given a string and need to find a substring of it which satisfy some restrictions. A general way is to use a hashmap assisted with two pointers. The template is given below.</span></span><br><span class="line"><span class="comment">// int findSubstring(string s)&#123;</span></span><br><span class="line"><span class="comment">//         int[] map = new int[128]; //used array instead hashmap could be more faster </span></span><br><span class="line"><span class="comment">//         int counter; // check whether the substring is valid</span></span><br><span class="line"><span class="comment">//         int begin=0, end=0; //two pointers, one point to tail and one  head</span></span><br><span class="line"><span class="comment">//         int d; //the length of substring</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//         for() &#123; /* initialize the map here */ &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//         while(end&lt;s.size())&#123;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//             char ch1 = s.charAt(end);</span></span><br><span class="line"><span class="comment">//             if (map[ch1] &gt; 0) &#123;/* modify counter here */&#125; </span></span><br><span class="line"><span class="comment">//             map[ch1]--;</span></span><br><span class="line"><span class="comment">//             ch1++:</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//             while(/* counter condition */)&#123; </span></span><br><span class="line">                 </span><br><span class="line"><span class="comment">//                  /* update d here if finding minimum*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//                 //increase begin to make it invalid/valid again</span></span><br><span class="line"><span class="comment">//                  char ch2 = s.charAt(begin);</span></span><br><span class="line"><span class="comment">//                  map[ch2]++;</span></span><br><span class="line"><span class="comment">//                  if (map[ch2] &gt; 0) &#123; /*modify counter here*/ &#125;</span></span><br><span class="line"><span class="comment">//                 begin++</span></span><br><span class="line"><span class="comment">//             &#125;  </span></span><br><span class="line"></span><br><span class="line"><span class="comment">//             /* update d here if finding maximum*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//         &#125;</span></span><br><span class="line"><span class="comment">//         return d;</span></span><br><span class="line"><span class="comment">//   &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">minWindow</span><span class="params">(String s, String t)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] map = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">128</span>];</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">char</span> ch: t.toCharArray()) map[ch]++;</span><br><span class="line">        <span class="keyword">int</span> maxLen = Integer.MAX_VALUE;</span><br><span class="line">        <span class="keyword">int</span> begin = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> end = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> count = t.length();</span><br><span class="line">        <span class="keyword">int</span> minStart = <span class="number">0</span>, minEnd = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(end &lt; s.length())&#123;</span><br><span class="line">            <span class="keyword">char</span> cur = s.charAt(end);            </span><br><span class="line">            <span class="keyword">if</span> (map[cur] &gt; <span class="number">0</span>) count--;</span><br><span class="line">            map[cur]--;</span><br><span class="line">            end++;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">while</span> (count == <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span> (maxLen &gt; end - begin)&#123;</span><br><span class="line">                    maxLen = end- begin;</span><br><span class="line">                    minStart = begin;</span><br><span class="line">                    minEnd = end;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">char</span> ch =  s.charAt(begin);</span><br><span class="line">                map[ch]++;</span><br><span class="line">                <span class="keyword">if</span> (map[ch] &gt; <span class="number">0</span>) count++;</span><br><span class="line">                begin++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (maxLen == Integer.MAX_VALUE) <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> s.substring(minStart, minEnd);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// For most substring problem, we are given a string and need to find a substring of it which satisfy some restrictions. A general way is to use a hashmap assisted with two pointers. The template is given below.</span></span><br><span class="line"><span class="comment">// int findSubstring(string s)&#123;</span></span><br><span class="line"><span class="comment">//         int[] map = new int[128]; //used array instead hashmap could be more faster </span></span><br><span class="line"><span class="comment">//         int counter; // check whether the substring is valid</span></span><br><span class="line"><span class="comment">//         int begin=0, end=0; //two pointers, one point to tail and one  head</span></span><br><span class="line"><span class="comment">//         int d; //the length of substring</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//         for() &#123; /* initialize the map here */ &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//         while(end&lt;s.size())&#123;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//             char ch1 = s.charAt(end);</span></span><br><span class="line"><span class="comment">//             if (map[ch1] &gt; 0) &#123;/* modify counter here */&#125; </span></span><br><span class="line"><span class="comment">//             map[ch1]--;</span></span><br><span class="line"><span class="comment">//             ch1++:</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//             while(/* counter condition */)&#123; </span></span><br><span class="line">                 </span><br><span class="line"><span class="comment">//                  /* update d here if finding minimum*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//                 //increase begin to make it invalid/valid again</span></span><br><span class="line"><span class="comment">//                  char ch2 = s.charAt(begin);</span></span><br><span class="line"><span class="comment">//                  map[ch2]++;</span></span><br><span class="line"><span class="comment">//                  if (map[ch2] &gt; 0) &#123; /*modify counter here*/ &#125;</span></span><br><span class="line"><span class="comment">//                 begin++</span></span><br><span class="line"><span class="comment">//             &#125;  </span></span><br><span class="line"></span><br><span class="line"><span class="comment">//             /* update d here if finding maximum*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//         &#125;</span></span><br><span class="line"><span class="comment">//         return d;</span></span><br><span class="line"><span class="comment">//   &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">minWindow</span><span class="params">(String s, String t)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] map = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">128</span>];</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">char</span> ch: t.toCharArray()) map[ch]++;</span><br><span class="line">        <span class="keyword">int</span> maxLen = Integer.MAX_VALUE;</span><br><span class="line">        <span class="keyword">int</span> begin = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> end = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> count = t.length();</span><br><span class="line">        <span class="keyword">int</span> minStart = <span class="number">0</span>, minEnd = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(end &lt; s.length())&#123;</span><br><span class="line">            <span class="keyword">char</span> cur = s.charAt(end);            </span><br><span class="line">            <span class="keyword">if</span> (map[cur] &gt; <span class="number">0</span>) count--;</span><br><span class="line">            map[cur]--;</span><br><span class="line">            end++;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">while</span> (count == <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span> (maxLen &gt; end - begin)&#123;</span><br><span class="line">                    maxLen = end- begin;</span><br><span class="line">                    minStart = begin;</span><br><span class="line">                    minEnd = end;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">char</span> ch =  s.charAt(begin);</span><br><span class="line">                map[ch]++;</span><br><span class="line">                <span class="keyword">if</span> (map[ch] &gt; <span class="number">0</span>) count++;</span><br><span class="line">                begin++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (maxLen == Integer.MAX_VALUE) <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> s.substring(minStart, minEnd);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr />
     </div>
 
@@ -315,6 +318,7 @@
               <a href="/tags/Two-Pointers/" rel="tag"># Two Pointers</a>
               <a href="/tags/String/" rel="tag"># String</a>
               <a href="/tags/Sliding-Window/" rel="tag"># Sliding Window</a>
+              <a href="/tags/TikTok/" rel="tag"># TikTok</a>
           </div>
 
         
@@ -405,20 +409,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">354</span>
+          <span class="site-state-item-count">395</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">139</span>
+        <span class="site-state-item-count">150</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -501,10 +505,10 @@
 
 <div class="copyright">
   
-  &copy; 2018 – 
-  <span itemprop="copyrightYear">2020</span>
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
-    <i class="fas fa-hand-spock"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">YF</span>
 </div>
@@ -564,8 +568,6 @@
 
 
 <script src="/js/next-boot.js"></script>
-
-<script src="/js/bookmark.js"></script>
 
 
 
@@ -676,7 +678,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     });
   }, window.Valine);
 });
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-60x60.png">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-32x32.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yfygoing.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#6699ff","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"yfygoing.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta property="og:type" content="website">
@@ -81,10 +81,14 @@
   </style>
 </noscript>
 
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -185,8 +189,6 @@
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
-  <div class="reading-progress-bar"></div>
-  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 
 
     <main class="main">
@@ -200,7 +202,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yfygoing.com/2020/07/10/syncing-a-fork-repo-using-rebase/">
+    <link itemprop="mainEntityOfPage" href="http://yfygoing.com/2022/01/13/Leetcode450-deletNodeinABST/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avatar.gif">
@@ -214,115 +216,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/07/10/syncing-a-fork-repo-using-rebase/" class="post-title-link" itemprop="url">Syncing a fork repository</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-07-10 23:19:48" itemprop="dateCreated datePublished" datetime="2020-07-10T23:19:48-05:00">2020-07-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-07-22 15:41:13" itemprop="dateModified" datetime="2020-07-22T15:41:13-05:00">2020-07-22</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Git-Github/" itemprop="url" rel="index"><span itemprop="name">Git/Github</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2020/07/10/syncing-a-fork-repo-using-rebase/" class="post-meta-item leancloud_visitors" data-flag-title="Syncing a fork repository" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/2020/07/10/syncing-a-fork-repo-using-rebase/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/10/syncing-a-fork-repo-using-rebase/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-            <div class="post-description">Using rebase to sync a fork repository</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p class="description"></p>
-
-<p><img src="/images/git-github.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
-
-          
-
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/07/10/syncing-a-fork-repo-using-rebase/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yfygoing.com/2020/07/10/Git-ignore-tracked-file/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/avatar.gif">
-      <meta itemprop="name" content="YF">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="StarWalker">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/07/10/Git-ignore-tracked-file/" class="post-title-link" itemprop="url">Git ignore already managed files</a>
+            <a href="/2022/01/13/Leetcode450-deletNodeinABST/" class="post-title-link" itemprop="url">Leetcode450-Delet Node in a BST</a>
         </h2>
 
         <div class="post-meta">
@@ -333,7 +227,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-07-10 12:31:20 / Modified: 16:39:51" itemprop="dateCreated datePublished" datetime="2020-07-10T12:31:20-05:00">2020-07-10</time>
+              <time title="Created: 2022-01-13 15:32:00 / Modified: 17:37:52" itemprop="dateCreated datePublished" datetime="2022-01-13T15:32:00-06:00">2022-01-13</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -341,12 +235,12 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Git-Github/" itemprop="url" rel="index"><span itemprop="name">Git/Github</span></a>
+                  <a href="/categories/leetcode/" itemprop="url" rel="index"><span itemprop="name">leetcode</span></a>
                 </span>
             </span>
 
           
-            <span id="/2020/07/10/Git-ignore-tracked-file/" class="post-meta-item leancloud_visitors" data-flag-title="Git ignore already managed files" title="Views">
+            <span id="/2022/01/13/Leetcode450-deletNodeinABST/" class="post-meta-item leancloud_visitors" data-flag-title="Leetcode450-Delet Node in a BST" title="Views">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -361,13 +255,13 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2020/07/10/Git-ignore-tracked-file/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/10/Git-ignore-tracked-file/" itemprop="commentCount"></span>
+    <a title="valine" href="/2022/01/13/Leetcode450-deletNodeinABST/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/01/13/Leetcode450-deletNodeinABST/" itemprop="commentCount"></span>
     </a>
   </span>
   
   
-            <div class="post-description">Ignore already managed files changes with Git</div>
+            <div class="post-description">Solution Report of LeetCode Acceptted</div>
 
         </div>
       </header>
@@ -380,13 +274,13 @@
       
           <p class="description"></p>
 
-<p><img src="/images/git-github.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
 
           
 
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/07/10/Git-ignore-tracked-file/#more" rel="contents">
+              <a class="btn" href="/2022/01/13/Leetcode450-deletNodeinABST/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -410,7 +304,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yfygoing.com/2020/07/09/upgrade-hexo-next/">
+    <link itemprop="mainEntityOfPage" href="http://yfygoing.com/2022/01/13/Leetcode211-designAddandSearchWordsDataStructure/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avatar.gif">
@@ -424,7 +318,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/07/09/upgrade-hexo-next/" class="post-title-link" itemprop="url">upgrade-hexo-next</a>
+            <a href="/2022/01/13/Leetcode211-designAddandSearchWordsDataStructure/" class="post-title-link" itemprop="url">Leetcode211-Design Add and Search Words Data Structure</a>
         </h2>
 
         <div class="post-meta">
@@ -435,218 +329,8 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-07-09 00:28:22 / Modified: 00:29:41" itemprop="dateCreated datePublished" datetime="2020-07-09T00:28:22-05:00">2020-07-09</time>
+              <time title="Created: 2022-01-13 14:31:29 / Modified: 16:35:37" itemprop="dateCreated datePublished" datetime="2022-01-13T14:31:29-06:00">2022-01-13</time>
             </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo-Blog/" itemprop="url" rel="index"><span itemprop="name">Hexo Blog</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2020/07/09/upgrade-hexo-next/" class="post-meta-item leancloud_visitors" data-flag-title="upgrade-hexo-next" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/2020/07/09/upgrade-hexo-next/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/09/upgrade-hexo-next/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-            <div class="post-description">Upgrade the version of Hexo and NexT</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p class="description"></p>
-
-<p><img src="" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
-
-          
-
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/07/09/upgrade-hexo-next/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yfygoing.com/2020/07/06/Modify-Github-Pages-Rep-for-Hexo-Blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/avatar.gif">
-      <meta itemprop="name" content="YF">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="StarWalker">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/07/06/Modify-Github-Pages-Rep-for-Hexo-Blog/" class="post-title-link" itemprop="url">Modify Github Pages Rep for Hexo-Blog</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-07-06 23:08:06 / Modified: 23:57:36" itemprop="dateCreated datePublished" datetime="2020-07-06T23:08:06-05:00">2020-07-06</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo-Blog/" itemprop="url" rel="index"><span itemprop="name">Hexo Blog</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2020/07/06/Modify-Github-Pages-Rep-for-Hexo-Blog/" class="post-meta-item leancloud_visitors" data-flag-title="Modify Github Pages Rep for Hexo-Blog" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/2020/07/06/Modify-Github-Pages-Rep-for-Hexo-Blog/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/06/Modify-Github-Pages-Rep-for-Hexo-Blog/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-            <div class="post-description">Reconstruct the rep for hexo blog to edit on muilty devices and version control</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p class="description"></p>
-
-<p><img src="/images/github_pages_hexo.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
-
-          
-
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/07/06/Modify-Github-Pages-Rep-for-Hexo-Blog/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yfygoing.com/2020/04/07/Leetcode299-bullsAndCows/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/avatar.gif">
-      <meta itemprop="name" content="YF">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="StarWalker">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/07/Leetcode299-bullsAndCows/" class="post-title-link" itemprop="url">Leetcode299-bullsAndCows</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-04-07 17:51:53" itemprop="dateCreated datePublished" datetime="2020-04-07T17:51:53-05:00">2020-04-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-07-06 21:59:26" itemprop="dateModified" datetime="2020-07-06T21:59:26-05:00">2020-07-06</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -658,7 +342,7 @@
             </span>
 
           
-            <span id="/2020/04/07/Leetcode299-bullsAndCows/" class="post-meta-item leancloud_visitors" data-flag-title="Leetcode299-bullsAndCows" title="Views">
+            <span id="/2022/01/13/Leetcode211-designAddandSearchWordsDataStructure/" class="post-meta-item leancloud_visitors" data-flag-title="Leetcode211-Design Add and Search Words Data Structure" title="Views">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -673,8 +357,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2020/04/07/Leetcode299-bullsAndCows/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/04/07/Leetcode299-bullsAndCows/" itemprop="commentCount"></span>
+    <a title="valine" href="/2022/01/13/Leetcode211-designAddandSearchWordsDataStructure/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/01/13/Leetcode211-designAddandSearchWordsDataStructure/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -698,7 +382,7 @@
 
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/04/07/Leetcode299-bullsAndCows/#more" rel="contents">
+              <a class="btn" href="/2022/01/13/Leetcode211-designAddandSearchWordsDataStructure/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -722,7 +406,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yfygoing.com/2020/04/07/Leetcode801-minimumSwapsToMakeSequencesIncreasing/">
+    <link itemprop="mainEntityOfPage" href="http://yfygoing.com/2022/01/10/Leetcode1531-stringCompressionII/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avatar.gif">
@@ -736,7 +420,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/04/07/Leetcode801-minimumSwapsToMakeSequencesIncreasing/" class="post-title-link" itemprop="url">Leetcode801-minimumSwapsToMakeSequencesIncreasing</a>
+            <a href="/2022/01/10/Leetcode1531-stringCompressionII/" class="post-title-link" itemprop="url">Leetcode1531-String Compression II</a>
         </h2>
 
         <div class="post-meta">
@@ -746,14 +430,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2020-04-07 17:48:25" itemprop="dateCreated datePublished" datetime="2020-04-07T17:48:25-05:00">2020-04-07</time>
+              <time title="Created: 2022-01-10 23:05:20" itemprop="dateCreated datePublished" datetime="2022-01-10T23:05:20-06:00">2022-01-10</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-07-06 21:59:26" itemprop="dateModified" datetime="2020-07-06T21:59:26-05:00">2020-07-06</time>
+                <time title="Modified: 2022-01-13 02:19:02" itemprop="dateModified" datetime="2022-01-13T02:19:02-06:00">2022-01-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -766,7 +450,7 @@
             </span>
 
           
-            <span id="/2020/04/07/Leetcode801-minimumSwapsToMakeSequencesIncreasing/" class="post-meta-item leancloud_visitors" data-flag-title="Leetcode801-minimumSwapsToMakeSequencesIncreasing" title="Views">
+            <span id="/2022/01/10/Leetcode1531-stringCompressionII/" class="post-meta-item leancloud_visitors" data-flag-title="Leetcode1531-String Compression II" title="Views">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -781,8 +465,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2020/04/07/Leetcode801-minimumSwapsToMakeSequencesIncreasing/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/04/07/Leetcode801-minimumSwapsToMakeSequencesIncreasing/" itemprop="commentCount"></span>
+    <a title="valine" href="/2022/01/10/Leetcode1531-stringCompressionII/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/01/10/Leetcode1531-stringCompressionII/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -806,7 +490,7 @@
 
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/04/07/Leetcode801-minimumSwapsToMakeSequencesIncreasing/#more" rel="contents">
+              <a class="btn" href="/2022/01/10/Leetcode1531-stringCompressionII/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -830,7 +514,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yfygoing.com/2020/04/07/Leetcode465-optimalAccountBalancing/">
+    <link itemprop="mainEntityOfPage" href="http://yfygoing.com/2022/01/10/Leetcode280-wiggleSort/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avatar.gif">
@@ -844,7 +528,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/04/07/Leetcode465-optimalAccountBalancing/" class="post-title-link" itemprop="url">Leetcode465-optimalAccountBalancing</a>
+            <a href="/2022/01/10/Leetcode280-wiggleSort/" class="post-title-link" itemprop="url">Leetcode280-Wiggle Sort</a>
         </h2>
 
         <div class="post-meta">
@@ -854,14 +538,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2020-04-07 17:42:25" itemprop="dateCreated datePublished" datetime="2020-04-07T17:42:25-05:00">2020-04-07</time>
+              <time title="Created: 2022-01-10 21:59:06" itemprop="dateCreated datePublished" datetime="2022-01-10T21:59:06-06:00">2022-01-10</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-07-06 21:59:26" itemprop="dateModified" datetime="2020-07-06T21:59:26-05:00">2020-07-06</time>
+                <time title="Modified: 2022-01-13 02:19:02" itemprop="dateModified" datetime="2022-01-13T02:19:02-06:00">2022-01-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -874,7 +558,7 @@
             </span>
 
           
-            <span id="/2020/04/07/Leetcode465-optimalAccountBalancing/" class="post-meta-item leancloud_visitors" data-flag-title="Leetcode465-optimalAccountBalancing" title="Views">
+            <span id="/2022/01/10/Leetcode280-wiggleSort/" class="post-meta-item leancloud_visitors" data-flag-title="Leetcode280-Wiggle Sort" title="Views">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -889,8 +573,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2020/04/07/Leetcode465-optimalAccountBalancing/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/04/07/Leetcode465-optimalAccountBalancing/" itemprop="commentCount"></span>
+    <a title="valine" href="/2022/01/10/Leetcode280-wiggleSort/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/01/10/Leetcode280-wiggleSort/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -914,7 +598,7 @@
 
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/04/07/Leetcode465-optimalAccountBalancing/#more" rel="contents">
+              <a class="btn" href="/2022/01/10/Leetcode280-wiggleSort/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -938,7 +622,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yfygoing.com/2020/04/07/Leetcode363-maxSumOfRectangleNoLargerThanK/">
+    <link itemprop="mainEntityOfPage" href="http://yfygoing.com/2021/02/28/ReactRouterNotRerender/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avatar.gif">
@@ -952,7 +636,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/04/07/Leetcode363-maxSumOfRectangleNoLargerThanK/" class="post-title-link" itemprop="url">Leetcode363-maxSumOfRectangleNoLargerThanK</a>
+            <a href="/2021/02/28/ReactRouterNotRerender/" class="post-title-link" itemprop="url">React Router with MobX Doesn't Re-render Using History.push()</a>
         </h2>
 
         <div class="post-meta">
@@ -962,14 +646,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2020-04-07 17:26:12" itemprop="dateCreated datePublished" datetime="2020-04-07T17:26:12-05:00">2020-04-07</time>
+              <time title="Created: 2021-02-28 21:15:13" itemprop="dateCreated datePublished" datetime="2021-02-28T21:15:13-06:00">2021-02-28</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-07-06 21:59:26" itemprop="dateModified" datetime="2020-07-06T21:59:26-05:00">2020-07-06</time>
+                <time title="Modified: 2022-01-13 02:19:02" itemprop="dateModified" datetime="2022-01-13T02:19:02-06:00">2022-01-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -977,12 +661,12 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/leetcode/" itemprop="url" rel="index"><span itemprop="name">leetcode</span></a>
+                  <a href="/categories/Issues/" itemprop="url" rel="index"><span itemprop="name">Issues</span></a>
                 </span>
             </span>
 
           
-            <span id="/2020/04/07/Leetcode363-maxSumOfRectangleNoLargerThanK/" class="post-meta-item leancloud_visitors" data-flag-title="Leetcode363-maxSumOfRectangleNoLargerThanK" title="Views">
+            <span id="/2021/02/28/ReactRouterNotRerender/" class="post-meta-item leancloud_visitors" data-flag-title="React Router with MobX Doesn't Re-render Using History.push()" title="Views">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -997,13 +681,13 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2020/04/07/Leetcode363-maxSumOfRectangleNoLargerThanK/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/04/07/Leetcode363-maxSumOfRectangleNoLargerThanK/" itemprop="commentCount"></span>
+    <a title="valine" href="/2021/02/28/ReactRouterNotRerender/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/02/28/ReactRouterNotRerender/" itemprop="commentCount"></span>
     </a>
   </span>
   
   
-            <div class="post-description">Solution Report of LeetCode Acceptted</div>
+            <div class="post-description">Records of issues and solutions</div>
 
         </div>
       </header>
@@ -1016,13 +700,13 @@
       
           <p class="description"></p>
 
-<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
+<p><img src="/images/react-mobx.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
 
           
 
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/04/07/Leetcode363-maxSumOfRectangleNoLargerThanK/#more" rel="contents">
+              <a class="btn" href="/2021/02/28/ReactRouterNotRerender/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -1046,7 +730,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yfygoing.com/2020/04/07/Leetcode946-validateStackSequences/">
+    <link itemprop="mainEntityOfPage" href="http://yfygoing.com/2021/01/21/Leetcode1172-dinnerPlateStacks/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avatar.gif">
@@ -1060,7 +744,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/04/07/Leetcode946-validateStackSequences/" class="post-title-link" itemprop="url">Leetcode946-validateStackSequences</a>
+            <a href="/2021/01/21/Leetcode1172-dinnerPlateStacks/" class="post-title-link" itemprop="url">Leetcode1172-Dinner Plate Stacks</a>
         </h2>
 
         <div class="post-meta">
@@ -1070,14 +754,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2020-04-07 17:07:24" itemprop="dateCreated datePublished" datetime="2020-04-07T17:07:24-05:00">2020-04-07</time>
+              <time title="Created: 2021-01-21 16:31:25" itemprop="dateCreated datePublished" datetime="2021-01-21T16:31:25-06:00">2021-01-21</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-07-06 21:59:26" itemprop="dateModified" datetime="2020-07-06T21:59:26-05:00">2020-07-06</time>
+                <time title="Modified: 2022-01-13 02:19:02" itemprop="dateModified" datetime="2022-01-13T02:19:02-06:00">2022-01-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1090,7 +774,7 @@
             </span>
 
           
-            <span id="/2020/04/07/Leetcode946-validateStackSequences/" class="post-meta-item leancloud_visitors" data-flag-title="Leetcode946-validateStackSequences" title="Views">
+            <span id="/2021/01/21/Leetcode1172-dinnerPlateStacks/" class="post-meta-item leancloud_visitors" data-flag-title="Leetcode1172-Dinner Plate Stacks" title="Views">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -1105,8 +789,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2020/04/07/Leetcode946-validateStackSequences/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/04/07/Leetcode946-validateStackSequences/" itemprop="commentCount"></span>
+    <a title="valine" href="/2021/01/21/Leetcode1172-dinnerPlateStacks/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/01/21/Leetcode1172-dinnerPlateStacks/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -1130,7 +814,7 @@
 
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/04/07/Leetcode946-validateStackSequences/#more" rel="contents">
+              <a class="btn" href="/2021/01/21/Leetcode1172-dinnerPlateStacks/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -1154,7 +838,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yfygoing.com/2020/04/07/Leetcode659-splitArrayIntoConsecutiveSubsequences/">
+    <link itemprop="mainEntityOfPage" href="http://yfygoing.com/2021/01/21/Leetcode351-androidUnlockPatterns/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avatar.gif">
@@ -1168,7 +852,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/04/07/Leetcode659-splitArrayIntoConsecutiveSubsequences/" class="post-title-link" itemprop="url">Leetcode659-splitArrayIntoConsecutiveSubsequences</a>
+            <a href="/2021/01/21/Leetcode351-androidUnlockPatterns/" class="post-title-link" itemprop="url">Leetcode351-Android Unlock Patterns</a>
         </h2>
 
         <div class="post-meta">
@@ -1178,14 +862,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2020-04-07 16:58:32" itemprop="dateCreated datePublished" datetime="2020-04-07T16:58:32-05:00">2020-04-07</time>
+              <time title="Created: 2021-01-21 16:03:43" itemprop="dateCreated datePublished" datetime="2021-01-21T16:03:43-06:00">2021-01-21</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-07-06 21:59:26" itemprop="dateModified" datetime="2020-07-06T21:59:26-05:00">2020-07-06</time>
+                <time title="Modified: 2022-01-13 02:19:02" itemprop="dateModified" datetime="2022-01-13T02:19:02-06:00">2022-01-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1198,7 +882,7 @@
             </span>
 
           
-            <span id="/2020/04/07/Leetcode659-splitArrayIntoConsecutiveSubsequences/" class="post-meta-item leancloud_visitors" data-flag-title="Leetcode659-splitArrayIntoConsecutiveSubsequences" title="Views">
+            <span id="/2021/01/21/Leetcode351-androidUnlockPatterns/" class="post-meta-item leancloud_visitors" data-flag-title="Leetcode351-Android Unlock Patterns" title="Views">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -1213,8 +897,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2020/04/07/Leetcode659-splitArrayIntoConsecutiveSubsequences/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/04/07/Leetcode659-splitArrayIntoConsecutiveSubsequences/" itemprop="commentCount"></span>
+    <a title="valine" href="/2021/01/21/Leetcode351-androidUnlockPatterns/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/01/21/Leetcode351-androidUnlockPatterns/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -1238,7 +922,331 @@
 
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/04/07/Leetcode659-splitArrayIntoConsecutiveSubsequences/#more" rel="contents">
+              <a class="btn" href="/2021/01/21/Leetcode351-androidUnlockPatterns/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yfygoing.com/2021/01/12/Leetcode1345-jumpGameIV/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.gif">
+      <meta itemprop="name" content="YF">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="StarWalker">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/12/Leetcode1345-jumpGameIV/" class="post-title-link" itemprop="url">Leetcode1345-Jump Game IV</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-01-12 12:25:28" itemprop="dateCreated datePublished" datetime="2021-01-12T12:25:28-06:00">2021-01-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-01-13 02:19:02" itemprop="dateModified" datetime="2022-01-13T02:19:02-06:00">2022-01-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index"><span itemprop="name">leetcode</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2021/01/12/Leetcode1345-jumpGameIV/" class="post-meta-item leancloud_visitors" data-flag-title="Leetcode1345-Jump Game IV" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2021/01/12/Leetcode1345-jumpGameIV/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/01/12/Leetcode1345-jumpGameIV/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <div class="post-description">Solution Report of LeetCode Acceptted</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
+
+          
+
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/01/12/Leetcode1345-jumpGameIV/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yfygoing.com/2021/01/11/Leetcode025-reverseNodesinkGroup/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.gif">
+      <meta itemprop="name" content="YF">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="StarWalker">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/11/Leetcode025-reverseNodesinkGroup/" class="post-title-link" itemprop="url">Leetcode025-Reverse Nodes in k-Group</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-01-11 15:41:06" itemprop="dateCreated datePublished" datetime="2021-01-11T15:41:06-06:00">2021-01-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-01-13 02:19:01" itemprop="dateModified" datetime="2022-01-13T02:19:01-06:00">2022-01-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index"><span itemprop="name">leetcode</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2021/01/11/Leetcode025-reverseNodesinkGroup/" class="post-meta-item leancloud_visitors" data-flag-title="Leetcode025-Reverse Nodes in k-Group" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2021/01/11/Leetcode025-reverseNodesinkGroup/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/01/11/Leetcode025-reverseNodesinkGroup/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <div class="post-description">Solution Report of LeetCode Acceptted</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
+
+          
+
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/01/11/Leetcode025-reverseNodesinkGroup/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yfygoing.com/2021/01/11/Leetcode051-NQueens/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.gif">
+      <meta itemprop="name" content="YF">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="StarWalker">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/11/Leetcode051-NQueens/" class="post-title-link" itemprop="url">Leetcode051-N-Queens</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-01-11 15:33:58" itemprop="dateCreated datePublished" datetime="2021-01-11T15:33:58-06:00">2021-01-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-01-13 02:19:01" itemprop="dateModified" datetime="2022-01-13T02:19:01-06:00">2022-01-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index"><span itemprop="name">leetcode</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2021/01/11/Leetcode051-NQueens/" class="post-meta-item leancloud_visitors" data-flag-title="Leetcode051-N-Queens" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2021/01/11/Leetcode051-NQueens/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/01/11/Leetcode051-NQueens/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <div class="post-description">Solution Report of LeetCode Acceptted</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
+
+          
+
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/01/11/Leetcode051-NQueens/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -1261,7 +1269,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/36/">36</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/40/">40</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1329,20 +1337,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">354</span>
+          <span class="site-state-item-count">395</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">139</span>
+        <span class="site-state-item-count">150</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -1425,10 +1433,10 @@
 
 <div class="copyright">
   
-  &copy; 2018 – 
-  <span itemprop="copyrightYear">2020</span>
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
-    <i class="fas fa-hand-spock"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">YF</span>
 </div>
@@ -1488,8 +1496,6 @@
 
 
 <script src="/js/next-boot.js"></script>
-
-<script src="/js/bookmark.js"></script>
 
 
 
@@ -1600,7 +1606,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     });
   }, window.Valine);
 });
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>

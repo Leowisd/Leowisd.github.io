@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-60x60.png">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-32x32.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yfygoing.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#6699ff","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"yfygoing.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="Solution Report of LeetCode Acceptted">
@@ -29,11 +29,12 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://yfygoing.com/images/LeetCode.jpg">
 <meta property="article:published_time" content="2019-10-28T16:33:13.000Z">
-<meta property="article:modified_time" content="2020-07-07T02:59:26.254Z">
+<meta property="article:modified_time" content="2022-01-13T08:19:02.248Z">
 <meta property="article:author" content="YF">
 <meta property="article:tag" content="Google">
 <meta property="article:tag" content="Hash Table">
 <meta property="article:tag" content="Divide and Conquer">
+<meta property="article:tag" content="TikTok">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yfygoing.com/images/LeetCode.jpg">
 
@@ -90,10 +91,14 @@
   </style>
 </noscript>
 
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -194,8 +199,6 @@
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
-  <div class="reading-progress-bar"></div>
-  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 
 
     <main class="main">
@@ -240,7 +243,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-07-06 21:59:26" itemprop="dateModified" datetime="2020-07-06T21:59:26-05:00">2020-07-06</time>
+                <time title="Modified: 2022-01-13 02:19:02" itemprop="dateModified" datetime="2022-01-13T02:19:02-06:00">2022-01-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -288,7 +291,7 @@
         <p class="description"></p>
 
 <p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Create a timebased key-value store class TimeMap, that supports two operations.</p>
 <ol>
 <li>set(string key, string value, int timestamp)</li>
@@ -302,7 +305,7 @@
 <ul>
 <li>Returns a value such that set(key, value, timestamp_prev) was called previously, with timestamp_prev &lt;= timestamp.</li>
 <li>If there are multiple such values, it returns the one with the largest timestamp_prev.</li>
-<li>If there are no values, it returns the empty string (“”).<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><strong>Example 1:</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Input: inputs &#x3D; [&quot;TimeMap&quot;,&quot;set&quot;,&quot;get&quot;,&quot;get&quot;,&quot;set&quot;,&quot;get&quot;,&quot;get&quot;], inputs &#x3D; [[],[&quot;foo&quot;,&quot;bar&quot;,1],[&quot;foo&quot;,1],[&quot;foo&quot;,3],[&quot;foo&quot;,&quot;bar2&quot;,4],[&quot;foo&quot;,4],[&quot;foo&quot;,5]]</span><br><span class="line">Output: [null,null,&quot;bar&quot;,&quot;bar&quot;,null,&quot;bar2&quot;,&quot;bar2&quot;]</span><br><span class="line">Explanation:   </span><br><span class="line">TimeMap kv;   </span><br><span class="line">kv.set(&quot;foo&quot;, &quot;bar&quot;, 1); &#x2F;&#x2F; store the key &quot;foo&quot; and value &quot;bar&quot; along with timestamp &#x3D; 1   </span><br><span class="line">kv.get(&quot;foo&quot;, 1);  &#x2F;&#x2F; output &quot;bar&quot;   </span><br><span class="line">kv.get(&quot;foo&quot;, 3); &#x2F;&#x2F; output &quot;bar&quot; since there is no value corresponding to foo at timestamp 3 and timestamp 2, then the only value is at timestamp 1 ie &quot;bar&quot;   </span><br><span class="line">kv.set(&quot;foo&quot;, &quot;bar2&quot;, 4);   </span><br><span class="line">kv.get(&quot;foo&quot;, 4); &#x2F;&#x2F; output &quot;bar2&quot;   </span><br><span class="line">kv.get(&quot;foo&quot;, 5); &#x2F;&#x2F;output &quot;bar2&quot;</span><br></pre></td></tr></table></figure>
+<li>If there are no values, it returns the empty string (“”).<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><strong>Example 1:</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Input: inputs &#x3D; [&quot;TimeMap&quot;,&quot;set&quot;,&quot;get&quot;,&quot;get&quot;,&quot;set&quot;,&quot;get&quot;,&quot;get&quot;], inputs &#x3D; [[],[&quot;foo&quot;,&quot;bar&quot;,1],[&quot;foo&quot;,1],[&quot;foo&quot;,3],[&quot;foo&quot;,&quot;bar2&quot;,4],[&quot;foo&quot;,4],[&quot;foo&quot;,5]]</span><br><span class="line">Output: [null,null,&quot;bar&quot;,&quot;bar&quot;,null,&quot;bar2&quot;,&quot;bar2&quot;]</span><br><span class="line">Explanation:   </span><br><span class="line">TimeMap kv;   </span><br><span class="line">kv.set(&quot;foo&quot;, &quot;bar&quot;, 1); &#x2F;&#x2F; store the key &quot;foo&quot; and value &quot;bar&quot; along with timestamp &#x3D; 1   </span><br><span class="line">kv.get(&quot;foo&quot;, 1);  &#x2F;&#x2F; output &quot;bar&quot;   </span><br><span class="line">kv.get(&quot;foo&quot;, 3); &#x2F;&#x2F; output &quot;bar&quot; since there is no value corresponding to foo at timestamp 3 and timestamp 2, then the only value is at timestamp 1 ie &quot;bar&quot;   </span><br><span class="line">kv.set(&quot;foo&quot;, &quot;bar2&quot;, 4);   </span><br><span class="line">kv.get(&quot;foo&quot;, 4); &#x2F;&#x2F; output &quot;bar2&quot;   </span><br><span class="line">kv.get(&quot;foo&quot;, 5); &#x2F;&#x2F;output &quot;bar2&quot;   </span><br></pre></td></tr></table></figure>
 <strong>Example 2:</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: inputs &#x3D; [&quot;TimeMap&quot;,&quot;set&quot;,&quot;set&quot;,&quot;get&quot;,&quot;get&quot;,&quot;get&quot;,&quot;get&quot;,&quot;get&quot;], inputs &#x3D; [[],[&quot;love&quot;,&quot;high&quot;,10],[&quot;love&quot;,&quot;low&quot;,20],[&quot;love&quot;,5],[&quot;love&quot;,10],[&quot;love&quot;,15],[&quot;love&quot;,20],[&quot;love&quot;,25]]</span><br><span class="line">Output: [null,null,null,&quot;&quot;,&quot;high&quot;,&quot;high&quot;,&quot;low&quot;,&quot;low&quot;]</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
@@ -312,7 +315,7 @@
 <li>All key/value strings have length in the range [1, 100]</li>
 <li>The timestamps for all TimeMap.set operations are strictly increasing.</li>
 <li>1 &lt;= timestamp &lt;= 10^7</li>
-<li>TimeMap.set and TimeMap.get functions will be called a total of 120000 times (combined) per test case.<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TimeMap</span> </span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Node</span></span>&#123;</span><br><span class="line">        String val;</span><br><span class="line">        <span class="keyword">int</span> times;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">(String val, <span class="keyword">int</span> times)</span></span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.val = val;</span><br><span class="line">            <span class="keyword">this</span>.times = times;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    HashMap&lt;String, List&lt;Node&gt;&gt; map;</span><br><span class="line">    <span class="comment">/** Initialize your data structure here. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">TimeMap</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        map = <span class="keyword">new</span> HashMap&lt;String, List&lt;Node&gt;&gt;();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">set</span><span class="params">(String key, String value, <span class="keyword">int</span> timestamp)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!map.containsKey(key)) map.put(key, <span class="keyword">new</span> ArrayList&lt;Node&gt;());</span><br><span class="line">        map.get(key).add(<span class="keyword">new</span> Node(value, timestamp));</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">get</span><span class="params">(String key, <span class="keyword">int</span> timestamp)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!map.containsKey(key)) <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">        <span class="keyword">return</span> binarySearch(map.get(key), timestamp);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">binarySearch</span><span class="params">(List&lt;Node&gt; list, <span class="keyword">int</span> timestamp)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> right = list.size() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(left &lt; right)&#123;</span><br><span class="line">            <span class="keyword">int</span> mid = (left + right) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (list.get(mid).times == timestamp) <span class="keyword">return</span> list.get(mid).val;</span><br><span class="line">            <span class="keyword">if</span> (list.get(mid).times &lt; timestamp)&#123;</span><br><span class="line">                <span class="keyword">if</span> (list.get(mid + <span class="number">1</span>).times &gt; timestamp) <span class="keyword">return</span> list.get(mid).val;</span><br><span class="line">                left = mid + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> right = mid - <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> list.get(left).times &lt;= timestamp ? list.get(left).val : <span class="string">""</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your TimeMap object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * TimeMap obj = new TimeMap();</span></span><br><span class="line"><span class="comment"> * obj.set(key,value,timestamp);</span></span><br><span class="line"><span class="comment"> * String param_2 = obj.get(key,timestamp);</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<li>TimeMap.set and TimeMap.get functions will be called a total of 120000 times (combined) per test case.<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TimeMap</span> </span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Node</span></span>&#123;</span><br><span class="line">        String val;</span><br><span class="line">        <span class="keyword">int</span> times;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">(String val, <span class="keyword">int</span> times)</span></span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.val = val;</span><br><span class="line">            <span class="keyword">this</span>.times = times;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    HashMap&lt;String, List&lt;Node&gt;&gt; map;</span><br><span class="line">    <span class="comment">/** Initialize your data structure here. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">TimeMap</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        map = <span class="keyword">new</span> HashMap&lt;String, List&lt;Node&gt;&gt;();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">set</span><span class="params">(String key, String value, <span class="keyword">int</span> timestamp)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!map.containsKey(key)) map.put(key, <span class="keyword">new</span> ArrayList&lt;Node&gt;());</span><br><span class="line">        map.get(key).add(<span class="keyword">new</span> Node(value, timestamp));</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">get</span><span class="params">(String key, <span class="keyword">int</span> timestamp)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!map.containsKey(key)) <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="keyword">return</span> binarySearch(map.get(key), timestamp);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">binarySearch</span><span class="params">(List&lt;Node&gt; list, <span class="keyword">int</span> timestamp)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> right = list.size() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(left &lt; right)&#123;</span><br><span class="line">            <span class="keyword">int</span> mid = (left + right) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (list.get(mid).times == timestamp) <span class="keyword">return</span> list.get(mid).val;</span><br><span class="line">            <span class="keyword">if</span> (list.get(mid).times &lt; timestamp)&#123;</span><br><span class="line">                <span class="keyword">if</span> (list.get(mid + <span class="number">1</span>).times &gt; timestamp) <span class="keyword">return</span> list.get(mid).val;</span><br><span class="line">                left = mid + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> right = mid - <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> list.get(left).times &lt;= timestamp ? list.get(left).val : <span class="string">&quot;&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your TimeMap object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * TimeMap obj = new TimeMap();</span></span><br><span class="line"><span class="comment"> * obj.set(key,value,timestamp);</span></span><br><span class="line"><span class="comment"> * String param_2 = obj.get(key,timestamp);</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <hr />
@@ -327,6 +330,7 @@
               <a href="/tags/Google/" rel="tag"># Google</a>
               <a href="/tags/Hash-Table/" rel="tag"># Hash Table</a>
               <a href="/tags/Divide-and-Conquer/" rel="tag"># Divide and Conquer</a>
+              <a href="/tags/TikTok/" rel="tag"># TikTok</a>
           </div>
 
         
@@ -417,20 +421,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">354</span>
+          <span class="site-state-item-count">395</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">139</span>
+        <span class="site-state-item-count">150</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -513,10 +517,10 @@
 
 <div class="copyright">
   
-  &copy; 2018 – 
-  <span itemprop="copyrightYear">2020</span>
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
-    <i class="fas fa-hand-spock"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">YF</span>
 </div>
@@ -576,8 +580,6 @@
 
 
 <script src="/js/next-boot.js"></script>
-
-<script src="/js/bookmark.js"></script>
 
 
 
@@ -688,7 +690,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     });
   }, window.Valine);
 });
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
