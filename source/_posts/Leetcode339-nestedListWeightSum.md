@@ -1,8 +1,8 @@
 ---
 title: Leetcode339-nestedListWeightSum
 categories: leetcode
-tags: [Linkedln, DFS, BFS]
-description: Solution Report of LeetCode Acceptted
+tags: [Linkedin, DFS, BFS]
+description: Solution Report of LeetCode Accepted
 mathjax: true
 date: 2022-01-24 15:29:54
 permalink:

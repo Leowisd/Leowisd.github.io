@@ -1,8 +1,8 @@
 ---
 title: Leetcode100-sameTree
 categories: leetcode
-tags: [Tree, Amazon, Bloomberg]
-description: Solution Report of LeetCode Acceptted
+tags: [Tree, Amazon, Bloomberg, Linkedin]
+description: Solution Report of LeetCode Accepted
 mathjax: true
 date: 2019-10-13 09:54:05
 permalink:

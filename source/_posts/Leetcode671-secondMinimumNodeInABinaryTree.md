@@ -1,8 +1,8 @@
 ---
 title: Leetcode671-Second Minimum Node In a BinaryTree
 categories: leetcode
-tags: [Tree, Linkedln, DFS]
-description: Solution Report of LeetCode Acceptted
+tags: [Tree, Linkedin, DFS]
+description: Solution Report of LeetCode Accepted
 mathjax: true
 date: 2022-01-24 15:07:05
 permalink:

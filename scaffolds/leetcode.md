@@ -4,7 +4,7 @@ date: {{ date }}
 permalink:
 categories: leetcode
 tags: []
-description: Solution Report of LeetCode Acceptted
+description: Solution Report of LeetCode Accepted
 mathjax: true
 image: #只在首页显示
 ---

@@ -1,8 +1,8 @@
 ---
-title: Leetcode450-Delet Node in a BST
+title: Leetcode450-Delete Node in a BST
 categories: leetcode
 tags: [Tree, BST, Amazon]
-description: Solution Report of LeetCode Acceptted
+description: Solution Report of LeetCode Accepted
 mathjax: true
 date: 2022-01-13 15:32:00
 permalink:

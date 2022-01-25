@@ -1,8 +1,8 @@
 ---
 title: Leetcode364-nestedListWeightSumII
 categories: leetcode
-tags: [Backtracking, Linkedln]
-description: Solution Report of LeetCode Acceptted
+tags: [Backtracking, Linkedin]
+description: Solution Report of LeetCode Accepted
 mathjax: true
 date: 2020-02-10 21:34:45
 permalink:
