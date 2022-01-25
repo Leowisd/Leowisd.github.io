@@ -1,5 +1,5 @@
 ---
-title: Leetcode100-sameTree
+title: Leetcode100-Same Tree
 categories: leetcode
 tags: [Tree, Amazon, Bloomberg, Linkedin]
 description: Solution Report of LeetCode Accepted
@@ -53,6 +53,13 @@ Output: false
 ```
 
 ## Solution
+
+**Solution 1: Recursion**
+
+Time Complex: $$O(N)$$
+
+Space Complex: $$O(logN)$$
+
 ```java
 /**
  * Definition for a binary tree node.
@@ -69,6 +76,55 @@ class Solution {
         if (p == null || q == null) return false;
         if (p.val != q.val) return false;
         return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+    }
+}
+```
+
+**Solution 2: Iteration**
+
+Time Complex: $$O(N)$$
+
+Space Complex: $$O(logN)$$
+
+```java
+// Iteration solution, use stack to preorder trees
+class Solution {
+    public boolean isSameTree(TreeNode p, TreeNode q) {
+        Stack<TreeNode> stP = new Stack<>();
+        Stack<TreeNode> stQ = new Stack<>();
+        if (p != null){
+            stP.push(p);
+        }
+        if (q != null){
+            stQ.push(q);
+        }
+        
+        while(!stP.isEmpty() && !stQ.isEmpty()){
+            TreeNode nodeP = stP.pop();
+            TreeNode nodeQ = stQ.pop();
+            if (nodeP.val != nodeQ.val){
+                return false;
+            }
+            if (nodeP.left != null){
+                stP.push(nodeP.left);
+            }
+            if (nodeQ.left != null){
+                stQ.push(nodeQ.left);
+            }
+            if (stP.size() != stQ.size()){
+                return false;
+            }
+            if (nodeP.right != null){
+                stP.push(nodeP.right);
+            }
+            if (nodeQ.right != null){
+                stQ.push(nodeQ.right);
+            }
+            if (stP.size() != stQ.size()){
+                return false;
+            }            
+        }
+        return stP.size() == 0 && stQ.size() == 0;
     }
 }
 ```
