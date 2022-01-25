@@ -2172,6 +2172,7 @@
         <tag>Divide and Conquer</tag>
         <tag>DP</tag>
         <tag>TikTok</tag>
+        <tag>Linkedin</tag>
       </tags>
   </entry>
   <entry>
@@ -2903,7 +2904,7 @@
       </tags>
   </entry>
   <entry>
-    <title>Leetcode100-sameTree</title>
+    <title>Leetcode100-Same Tree</title>
     <url>/2019/10/13/Leetcode100-sameTree/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
 
@@ -11008,7 +11009,7 @@
       </tags>
   </entry>
   <entry>
-    <title>Leetcode244-shortestWordDistanceII</title>
+    <title>Leetcode244-Shortest Word Distance II</title>
     <url>/2022/01/25/Leetcode244-shortestWordDistanceII/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
 
@@ -11041,6 +11042,70 @@
       <tags>
         <tag>Hash Table</tag>
         <tag>Two Pointers</tag>
+        <tag>Linkedin</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode243-Shortest Word Distance</title>
+    <url>/2022/01/25/Leetcode243-shortestWordDistance/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
+<span id="more"></span>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given an array of strings wordsDict and two different strings that already exist in the array word1 and word2, return the shortest distance between these two words in the list.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: wordsDict &#x3D; [&quot;practice&quot;, &quot;makes&quot;, &quot;perfect&quot;, &quot;coding&quot;, &quot;makes&quot;], word1 &#x3D; &quot;coding&quot;, word2 &#x3D; &quot;practice&quot;</span><br><span class="line">Output: 3</span><br></pre></td></tr></table></figure><br><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: wordsDict &#x3D; [&quot;practice&quot;, &quot;makes&quot;, &quot;perfect&quot;, &quot;coding&quot;, &quot;makes&quot;], word1 &#x3D; &quot;makes&quot;, word2 &#x3D; &quot;coding&quot;</span><br><span class="line">Output: 1</span><br></pre></td></tr></table></figure></p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>1 &lt;= wordsDict.length &lt;= 3 * 104</li>
+<li>1 &lt;= wordsDict[i].length &lt;= 10</li>
+<li>wordsDict[i] consists of lowercase English letters.</li>
+<li>word1 and word2 are in wordsDict.</li>
+<li>word1 != word2</li>
+</ul>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul>
+<li>Time Complexity: <script type="math/tex">O(NM)</script>, N is the number of words, M is the length of target word(equal needs O(M) to compare)</li>
+<li>Space Complexity: <script type="math/tex">O(1)</script></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">shortestDistance</span><span class="params">(String[] wordsDict, String word1, String word2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> p1 = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> p2 = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> res = Integer.MAX_VALUE;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; wordsDict.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (wordsDict[i].equals(word1))&#123;</span><br><span class="line">                p1 = i;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (wordsDict[i].equals(word2))&#123;</span><br><span class="line">                p2 = i;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (p1 != -<span class="number">1</span> &amp;&amp; p2 != -<span class="number">1</span>)&#123;</span><br><span class="line">                res = Math.min(res, Math.abs(p1 - p2));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr />]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Two Pointers</tag>
+        <tag>Linkedin</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode152-Maximum Product Subarray</title>
+    <url>/2022/01/25/Leetcode152-maximumProductSubarray/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
+<span id="more"></span>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given an integer array nums, find a contiguous non-empty subarray within the array that has the largest product, and return the product.</p>
+<p>The test cases are generated so that the answer will fit in a 32-bit integer.</p>
+<p>A subarray is a contiguous subsequence of the array.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: nums &#x3D; [2,3,-2,4]</span><br><span class="line">Output: 6</span><br><span class="line">Explanation: [2,3] has the largest product 6.</span><br></pre></td></tr></table></figure><br><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: nums &#x3D; [-2,0,-1]</span><br><span class="line">Output: 0</span><br><span class="line">Explanation: The result cannot be 2, because [-2,-1] is not a subarray.</span><br></pre></td></tr></table></figure><br><strong>Constraints:</strong></p>
+<ul>
+<li>1 &lt;= nums.length &lt;= 2 * 104</li>
+<li>-10 &lt;= nums[i] &lt;= 10</li>
+<li>The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.</li>
+</ul>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p><strong>Solution 1: DP</strong></p>
+<ul>
+<li>Time Complexity: <script type="math/tex">O(N)</script></li>
+<li>Space Complexity: <script type="math/tex">O(1)</script></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"><span class="comment">//    DP</span></span><br><span class="line"><span class="comment">// dp[i][0] = min( min(dp[i - 1][0] * nums[i], dp[i - 1][1] * nums[i]), nums[i])</span></span><br><span class="line"><span class="comment">// dp[i][1] = max( max(dp[i - 1][0] * nums[i], dp[i - 1][1] * nums[i]), nums[i])</span></span><br><span class="line"><span class="comment">// improved:</span></span><br><span class="line"><span class="comment">// minPro = min( min(minPro * nums[i], maxPro * nums[i]), nums[i])</span></span><br><span class="line"><span class="comment">// maxPro = max( max(minPro * nums[i], maxPro * nums[i]), nums[i])</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxProduct</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums == <span class="keyword">null</span> || nums.length == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> premax = nums[<span class="number">0</span>], premin = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> min = <span class="number">0</span>, max = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> res = premax;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">            min = premin * nums[i];</span><br><span class="line">            max = premax * nums[i];</span><br><span class="line">            premax = Math.max(Math.max(min, max), nums[i]);</span><br><span class="line">            premin = Math.min(Math.min(min, max), nums[i]);</span><br><span class="line">            res = Math.max(res, premax);            </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Solution 2: cal prefix and suffix</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//    Solution 2: cal prefix and suffix </span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxProduct</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums == <span class="keyword">null</span> || nums.length == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> res = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> prefix = <span class="number">0</span>, suffix = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">            prefix = (prefix == <span class="number">0</span> ? <span class="number">1</span> : prefix) * nums[i];</span><br><span class="line">            suffix = (suffix == <span class="number">0</span> ? <span class="number">1</span> : suffix) * nums[nums.length - i - <span class="number">1</span>];</span><br><span class="line">            res = Math.max(res, Math.max(prefix, suffix));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<hr />]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>DP</tag>
         <tag>Linkedin</tag>
       </tags>
   </entry>
