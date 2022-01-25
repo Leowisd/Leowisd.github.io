@@ -2908,7 +2908,7 @@
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
 
 <p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given two binary trees, write a function to check if they are the same or not.</p>
 <p>Two binary trees are considered the same if they are structurally identical and the nodes have the same value.</p>
 <h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input:     1         1</span><br><span class="line">          &#x2F; \       &#x2F; \</span><br><span class="line">         2   3     2   3</span><br><span class="line"></span><br><span class="line">        [1,2,3],   [1,2,3]</span><br><span class="line"></span><br><span class="line">Output: true</span><br></pre></td></tr></table></figure><br><strong>Example 2:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input:     1         1</span><br><span class="line">          &#x2F;           \</span><br><span class="line">         2             2</span><br><span class="line"></span><br><span class="line">        [1,2],     [1,null,2]</span><br><span class="line"></span><br><span class="line">Output: false</span><br></pre></td></tr></table></figure><br><strong>Example 3:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input:     1         1</span><br><span class="line">          &#x2F; \       &#x2F; \</span><br><span class="line">         2   1     1   2</span><br><span class="line"></span><br><span class="line">        [1,2,1],   [1,1,2]</span><br><span class="line"></span><br><span class="line">Output: false</span><br></pre></td></tr></table></figure></p>
@@ -2921,6 +2921,7 @@
         <tag>Amazon</tag>
         <tag>Bloomberg</tag>
         <tag>Tree</tag>
+        <tag>Linkedin</tag>
       </tags>
   </entry>
   <entry>
@@ -6347,12 +6348,13 @@
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
 
 <p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given a nested list of integers, return the sum of all integers in the list weighted by their depth.</p>
 <p>Each element is either an integer, or a list — whose elements may also be integers or other lists.</p>
 <p>Different from the previous question where weight is increasing from root to leaf, now the weight is defined from bottom up. i.e., the leaf level integers have weight 1, and the root level integers have the largest weight.</p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br>Given the list [[1,1],2,[1,1]], return 8. (four 1’s at depth 1, one 2 at depth 2)</p>
-<p><strong>Example 2:</strong><br>Given the list [1,[4,[6]]], return 17. (one 1 at depth 3, one 4 at depth 2, and one 6 at depth 1; 13 + 42 + 6*1 = 17)</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong></p>
+<p><img src="https://assets.leetcode.com/uploads/2021/03/27/nestedlistweightsumiiex1.png" alt=""><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Given the list [[1,1],2,[1,1]], return 8. (four 1&#39;s at depth 1, one 2 at depth 2)</span><br></pre></td></tr></table></figure><br><strong>Example 2:</strong></p>
+<p><img src="https://assets.leetcode.com/uploads/2021/03/27/nestedlistweightsumiiex2.png" alt=""><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Given the list [1,[4,[6]]], return 17. (one 1 at depth 3, one 4 at depth 2, and one 6 at depth 1; 13 + 42 + 6*1 &#x3D; 17)</span><br></pre></td></tr></table></figure></p>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">depthSumInverse</span><span class="params">(List&lt;NestedInteger&gt; nestedList)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> DFS(nestedList, <span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">DFS</span><span class="params">(List&lt;NestedInteger&gt; nestedList, <span class="keyword">int</span> intSum)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//关键点在于把上一层的integer sum传到下一层去，这样的话，接下来还有几层，每一层都会加上这个integer sum,也就等于乘以了它的层数</span></span><br><span class="line">    List&lt;NestedInteger&gt; nextLevel = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="keyword">int</span> listSum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (NestedInteger list : nestedList) &#123;</span><br><span class="line">        <span class="keyword">if</span> (list.isInteger()) &#123;</span><br><span class="line">            intSum += list.getInteger();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            nextLevel.addAll(list.getList());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    listSum = nextLevel.isEmpty() ? <span class="number">0</span> : DFS(nextLevel, intSum);</span><br><span class="line">    <span class="keyword">return</span> listSum + intSum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr />]]></content>
       <categories>
@@ -6360,6 +6362,7 @@
       </categories>
       <tags>
         <tag>Backtracking</tag>
+        <tag>Linkedin</tag>
       </tags>
   </entry>
   <entry>
@@ -10888,7 +10891,7 @@
       </tags>
   </entry>
   <entry>
-    <title>Leetcode450-Delet Node in a BST</title>
+    <title>Leetcode450-Delete Node in a BST</title>
     <url>/2022/01/13/Leetcode450-deletNodeinABST/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
 
@@ -10925,6 +10928,76 @@
         <tag>Amazon</tag>
         <tag>Tree</tag>
         <tag>BST</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode339-nestedListWeightSum</title>
+    <url>/2022/01/24/Leetcode339-nestedListWeightSum/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
+<span id="more"></span>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>You are given a nested list of integers nestedList. Each element is either an integer or a list whose elements may also be integers or other lists.</p>
+<p>The <strong>depth</strong> of an integer is the number of lists that it is inside of. For example, the nested list [1,[2,2],[[3],2],1] has each integer’s value set to its <strong>depth</strong>.</p>
+<p>Return the sum of each integer in nestedList multiplied by its <strong>depth</strong>.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br><img src="https://assets.leetcode.com/uploads/2021/01/14/nestedlistweightsumex1.png" alt=""><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: nestedList &#x3D; [[1,1],2,[1,1]]</span><br><span class="line">Output: 10</span><br><span class="line">Explanation: Four 1&#39;s at depth 2, one 2 at depth 1. 1*2 + 1*2 + 2*1 + 1*2 + 1*2 &#x3D; 10.</span><br></pre></td></tr></table></figure><br><strong>Example 2:</strong><br><img src="https://assets.leetcode.com/uploads/2021/01/14/nestedlistweightsumex2.png" alt=""><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: nestedList &#x3D; [1,[4,[6]]]</span><br><span class="line">Output: 27</span><br><span class="line">Explanation: One 1 at depth 1, one 4 at depth 2, and one 6 at depth 3. 1*1 + 4*2 + 6*3 &#x3D; 27.</span><br></pre></td></tr></table></figure><br><strong>Example 3:</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: nestedList &#x3D; [0]</span><br><span class="line">Output: 0</span><br></pre></td></tr></table></figure><br><strong>Constraints:</strong></p>
+<ul>
+<li>1 &lt;= nestedList.length &lt;= 50</li>
+<li>The values of the integers in the nested list is in the range [-100, 100].</li>
+<li>The maximum depth of any integer is less than or equal to 50.</li>
+</ul>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul>
+<li>Time Complexity: <script type="math/tex">O(N)</script></li>
+<li>Space Complexity: <script type="math/tex">O(N)</script></li>
+</ul>
+<p><strong>Solution 1: DFS</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * // This is the interface that allows for creating nested lists.</span></span><br><span class="line"><span class="comment"> * // You should not implement it, or speculate about its implementation</span></span><br><span class="line"><span class="comment"> * public interface NestedInteger &#123;</span></span><br><span class="line"><span class="comment"> *     // Constructor initializes an empty nested list.</span></span><br><span class="line"><span class="comment"> *     public NestedInteger();</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *     // Constructor initializes a single integer.</span></span><br><span class="line"><span class="comment"> *     public NestedInteger(int value);</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *     // <span class="doctag">@return</span> true if this NestedInteger holds a single integer, rather than a nested list.</span></span><br><span class="line"><span class="comment"> *     public boolean isInteger();</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *     // <span class="doctag">@return</span> the single integer that this NestedInteger holds, if it holds a single integer</span></span><br><span class="line"><span class="comment"> *     // Return null if this NestedInteger holds a nested list</span></span><br><span class="line"><span class="comment"> *     public Integer getInteger();</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *     // Set this NestedInteger to hold a single integer.</span></span><br><span class="line"><span class="comment"> *     public void setInteger(int value);</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *     // Set this NestedInteger to hold a nested list and adds a nested integer to it.</span></span><br><span class="line"><span class="comment"> *     public void add(NestedInteger ni);</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *     // <span class="doctag">@return</span> the nested list that this NestedInteger holds, if it holds a nested list</span></span><br><span class="line"><span class="comment"> *     // Return empty list if this NestedInteger holds a single integer</span></span><br><span class="line"><span class="comment"> *     public List&lt;NestedInteger&gt; getList();</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">// DFS, O(N)</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">depthSum</span><span class="params">(List&lt;NestedInteger&gt; nestedList)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (NestedInteger element: nestedList)&#123;</span><br><span class="line">            res += helper(element, <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">helper</span><span class="params">(NestedInteger cur, <span class="keyword">int</span> depth)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (cur.isInteger())&#123;</span><br><span class="line">            <span class="keyword">return</span> cur.getInteger() * depth;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (NestedInteger next: cur.getList())&#123;</span><br><span class="line">            res += helper(next, depth + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Solution 2: BFS</strong><br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">depthSum</span><span class="params">(List&lt;NestedInteger&gt; nestedList)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        Queue&lt;NestedInteger&gt; q = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        q.addAll(nestedList);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> depth = <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(!q.isEmpty())&#123;</span><br><span class="line">            <span class="keyword">int</span> size = q.size();</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++)&#123;</span><br><span class="line">                NestedInteger cur = q.poll();</span><br><span class="line">                <span class="keyword">if</span>(cur.isInteger())&#123;</span><br><span class="line">                    res += cur.getInteger() * depth;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                    q.addAll(cur.getList());</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            depth++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr />]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>DFS</tag>
+        <tag>BFS</tag>
+        <tag>Linkedin</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode671-Second Minimum Node In a BinaryTree</title>
+    <url>/2022/01/24/Leetcode671-secondMinimumNodeInABinaryTree/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p class="description"></p>
+
+<p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
+<span id="more"></span>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given a non-empty special binary tree consisting of nodes with the non-negative value, where each node in this tree has exactly two or zero sub-node. If the node has two sub-nodes, then this node’s value is the smaller value among its two sub-nodes. More formally, the property root.val = min(root.left.val, root.right.val) always holds.</p>
+<p>Given such a binary tree, you need to output the second minimum value in the set made of all the nodes’ value in the whole tree.</p>
+<p>If no such second minimum value exists, output -1 instead.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1</strong><br><img src="https://assets.leetcode.com/uploads/2020/10/15/smbt1.jpg" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: root &#x3D; [2,2,5,null,null,5,7]</span><br><span class="line">Output: 5</span><br><span class="line">Explanation: The smallest value is 2, the second smallest value is 5.</span><br></pre></td></tr></table></figure>
+<p><strong>Example 2</strong><br><img src="https://assets.leetcode.com/uploads/2020/10/15/smbt2.jpg" alt=""><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: root &#x3D; [2,2,2]</span><br><span class="line">Output: -1</span><br><span class="line">Explanation: The smallest value is 2, but there isn&#39;t any second smallest value.</span><br></pre></td></tr></table></figure></p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>The number of nodes in the tree is in the range [1, 25].</li>
+<li>1 &lt;= Node.val &lt;= 231 - 1</li>
+<li>root.val == min(root.left.val, root.right.val) for each internal node of the tree.</li>
+</ul>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul>
+<li>Time Complexity: <script type="math/tex">O(N)</script></li>
+<li>Space Complexity: <script type="math/tex">O(N)</script></li>
+</ul>
+<p>In this tree, the root should be the smallest node.</p>
+<p>If the value of the children of the root node is not same, root val should be the smaller child value, but the larger one may not the second smallest one, cause the second smallest one may also in the subtree of the smaller value node.</p>
+<p>Similar, if the two children value are the same, then calculate the second smallest value of each subtree, then compare them to find the smaller one as the second smallest value.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * public class TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode left;</span></span><br><span class="line"><span class="comment"> *     TreeNode right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int val) &#123; this.val = val; &#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int val, TreeNode left, TreeNode right) &#123;</span></span><br><span class="line"><span class="comment"> *         this.val = val;</span></span><br><span class="line"><span class="comment"> *         this.left = left;</span></span><br><span class="line"><span class="comment"> *         this.right = right;</span></span><br><span class="line"><span class="comment"> *     &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findSecondMinimumValue</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span> || root.left == <span class="keyword">null</span> || root.right == <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> left = root.left.val;</span><br><span class="line">        <span class="keyword">int</span> right = root.right.val;</span><br><span class="line">        <span class="keyword">if</span> (root.val ==  left)&#123;</span><br><span class="line">            left = findSecondMinimumValue(root.left);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (root.val == right)&#123;</span><br><span class="line">            right = findSecondMinimumValue(root.right);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (left == -<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> right;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (right == -<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> left;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Math.min(left, right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr />]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>DFS</tag>
+        <tag>Tree</tag>
+        <tag>Linkedin</tag>
       </tags>
   </entry>
 </search>

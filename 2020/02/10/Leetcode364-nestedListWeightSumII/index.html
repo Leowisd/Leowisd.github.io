@@ -20,18 +20,21 @@
     var CONFIG = {"hostname":"yfygoing.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Solution Report of LeetCode Acceptted">
+  <meta name="description" content="Solution Report of LeetCode Accepted">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Leetcode364-nestedListWeightSumII">
 <meta property="og:url" content="http://yfygoing.com/2020/02/10/Leetcode364-nestedListWeightSumII/index.html">
 <meta property="og:site_name" content="StarWalker">
-<meta property="og:description" content="Solution Report of LeetCode Acceptted">
+<meta property="og:description" content="Solution Report of LeetCode Accepted">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://yfygoing.com/images/LeetCode.jpg">
+<meta property="og:image" content="https://assets.leetcode.com/uploads/2021/03/27/nestedlistweightsumiiex1.png">
+<meta property="og:image" content="https://assets.leetcode.com/uploads/2021/03/27/nestedlistweightsumiiex2.png">
 <meta property="article:published_time" content="2020-02-11T03:34:45.000Z">
-<meta property="article:modified_time" content="2020-07-07T02:59:26.111Z">
+<meta property="article:modified_time" content="2022-01-25T21:51:15.827Z">
 <meta property="article:author" content="YF">
 <meta property="article:tag" content="Backtracking">
+<meta property="article:tag" content="Linkedin">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yfygoing.com/images/LeetCode.jpg">
 
@@ -240,7 +243,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-07-06 21:59:26" itemprop="dateModified" datetime="2020-07-06T21:59:26-05:00">2020-07-06</time>
+                <time title="Modified: 2022-01-25 15:51:15" itemprop="dateModified" datetime="2022-01-25T15:51:15-06:00">2022-01-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -274,7 +277,7 @@
   </span>
   
   
-            <div class="post-description">Solution Report of LeetCode Acceptted</div>
+            <div class="post-description">Solution Report of LeetCode Accepted</div>
 
         </div>
       </header>
@@ -288,12 +291,13 @@
         <p class="description"></p>
 
 <p><img src="/images/LeetCode.jpg" alt="" style="width:100%" /> <!-- 首页和文章内都会显示 --></p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given a nested list of integers, return the sum of all integers in the list weighted by their depth.</p>
 <p>Each element is either an integer, or a list — whose elements may also be integers or other lists.</p>
 <p>Different from the previous question where weight is increasing from root to leaf, now the weight is defined from bottom up. i.e., the leaf level integers have weight 1, and the root level integers have the largest weight.</p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong><br>Given the list [[1,1],2,[1,1]], return 8. (four 1’s at depth 1, one 2 at depth 2)</p>
-<p><strong>Example 2:</strong><br>Given the list [1,[4,[6]]], return 17. (one 1 at depth 3, one 4 at depth 2, and one 6 at depth 1; 13 + 42 + 6*1 = 17)</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Example 1:</strong></p>
+<p><img src="https://assets.leetcode.com/uploads/2021/03/27/nestedlistweightsumiiex1.png" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Given the list [[1,1],2,[1,1]], return 8. (four 1&#39;s at depth 1, one 2 at depth 2)</span><br></pre></td></tr></table></figure><br><strong>Example 2:</strong></p>
+<p><img src="https://assets.leetcode.com/uploads/2021/03/27/nestedlistweightsumiiex2.png" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Given the list [1,[4,[6]]], return 17. (one 1 at depth 3, one 4 at depth 2, and one 6 at depth 1; 13 + 42 + 6*1 &#x3D; 17)</span><br></pre></td></tr></table></figure></p>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">depthSumInverse</span><span class="params">(List&lt;NestedInteger&gt; nestedList)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> DFS(nestedList, <span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">DFS</span><span class="params">(List&lt;NestedInteger&gt; nestedList, <span class="keyword">int</span> intSum)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//关键点在于把上一层的integer sum传到下一层去，这样的话，接下来还有几层，每一层都会加上这个integer sum,也就等于乘以了它的层数</span></span><br><span class="line">    List&lt;NestedInteger&gt; nextLevel = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="keyword">int</span> listSum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (NestedInteger list : nestedList) &#123;</span><br><span class="line">        <span class="keyword">if</span> (list.isInteger()) &#123;</span><br><span class="line">            intSum += list.getInteger();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            nextLevel.addAll(list.getList());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    listSum = nextLevel.isEmpty() ? <span class="number">0</span> : DFS(nextLevel, intSum);</span><br><span class="line">    <span class="keyword">return</span> listSum + intSum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr />
     </div>
@@ -305,6 +309,7 @@
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/Backtracking/" rel="tag"># Backtracking</a>
+              <a href="/tags/Linkedin/" rel="tag"># Linkedin</a>
           </div>
 
         
@@ -395,7 +400,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">395</span>
+          <span class="site-state-item-count">397</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -408,7 +413,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">150</span>
+        <span class="site-state-item-count">151</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
