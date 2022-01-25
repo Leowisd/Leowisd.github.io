@@ -1,7 +1,7 @@
 ---
 title: Leetcode364-nestedListWeightSumII
 categories: leetcode
-tags: [Backtracking]
+tags: [Backtracking, Linkedln]
 description: Solution Report of LeetCode Acceptted
 mathjax: true
 date: 2020-02-10 21:34:45
@@ -24,11 +24,17 @@ Different from the previous question where weight is increasing from root to lea
 
 ## Example
 **Example 1:**
+
+![](https://assets.leetcode.com/uploads/2021/03/27/nestedlistweightsumiiex1.png)
+```
 Given the list [[1,1],2,[1,1]], return 8. (four 1's at depth 1, one 2 at depth 2)
-
+```
 **Example 2:**
-Given the list [1,[4,[6]]], return 17. (one 1 at depth 3, one 4 at depth 2, and one 6 at depth 1; 13 + 42 + 6*1 = 17)
 
+![](https://assets.leetcode.com/uploads/2021/03/27/nestedlistweightsumiiex2.png)
+```
+Given the list [1,[4,[6]]], return 17. (one 1 at depth 3, one 4 at depth 2, and one 6 at depth 1; 13 + 42 + 6*1 = 17)
+```
 ## Solution
 ```java
 public int depthSumInverse(List<NestedInteger> nestedList) {
